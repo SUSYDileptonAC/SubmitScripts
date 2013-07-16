@@ -1,0 +1,58 @@
+
+    [
+        ComputingElement = 
+            [
+                CloseStorageElements = 
+                   {
+                      
+                          [
+                              GlueSAUsedOnlineSize = 244347; 
+                              GlueSAExpirationMode = "neverExpire"; 
+                              GlueSAPath = "/pnfs/physik.rwth-aachen.de/cms"; 
+                              GlueSchemaVersionMajor = 1; 
+                              GlueSAStateAvailableSpace = 2.828220000000000E+11; 
+                              GlueCESEBindCEAccessPoint = ""; 
+                              GlueCESEBindMountInfo = 
+                                 {
+                                    "/pnfs/physik.rwth-aachen.de"
+                                 }; 
+                              GlueCESEBindWeight = 
+                                 {
+                                    0
+                                 }; 
+                              GlueSAStateUsedSpace = 2.443470000000000E+11; 
+                              GlueCESEBindSEUniqueID = "grid-srm.physik.rwth-aachen.de"; 
+                              GlueSchemaVersionMinor = 3; 
+                              mount = GlueCESEBindCEAccessPoint; 
+                              GlueSALocalID = "cms"; 
+                              name = "grid-srm.physik.rwth-aachen.de"; 
+                              GlueSAType = "volatile"; 
+                              GlueSARetentionPolicy = "replica"; 
+                              freespace = GlueSAStateAvailableSpace; 
+                              GlueCESEBindCEUniqueID = "grid-ce.physik.rwth-aachen.de:2119/jobmanager-pbs-cms"; 
+                              GlueSAFreeOnlineSize = 282822; 
+                              GlueSAAccessLatency = "online"; 
+                              GlueChunkKey = 
+                                 {
+                                    "GlueSEUniqueID=grid-srm.physik.rwth-aachen.de"
+                                 }; 
+                              GlueSAReservedOnlineSize = 0; 
+                              GlueSATotalOnlineSize = 527170; 
+                              GlueSAAccessControlBaseRule = 
+                                 {
+                                    "cms"
+                                 }; 
+                              objectClass = "GlueSATop"; 
+                              GlueSAName = "Information for VO cms"
+                          ]
+                   }; 
+                name = "grid-ce.physik.rwth-aachen.de:2119/jobmanager-pbs-cms"
+            ]; 
+        InputFNs = 
+           {
+           }; 
+        StorageElements = 
+           {
+           }; 
+        VirtualOrganisation = "cms"
+    ]

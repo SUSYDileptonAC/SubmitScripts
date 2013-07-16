@@ -1,0 +1,8 @@
+[
+# PF Muons
+#==========
+	{	"src": "selectedPatMuonsPF",
+		"name": "basicMuons",
+		"cut": "abs( eta ) <= 2.4 & pt >= 5"
+	},
+]

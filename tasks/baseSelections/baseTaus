@@ -1,0 +1,37 @@
+[
+   {   
+        "name": "AgainstLightLeptonsHpsTausPF",
+        "cut": 'tauID("againstMuonTight") > 0.5 && tauID("againstElectronTight")>0.5'
+   },
+   { "name":"electronCleanHpsTaus",
+      "srcNames": "src leptSrc",
+     "selector":"tauElectronCleaner",
+      "leptSrc":"cleanPatElectrons",
+     "dRJetLepton": 0.3,
+   },
+ {	
+        "name": "muonCleanHpsTaus",
+        "srcNames": "src leptSrc",
+        "selector":"tauMuonCleaner",
+        "leptSrc": "cleanPatMuons",
+          "dRJetLepton": 0.3,
+   },
+  {  
+      "name": "ChargeOneHpsTausPFAC",
+       "cut": 'abs( charge ) == 1. && (chargedHadronIso + photonIso + neutralHadronIso) / pt <= 0.5 && chargedHadronIso < 4'   
+   },
+   {
+       "name": "HpsTausAC",
+       "cut": 'tauID("byLooseIsolationCombinedIsolationDBSumPtCorr") > 0.5'
+   },
+   {  "src":"(taus.muonCleanHpsTaus)",
+      "name": "ChargeOneHpsTausForMediumPFAC",
+      "cut": 'abs( charge ) == 1. && (chargedHadronIso + photonIso + neutralHadronIso) / pt <= 1 && chargedHadronIso < 1',
+   },
+   {   "name": "HpsTausForMediumPFAC",
+       "cut": 'tauID("byLooseIsolationCombinedIsolationDBSumPtCorr") > 0.5'
+   },
+   {   "name": "NoTaus",
+        "cut": "pt < 0" 
+   },
+]

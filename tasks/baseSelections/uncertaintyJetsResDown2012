@@ -1,0 +1,10 @@
+[
+# PAT Jets
+#===========
+
+    {  "src": "smearedPatJetsPFresDown",
+        "name": "qualityJetsResDown",
+	"cut": "abs( eta ) <= 3. & pt >= 40.",
+    },
+
+ ]

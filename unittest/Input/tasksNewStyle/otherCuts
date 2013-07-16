@@ -1,0 +1,42 @@
+{
+"activeFilters": ["METFilter", "JetFilterLow", "JetFilterHigh"],
+"muons": [ 
+	{	"name": "basicMuons",
+		"src":"cleanLayer1Muons",
+		"cut": "abs( eta ) <= 2.0 & pt >= 20"
+	}
+],
+
+"electrons" : [	
+	{	
+	    "src": "cleanLayer1Electrons",
+	    "cut": "abs( eta ) <= 2.0 & pt >= 20" }
+],
+
+"taus" : [
+	{	"src":"cleanLayer1Taus",
+	      "cut": "abs( eta ) <= 2.0 & pt >= 20" }
+],
+
+"jets" : [
+	{	"name": "BaseJets",
+		"src":"cleanLayer1JetsAK5",
+		"cut": "abs( eta ) <= 2.5 & pt >= 50"},
+	{	"name":"JetFilterHigh",
+		"skip": True,
+		"selector": "patJetCountFilter",
+		"cut": "abs( eta ) <= 2.5 & pt >= 100",
+		"minNumber": 1},
+	{	"name":"JetFilterLow",
+		"selector": "patJetCountFilter",
+		"cut": "abs( eta ) <= 2.5 & pt >= 50",
+		"minNumber": 3}
+],
+
+"met" : [
+	{	"name": "METFilter",
+		"src": "layer1METsAK5",
+	"cut": "pt >= 100"},
+]
+
+}

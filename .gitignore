@@ -1,0 +1,26 @@
+syntax: glob
+*.root
+*.pkl
+*.aux
+*.log
+*.nav
+*.snm
+*.toc
+*.synctex.gz
+*.out
+*.pyc
+*.db
+*.pdf
+*.png
+*.root
+*.tex
+*.d
+*.so
+Crosschecks/tab/*
+Crosschecks/cfg/*
+Crosschecks/shelves/*
+Crosschecks/eventLists/*
+EdgeFitter/shelves/*
+DataMC/shelves/*
+DataMC/tab/*
+TriggerEfficiencies/shelves/*

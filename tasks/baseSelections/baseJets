@@ -1,0 +1,23 @@
+[
+# PAT Jets
+#===========
+    {  "src": "selectedPatJetsAK5PF",
+        "name": "baseJets",
+        "cut": "abs( eta ) <= 3. & pt >= 30.",
+    },
+    {   "selector": "muonCleanJets",
+        "srcNames": "src leptSrc",
+        "name": "MuonCleanJets",
+        "leptSrc": "(muons.IsoMuons)"},
+    {   "selector": "electronCleanJets",
+        "srcNames": "src leptSrc",
+        "name": "ElectronCleanJets",
+        "leptSrc": "(electrons.IsoElectrons)"},
+    {   "name": "qualityJets",
+        "selector": "patPFJetIDSelector",
+    },
+    {   "skip": True,
+        "name": "qualityBJets",
+        "cut": 'bDiscriminator("trackCountingHighEffBJetTags")>=3.3',
+    },
+]

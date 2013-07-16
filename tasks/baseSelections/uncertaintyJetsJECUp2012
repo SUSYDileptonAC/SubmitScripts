@@ -1,0 +1,10 @@
+[
+# PAT Jets
+#===========
+
+    {  "src": "shiftedPatJetsPFenUpForRawMEt",
+        "name": "qualityJetsJESUp",
+	"cut": "abs( eta ) <= 3. & pt >= 40.",
+    },
+
+ ]

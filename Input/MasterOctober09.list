@@ -1,0 +1,1279 @@
+[InclusiveMu5_Pt50_SD_BTag_HSCP_October09]
+status = CREATED
+numevents = 2749332
+kfactor = 1
+localevents = 0
+groups = October09 SD_BTag_HSCP PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu5_Pt50/Summer09-MC_31X_V3_SD_BTag_HSCP-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_Jet15U_October09]
+status = CREATED
+numevents = 769694
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet15U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_Jet15U-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt80_SD_Jet50U_October09]
+status = CREATED
+numevents = 1318275
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet50U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt80/Summer09-MC_31X_V3_SD_Jet50U-v1/GEN-SIM-RECO
+localdbspath = 
+
+[ppMuMuX_PD_Mu_HLTMu3_October09]
+status = CREATED
+numevents = 632062
+kfactor = 1
+localevents = 0
+groups = October09 PD_Mu_HLTMu3 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /ppMuMuX/Summer09-MC_31X_V3_PD_Mu_HLTMu3-v1/AODSIM
+localdbspath = 
+
+[MinBias_SD_ZeroBias_October09]
+status = CREATED
+numevents = 1299720
+kfactor = 1
+localevents = 0
+groups = October09 SD_ZeroBias PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_ZeroBias-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_SD_Jet30U_Quad_Fwd_October09]
+status = CREATED
+numevents = 40316
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet30U_Quad_Fwd PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_Jet30U_Quad_Fwd-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt80_CS_DiJetAve30U_October09]
+status = CREATED
+numevents = 1634855
+kfactor = 1
+localevents = 0
+groups = October09 CS_DiJetAve30U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt80/Summer09-MC_31X_V3_CS_DiJetAve30U-v1/USER
+localdbspath = 
+
+[QCD_EMEnriched_Pt20to30_SD_Ele15_October09]
+status = CREATED
+numevents = 6242601
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 594533.4
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_EMEnriched_Pt20to30/susy-QCD_EMEnriched_Pt20to30-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER   
+
+[QCD_EMEnriched_Pt20to30_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 6094999
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 312564.1
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_EMEnriched_Pt20to30/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[Zee_SD_DoublePhoton10_October09]
+status = CREATED
+numevents = 10281
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoublePhoton10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zee/Summer09-MC_31X_V3_SD_DoublePhoton10-v1/GEN-SIM-RECO
+localdbspath = /Zee/susy-Zee-DoublePhoton10-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt30to80_SD_Photon20_October09]
+status = CREATED
+numevents = 379132
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_DoublePhoton10_October09]
+status = CREATED
+numevents = 2085
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoublePhoton10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_DoublePhoton10-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt15/susy-QCD_Pt15-DoublePhoton10-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[PhotonJet_Pt15_SD_Photon15_October09]
+status = CREATED
+numevents = 99794
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /PhotonJet_Pt15/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt20to30_SD_Photon15_October09]
+status = CREATED
+numevents = 2260173
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_L1_L2_Mu_October09]
+status = CREATED
+numevents = 4614
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1_L2_Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_L1_L2_Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt20to30_SD_Ele10_October09]
+status = CREATED
+numevents = 1285477
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zmumu_SD_L1_L2_Mu_October09]
+status = CREATED
+numevents = 12178
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1_L2_Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zmumu/Summer09-MC_31X_V3_SD_L1_L2_Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_SD_DoubleEG5_October09]
+status = CREATED
+numevents = 42489
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleEG5 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_DoubleEG5-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_SD_Mu9_October09]
+status = CREATED
+numevents = 3984
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_Mu9-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt30/susy-QCD_Pt30-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_Pt30_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 47662
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_SD_BTag_HSCP_October09]
+status = CREATED
+numevents = 16145
+kfactor = 1
+localevents = 0
+groups = October09 SD_BTag_HSCP PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_BTag_HSCP-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt30to80_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 55704
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zee_SD_Ele10_October09]
+status = CREATED
+numevents = 1911
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zee/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt30to80_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 1311607
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_L1Mu_October09]
+status = CREATED
+numevents = 22804
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_L1Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt80to170_SD_Photon20_October09]
+status = CREATED
+numevents = 2444805
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_SD_Jet50U_October09]
+status = CREATED
+numevents = 30724
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet50U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_Jet50U-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt30/susy-QCD_Pt30-Jet50U-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[DEBUG]
+status = CREATED
+numevents = 100000
+kfactor = 1
+localevents = 0
+groups = Summer09 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Wenu_SD_Photon15_October09]
+status = CREATED
+numevents = 18452
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Wenu/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_L1DoubleEG5_October09]
+status = CREATED
+numevents = 114846
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1DoubleEG5 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_L1DoubleEG5-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_Photon10_October09]
+status = CREATED
+numevents = 191814
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_Photon10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt30to80_SD_Ele15_October09]
+status = CREATED
+numevents = 769808
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 90779.2
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_BCtoE_Pt30to80/susy-QCD_BCtoE_Pt30to80-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt30to80_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 840100
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 52836.5
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_BCtoE_Pt30to80/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[QCD_BCtoE_Pt20to30_SD_Ele15_October09]
+status = CREATED
+numevents = 393019
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 31695.1
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_Ele15_QCD-v1/GEN-SIM-RECO
+localdbspath = /QCD_BCtoE_Pt20to30/susy-QCD_BCtoE_Pt20to30-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt20to30_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 427380
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 16826.0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_7TeV_SD_Ele15_QCD-v1/GEN-SIM-RECO
+localdbspath = /QCD_BCtoE_Pt20to30/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[QCD_EMEnriched_Pt20to30_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 1298071
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_CS_DiJetAve15U_October09]
+status = CREATED
+numevents = 553436
+kfactor = 1
+localevents = 0
+groups = October09 CS_DiJetAve15U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_CS_DiJetAve15U-v1/USER
+localdbspath = 
+
+[InclusiveMu5_Pt50_PD_Mu_HLTMu5_October09]
+status = CREATED
+numevents = 3968087
+kfactor = 1
+localevents = 0
+groups = October09 PD_Mu_HLTMu5 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu5_Pt50/Summer09-MC_31X_V3_PD_Mu_HLTMu5-v1/AODSIM
+localdbspath = 
+
+[ppMuX_SD_Mu3_October09]
+status = CREATED
+numevents = 193269
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu3 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /ppMuX/Summer09-MC_31X_V3_SD_Mu3-v1/GEN-SIM-RECO
+localdbspath = 
+
+[InclusiveMu5_Pt50_SD_Mu9_October09]
+status = CREATED
+numevents = 1531609
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu5_Pt50/Summer09-MC_31X_V3_SD_Mu9-v1/GEN-SIM-RECO
+localdbspath = /InclusiveMu5_Pt50/susy-InclusiveMu5_Pt50-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+[InclusiveMu15_SD_Mu9_October09]
+status = CREATED
+numevents = 1242007
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu15/Summer09-MC_31X_V3_SD_Mu9-v1/GEN-SIM-RECO
+localdbspath = /InclusiveMu15/susy-InclusiveMu15-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_EMEnriched_Pt20to30_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 164263
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[TTbar_SD_DoubleMu_October09]
+status = CREATED
+numevents = 525
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleMu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_DoubleMu-v1/GEN-SIM-RECO
+localdbspath = /TTbar/susy-TTbar-DoubleMu-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[Wmunu_SD_Mu9_October09]
+status = CREATED
+numevents = 75065
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Wmunu/Summer09-MC_31X_V3_SD_Mu9-v2/GEN-SIM-RECO
+localdbspath = /Wmunu/susy-Wmunu-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[TTbar_SD_Mu9_October09]
+status = CREATED
+numevents = 1506
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_Mu9-v1/GEN-SIM-RECO
+localdbspath = /TTbar/susy-TTbar-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_Pt80_SD_BTag_HSCP_October09]
+status = CREATED
+numevents = 161115
+kfactor = 1
+localevents = 0
+groups = October09 SD_BTag_HSCP PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt80/Summer09-MC_31X_V3_SD_BTag_HSCP-v1/GEN-SIM-RECO
+localdbspath = 
+
+[MinBias_SD_L1MuOpen_October09]
+status = CREATED
+numevents = 58483
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1MuOpen PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_L1MuOpen-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Wenu_SD_Ele15_October09]
+status = CREATED
+numevents = 87514
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 7138.2
+datasetpath = /Wenu/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /Wenu/susy-Wenu-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[Wenu_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 85505
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 5062.5
+datasetpath = /Wenu/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /Wenu/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[QCD_EMEnriched_Pt80to170_SD_Photon15_October09]
+status = CREATED
+numevents = 585944
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt20to30_SD_Ele15_QCD_October09]
+status = CREATED
+numevents = 393019
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15_QCD PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_Ele15_QCD-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt80to170_SD_Ele15_October09]
+status = CREATED
+numevents = 2538711
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 126304.0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_EMEnriched_Pt80to170/susy-QCD_EMEnriched_Pt80to170-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER  
+
+[QCD_EMEnriched_Pt80to170_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 2467814
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 59609.0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_EMEnriched_Pt80to170/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[QCD_EMEnriched_Pt80to170_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 549646
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt30to80_SD_Ele15_October09]
+status = CREATED
+numevents = 10792435
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 1322602.3
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_EMEnriched_Pt30to80/susy-QCD_EMEnriched_Pt30to80-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER
+
+[QCD_EMEnriched_Pt30to80_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 9014696
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 980924.5
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_EMEnriched_Pt30to80/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER 
+
+[QCD_Pt30_SD_L1_L2_Mu_October09]
+status = CREATED
+numevents = 6483
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1_L2_Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_L1_L2_Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[ppMuX_SD_DoubleMu_October09]
+status = CREATED
+numevents = 76641
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleMu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /ppMuX/Summer09-MC_31X_V3_SD_DoubleMu-v1/GEN-SIM-RECO
+localdbspath = /ppMuX/susy-ppMuX-DoubleMu-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt80to170_SD_Photon20_October09]
+status = CREATED
+numevents = 533714
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zee_SD_Ele10_EleId_October09]
+status = CREATED
+numevents = 17142
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10_EleId PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zee/Summer09-MC_31X_V3_SD_Ele10_EleId-v1/GEN-SIM-RECO
+localdbspath = 
+
+[MinBias_SD_MET_October09]
+status = CREATED
+numevents = 783
+kfactor = 1
+localevents = 0
+groups = October09 SD_MET PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_MET-v1/GEN-SIM-RECO
+localdbspath = /MinBias/susy-MinBias-MET-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_Pt30_SD_MET_October09]
+status = CREATED
+numevents = 6260
+kfactor = 1
+localevents = 0
+groups = October09 SD_MET PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_MET-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt30/susy-QCD_Pt30-MET-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_Pt30_SD_DoublePhoton10_October09]
+status = CREATED
+numevents = 55772
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoublePhoton10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_DoublePhoton10-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt30/susy-QCD_Pt30-DoublePhoton10-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt30to80_SD_Ele10_October09]
+status = CREATED
+numevents = 162050
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt30to80_SD_Photon15_October09]
+status = CREATED
+numevents = 164258
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_SD_DoublePhoton5_JPsi_Upsilon_October09]
+status = CREATED
+numevents = 79633
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoublePhoton5_JPsi_Upsilon PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_DoublePhoton5_JPsi_Upsilon-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt80to170_SD_Ele10_October09]
+status = CREATED
+numevents = 86979
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zmumu_SD_Mu9_October09]
+status = CREATED
+numevents = 11690
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zmumu/Summer09-MC_31X_V3_SD_Mu9-v1/GEN-SIM-RECO
+localdbspath = /Zmumu/susy-Zmumu-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_EMEnriched_Pt30to80_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 3546652
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_Jet30U_Quad_Fwd_October09]
+status = CREATED
+numevents = 1747
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet30U_Quad_Fwd PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_Jet30U_Quad_Fwd-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zee_SD_Photon20_October09]
+status = CREATED
+numevents = 13542
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zee/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = /Zee/susy-Zee-Photon20-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[MinBias_SD_Jet15U_October09]
+status = CREATED
+numevents = 12344
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet15U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_Jet15U-v1/GEN-SIM-RECO
+localdbspath = 
+
+[ppMuMuX_SD_Mu3_October09]
+status = CREATED
+numevents = 51979
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu3 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /ppMuMuX/Summer09-MC_31X_V3_SD_Mu3-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt20to30_SD_Photon20_October09]
+status = CREATED
+numevents = 5050774
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[MinBias_CS_DiJetAve15U_October09]
+status = CREATED
+numevents = 4328
+kfactor = 1
+localevents = 0
+groups = October09 CS_DiJetAve15U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_CS_DiJetAve15U-v1/USER
+localdbspath = 
+
+[QCD_BCtoE_Pt20to30_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 3571
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Wenu_SD_Photon20_October09]
+status = CREATED
+numevents = 83103
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Wenu/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_L1MuOpen_October09]
+status = CREATED
+numevents = 116310
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1MuOpen PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_L1MuOpen-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zee_SD_Ele15_October09]
+status = CREATED
+numevents = 15092
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 1093.6
+datasetpath = /Zee/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /Zee/susy-Zee-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[Zee_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 14683
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 751.8
+datasetpath = /Zee/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /Zee/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[ppMuX_PD_Mu_HLTMu3_October09]
+status = CREATED
+numevents = 2205935
+kfactor = 1
+localevents = 0
+groups = October09 PD_Mu_HLTMu3 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /ppMuX/Summer09-MC_31X_V3_PD_Mu_HLTMu3-v1/AODSIM
+localdbspath = 
+
+[InclusiveMu5_Pt50_SD_L1_L2_Mu_October09]
+status = CREATED
+numevents = 1838073
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1_L2_Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu5_Pt50/Summer09-MC_31X_V3_SD_L1_L2_Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[MinBias_SD_MinBiasCal_October09]
+status = CREATED
+numevents = 673408
+kfactor = 1
+localevents = 0
+groups = October09 SD_MinBiasCal PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_MinBiasCal-v1/GEN-SIM-RECO
+localdbspath = 
+
+[TTbar_SD_L1_L2_Mu_October09]
+status = CREATED
+numevents = 1665
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1_L2_Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_L1_L2_Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[TTbar_SD_Ele15_October09]
+status = CREATED
+numevents = 3297
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 151.1
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /TTbar/susy-TTbar-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[TTbar_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 3841
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 57.8
+datasetpath = /TTbar/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /TTbar/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[Zmumu_SD_DoubleMu_October09]
+status = CREATED
+numevents = 7333
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleMu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zmumu/Summer09-MC_31X_V3_SD_DoubleMu-v1/GEN-SIM-RECO
+localdbspath = /Zmumu/susy-Zmumu-DoubleMu-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_EMEnriched_Pt30to80_SD_Photon20_October09]
+status = CREATED
+numevents = 9469168
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_MET_October09]
+status = CREATED
+numevents = 1128
+kfactor = 1
+localevents = 0
+groups = October09 SD_MET PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_MET-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt15/susy-QCD_Pt15-MET-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt80to170_SD_Photon15_October09]
+status = CREATED
+numevents = 134192
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Wenu_SD_Ele10_October09]
+status = CREATED
+numevents = 9438
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Wenu/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt80_SD_Jet30U_Quad_Fwd_October09]
+status = CREATED
+numevents = 341147
+kfactor = 1
+localevents = 0
+groups = October09 SD_Jet30U_Quad_Fwd PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt80/Summer09-MC_31X_V3_SD_Jet30U_Quad_Fwd-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_CS_DiJetAve30U_October09]
+status = CREATED
+numevents = 190432
+kfactor = 1
+localevents = 0
+groups = October09 CS_DiJetAve30U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_CS_DiJetAve30U-v1/USER
+localdbspath = 
+
+[MinBias_SD_MinBiasPixel_October09]
+status = CREATED
+numevents = 1797468
+kfactor = 1
+localevents = 0
+groups = October09 SD_MinBiasPixel PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_MinBiasPixel-v1/GEN-SIM-RECO
+localdbspath = 
+
+[InclusiveMu5_Pt150_PD_Mu_HLTMu5_October09]
+status = CREATED
+numevents = 778400
+kfactor = 1
+localevents = 0
+groups = October09 PD_Mu_HLTMu5 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu5_Pt150/Summer09-MC_31X_V3_PD_Mu_HLTMu5-v1/AODSIM
+localdbspath = 
+
+[QCD_EMEnriched_Pt80to170_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 937960
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt20to30_SD_Photon15_October09]
+status = CREATED
+numevents = 83449
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt80to170_SD_Ele10_October09]
+status = CREATED
+numevents = 382702
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[ppMuMuX_SD_DoubleMu_October09]
+status = CREATED
+numevents = 231456
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleMu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /ppMuMuX/Summer09-MC_31X_V3_SD_DoubleMu-v1/GEN-SIM-RECO
+localdbspath = /ppMuMuX/susy-ppMuMuX-DoubleMu-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_EMEnriched_Pt30to80_SD_Photon15_October09]
+status = CREATED
+numevents = 3102646
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt80to170_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 167116
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt80to170_SD_Ele15_October09]
+status = CREATED
+numevents = 641522
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E10TeV
+crosssection = 14099.4
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_BCtoE_Pt80to170/susy-QCD_BCtoE_Pt80to170-Ele15-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_BCtoE_Pt80to170_7TeV_SD_Ele15_October09]
+status = CREATED
+numevents = 672720
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele15 PL1v6c CERN QCD E7TeV
+crosssection = 5749.7
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_7TeV_SD_Ele15-v1/GEN-SIM-RECO
+localdbspath = /QCD_BCtoE_Pt80to170/susy-7TeV-Ele15-314-SUSYPAT-V00-04-12-v2-c44ea04b24888fabe12d6ce1aba555ef/USER
+
+[TTbar_SD_Photon20_October09]
+status = CREATED
+numevents = 3007
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = /TTbar/susy-TTbar-Photon20-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[TTbar_SD_Ele10_October09]
+status = CREATED
+numevents = 460
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[InclusiveMu5_Pt150_SD_BTag_HSCP_October09]
+status = CREATED
+numevents = 704562
+kfactor = 1
+localevents = 0
+groups = October09 SD_BTag_HSCP PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /InclusiveMu5_Pt150/Summer09-MC_31X_V3_SD_BTag_HSCP-v1/GEN-SIM-RECO
+localdbspath = 
+
+[MinBias_SD_L1Jet6U_October09]
+status = CREATED
+numevents = 257394
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1Jet6U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_L1Jet6U-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt30to80_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 135129
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt30to80/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_DoubleEG5_October09]
+status = CREATED
+numevents = 2326
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleEG5 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_DoubleEG5-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt30to80_SD_Ele10_October09]
+status = CREATED
+numevents = 1844595
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Wenu_SD_Ele10_EleId_October09]
+status = CREATED
+numevents = 88131
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10_EleId PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Wenu/Summer09-MC_31X_V3_SD_Ele10_EleId-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_Mu9_October09]
+status = CREATED
+numevents = 1805
+kfactor = 1
+localevents = 0
+groups = October09 SD_Mu9 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_Mu9-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt15/susy-QCD_Pt15-Mu9-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[MinBias_SD_BH_Forward_October09]
+status = CREATED
+numevents = 882
+kfactor = 1
+localevents = 0
+groups = October09 SD_BH_Forward PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_BH_Forward-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt20to30_SD_Photon20_October09]
+status = CREATED
+numevents = 78905
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[PhotonJet_Pt15_SD_Photon20_October09]
+status = CREATED
+numevents = 290847
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /PhotonJet_Pt15/Summer09-MC_31X_V3_SD_Photon20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt20to30_SD_SingleLooseTau20_October09]
+status = CREATED
+numevents = 22144
+kfactor = 1
+localevents = 0
+groups = October09 SD_SingleLooseTau20 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_SingleLooseTau20-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Wmunu_SD_L1_L2_Mu_October09]
+status = CREATED
+numevents = 80653
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1_L2_Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Wmunu/Summer09-MC_31X_V3_SD_L1_L2_Mu-v2/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_L1Jet6U_October09]
+status = CREATED
+numevents = 751720
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1Jet6U PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_L1Jet6U-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt80to170_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 99112
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt80to170/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt80_SD_MET_October09]
+status = CREATED
+numevents = 93428
+kfactor = 1
+localevents = 0
+groups = October09 SD_MET PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt80/Summer09-MC_31X_V3_SD_MET-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt80/susy-QCD_Pt80-MET-314-SUSYPAT-V00-04-12-v1-b7c55b12267b4a08737862c770330b9e/USER 
+
+[QCD_Pt30_SD_DoubleLooseTau15_October09]
+status = CREATED
+numevents = 15179
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoubleLooseTau15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt30/Summer09-MC_31X_V3_SD_DoubleLooseTau15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt20to30_SD_Ele10_October09]
+status = CREATED
+numevents = 176316
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer09-MC_31X_V3_SD_Ele10-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_L1SingleEG5_October09]
+status = CREATED
+numevents = 346965
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1SingleEG5 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_L1SingleEG5-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt15_SD_DoublePhoton5_JPsi_Upsilon_October09]
+status = CREATED
+numevents = 7212
+kfactor = 1
+localevents = 0
+groups = October09 SD_DoublePhoton5_JPsi_Upsilon PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /QCD_Pt15/Summer09-MC_31X_V3_SD_DoublePhoton5_JPsi_Upsilon-v1/GEN-SIM-RECO
+localdbspath = 
+
+[TTbar_SD_Ele10_EleId_October09]
+status = CREATED
+numevents = 2764
+kfactor = 1
+localevents = 0
+groups = October09 SD_Ele10_EleId PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_Ele10_EleId-v1/GEN-SIM-RECO
+localdbspath = 
+
+[MinBias_SD_L1Mu_October09]
+status = CREATED
+numevents = 6079
+kfactor = 1
+localevents = 0
+groups = October09 SD_L1Mu PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /MinBias/Summer09-MC_31X_V3_SD_L1Mu-v1/GEN-SIM-RECO
+localdbspath = 
+
+[TTbar_SD_Photon15_October09]
+status = CREATED
+numevents = 725
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /TTbar/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+
+[Zee_SD_Photon15_October09]
+status = CREATED
+numevents = 3178
+kfactor = 1
+localevents = 0
+groups = October09 SD_Photon15 PL1v6c CERN QCD
+crosssection = 0
+datasetpath = /Zee/Summer09-MC_31X_V3_SD_Photon15-v1/GEN-SIM-RECO
+localdbspath = 
+

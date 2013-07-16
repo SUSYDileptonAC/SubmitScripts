@@ -1,0 +1,2145 @@
+[mSUGRA_800_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.07738
+a0 = 0
+m12 = 550
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_550_10_1_0-b685041e4302b938ede05e0b446272d9/nmohr-mSUGRA_800_550_10_1_0-b685041e4302b938ede05e0b446272d9/USER
+
+[mSUGRA_0_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.342
+a0 = 0
+m12 = 500
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_500_10_1_0-ca81c56d490139bbdfc94bf9485d4067/nmohr-mSUGRA_0_500_10_1_0-ca81c56d490139bbdfc94bf9485d4067/USER
+
+[mSUGRA_400_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01194
+a0 = 0
+m12 = 800
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_800_10_1_0-6f3ae1a974d27f9b09c802b1fbb172a7/nmohr-mSUGRA_400_800_10_1_0-6f3ae1a974d27f9b09c802b1fbb172a7/USER
+
+[mSUGRA_200_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 128.7
+a0 = 0
+m12 = 150
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_150_10_1_0-ebd04b8969c24c31643c88309b322157/nmohr-mSUGRA_200_150_10_1_0-ebd04b8969c24c31643c88309b322157/USER
+
+[mSUGRA_800_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.7431
+a0 = 0
+m12 = 350
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_350_10_1_0-45f22a4a65e8af0a8e187057b80a7c46/nmohr-mSUGRA_800_350_10_1_0-45f22a4a65e8af0a8e187057b80a7c46/USER
+
+[mSUGRA_600_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001415
+a0 = 0
+m12 = 1050
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_1050_10_1_0-7ebe49888f380aa413c19042ebada541/nmohr-mSUGRA_600_1050_10_1_0-7ebe49888f380aa413c19042ebada541/USER
+
+[mSUGRA_1000_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 28.45
+a0 = 0
+m12 = 150
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_150_10_1_0-789f20049a7b9cc224be7c23097a85c1/nmohr-mSUGRA_1000_150_10_1_0-789f20049a7b9cc224be7c23097a85c1/USER
+
+[mSUGRA_0_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 6.049
+a0 = 0
+m12 = 300
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_300_10_1_0-1db45336b19ff55bcd3ced634060c31f/nmohr-mSUGRA_0_300_10_1_0-1db45336b19ff55bcd3ced634060c31f/USER
+
+[mSUGRA_1200_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001065
+a0 = 0
+m12 = 1050
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_1050_10_1_0-2469ccd9ab1d3da1a6879aa412e2fddc/nmohr-mSUGRA_1200_1050_10_1_0-2469ccd9ab1d3da1a6879aa412e2fddc/USER
+
+[mSUGRA_600_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 4.892
+a0 = 0
+m12 = 250
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_250_10_1_0-74364a996e32b7abdcce018ba62e6ca1/nmohr-mSUGRA_600_250_10_1_0-74364a996e32b7abdcce018ba62e6ca1/USER
+
+[mSUGRA_1000_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.007059
+a0 = 0
+m12 = 800
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_800_10_1_0-47713d4d3c9e6f129122f586f186ebcb/nmohr-mSUGRA_1000_800_10_1_0-47713d4d3c9e6f129122f586f186ebcb/USER
+
+[mSUGRA_200_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 35.55
+a0 = 0
+m12 = 200
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_200_10_1_0-03f2f6b29da45cbd8c26335670ca80d5/nmohr-mSUGRA_200_200_10_1_0-03f2f6b29da45cbd8c26335670ca80d5/USER
+
+[mSUGRA_1600_50_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 37230.0
+a0 = 0
+m12 = 50
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_50_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_50_10_1_0-581d452cdad5d2f24f93e4ccef99c2da/nmohr-mSUGRA_1600_50_10_1_0-581d452cdad5d2f24f93e4ccef99c2da/USER
+
+[mSUGRA_1600_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.07492
+a0 = 0
+m12 = 500
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_500_10_1_0-b13c02ce031dedb83db2ed52ce600044/nmohr-mSUGRA_1600_500_10_1_0-b13c02ce031dedb83db2ed52ce600044/USER
+
+[mSUGRA_800_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.04718
+a0 = 0
+m12 = 600
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_600_10_1_0-6d917a85a166ab50491e5e44e494afb4/nmohr-mSUGRA_800_600_10_1_0-6d917a85a166ab50491e5e44e494afb4/USER
+
+[mSUGRA_0_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.06749
+a0 = 0
+m12 = 650
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_650_10_1_0-8c817047371a299704a7de56c8fe9efa/nmohr-mSUGRA_0_650_10_1_0-8c817047371a299704a7de56c8fe9efa/USER
+
+[mSUGRA_600_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002972
+a0 = 0
+m12 = 950
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_950_10_1_0-d60b9d727ec2ff14a2f1df67e85ef387/nmohr-mSUGRA_600_950_10_1_0-d60b9d727ec2ff14a2f1df67e85ef387/USER
+
+[mSUGRA_800_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 9.05
+a0 = 0
+m12 = 200
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_200_10_1_0-d74375ece6eb9da4fe43f59e23c4d672/nmohr-mSUGRA_800_200_10_1_0-d74375ece6eb9da4fe43f59e23c4d672/USER
+
+[mSUGRA_1600_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.004043
+a0 = 0
+m12 = 850
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_850_10_1_0-ac1a1f72aff429f1ca7e88824a50e60f/nmohr-mSUGRA_1600_850_10_1_0-ac1a1f72aff429f1ca7e88824a50e60f/USER
+
+[mSUGRA_600_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.5521
+a0 = 0
+m12 = 400
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_400_10_1_0-a51af4945d693107884b269ab7ca0ed2/nmohr-mSUGRA_600_400_10_1_0-a51af4945d693107884b269ab7ca0ed2/USER
+
+[mSUGRA_400_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.2317
+a0 = 0
+m12 = 500
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_500_10_1_0-8b3c5f84ccd0e03e815948118815711b/nmohr-mSUGRA_400_500_10_1_0-8b3c5f84ccd0e03e815948118815711b/USER
+
+[mSUGRA_1400_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.4443
+a0 = 0
+m12 = 350
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_350_10_1_0-2e81493e1544d05bce4403df70b6517a/nmohr-mSUGRA_1400_350_10_1_0-2e81493e1544d05bce4403df70b6517a/USER
+
+[CalibmSUGRA_1450_200_50_1_0]
+status = F
+sgnmu = 1
+tanb = 50
+pythia_xsec = 5.705
+a0 = 0
+m12 = 200
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_200_50_1_0.slha
+localdbspath = /CalibmSUGRA_1450_200_50_1_0/nmohr-CalibmSUGRA_1450_200_50_1_0-0c92fa3b6a7953b5d89c57a39e6a5122/USER
+
+[mSUGRA_1400_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.04807
+a0 = 0
+m12 = 550
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_550_10_1_0-348fcdb50d7762d2422869b0b065b769/nmohr-mSUGRA_1400_550_10_1_0-348fcdb50d7762d2422869b0b065b769/USER
+
+[mSUGRA_1200_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002994
+a0 = 0
+m12 = 900
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_900_10_1_0-10db8b48f55cc5f2de96e9c0a5540ad9/nmohr-mSUGRA_1200_900_10_1_0-10db8b48f55cc5f2de96e9c0a5540ad9/USER
+
+[mSUGRA_0_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1127
+a0 = 0
+m12 = 600
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_600_10_1_0-e606cdafb8b1afd5bd4b8a8b1dd1b361/nmohr-mSUGRA_0_600_10_1_0-e606cdafb8b1afd5bd4b8a8b1dd1b361/USER
+
+[CalibmSUGRA_200_100_10_1_m400]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1221.0
+a0 = m400
+m12 = 100
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_100_10_1_m400.slha
+localdbspath = /CalibmSUGRA_200_100_10_1_m400/nmohr-CalibmSUGRA_200_100_10_1_m400-5f66519238a5273f04b5eafc9afde25f/USER
+
+[CalibmSUGRA_200_140_10_1_m400]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 205.3
+a0 = m400
+m12 = 140
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_140_10_1_m400.slha
+localdbspath = /CalibmSUGRA_200_140_10_1_m400/nmohr-CalibmSUGRA_200_140_10_1_m400-b8071b003a9adf6089f81d7e220f9192/USER
+
+[mSUGRA_0_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.0118
+a0 = 0
+m12 = 850
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_850_10_1_0-efa4a63813728549195f660c4d86ad72/nmohr-mSUGRA_0_850_10_1_0-efa4a63813728549195f660c4d86ad72/USER
+
+[mSUGRA_400_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.003628
+a0 = 0
+m12 = 950
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_950_10_1_0-a1fa402199298ff50effff17833224fa/nmohr-mSUGRA_400_950_10_1_0-a1fa402199298ff50effff17833224fa/USER
+
+[mSUGRA_1600_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.2219
+a0 = 0
+m12 = 400
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_400_10_1_0-be90a2adbb8e34bbeddbe6c19974e707/nmohr-mSUGRA_1600_400_10_1_0-be90a2adbb8e34bbeddbe6c19974e707/USER
+
+[mSUGRA_1600_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002839
+a0 = 0
+m12 = 900
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_900_10_1_0-4f1db625ae74540a1d466ded850df6ca/nmohr-mSUGRA_1600_900_10_1_0-4f1db625ae74540a1d466ded850df6ca/USER
+
+[mSUGRA_800_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001224
+a0 = 0
+m12 = 1050
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_1050_10_1_0-9174b7090b45e224e5d7e2178a75d4cf/nmohr-mSUGRA_800_1050_10_1_0-9174b7090b45e224e5d7e2178a75d4cf/USER
+
+[mSUGRA_1000_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.03826
+a0 = 0
+m12 = 600
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_600_10_1_0-1e7408274a4f4fcb3c92e34ca2252c7f/nmohr-mSUGRA_1000_600_10_1_0-1e7408274a4f4fcb3c92e34ca2252c7f/USER
+
+[mSUGRA_600_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.00648
+a0 = 0
+m12 = 850
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_850_10_1_0-3711f0a043770caf1f7e19332f71e799/nmohr-mSUGRA_600_850_10_1_0-3711f0a043770caf1f7e19332f71e799/USER
+
+[mSUGRA_400_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1323
+a0 = 0
+m12 = 550
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_550_10_1_0-91510be47a7c71a8948703f7c8f51e55/nmohr-mSUGRA_400_550_10_1_0-91510be47a7c71a8948703f7c8f51e55/USER
+
+[mSUGRA_1200_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.03307
+a0 = 0
+m12 = 600
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_600_10_1_0-1de264e0171fdad8d155da52e2b32aac/nmohr-mSUGRA_1200_600_10_1_0-1de264e0171fdad8d155da52e2b32aac/USER
+
+[mSUGRA_400_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02915
+a0 = 0
+m12 = 700
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_700_10_1_0-87f3c443947f99f9391a3cc308ba045d/nmohr-mSUGRA_400_700_10_1_0-87f3c443947f99f9391a3cc308ba045d/USER
+
+[mSUGRA_400_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001767
+a0 = 0
+m12 = 1050
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_1050_10_1_0-9e6002ce71b70d4cc07f36f450c2cad0/nmohr-mSUGRA_400_1050_10_1_0-9e6002ce71b70d4cc07f36f450c2cad0/USER
+
+[mSUGRA_1000_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.674
+a0 = 0
+m12 = 250
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_250_10_1_0-c3aa22f23ec74aac93b38083956a704c/nmohr-mSUGRA_1000_250_10_1_0-c3aa22f23ec74aac93b38083956a704c/USER
+
+[mSUGRA_1400_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001438
+a0 = 0
+m12 = 1000
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_1000_10_1_0-90d71b59f0a1774a817f6588feacc0b6/nmohr-mSUGRA_1400_1000_10_1_0-90d71b59f0a1774a817f6588feacc0b6/USER
+
+[mSUGRA_600_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.06103
+a0 = 0
+m12 = 600
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_600_10_1_0-9b77494b489ba6a69d54855b0aef350f/nmohr-mSUGRA_600_600_10_1_0-9b77494b489ba6a69d54855b0aef350f/USER
+
+[mSUGRA_1600_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01905
+a0 = 0
+m12 = 650
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_650_10_1_0-31708833bc72a0c676513d284914c190/nmohr-mSUGRA_1600_650_10_1_0-31708833bc72a0c676513d284914c190/USER
+
+[mSUGRA_600_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002082
+a0 = 0
+m12 = 1000
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_1000_10_1_0-f599aa059ca739dbce29293c70826553/nmohr-mSUGRA_600_1000_10_1_0-f599aa059ca739dbce29293c70826553/USER
+
+[mSUGRA_0_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.008046
+a0 = 0
+m12 = 900
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_900_10_1_0-cfd3571ecbdef9f86ea44ade1cfbe498/nmohr-mSUGRA_0_900_10_1_0-cfd3571ecbdef9f86ea44ade1cfbe498/USER
+
+[mSUGRA_1000_50_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 35470.
+a0 = 0
+m12 = 50
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_50_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_50_10_1_0-ebaab0104bd2303a35f3ea7c4a5fed08/nmohr-mSUGRA_1000_50_10_1_0-ebaab0104bd2303a35f3ea7c4a5fed08/USER
+
+[mSUGRA_800_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 32.83
+a0 = 0
+m12 = 150
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_150_10_1_0-ef944cc7b9d4c649c85a2824066881c9/nmohr-mSUGRA_800_150_10_1_0-ef944cc7b9d4c649c85a2824066881c9/USER
+
+[mSUGRA_1400_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.179
+a0 = 0
+m12 = 250
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_250_10_1_0-4a280a951f1c28808323470340d7cab6/nmohr-mSUGRA_1400_250_10_1_0-4a280a951f1c28808323470340d7cab6/USER
+
+[mSUGRA_1000_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1724
+a0 = 0
+m12 = 450
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_450_10_1_0-6dd2cdc8d5603bc75b14a12136d8b649/nmohr-mSUGRA_1000_450_10_1_0-6dd2cdc8d5603bc75b14a12136d8b649/USER
+
+[CalibmSUGRA_200_160_10_1_m400]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 108.5
+a0 = m400
+m12 = 160
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_160_10_1_m400.slha
+localdbspath = /CalibmSUGRA_200_160_10_1_m400/nmohr-CalibmSUGRA_200_160_10_1_m400-da1626c6c0d4ffc4632869d794f43f4a/USER
+
+[mSUGRA_1200_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.481
+a0 = 0
+m12 = 350
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_350_10_1_0-783c07c4bcdaab25147ca499ae0526e0/nmohr-mSUGRA_1200_350_10_1_0-783c07c4bcdaab25147ca499ae0526e0/USER
+
+[mSUGRA_800_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 235.9
+a0 = 0
+m12 = 100
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_100_10_1_0-10b7ac753eb013956a549df780827081/nmohr-mSUGRA_800_100_10_1_0-10b7ac753eb013956a549df780827081/USER
+
+[mSUGRA_1200_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.009336
+a0 = 0
+m12 = 750
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_750_10_1_0-a1d1f1f9cf4e4f92eb1b40b8f00ce616/nmohr-mSUGRA_1200_750_10_1_0-a1d1f1f9cf4e4f92eb1b40b8f00ce616/USER
+
+[mSUGRA_0_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1.252
+a0 = 0
+m12 = 400
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_400_10_1_0-645396d09b861ed79315fd94643adf7b/nmohr-mSUGRA_0_400_10_1_0-645396d09b861ed79315fd94643adf7b/USER
+
+[mSUGRA_200_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.0364
+a0 = 0
+m12 = 700
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_700_10_1_0-d949a2b691c5355628b8bcc464e7fde4/nmohr-mSUGRA_200_700_10_1_0-d949a2b691c5355628b8bcc464e7fde4/USER
+
+[mSUGRA_1400_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01947
+a0 = 0
+m12 = 650
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_650_10_1_0-c4470a1d466e7d22ebab069fb2fc4f3b/nmohr-mSUGRA_1400_650_10_1_0-c4470a1d466e7d22ebab069fb2fc4f3b/USER
+
+[mSUGRA_200_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.5511
+a0 = 0
+m12 = 450
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_450_10_1_0-a0db7419c12f99d5646739fce5429eac/nmohr-mSUGRA_200_450_10_1_0-a0db7419c12f99d5646739fce5429eac/USER
+
+[mSUGRA_1600_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.008481
+a0 = 0
+m12 = 750
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_750_10_1_0.slha
+localdbspath = /mSUGRA_1600_750_10_1_0/nmohr-mSUGRA_1600_750_10_1_0-948fc468681313dacd40287c1bbb31d0/USER
+
+[mSUGRA_1000_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.5716
+a0 = 0
+m12 = 350
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_350_10_1_0-74fbf20c2bc820ae3adf3916cc893fb9/nmohr-mSUGRA_1000_350_10_1_0-74fbf20c2bc820ae3adf3916cc893fb9/USER
+
+[mSUGRA_1200_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02149
+a0 = 0
+m12 = 650
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_650_10_1_0-21094fc2c89c655edf434aeedeb36893/nmohr-mSUGRA_1200_650_10_1_0-21094fc2c89c655edf434aeedeb36893/USER
+
+[mSUGRA_400_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002518
+a0 = 0
+m12 = 1000
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_1000_10_1_0-c2d0a72ebf7824a62a46fc2c67661954/nmohr-mSUGRA_400_1000_10_1_0-c2d0a72ebf7824a62a46fc2c67661954/USER
+
+[mSUGRA_200_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.212
+a0 = 0
+m12 = 350
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_350_10_1_0-0594046c10fa266c988a939a22b67735/nmohr-mSUGRA_200_350_10_1_0-0594046c10fa266c988a939a22b67735/USER
+
+[mSUGRA_800_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01891
+a0 = 0
+m12 = 700
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_700_10_1_0-6b77123da90c016d84a01ba44a933db8/nmohr-mSUGRA_800_700_10_1_0-6b77123da90c016d84a01ba44a933db8/USER
+
+[mSUGRA_0_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002839
+a0 = 0
+m12 = 1050
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_1050_10_1_0-642b253ba3a4fbc2a19d29c1311c18a6/nmohr-mSUGRA_0_1050_10_1_0-642b253ba3a4fbc2a19d29c1311c18a6/USER
+
+[mSUGRA_1200_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 26.02
+a0 = 0
+m12 = 150
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_150_10_1_0-cdabebd0687414c1d9b407cbdb11d8b5/nmohr-mSUGRA_1200_150_10_1_0-cdabebd0687414c1d9b407cbdb11d8b5/USER
+
+[mSUGRA_200_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1889.0
+a0 = 0
+m12 = 100
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_100_10_1_0-2e17fef78c0dc28b304ccca1e86f975a/nmohr-mSUGRA_200_100_10_1_0-2e17fef78c0dc28b304ccca1e86f975a/USER
+
+[mSUGRA_0_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.005537
+a0 = 0
+m12 = 950
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_950_10_1_0-8338f559a667d15dd99f46c17c089683/nmohr-mSUGRA_0_950_10_1_0-8338f559a667d15dd99f46c17c089683/USER
+
+[mSUGRA_800_50_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 36490.
+a0 = 0
+m12 = 50
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_50_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_50_10_1_0-a23d76501aded61b491c4d849f836f60/nmohr-mSUGRA_800_50_10_1_0-a23d76501aded61b491c4d849f836f60/USER
+
+[mSUGRA_1400_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.07799
+a0 = 0
+m12 = 500
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_500_10_1_0-9f70fb791d06c46b812812fb1b1f9339/nmohr-mSUGRA_1400_500_10_1_0-9f70fb791d06c46b812812fb1b1f9339/USER
+
+[mSUGRA_0_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.6351
+a0 = 0
+m12 = 450
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_450_10_1_0-552f8affe9a852bd04580574ea94f23c/nmohr-mSUGRA_0_450_10_1_0-552f8affe9a852bd04580574ea94f23c/USER
+
+[mSUGRA_0_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.003918
+a0 = 0
+m12 = 1000
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_1000_10_1_0-957d9766e82874a55b2b60cea3756ff7/nmohr-mSUGRA_0_1000_10_1_0-957d9766e82874a55b2b60cea3756ff7/USER
+
+[mSUGRA_1400_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 206.9
+a0 = 0
+m12 = 100
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_100_10_1_0-ed7a79c73a3ab30cfcb3c8633277139c/nmohr-mSUGRA_1400_100_10_1_0-ed7a79c73a3ab30cfcb3c8633277139c/USER
+
+[CalibmSUGRA_200_200_10_1_m400]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 37.67
+a0 = m400
+m12 = 200
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_200_10_1_m400.slha
+localdbspath = /CalibmSUGRA_200_200_10_1_m400/nmohr-CalibmSUGRA_200_200_10_1_m400-8965ac433044f526103e4796954c2c12/USER
+
+[mSUGRA_1200_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.2568
+a0 = 0
+m12 = 400
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_400_10_1_0-1eea6124d15f930942bd0c1ec6079932/nmohr-mSUGRA_1200_400_10_1_0-1eea6124d15f930942bd0c1ec6079932/USER
+
+[mSUGRA_800_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 3.381
+a0 = 0
+m12 = 250
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_250_10_1_0-3edd876275dc6a23ec9ceec0428b1bc2/nmohr-mSUGRA_800_250_10_1_0-3edd876275dc6a23ec9ceec0428b1bc2/USER
+
+[mSUGRA_1000_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01057
+a0 = 0
+m12 = 750
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_750_10_1_0-36e3064e7cf35444bb241a063e707241/nmohr-mSUGRA_1000_750_10_1_0-36e3064e7cf35444bb241a063e707241/USER
+
+[mSUGRA_600_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.188
+a0 = 0
+m12 = 300
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_300_10_1_0-42b221c19590c88eb198ad8201e90475/nmohr-mSUGRA_600_300_10_1_0-42b221c19590c88eb198ad8201e90475/USER
+
+[mSUGRA_1200_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1452
+a0 = 0
+m12 = 450
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_450_10_1_0-23b8de1200bddb726cbb79724d37c813/nmohr-mSUGRA_1200_450_10_1_0-23b8de1200bddb726cbb79724d37c813/USER
+
+[mSUGRA_0_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 190.4
+a0 = 0
+m12 = 150
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_150_10_1_0-523c0fe295b78c377a9cb70fe2ebbb8c/nmohr-mSUGRA_0_150_10_1_0-523c0fe295b78c377a9cb70fe2ebbb8c/USER
+
+[mSUGRA_400_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01855
+a0 = 0
+m12 = 750
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_750_10_1_0-6bcb7579a4d764c5ba24f48d5076e22a/nmohr-mSUGRA_400_750_10_1_0-6bcb7579a4d764c5ba24f48d5076e22a/USER
+
+[mSUGRA_800_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01231
+a0 = 0
+m12 = 750
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_750_10_1_0-0b14d8191dcfeeb95f14124a3fe58618/nmohr-mSUGRA_800_750_10_1_0-0b14d8191dcfeeb95f14124a3fe58618/USER
+
+[mSUGRA_1200_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 202.6
+a0 = 0
+m12 = 100
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_100_10_1_0-08337acfe317a6282d9510d79a94e32c/nmohr-mSUGRA_1200_100_10_1_0-08337acfe317a6282d9510d79a94e32c/USER
+
+[mSUGRA_200_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 12.52
+a0 = 0
+m12 = 250
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_250_10_1_0-b0120ea9246616c7fbbb64c88e635cf6/nmohr-mSUGRA_200_250_10_1_0-b0120ea9246616c7fbbb64c88e635cf6/USER
+
+[mSUGRA_600_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 43.18
+a0 = 0
+m12 = 150
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_150_10_1_0-f38634822683c7cf7a343006ac26b963/nmohr-mSUGRA_600_150_10_1_0-f38634822683c7cf7a343006ac26b963/USER
+
+[mSUGRA_400_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.0474
+a0 = 0
+m12 = 650
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_650_10_1_0-e8bfdb029523439e1f573c903dc33eae/nmohr-mSUGRA_400_650_10_1_0-e8bfdb029523439e1f573c903dc33eae/USER
+
+[mSUGRA_200_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.05875
+a0 = 0
+m12 = 650
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_650_10_1_0-9187ef0efbc6a625f5c8640c0d594cde/nmohr-mSUGRA_200_650_10_1_0-9187ef0efbc6a625f5c8640c0d594cde/USER
+
+[mSUGRA_1600_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.132
+a0 = 0
+m12 = 250
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_250_10_1_0-2aa4ab10ceeb5e10b8cb54be4d5e4bd6/nmohr-mSUGRA_1600_250_10_1_0-2aa4ab10ceeb5e10b8cb54be4d5e4bd6/USER
+
+[mSUGRA_400_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 20.87
+a0 = 0
+m12 = 200
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_200_10_1_0-a0ec8d093e7cf2127e7d9909ff1bd652/nmohr-mSUGRA_400_200_10_1_0-a0ec8d093e7cf2127e7d9909ff1bd652/USER
+
+[mSUGRA_400_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.07737
+a0 = 0
+m12 = 600
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_600_10_1_0-51ed11b30d052dd14a0ec8e06559ef22/nmohr-mSUGRA_400_600_10_1_0-51ed11b30d052dd14a0ec8e06559ef22/USER
+
+[mSUGRA_800_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1277
+a0 = 0
+m12 = 500
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_500_10_1_0-c0af47f6e22a1d30389190294cce5c59/nmohr-mSUGRA_800_500_10_1_0-c0af47f6e22a1d30389190294cce5c59/USER
+
+[CalibmSUGRA_200_120_10_1_m400]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 442.4
+a0 = m400
+m12 = 120
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_120_10_1_m400.slha
+localdbspath = /CalibmSUGRA_200_120_10_1_m400/nmohr-CalibmSUGRA_200_120_10_1_m400-8d9700d7c3b091ca7b09cf60902029d7/USER
+
+[mSUGRA_1400_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 6.29
+a0 = 0
+m12 = 200
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_200_10_1_0-0073bac30b4b3012fa24d5918f83d2cd/nmohr-mSUGRA_1400_200_10_1_0-0073bac30b4b3012fa24d5918f83d2cd/USER
+
+[mSUGRA_200_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.006843
+a0 = 0
+m12 = 900
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_900_10_1_0-dd7b663d3627d00c9d78b354b55d9776/nmohr-mSUGRA_200_900_10_1_0-dd7b663d3627d00c9d78b354b55d9776/USER
+
+[mSUGRA_1000_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 7.352
+a0 = 0
+m12 = 200
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_200_10_1_0-054115e9baaa2a7fce825af54d9a58f4/nmohr-mSUGRA_1000_200_10_1_0-054115e9baaa2a7fce825af54d9a58f4/USER
+
+[mSUGRA_1000_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1.148
+a0 = 0
+m12 = 300
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_300_10_1_0-c7b586b738792574e54647f68c04db9e/nmohr-mSUGRA_1000_300_10_1_0-c7b586b738792574e54647f68c04db9e/USER
+
+[mSUGRA_0_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01768
+a0 = 0
+m12 = 800
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_800_10_1_0-8a3194250d6317c66342a8de9a21c39c/nmohr-mSUGRA_0_800_10_1_0-8a3194250d6317c66342a8de9a21c39c/USER
+
+[mSUGRA_800_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.005486
+a0 = 0
+m12 = 850
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_850_10_1_0-095ac75492b1ab69430001b183f5c74f/nmohr-mSUGRA_800_850_10_1_0-095ac75492b1ab69430001b183f5c74f/USER
+
+[mSUGRA_1600_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01261
+a0 = 0
+m12 = 700
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_700_10_1_0-313f3fe8e52995d238b1696da502dfe7/nmohr-mSUGRA_1600_700_10_1_0-313f3fe8e52995d238b1696da502dfe7/USER
+
+[mSUGRA_1000_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 211.4
+a0 = 0
+m12 = 100
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_100_10_1_0-20af9f6eca08bcd0afdb3fce94a59447/nmohr-mSUGRA_1000_100_10_1_0-20af9f6eca08bcd0afdb3fce94a59447/USER
+
+[mSUGRA_0_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 48.22
+a0 = 0
+m12 = 200
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_200_10_1_0-2140d3d06a8b8c589a7b49e94053420a/nmohr-mSUGRA_0_200_10_1_0-2140d3d06a8b8c589a7b49e94053420a/USER
+
+[mSUGRA_1000_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1006
+a0 = 0
+m12 = 500
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_500_10_1_0-84f8acc66c438cba0583f923ebccaa15/nmohr-mSUGRA_1000_500_10_1_0-84f8acc66c438cba0583f923ebccaa15/USER
+
+[mSUGRA_1000_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001601
+a0 = 0
+m12 = 1000
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_1000_10_1_0-50d1773565a54a59870517ba1ab23745/nmohr-mSUGRA_1000_1000_10_1_0-50d1773565a54a59870517ba1ab23745/USER
+
+[mSUGRA_600_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.0374
+a0 = 0
+m12 = 650
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_650_10_1_0-148f74db605d70a1d632cc49d6e20095/nmohr-mSUGRA_600_650_10_1_0-148f74db605d70a1d632cc49d6e20095/USER
+
+[mSUGRA_1600_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02899
+a0 = 0
+m12 = 600
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_600_10_1_0-61d919aeb55c4288f632b89bf35368f7/nmohr-mSUGRA_1600_600_10_1_0-61d919aeb55c4288f632b89bf35368f7/USER
+
+[mSUGRA_1400_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.2342
+a0 = 0
+m12 = 400
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_400_10_1_0-46df4802a463677db60eb702d912539b/nmohr-mSUGRA_1400_400_10_1_0-46df4802a463677db60eb702d912539b/USER
+
+[mSUGRA_800_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.3999
+a0 = 0
+m12 = 400
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_400_10_1_0-10736ef52481732698198b5ba39bde5e/nmohr-mSUGRA_800_400_10_1_0-10736ef52481732698198b5ba39bde5e/USER
+
+[mSUGRA_800_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.003745
+a0 = 0
+m12 = 900
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_900_10_1_0-49cfac24ae8b4fcf2fca4a963bde72f2/nmohr-mSUGRA_800_900_10_1_0-49cfac24ae8b4fcf2fca4a963bde72f2/USER
+
+[mSUGRA_1600_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.005818
+a0 = 0
+m12 = 800
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_800_10_1_0-b8ee3ed95c84121d323390c6ab8636fc/nmohr-mSUGRA_1600_800_10_1_0-b8ee3ed95c84121d323390c6ab8636fc/USER
+
+[mSUGRA_600_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.3037
+a0 = 0
+m12 = 450
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_450_10_1_0-fa3abda7abb174bb0f532b68416d1bcf/nmohr-mSUGRA_600_450_10_1_0-fa3abda7abb174bb0f532b68416d1bcf/USER
+
+[mSUGRA_200_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1.061
+a0 = 0
+m12 = 400
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_400_10_1_0-6cacfd0f66d7146115c736c83961400d/nmohr-mSUGRA_200_400_10_1_0-6cacfd0f66d7146115c736c83961400d/USER
+
+[mSUGRA_800_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.008251
+a0 = 0
+m12 = 800
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_800_10_1_0-cffdd474d7c17f72382cda83bc1524aa/nmohr-mSUGRA_800_800_10_1_0-cffdd474d7c17f72382cda83bc1524aa/USER
+
+[mSUGRA_800_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.2202
+a0 = 0
+m12 = 450
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_450_10_1_0-c5a06d79ada6a9072eee5c2c47cfa33c/nmohr-mSUGRA_800_450_10_1_0-c5a06d79ada6a9072eee5c2c47cfa33c/USER
+
+[mSUGRA_0_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.04196
+a0 = 0
+m12 = 700
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_700_10_1_0-11ce737bfd0037bf3c0d6322162eb81c/nmohr-mSUGRA_0_700_10_1_0-11ce737bfd0037bf3c0d6322162eb81c/USER
+
+[mSUGRA_1600_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.427
+a0 = 0
+m12 = 350
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_350_10_1_0-b8feae0ee46e0100d3fa9209c687d9cb/nmohr-mSUGRA_1600_350_10_1_0-b8feae0ee46e0100d3fa9209c687d9cb/USER
+
+[mSUGRA_400_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 69.01
+a0 = 0
+m12 = 150
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_150_10_1_0-2d513674ffcb36b2b74e7ae654cb3c2a/nmohr-mSUGRA_400_150_10_1_0-2d513674ffcb36b2b74e7ae654cb3c2a/USER
+
+[mSUGRA_1400_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 25.29
+a0 = 0
+m12 = 150
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_150_10_1_0-efe28746cff0116bc27937d9e7d691b8/nmohr-mSUGRA_1400_150_10_1_0-efe28746cff0116bc27937d9e7d691b8/USER
+
+[mSUGRA_600_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1.06
+a0 = 0
+m12 = 350
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_350_10_1_0-0195ecef1c6716111d4fe56929c5b383/nmohr-mSUGRA_600_350_10_1_0-0195ecef1c6716111d4fe56929c5b383/USER
+
+[CalibmSUGRA_200_180_10_1_m400]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 61.96
+a0 = m400
+m12 = 180
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_180_10_1_m400.slha
+localdbspath = /CalibmSUGRA_200_180_10_1_m400/nmohr-CalibmSUGRA_200_180_10_1_m400-c1c037ba1a4aa412b4ef0069ff605dc4/USER
+
+[mSUGRA_600_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02355
+a0 = 0
+m12 = 700
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_700_10_1_0-1f89a32e403948c97d9af5e75ddc381f/nmohr-mSUGRA_600_700_10_1_0-1f89a32e403948c97d9af5e75ddc381f/USER
+
+[mSUGRA_200_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.004714
+a0 = 0
+m12 = 950
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_950_10_1_0-2894f92b2e0278d258c436c82e25ae83/nmohr-mSUGRA_200_950_10_1_0-2894f92b2e0278d258c436c82e25ae83/USER
+
+[mSUGRA_600_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.004318
+a0 = 0
+m12 = 900
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_900_10_1_0-824a8febdbca6e4fa3065d7d96b851cc/nmohr-mSUGRA_600_900_10_1_0-824a8febdbca6e4fa3065d7d96b851cc/USER
+
+[mSUGRA_1600_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.8837
+a0 = 0
+m12 = 300
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_300_10_1_0-ee88001e08e5ab160b1bf80b7fedf4f1/nmohr-mSUGRA_1600_300_10_1_0-ee88001e08e5ab160b1bf80b7fedf4f1/USER
+
+[mSUGRA_800_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001788
+a0 = 0
+m12 = 1000
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_1000_10_1_0-6610ff10f640ed23fc2fae294315f99d/nmohr-mSUGRA_800_1000_10_1_0-6610ff10f640ed23fc2fae294315f99d/USER
+
+[mSUGRA_1200_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.00634
+a0 = 0
+m12 = 800
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_800_10_1_0-860bb8c8420a2aee189d29ae9fc805b7/nmohr-mSUGRA_1200_800_10_1_0-860bb8c8420a2aee189d29ae9fc805b7/USER
+
+[mSUGRA_200_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.2968
+a0 = 0
+m12 = 500
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_500_10_1_0-a81f27bc7047837b63f304d047d97537/nmohr-mSUGRA_200_500_10_1_0-a81f27bc7047837b63f304d047d97537/USER
+
+[mSUGRA_1600_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 6.279
+a0 = 0
+m12 = 200
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_200_10_1_0-81e5661ddaa0ee9f9345e0624d31ee1c/nmohr-mSUGRA_1600_200_10_1_0-81e5661ddaa0ee9f9345e0624d31ee1c/USER
+
+[mSUGRA_0_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 5777.0
+a0 = 0
+m12 = 100
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_100_10_1_0-65138dc079752fa215fdd81eb2749b36/nmohr-mSUGRA_0_100_10_1_0-65138dc079752fa215fdd81eb2749b36/USER
+
+[mSUGRA_1400_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1334
+a0 = 0
+m12 = 450
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_450_10_1_0-2d5c7635690eee891650fef856cc96f1/nmohr-mSUGRA_1400_450_10_1_0-2d5c7635690eee891650fef856cc96f1/USER
+
+[mSUGRA_1400_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.00288
+a0 = 0
+m12 = 900
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_900_10_1_0-fcb35dc8e15c29615f597554a207b5f9/nmohr-mSUGRA_1400_900_10_1_0-fcb35dc8e15c29615f597554a207b5f9/USER
+
+[mSUGRA_600_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1729
+a0 = 0
+m12 = 500
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_500_10_1_0-6318b80ab821de4c573a2aeac4578a41/nmohr-mSUGRA_600_500_10_1_0-6318b80ab821de4c573a2aeac4578a41/USER
+
+[mSUGRA_400_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 3.375
+a0 = 0
+m12 = 300
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_300_10_1_0-1f1b6db8a04e333f0b84047f75ec05f6/nmohr-mSUGRA_400_300_10_1_0-1f1b6db8a04e333f0b84047f75ec05f6/USER
+
+[mSUGRA_200_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.0981
+a0 = 0
+m12 = 600
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_600_10_1_0-93d6c048e89bd028b45ac681201bbff5/nmohr-mSUGRA_200_600_10_1_0-93d6c048e89bd028b45ac681201bbff5/USER
+
+[mSUGRA_400_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.005275
+a0 = 0
+m12 = 900
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_900_10_1_0-b1a259c66a3a49d5be8899296eea78b0/nmohr-mSUGRA_400_900_10_1_0-b1a259c66a3a49d5be8899296eea78b0/USER
+
+[mSUGRA_1200_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 6.612
+a0 = 0
+m12 = 200
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_200_10_1_0-5c7124f96e331969eeef7565a8229983/nmohr-mSUGRA_1200_200_10_1_0-5c7124f96e331969eeef7565a8229983/USER
+
+[mSUGRA_1000_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002265
+a0 = 0
+m12 = 950
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_950_10_1_0-ac92ed289563206614d8dfb0257e7412/nmohr-mSUGRA_1000_950_10_1_0-ac92ed289563206614d8dfb0257e7412/USER
+
+[mSUGRA_1000_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001126
+a0 = 0
+m12 = 1050
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_1050_10_1_0-fa0f87152812e1dfe4e6c0178df63e0b/nmohr-mSUGRA_1000_1050_10_1_0-fa0f87152812e1dfe4e6c0178df63e0b/USER
+
+[mSUGRA_0_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.62
+a0 = 0
+m12 = 350
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_350_10_1_0-f3982d6006efc7781c3492363cf51ae8/nmohr-mSUGRA_0_350_10_1_0-f3982d6006efc7781c3492363cf51ae8/USER
+
+[mSUGRA_1000_900_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.003305
+a0 = 0
+m12 = 900
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_900_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_900_10_1_0-16dde94e7a6e626def9718b4dbc59262/nmohr-mSUGRA_1000_900_10_1_0-16dde94e7a6e626def9718b4dbc59262/USER
+
+[mSUGRA_1400_600_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.03091
+a0 = 0
+m12 = 600
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_600_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_600_10_1_0-0386ae205619cb09cb26a7fb8e3c03fd/nmohr-mSUGRA_1400_600_10_1_0-0386ae205619cb09cb26a7fb8e3c03fd/USER
+
+[mSUGRA_1600_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.04597
+a0 = 0
+m12 = 550
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_550_10_1_0-67510576e85b3e5e3ef2fb29e3e63eac/nmohr-mSUGRA_1600_550_10_1_0-67510576e85b3e5e3ef2fb29e3e63eac/USER
+
+[mSUGRA_0_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.191
+a0 = 0
+m12 = 550
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_550_10_1_0-80a107087107f2ca8b8e63716e6d3f52/nmohr-mSUGRA_0_550_10_1_0-80a107087107f2ca8b8e63716e6d3f52/USER
+
+[mSUGRA_1600_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 252.1
+a0 = 0
+m12 = 100
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_100_10_1_0-4ddacbd4e73dd38fdb79bdee63c485b5/nmohr-mSUGRA_1600_100_10_1_0-4ddacbd4e73dd38fdb79bdee63c485b5/USER
+
+[mSUGRA_400_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 7.778
+a0 = 0
+m12 = 250
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_250_10_1_0-54b9e1e504ce0d7969d8935d5d460fa1/nmohr-mSUGRA_400_250_10_1_0-54b9e1e504ce0d7969d8935d5d460fa1/USER
+
+[mSUGRA_600_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.102
+a0 = 0
+m12 = 550
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_550_10_1_0-a421ece955adf8e3376097eeda60817b/nmohr-mSUGRA_600_550_10_1_0-a421ece955adf8e3376097eeda60817b/USER
+
+[CalibmSUGRA_1450_210_50_1_0]
+status = F
+sgnmu = 1
+tanb = 50
+pythia_xsec = 4.529
+a0 = 0
+m12 = 210
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_210_50_1_0.slha
+localdbspath = /CalibmSUGRA_1450_210_50_1_0/nmohr-CalibmSUGRA_1450_210_50_1_0-3a9dfc4f91f0bb33c8745e71d7d9e9d2/USER
+
+[mSUGRA_1000_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.3043
+a0 = 0
+m12 = 400
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_400_10_1_0-00798f380f6adbe253acd053c4078752/nmohr-mSUGRA_1000_400_10_1_0-00798f380f6adbe253acd053c4078752/USER
+
+[mSUGRA_1400_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.9087
+a0 = 0
+m12 = 300
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_300_10_1_0-dfc01ac70950aa2eb2747bea67c77244/nmohr-mSUGRA_1400_300_10_1_0-dfc01ac70950aa2eb2747bea67c77244/USER
+
+[mSUGRA_600_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 300.7
+a0 = 0
+m12 = 100
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_100_10_1_0-bf3cd90aeb9405e64ce3a59b8796fe65/nmohr-mSUGRA_600_100_10_1_0-bf3cd90aeb9405e64ce3a59b8796fe65/USER
+
+[mSUGRA_200_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01503
+a0 = 0
+m12 = 800
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_800_10_1_0-74ff8538ffa237e68787a2a81c293c46/nmohr-mSUGRA_200_800_10_1_0-74ff8538ffa237e68787a2a81c293c46/USER
+
+[mSUGRA_0_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 15.67
+a0 = 0
+m12 = 250
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_250_10_1_0-fe2d3c21e18df8bf2ac9fb0cbc084abf/nmohr-mSUGRA_0_250_10_1_0-fe2d3c21e18df8bf2ac9fb0cbc084abf/USER
+
+[mSUGRA_400_350_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1.595
+a0 = 0
+m12 = 350
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_350_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_350_10_1_0-e525fee364e29927541010977c5847a3/nmohr-mSUGRA_400_350_10_1_0-e525fee364e29927541010977c5847a3/USER
+
+[mSUGRA_1000_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.06206
+a0 = 0
+m12 = 550
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_550_10_1_0-8079c8d35d31cc499f35ef5b099c9029/nmohr-mSUGRA_1000_550_10_1_0-8079c8d35d31cc499f35ef5b099c9029/USER
+
+[mSUGRA_200_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1677
+a0 = 0
+m12 = 550
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_550_10_1_0-572b13957a753b0cffbb1007a943359c/nmohr-mSUGRA_200_550_10_1_0-572b13957a753b0cffbb1007a943359c/USER
+
+[mSUGRA_800_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002523
+a0 = 0
+m12 = 950
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_950_10_1_0-43e8d11f5da3b00aa7f016fa0cee59be/nmohr-mSUGRA_800_950_10_1_0-43e8d11f5da3b00aa7f016fa0cee59be/USER
+
+[mSUGRA_400_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.4149
+a0 = 0
+m12 = 450
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_450_10_1_0-3177aadedba2375c52ad7549267db6f8/nmohr-mSUGRA_400_450_10_1_0-3177aadedba2375c52ad7549267db6f8/USER
+
+[mSUGRA_600_200_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 12.79
+a0 = 0
+m12 = 200
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_200_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_200_10_1_0-45eab9a0d4e0c21566121c2054439257/nmohr-mSUGRA_600_200_10_1_0-45eab9a0d4e0c21566121c2054439257/USER
+
+[mSUGRA_1000_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.004795
+a0 = 0
+m12 = 850
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_850_10_1_0-906e31cb2489f0e336154afb8437a7f1/nmohr-mSUGRA_1000_850_10_1_0-906e31cb2489f0e336154afb8437a7f1/USER
+
+[mSUGRA_800_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 1.521
+a0 = 0
+m12 = 300
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_300_10_1_0-7d5943b11fa74a4dcff6f05e69eaceda/nmohr-mSUGRA_800_300_10_1_0-7d5943b11fa74a4dcff6f05e69eaceda/USER
+
+[mSUGRA_1400_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01305
+a0 = 0
+m12 = 700
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_700_10_1_0-95c867c8bd5f60937798126924042b7a/nmohr-mSUGRA_1400_700_10_1_0-95c867c8bd5f60937798126924042b7a/USER
+
+[mSUGRA_0_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02706
+a0 = 0
+m12 = 750
+m0 = 0
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_0_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_0_750_10_1_0-d89df9b57239a2594e6fa8085e002b87/nmohr-mSUGRA_0_750_10_1_0-d89df9b57239a2594e6fa8085e002b87/USER
+
+[mSUGRA_1200_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001499
+a0 = 0
+m12 = 1000
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_1000_10_1_0-8099f31b34c7b4de38495a826d90d343/nmohr-mSUGRA_1200_1000_10_1_0-8099f31b34c7b4de38495a826d90d343/USER
+
+[mSUGRA_1600_150_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 25.58
+a0 = 0
+m12 = 150
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_150_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_150_10_1_0-ceb3556a29840680a1982b67836280ab/nmohr-mSUGRA_1600_150_10_1_0-ceb3556a29840680a1982b67836280ab/USER
+
+[mSUGRA_200_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.003317
+a0 = 0
+m12 = 1000
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_1000_10_1_0-9fe9373d2472944e259b05118df68e27/nmohr-mSUGRA_200_1000_10_1_0-9fe9373d2472944e259b05118df68e27/USER
+
+[mSUGRA_1400_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001033
+a0 = 0
+m12 = 1050
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_1050_10_1_0-833f9d8844b93e886df1ed969c41df70/nmohr-mSUGRA_1400_1050_10_1_0-833f9d8844b93e886df1ed969c41df70/USER
+
+[mSUGRA_600_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01512
+a0 = 0
+m12 = 750
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_750_10_1_0-778ec7fc53c5e8bcb0a0b737d0320499/nmohr-mSUGRA_600_750_10_1_0-778ec7fc53c5e8bcb0a0b737d0320499/USER
+
+[mSUGRA_1400_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.008793
+a0 = 0
+m12 = 750
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_750_10_1_0-f648326f8da9f54fc2cbd4e7b1ed349b/nmohr-mSUGRA_1400_750_10_1_0-f648326f8da9f54fc2cbd4e7b1ed349b/USER
+
+[mSUGRA_1600_1000_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001439
+a0 = 0
+m12 = 1000
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_1000_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_1000_10_1_0-7a94de52332c6df5eb357029b8729685/nmohr-mSUGRA_1600_1000_10_1_0-7a94de52332c6df5eb357029b8729685/USER
+
+[mSUGRA_400_100_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 486.7
+a0 = 0
+m12 = 100
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_100_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_100_10_1_0-5a421503d136a2e007547ecc522e2041/nmohr-mSUGRA_400_100_10_1_0-5a421503d136a2e007547ecc522e2041/USER
+
+[mSUGRA_400_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.007884
+a0 = 0
+m12 = 850
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_850_10_1_0-fb709a482ea188a2e3436dd87f093ec4/nmohr-mSUGRA_400_850_10_1_0-fb709a482ea188a2e3436dd87f093ec4/USER
+
+[mSUGRA_1400_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.004122
+a0 = 0
+m12 = 850
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_850_10_1_0-7491a13afc844e3d6e0364519a092d88/nmohr-mSUGRA_1400_850_10_1_0-7491a13afc844e3d6e0364519a092d88/USER
+
+[CalibmSUGRA_1450_175_50_1_0]
+status = F
+sgnmu = 1
+tanb = 50
+pythia_xsec = 10.85
+a0 = 0
+m12 = 175
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_175_50_1_0.slha
+localdbspath = /CalibmSUGRA_1450_175_50_1_0/nmohr-CalibmSUGRA_1450_175_50_1_0-e8454c4d50895546758cd22ab0355b4f/USER
+
+[mSUGRA_800_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02988
+a0 = 0
+m12 = 650
+m0 = 800
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_800_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_800_650_10_1_0-2e6484badfb476cd5e821d96964baa08/nmohr-mSUGRA_800_650_10_1_0-2e6484badfb476cd5e821d96964baa08/USER
+
+[CalibmSUGRA_1450_125_50_1_0]
+status = F
+sgnmu = 1
+tanb = 50
+pythia_xsec = 53.33
+a0 = 0
+m12 = 125
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_125_50_1_0.slha
+localdbspath = /CalibmSUGRA_1450_125_50_1_0/nmohr-CalibmSUGRA_1450_125_50_1_0-9d301ba426934ada2e94986a99b15460/USER
+
+[mSUGRA_1000_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01599
+a0 = 0
+m12 = 700
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_700_10_1_0-bfcd4ac471afde2d7810e1b4be2c03b7/nmohr-mSUGRA_1000_700_10_1_0-bfcd4ac471afde2d7810e1b4be2c03b7/USER
+
+[mSUGRA_1200_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.00209
+a0 = 0
+m12 = 950
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_950_10_1_0-c538a89f132e76064405b39adebf8f87/nmohr-mSUGRA_1200_950_10_1_0-c538a89f132e76064405b39adebf8f87/USER
+
+[mSUGRA_1600_450_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.1265
+a0 = 0
+m12 = 450
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_450_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_450_10_1_0-5a369daeaff50121847a2498cf15b34e/nmohr-mSUGRA_1600_450_10_1_0-5a369daeaff50121847a2498cf15b34e/USER
+
+[mSUGRA_1000_650_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02472
+a0 = 0
+m12 = 650
+m0 = 1000
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1000_650_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1000_650_10_1_0-6f8672f67c28cb351bc6853dd5e50cc1/nmohr-mSUGRA_1000_650_10_1_0-6f8672f67c28cb351bc6853dd5e50cc1/USER
+
+[mSUGRA_1200_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.004359
+a0 = 0
+m12 = 850
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_850_10_1_0-deff35efd3c62a7092d79ebb0693bcac/nmohr-mSUGRA_1200_850_10_1_0-deff35efd3c62a7092d79ebb0693bcac/USER
+
+[mSUGRA_1200_250_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 2.336
+a0 = 0
+m12 = 250
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_250_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_250_10_1_0-9d782262f13bc6b064c68fd2cc2b0def/nmohr-mSUGRA_1200_250_10_1_0-9d782262f13bc6b064c68fd2cc2b0def/USER
+
+[mSUGRA_600_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.009815
+a0 = 0
+m12 = 800
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_800_10_1_0-965d9e273c3f1ce51ea2d45119abb01e/nmohr-mSUGRA_600_800_10_1_0-965d9e273c3f1ce51ea2d45119abb01e/USER
+
+[CalibmSUGRA_1450_150_50_1_0]
+status = F
+sgnmu = 1
+tanb = 50
+pythia_xsec = 22.29
+a0 = 0
+m12 = 150
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_150_50_1_0.slha
+localdbspath = /CalibmSUGRA_1450_150_50_1_0/nmohr-CalibmSUGRA_1450_150_50_1_0-d90426450429f6949e7136fb801fb3b9/USER
+
+[mSUGRA_400_400_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.7958
+a0 = 0
+m12 = 400
+m0 = 400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_400_400_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_400_400_10_1_0-4ef5faf8e4a14f424854782e97e8dc5d/nmohr-mSUGRA_400_400_10_1_0-4ef5faf8e4a14f424854782e97e8dc5d/USER
+
+[mSUGRA_1600_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.001023
+a0 = 0
+m12 = 1050
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_1050_10_1_0-f54d91d2a7b41769a85f318e5d68fc75/nmohr-mSUGRA_1600_1050_10_1_0-f54d91d2a7b41769a85f318e5d68fc75/USER
+
+[mSUGRA_1400_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002013
+a0 = 0
+m12 = 950
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_950_10_1_0-b5dd589e14333ffa315b3b8183670047/nmohr-mSUGRA_1400_950_10_1_0-b5dd589e14333ffa315b3b8183670047/USER
+
+[mSUGRA_1200_500_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.08544
+a0 = 0
+m12 = 500
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_500_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_500_10_1_0-09a1ced68a29631b29e97e43dfdb1401/nmohr-mSUGRA_1200_500_10_1_0-09a1ced68a29631b29e97e43dfdb1401/USER
+
+[mSUGRA_1600_950_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002008
+a0 = 0
+m12 = 950
+m0 = 1600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1600_950_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1600_950_10_1_0-e9a10ed8d09d12d5ee94e3b41bb194ec/nmohr-mSUGRA_1600_950_10_1_0-e9a10ed8d09d12d5ee94e3b41bb194ec/USER
+
+[mSUGRA_200_1050_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.002377
+a0 = 0
+m12 = 1050
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_1050_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_1050_10_1_0-9cb4101a4d67977eaa67772336fec9aa/nmohr-mSUGRA_200_1050_10_1_0-9cb4101a4d67977eaa67772336fec9aa/USER
+
+[mSUGRA_1400_800_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.006004
+a0 = 0
+m12 = 800
+m0 = 1400
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1400_800_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1400_800_10_1_0-d04b9112d105e65a823cf0c2ff4d3f6a/nmohr-mSUGRA_1400_800_10_1_0-d04b9112d105e65a823cf0c2ff4d3f6a/USER
+
+[mSUGRA_1200_700_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.01415
+a0 = 0
+m12 = 700
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_700_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_700_10_1_0-da84a1a3c635a0590bd0a52c3c91f232/nmohr-mSUGRA_1200_700_10_1_0-da84a1a3c635a0590bd0a52c3c91f232/USER
+
+[mSUGRA_600_50_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 35660.
+a0 = 0
+m12 = 50
+m0 = 600
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_600_50_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_600_50_10_1_0-340e118815af3ff69113716c306faabb/nmohr-mSUGRA_600_50_10_1_0-340e118815af3ff69113716c306faabb/USER
+
+[mSUGRA_200_850_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.009962
+a0 = 0
+m12 = 850
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_850_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_850_10_1_0-7bf1f5bd576e0961fc15d2b028b27e4c/nmohr-mSUGRA_200_850_10_1_0-7bf1f5bd576e0961fc15d2b028b27e4c/USER
+
+[mSUGRA_1200_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.9996
+a0 = 0
+m12 = 300
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_300_10_1_0-1a2857b3a73ca488acd56924584a832d/nmohr-mSUGRA_1200_300_10_1_0-1a2857b3a73ca488acd56924584a832d/USER
+
+[mSUGRA_1200_550_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.05243
+a0 = 0
+m12 = 550
+m0 = 1200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_1200_550_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_1200_550_10_1_0-aed27afacf6893f6a0cf95ec55549c9d/nmohr-mSUGRA_1200_550_10_1_0-aed27afacf6893f6a0cf95ec55549c9d/USER
+
+[mSUGRA_200_750_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 0.02306
+a0 = 0
+m12 = 750
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_750_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_750_10_1_0-7f6ed2e28f1618b8edf42ef163992aa2/nmohr-mSUGRA_200_750_10_1_0-7f6ed2e28f1618b8edf42ef163992aa2/USER
+
+[mSUGRA_200_300_10_1_0]
+status = F
+sgnmu = 1
+tanb = 10
+pythia_xsec = 4.994
+a0 = 0
+m12 = 300
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/mSUGRA_200_300_10_1_0.slha
+localdbspath = /nmohr-mSUGRA_200_300_10_1_0-0b2dae0152429e973a382f1edf2b6e50/nmohr-mSUGRA_200_300_10_1_0-0b2dae0152429e973a382f1edf2b6e50/USER
+

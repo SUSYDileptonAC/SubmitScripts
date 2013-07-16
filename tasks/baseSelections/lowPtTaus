@@ -1,0 +1,6 @@
+[
+   {   "src": "selectedPatTausPF",
+       "name": "basicTaus",
+       "cut": "abs( eta ) <= 2.3 & pt >= 15"
+   },
+]

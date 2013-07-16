@@ -1,0 +1,516 @@
+[ChowderAllEvents100pb]
+numevents = 12295619
+localevents = 4060446
+crosssection = 0
+soupfactor = 2.25
+datasetpath = /CSA07AllEvents/CMSSW_1_6_7-CSA07-Chowder-A2-PDAllEvents-ReReco-100pb/AODSIM
+localdbspath = /CSA07AllEvents/ChowderAllEvents100pb_HLT_CMSSW_1_6_12_PAT/USER
+
+[StewMuon100pb]
+numevents = 1735967
+localevents = 1638727
+crosssection = 0
+soupfactor = 1.03
+datasetpath = /CSA07Muon/CMSSW_1_6_7-CSA07-Stew-B2-PDMuonReReco-100pb/AODSIM
+localdbspath = /CSA07Muon/StewMuon100pb_HLT_CMSSW_1_6_12_PAT/USER
+
+[StewElectron100pb]
+numevents = 160000
+localevents = 88607
+crosssection = 0
+soupfactor = 1.12
+datasetpath = /CSA07Electron/CMSSW_1_6_7-CSA07-Stew-B2-PDElectronReReco-100pb/AODSIM
+localdbspath = /CSA07Electron/StewElectron100pb_HLT_CMSSW_1_6_12_PAT/USER
+
+[GumboMuon100pb]
+numevents = 145443
+localevents = 127329
+crosssection = 0
+soupfactor = 1.15
+datasetpath = /CSA07Muon/CMSSW_1_6_7-CSA07-Gumbo-B1-PDMuon-ReReco-100pb/AODSIM
+localdbspath = /CSA07Muon/GumboMuon100pb_HLT_CMSSW_1_6_12_PAT/USER
+
+[GumboElectron100pb]
+numevents = 1986548
+localevents = 94203
+crosssection = 0
+soupfactor = 1.04
+datasetpath = /CSA07Electron/CMSSW_1_6_7-CSA07-Gumbo-B1-PDElectron-ReReco-100pb/AODSIM
+localdbspath = /CSA07Electron/GumboElectron100pb_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM1_sftsdkpyt]
+numevents = 120624
+localevents = 33008
+crosssection = 43.48
+soupfactor = 1.0
+datasetpath = /LM1_sftsdkpyt/CMSSW_1_6_7-CSA07-1200560744/RECO
+localdbspath = /LM1_sftsdkpyt/LM1_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM2_sftsdkpyt]
+numevents = 106749
+localevents = 26738
+crosssection = 7.12
+soupfactor = 1.0
+datasetpath = /LM2_sftsdkpyt/CMSSW_1_6_7-CSA07-1200560796/RECO
+localdbspath = /LM2_sftsdkpyt/LM2_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM3_sftsdkpyt]
+numevents = 103874
+localevents = 32806
+crosssection = 33.51
+soupfactor = 1.0
+datasetpath = /LM3_sftsdkpyt/CMSSW_1_6_7-CSA07-1203058218/RECO
+localdbspath = /LM3_sftsdkpyt/LM3_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM4_sftsdkpyt]
+numevents = 100621
+localevents = 25359
+crosssection = 19.02
+soupfactor = 1.0
+datasetpath = /LM4_sftsdkpyt/CMSSW_1_6_7-CSA07-1200560848/RECO
+localdbspath = /LM4_sftsdkpyt/LM4_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM5_sftsdkpyt]
+numevents = 98621
+localevents = 25469
+crosssection = 6.29
+soupfactor = 1.0
+datasetpath = /LM5_sftsdkpyt/CMSSW_1_6_7-CSA07-1200560900/RECO
+localdbspath = /LM5_sftsdkpyt/LM5_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM6_sftsdkpyt]
+numevents = 102498
+localevents = 42109
+crosssection = 4.2
+soupfactor = 1.0
+datasetpath = /LM6_sftsdkpyt/CMSSW_1_6_7-CSA07-1200560952/RECO
+localdbspath = /LM6_sftsdkpyt/LM6_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM7_sftsdkpyt]
+numevents = 106998
+localevents = 32339
+crosssection = 7.25
+soupfactor = 1.0
+datasetpath = /LM7_sftsdkpyt/CMSSW_1_6_7-CSA07-1203060234/RECO
+localdbspath = /LM7_sftsdkpyt/LM7_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM8_sftsdkpyt]
+numevents = 105359
+localevents = 47158
+crosssection = 8.44
+soupfactor = 1.0
+datasetpath = /LM8_sftsdkpyt/CMSSW_1_6_7-CSA07-1198676908/RECO
+localdbspath = /LM8_sftsdkpyt/LM8_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM9t175_sftsdkpyt]
+numevents = 109609
+localevents = 29641
+crosssection = 29.41
+soupfactor = 1.0
+datasetpath = /LM9t175_sftsdkpyt/CMSSW_1_6_7-CSA07-1198935465/RECO
+localdbspath = /LM9t175_sftsdkpyt/LM9t175_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM9_sftsdkpyt]
+numevents = 108357
+localevents = 30097
+crosssection = 29.49
+soupfactor = 1.0
+datasetpath = /LM9_sftsdkpyt/CMSSW_1_6_7-CSA07-1198677063/RECO
+localdbspath = /LM9_sftsdkpyt/LM9_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM9p_sftsdkpyt]
+numevents = 106855
+localevents = 35736
+crosssection = 9.69
+soupfactor = 1.0
+datasetpath = /LM9p_sftsdkpyt/CMSSW_1_6_7-CSA07-1198677011/RECO
+localdbspath = /LM9p_sftsdkpyt/LM9p_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM10_sftsdkpyt]
+numevents = 107910
+localevents = 40136
+crosssection = 0.16
+soupfactor = 1.0
+datasetpath = /LM10_sftsdkpyt/CMSSW_1_6_7-CSA07-1198935360/RECO
+localdbspath = /LM10_sftsdkpyt/LM10_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[LM11_sftsdkpyt]
+numevents = 108110
+localevents = 35740
+crosssection = 10.03
+soupfactor = 1.0
+datasetpath = /LM11_sftsdkpyt/CMSSW_1_6_7-CSA07-1198935413/RECO
+localdbspath = /LM11_sftsdkpyt/LM11_sftsdkpyt_HLT_CMSSW_1_6_12_PAT/USER
+
+[w5j_1600ptw3200_alpgen]
+numevents = 11019
+localevents = 5738
+crosssection = 7.43E-4
+soupfactor = 1.0
+datasetpath = /w5j_1600ptw3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203692345/RECO
+localdbspath = /w5j_1600ptw3200_alpgen-alpgen/w5j_1600ptw3200_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w5j_800ptw1600_alpgen]
+numevents = 16881
+localevents = 8958
+crosssection = 0.0592
+soupfactor = 1.0
+datasetpath = /w5j_800ptw1600-alpgen/CMSSW_1_6_7-CSA07-1206037963/RECO
+localdbspath = /w5j_800ptw1600-alpgen/w5j_800ptw1600_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z4j_1600ptz3200_alpgen]
+numevents = 20955
+localevents = 11332
+crosssection = 2.79E-5
+soupfactor = 1.0
+datasetpath = /z4j_1600ptz3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203058430/RECO
+localdbspath = /z4j_1600ptz3200_alpgen-alpgen/z4j_1600ptz3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[GumboAllEvents100pb]
+datasetpath = /CSA07AllEvents/CMSSW_1_6_7-CSA07-Gumbo-B1-PDAllEvents-ReReco-100pb/AODSIM
+crosssection = 0
+
+[w5j_300ptw800_alpgen]
+numevents = 40104
+localevents = 19445
+crosssection = 30.3
+soupfactor = 1.0
+datasetpath = /w5j_300ptw800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202638045/RECO
+localdbspath = /w5j_300ptw800_alpgen-alpgen/w5j_300ptw800_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[StewMuon10pb]
+datasetpath = /CSA07Muon/CMSSW_1_6_7-CSA07-Stew-A1-PDMuon-ReReco-startup/AODSIM
+crosssection = 0
+
+[w2j_300ptw800_alpgen]
+numevents = 25171
+localevents = 12556
+crosssection = 40.4
+soupfactor = 1.0
+datasetpath = /w2j_300ptw800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637319/RECO
+localdbspath = /w2j_300ptw800_alpgen-alpgen/w2j_300ptw800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w1j_1600ptw3200_alpgen]
+numevents = 27310
+localevents = 14284
+crosssection = 1.34E-4
+soupfactor = 1.0
+datasetpath = /w1j_1600ptw3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637267/RECO
+localdbspath = /w1j_1600ptw3200_alpgen-alpgen/w1j_1600ptw3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z2j_300ptz800_alpgen]
+numevents = 29431
+localevents = 20890
+crosssection = 0.547
+soupfactor = 1.0
+datasetpath = /z2j_300ptz800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637111/RECO
+localdbspath = /z2j_300ptz800_alpgen-alpgen/z2j_300ptz800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w4j_300ptw800_alpgen]
+numevents = 13000
+localevents = 6423
+crosssection = 15.6
+soupfactor = 1.0
+datasetpath = /w4j_300ptw800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637475/RECO
+localdbspath = /w4j_300ptw800_alpgen-alpgen/w4j_300ptw800_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[GumboElectron10pb]
+datasetpath = /CSA07Electron/CMSSW_1_6_7-CSA07-Gumbo-B4-PDElectron-ReReco-startup/AODSIM
+crosssection = 0
+
+[z5j_300ptz800_alpgen]
+numevents = 25137
+localevents = 17614
+crosssection = 0.45
+soupfactor = 1.0
+datasetpath = /z5j_300ptz800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203663170/RECO
+localdbspath = /z5j_300ptz800_alpgen-alpgen/z5j_300ptz800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z1j_800ptz1600_alpgen]
+numevents = 13425
+localevents = 9555
+crosssection = 2.13E-3
+soupfactor = 1.0
+datasetpath = /z1j_800ptz1600_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202636956/RECO
+localdbspath = /z1j_800ptz1600_alpgen-alpgen/z1j_800ptz1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w3j_300ptw800_alpgen]
+numevents = 106758
+localevents = 53495
+crosssection = 30.7
+soupfactor = 1.0
+datasetpath = /w3j_300ptw800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637993/RECO
+localdbspath = /w3j_300ptw800_alpgen-alpgen/w3j_300ptw800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z1j_1600ptz3200_alpgen]
+numevents = 19470
+localevents = 10690
+crosssection = 1.67E-5
+soupfactor = 1.0
+datasetpath = /z1j_1600ptz3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637007/RECO
+localdbspath = /z1j_1600ptz3200_alpgen-alpgen/z1j_1600ptz3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w1j_800ptw1600_alpgen]
+numevents = 59557
+localevents = 31744
+crosssection = 0.0159
+soupfactor = 1.0
+datasetpath = /w1j_800ptw1600-alpgen/CMSSW_1_6_7-CSA07-1206037751/RECO
+localdbspath = /w1j_800ptw1600-alpgen/w1j_800ptw1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z1j_300ptz800_alpgen]
+numevents = 30000
+localevents = 20857
+crosssection = 0.361
+soupfactor = 1.0
+datasetpath = /z1j_300ptz800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637060/RECO
+localdbspath = /z1j_300ptz800_alpgen-alpgen/z1j_300ptz800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w4j_800ptw1600_alpgen]
+numevents = 54939
+localevents = 29358
+crosssection = 0.0188
+soupfactor = 1.0
+datasetpath = /w4j_800ptw1600-alpgen/CMSSW_1_6_7-CSA07-1206037910/RECO
+localdbspath = /w4j_800ptw1600-alpgen/w4j_800ptw1600_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[GumboAllEvents10pb]
+datasetpath = /CSA07AllEvents/CMSSW_1_6_7-CSA07-Gumbo-B4-PDAllEvents-ReReco-startup/AODSIM
+crosssection = 0
+
+[z2j_1600ptz3200_alpgen]
+numevents = 17752
+localevents = 9700
+crosssection = 3.95E-5
+soupfactor = 1.0
+datasetpath = /z2j_1600ptz3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637630/RECO
+localdbspath = /z2j_1600ptz3200_alpgen-alpgen/z2j_1600ptz3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w3j_800ptw1600_alpgen]
+numevents = 53363
+localevents = 28847
+crosssection = 0.0301
+soupfactor = 1.0
+datasetpath = /w3j_800ptw1600-alpgen/CMSSW_1_6_7-CSA07-1206037858/RECO
+localdbspath = /w3j_800ptw1600-alpgen/w3j_800ptw1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z5j_800ptz1600_alpgen]
+numevents = 36101
+localevents = 25521
+crosssection = 7.36E-3
+soupfactor = 1.0
+datasetpath = /z5j_800ptz1600_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203663222/RECO
+localdbspath = /z5j_800ptz1600_alpgen-alpgen/z5j_800ptz1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w1j_300ptw800_alpgen]
+numevents = 56662
+localevents = 27728
+crosssection = 29.9
+soupfactor = 1.0
+datasetpath = /w1j_300ptw800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637163/RECO
+localdbspath = /w1j_300ptw800_alpgen-alpgen/w1j_300ptw800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z3j_800ptz1600_alpgen]
+numevents = 16419
+localevents = 11581
+crosssection = 3.79E-3
+soupfactor = 1.0
+datasetpath = /z3j_800ptz1600_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637682/RECO
+localdbspath = /z3j_800ptz1600_alpgen-alpgen/z3j_800ptz1600_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w2j_1600ptw3200_alpgen]
+numevents = 11227
+localevents = 5922
+crosssection = 3.04E-4
+soupfactor = 1.0
+datasetpath = /w2j_1600ptw3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203692292/RECO
+localdbspath = /w2j_1600ptw3200_alpgen-alpgen/w2j_1600ptw3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[ChowderAllEvents10pb]
+datasetpath = /CSA07AllEvents/CMSSW_1_6_7-CSA07-Chowder-A1-PDAllEvents-ReReco-startup/AODSIM
+crosssection = 0
+
+[z3j_300ptz800_alpgen]
+numevents = 28109
+localevents = 19957
+crosssection = 0.40
+soupfactor = 1.0
+datasetpath = /z3j_300ptz800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202638201/RECO
+localdbspath = /z3j_300ptz800_alpgen-alpgen/z3j_300ptz800_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z2j_800ptz1600_alpgen]
+numevents = 10368
+localevents = 7354
+crosssection = 3.97E-3
+soupfactor = 1.0
+datasetpath = /z2j_800ptz1600_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637889/RECO
+localdbspath = /z2j_800ptz1600_alpgen-alpgen/z2j_800ptz1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[StewElectron10pb]
+datasetpath = /CSA07Electron/CMSSW_1_6_7-CSA07-Stew-A1-PDElectron-ReReco-startup/AODSIM
+crosssection = 0
+
+[z5j_1600ptz3200_alpgen]
+numevents = 13987
+localevents = 7683
+crosssection = 9.06E-5
+soupfactor = 1.0
+datasetpath = /z5j_1600ptz3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203847047/RECO
+localdbspath = /z5j_1600ptz3200_alpgen-alpgen/z5j_1600ptz3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[GumboMuon10pb]
+datasetpath = /CSA07Muon/CMSSW_1_6_7-CSA07-Gumbo-B5-PDMuon-ReReco-startup/AODSIM
+crosssection = 0
+
+[w3j_1600ptw3200_alpgen]
+numevents = 14078
+localevents = 7420
+crosssection = 3.47E-4
+soupfactor = 1.0
+datasetpath = /w3j_1600ptw3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202636903/RECO
+localdbspath = /w3j_1600ptw3200_alpgen-alpgen/w3j_1600ptw3200_alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w2j_800ptw1600_alpgen]
+numevents = 54137
+localevents = 29371
+crosssection = 0.0315
+soupfactor = 1.0
+datasetpath = /w2j_800ptw1600-alpgen/CMSSW_1_6_7-CSA07-1206037804/RECO
+localdbspath = /w2j_800ptw1600-alpgen/w2j_800ptw1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[StewAllEvents100pb]
+datasetpath = /CSA07AllEvents/CMSSW_1_6_7-CSA07-Stew-B2-PDAllEvents-ReReco-100pb/AODSIM
+crosssection = 0
+
+[z4j_800ptz1600_alpgen]
+numevents = 11842
+localevents = 8291
+crosssection = 2.47E-3
+soupfactor = 1.0
+datasetpath = /z4j_800ptz1600_alpgen-alpgen/CMSSW_1_6_7-CSA07-1203079673/RECO
+localdbspath = /z4j_800ptz1600_alpgen-alpgen/z4j_800ptz1600_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[w4j_1600ptw3200_alpgen]
+numevents = 19391
+localevents = 10070
+crosssection = 2.24E-4
+soupfactor = 1.0
+datasetpath = /w4j_1600ptw3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637578/RECO
+localdbspath = /w4j_1600ptw3200_alpgen-alpgen/w4j_1600ptw3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[StewAllEvents10pb]
+datasetpath = /CSA07AllEvents/CMSSW_1_6_7-CSA07-Stew-A1-PDAllEvents-ReReco-startup/AODSIM
+crosssection = 0
+
+[z3j_1600ptz3200_alpgen]
+numevents = 13368
+localevents = 7277
+crosssection = 4.11E-5
+soupfactor = 1.0
+datasetpath = /z3j_1600ptz3200_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637734/RECO
+localdbspath = /z3j_1600ptz3200_alpgen-alpgen/z3j_1600ptz3200_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[z4j_300ptz800_alpgen]
+numevents = 24598
+localevents = 17483
+crosssection = 0.201
+soupfactor = 1.0
+datasetpath = /z4j_300ptz800_alpgen-alpgen/CMSSW_1_6_7-CSA07-1202637941/RECO
+localdbspath = /z4j_300ptz800_alpgen-alpgen/z4j_300ptz800_alpgen-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[ww0j_alpgen]
+numevents = 9201
+localevents = 5367
+crosssection = 8.4
+soupfactor = 1.0
+datasetpath = /ww0j-alpgen/CMSSW_1_6_7-CSA07-1205410499/RECO
+localdbspath = /ww0j-alpgen/ww0j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[ww1j_alpgen]
+numevents = 15752
+localevents = 9657
+crosssection = 5.9
+soupfactor = 1.0
+datasetpath = /ww1j-alpgen/CMSSW_1_6_7-CSA07-1205410552/RECO
+localdbspath = /ww1j-alpgen/ww1j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[ww2j_alpgen]
+numevents = 5923
+localevents = 3775
+crosssection = 4.0
+soupfactor = 1.0
+datasetpath = /ww2j-alpgen/CMSSW_1_6_7-CSA07-1205410603/RECO
+localdbspath = /ww2j-alpgen/ww2j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[ww3j_alpgen]
+numevents = 5328
+localevents = 3494
+crosssection = 2.3
+soupfactor = 1.0
+datasetpath = /ww3j-alpgen/CMSSW_1_6_7-CSA07-1205410655/RECO
+localdbspath = /ww3j-alpgen/ww3j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[wz0j_alpgen]
+numevents = 5556
+localevents = 3428
+crosssection = 2.90
+soupfactor = 1.0
+datasetpath = /wz0j-alpgen/CMSSW_1_6_7-CSA07-1205618406/RECO
+localdbspath = /wz0j-alpgen/wz0j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[wz1j_alpgen]
+numevents = 5898
+localevents = 3777
+crosssection = 2.79
+soupfactor = 1.0
+datasetpath = /wz1j-alpgen/CMSSW_1_6_7-CSA07-1205618509/RECO
+localdbspath = /wz1j-alpgen/wz1j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[wz2j_alpgen]
+numevents = 5435
+localevents = 3571
+crosssection = 2.22
+soupfactor = 1.0
+datasetpath = /wz2j-alpgen/CMSSW_1_6_7-CSA07-1205907776/RECO
+localdbspath = /wz2j-alpgen/wz2j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[wz3j_alpgen]
+numevents = 5687
+localevents = 3948
+crosssection = 1.39
+soupfactor = 1.0
+datasetpath = /wz3j-alpgen/CMSSW_1_6_7-CSA07-1205618561/RECO
+localdbspath = /wz3j-alpgen/wz3j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[zz0j_alpgen]
+numevents = 5416
+localevents = 3139
+crosssection = 1.369
+soupfactor = 1.0
+datasetpath = /zz0j-alpgen/CMSSW_1_6_7-CSA07-1205618354/RECO
+localdbspath = /zz0j-alpgen/zz0j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[zz1j_alpgen]
+numevents = 5273
+localevents = 3274
+crosssection = 0.637
+soupfactor = 1.0
+datasetpath = /zz1j-alpgen/CMSSW_1_6_7-CSA07-1205618302/RECO
+localdbspath = /zz1j-alpgen/zz1j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[zz2j_alpgen]
+numevents = 7286
+localevents = 4627
+crosssection = 0.247
+soupfactor = 1.0
+datasetpath = /zz2j-alpgen/CMSSW_1_6_7-CSA07-1205618250/RECO
+localdbspath = /zz2j-alpgen/zz2j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+
+[zz3j_alpgen]
+numevents = 5455
+localevents = 3459
+crosssection = 0.239
+soupfactor = 1.0
+datasetpath = /zz3j-alpgen/CMSSW_1_6_7-CSA07-1205907722/RECO
+localdbspath = /zz3j-alpgen/zz3j-alpgen_HLT_CMSSW_1_6_12_PAT/USER
+

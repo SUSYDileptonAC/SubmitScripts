@@ -1,0 +1,22 @@
+[
+	{   "src": InputTag("HBHENoiseFilterResultProducer","HBHENoiseFilterResult",""),
+	    "name": "HBHENoiseFilter"
+	
+	},
+	{   "src":"beamHaloFilter", 
+	    "name" : "beamHaloFilter"
+	},
+	{   "src":"EcalDeadCellTriggerPrimitiveFilter", 
+	    "name" : "EcalDeadCellFilter"
+	},
+	{   "src":"eeBadScFilter", 
+	    "name" : "eeBadSuperclusterFilter"
+	},
+	{   "src":"hcalLaserEventFilter", 
+	    "name" : "HCALLaserFilter"
+	},
+	{   "src":"trackingFailureFilter", 
+	    "name" : "trackingFailureFilter"
+	},
+
+]

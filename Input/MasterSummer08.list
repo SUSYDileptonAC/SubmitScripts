@@ -1,0 +1,1367 @@
+[Upsilon3S]
+groups = Summer08 StandardModel QCD  Aachen Pythia
+status = READY
+numevents = 216981
+kfactor = 1
+localevents = 19445
+crosssection = 767.18
+datasetpath = /Upsilon3S/Summer08_IDEAL_V9_v10/GEN-SIM-RECO
+localdbspath = /Upsilon3S/nmohr-Upsilon3S-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt3000]
+groups = Summer08 StandardModel QCD  Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /QCDpt3000/Summer08_IDEAL_V9_reco-v2/GEN-SIM-RECO
+crosssection = 0
+
+[QCD1000toInf_madgraph_redigi]
+groups = Summer08 StandardModel QCD Aachen Madgraph
+status = READY
+numevents = 1066863
+kfactor = 1
+localevents = 1066863
+crosssection = 370
+datasetpath = /QCD1000toInf-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD1000toInf-madgraph/nmohr-QCD1000toInf_madgraph_redigi-add7e912b8d7450bc913d7e2165b923b/USER
+
+[QCD1000toInf_madgraph_Cern]
+groups = Summer08 StandardModel QCD  CERN PL1v5 Madgraph
+status = READY
+numevents = 1066863
+kfactor = 1
+localevents = 1066863
+crosssection = 370
+datasetpath = /QCD1000toInf-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD1000toInf-madgraph/meyera-QCD1000toInf-madgraph_229_SUSYPAT_V5_v1-6e6ee89347d8aaa6f7b14dff1a0707fb/USER
+
+[QCDpt80]
+groups = Summer08 StandardModel QCD  Aachen Pythia
+status = READY
+numevents = 3327876
+kfactor = 1
+localevents = 23348
+crosssection = 1934639.567
+datasetpath = /QCDpt80/Summer08_IDEAL_V9_v2/GEN-SIM-RECO
+localdbspath = /QCDpt80/nmohr-QCDpt80-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt80_Cern]
+groups = Summer08 StandardModel QCD  CERN PL1v5 Pythia Redigi
+status = READY
+numevents = 3477680
+kfactor = 1
+localevents = 3477680
+crosssection = 1934639.567
+datasetpath = /QCDpt80/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCDpt80/susy-QCD_PYTHIA_PT80_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SingleTop_sChannel]
+groups = Summer08 StandardModel Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /SingleTop_sChannel/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+crosssection = 0
+
+[SUSY_LM10]
+groups = Summer08 LM10 SUSY Redigi Aachen Pythia
+status = PUBLISHED
+numevents = 100000
+kfactor = 1
+localevents = 100000
+crosssection = 6.55
+datasetpath = /SUSY_LM10-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM10-sftsht/nmohr-SUSY_LM10-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM10_Cern]
+groups = Summer08 LM10 SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 100000
+kfactor = 1
+localevents = 100000
+crosssection = 6.55
+datasetpath = /SUSY_LM10-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM10-sftsht/auterman-SUSY_LM10_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM11]
+groups = Summer08 LM1 SUSY Redigi Aachen Pythia
+status = PUBLISHED
+numevents = 208314
+kfactor = 1
+localevents = 208314
+crosssection = 3.24
+datasetpath = /SUSY_LM11-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM11-sftsht/nmohr-SUSY_LM11-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM11_Cern]
+groups = Summer08 LM1 SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 208314
+kfactor = 1
+localevents = 208314
+crosssection = 3.24
+datasetpath = /SUSY_LM11-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM11-sftsht/auterman-SUSY_LM11_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_GM1b_Cern]
+groups = Summer08 GM1b SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 96760
+kfactor = 1
+localevents = 96760
+crosssection = 2.97
+datasetpath = /Exotica_GMSB_GM1b/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /Exotica_GMSB_GM1b/susy-Exotica_GMSB_GM1b_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_GM1c_Cern]
+groups = Summer08 GM1c SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 91171
+kfactor = 1
+localevents = 91171
+crosssection = 0.843
+datasetpath = /Exotica_GMSB_GM1c/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /Exotica_GMSB_GM1c/susy-Exotica_GMSB_GM1c_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_GM1d_Cern]
+groups = Summer08 GM1d SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 101193
+kfactor = 1
+localevents = 101193
+crosssection = 0.299
+datasetpath = /Exotica_GMSB_GM1d/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /Exotica_GMSB_GM1d/susy-Exotica_GMSB_GM1d_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_GM1e_Cern]
+groups = Summer08 GM1e SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 97651
+kfactor = 1
+localevents = 97651
+crosssection = 0.0124
+datasetpath = /Exotica_GMSB_GM1e/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /Exotica_GMSB_GM1e/susy-Exotica_GMSB_GM1e_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_GM1f_Cern]
+groups = Summer08 GM1f SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 77001
+kfactor = 1
+localevents = 77001
+crosssection = 0.00582
+datasetpath = /Exotica_GMSB_GM1f/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /Exotica_GMSB_GM1f/susy-Exotica_GMSB_GM1f_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER 
+
+[SUSY_GM1g_Cern]
+groups = Summer08 GM1g SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 100059
+kfactor = 1
+localevents = 100059
+crosssection = 0.00311
+datasetpath = /Exotica_GMSB_GM1g/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /Exotica_GMSB_GM1g/susy-Exotica_GMSB_GM1g_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[AstarJets_madgraph_redigi]
+groups = Summer08 StandardModel ZJets Redigi Aachen Madgraph
+status = 0
+crosssection = 0
+datasetpath = /AstarJets-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[CalibmSUGRA_1450_200_50_1_0]
+groups = Summer08 Aachen Pythia SUSY FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 50
+pythia_xsec = 5.705
+a0 = 0
+m12 = 200
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_200_50_1_0.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_1450_200_50_1_0/nmohr-CalibmSUGRA_1450_200_50_1_0-0c92fa3b6a7953b5d89c57a39e6a5122/USER
+
+[QCDpt800]
+groups = Summer08 StandardModel QCD Aachen Pythia
+status = READY
+numevents = 1027080
+kfactor = 1
+localevents = 4728
+crosssection = 11.9419745
+datasetpath = /QCDpt800/Summer08_IDEAL_V9_v3/GEN-SIM-RECO
+localdbspath = /QCDpt800/nmohr-QCDpt800-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt800_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 2922476
+kfactor = 1
+localevents = 2922476
+crosssection = 11.9419745
+datasetpath = /QCDpt800/Summer08_IDEAL_V11_redigi_v2/GEN-SIM-RECO
+localdbspath = /QCDpt800/susy-QCD_PYTHIA_PT800_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[EMenrichedQCDpt20_30_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 20339200
+kfactor = 1
+localevents = 20339200
+crosssection = 3200000
+datasetpath = /QCD_EMenriched_Pt20to30/Summer08_IDEAL_V11_redigi_v2/GEN-SIM-RECO
+localdbspath = /QCD_EMenriched_Pt20to30/susy-SUSY_QCD-EMenriched-Pt20to30_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[EMenrichedQCDpt30_80_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 38278918
+kfactor = 1
+localevents = 38278918
+crosssection = 4700000
+datasetpath = /QCD_EMenriched_Pt30to80/Summer08_IDEAL_V11_redigi_v2/GEN-SIM-RECO
+localdbspath = /QCD_EMenriched_Pt30to80/susy-QCD_EMenriched_Pt30to80_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[EMenrichedQCDpt80_170_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 5920425
+kfactor = 1
+localevents = 5920425
+crosssection = 285000
+datasetpath = /QCD_EMenriched_Pt80to170/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD_EMenriched_Pt80to170/susy-QCD_EMenriched_Pt80to170_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[Upsilon2S]
+groups = Summer08 StandardModel QCD Aachen Pythia
+status = READY
+numevents = 244341
+kfactor = 1
+localevents = 7579
+crosssection = 47.15
+datasetpath = /Upsilon2S/Summer08_IDEAL_V9_v10/GEN-SIM-RECO
+localdbspath = /Upsilon2S/nmohr-Upsilon2S-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[CalibmSUGRA_200_100_10_1_m400]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 10
+pythia_xsec = 1221.0
+a0 = m400
+m12 = 100
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_100_10_1_m400.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_200_100_10_1_m400/nmohr-CalibmSUGRA_200_100_10_1_m400-5f66519238a5273f04b5eafc9afde25f/USER
+
+[QCDpt1400]
+groups = Summer08 StandardModel Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /QCDpt1400/Summer08_IDEAL_V9_reco-v5/GEN-SIM-RECO
+crosssection = 0
+
+[CalibmSUGRA_200_140_10_1_m400]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 10
+pythia_xsec = 205.3
+a0 = m400
+m12 = 140
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_140_10_1_m400.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_200_140_10_1_m400/nmohr-CalibmSUGRA_200_140_10_1_m400-b8071b003a9adf6089f81d7e220f9192/USER
+
+[QCDpt470]
+groups = Summer08 StandardModel QCD Aachen Pythia
+status = READY
+numevents = 2808000
+kfactor = 1
+localevents = 13762
+crosssection = 315.5131272
+datasetpath = /QCDpt470/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /QCDpt470/nmohr-QCDpt470-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt470_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 2426752 
+kfactor = 1
+localevents = 2426752
+crosssection = 315.5131272
+datasetpath = /QCDpt470/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCDpt470/susy-QCD_PYTHIA_PT470_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[WW_Summer08]
+groups = Summer08 StandardModel Diboson Aachen Pythia
+status = READY
+numevents = 203591
+kfactor = 1.65
+localevents = 52462
+crosssection = 44.8
+datasetpath = /WW/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /WW/nmohr-WW_Summer08-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[SUSY_LM2]
+groups = Summer08 LM2 SUSY Redigi Aachen Pythia
+status = PUBLISHED
+numevents = 130400
+kfactor = 1
+localevents = 130400
+crosssection = 2.42
+datasetpath = /SUSY_LM2-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM2-sftsht/nmohr-SUSY_LM2-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM2_Cern]
+groups = Summer08 LM2 SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 130400
+kfactor = 1
+localevents = 130400
+crosssection = 2.42
+datasetpath = /SUSY_LM2-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM2-sftsht/susy-SUSY_LM2_229_SUSYPAT_V5_v2-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[Zgamma_redigi]
+groups = Summer08 StandardModel Aachen Pythia Redigi
+status = 0
+crosssection = 0
+datasetpath = /Zgamma/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[Zee_M20]
+groups = Summer08 StandardModel Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /Zee_M20/Summer08_IDEAL_V9_reco-v3/GEN-SIM-RECO
+crosssection = 0
+
+[SUSY_LM0_Cern]
+groups = Summer08 LM0 SUSY Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 202686
+kfactor = 1.3756
+localevents = 202686
+crosssection = 110.
+datasetpath = /SUSY_LM0-sftsht/Summer08_IDEAL_V11_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM0-sftsht/susy-SUSY_LM0_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[Upsilon1S_redigi]
+groups = Summer08 StandardModel QCD Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /Upsilon1S/Summer08_IDEAL_V11_redigi_v10/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt170]
+groups = Summer08 StandardModel Aachen Pythia QCD
+status = READY
+numevents = 2997540
+kfactor = 1
+localevents = 16396
+crosssection = 62562.87713
+datasetpath = /QCDpt170/Summer08_IDEAL_V9_v3/GEN-SIM-RECO
+localdbspath = /QCDpt170/nmohr-QCDpt170-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt170_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 3756780
+kfactor = 1
+localevents = 3756780
+crosssection = 62562.87713
+datasetpath = /QCDpt170/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCDpt170/susy-QCD_PYTHIA_PT170_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[VVJets_madgraph_Fall08]
+groups = Fall08 StandardModel Diboson Aachen Madgraph
+status = READY
+numevents = 101778
+kfactor = 1
+localevents = 69799
+crosssection = 11.8
+datasetpath = /VVJets-madgraph/Fall08_IDEAL_V9_v2/GEN-SIM-RECO
+localdbspath = /VVJets-madgraph/nmohr-VVJets_madgraph_Fall08-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt15]
+groups = Summer08 StandardModel Aachen Pythia QCD
+status = READY
+numevents = 7033205
+kfactor = 1
+localevents = 4864
+crosssection = 1457159248
+datasetpath = /QCDpt15/Summer08_IDEAL_V9_v3/GEN-SIM-RECO
+localdbspath = /QCDpt15/nmohr-QCDpt15-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt15_Cern]
+groups = Summer08 StandardModel Redigi QCD CERN PL1v5 Pythia
+status = READY
+numevents = 7938560
+kfactor = 1
+localevents = 7938560
+crosssection = 1457159248
+datasetpath = /QCDpt15/Summer08_IDEAL_V11_redigi_v3/GEN-SIM-RECO
+localdbspath = /QCDpt15/susy-QCD_PYTHIA_PT15_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[QCD250to500_madgraph_redigi]
+groups = Summer08 StandardModel Redigi QCD Aachen Madgraph
+status = READY
+numevents = 4205949
+kfactor = 1
+localevents = 3299337
+crosssection = 400000
+datasetpath = /QCD250to500-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD250to500-madgraph/nmohr-QCD250to500_madgraph_redigi-add7e912b8d7450bc913d7e2165b923b/USER
+
+[QCD250to500_madgraph_Cern]
+groups = Summer08 StandardModel Redigi CERN PL1v5 QCD Madgraph
+status = READY
+numevents = 5064539
+kfactor = 1
+localevents = 5064539
+crosssection = 400000
+datasetpath = /QCD250to500-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD250to500-madgraph/susy-SUSY_QCD250to500-madgraph_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[CalibmSUGRA_200_160_10_1_m400]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 10
+pythia_xsec = 108.5
+a0 = m400
+m12 = 160
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_160_10_1_m400.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_200_160_10_1_m400/nmohr-CalibmSUGRA_200_160_10_1_m400-da1626c6c0d4ffc4632869d794f43f4a/USER
+
+[ZZ_Summer08]
+groups = Summer08 StandardModel Aachen Pythia Diboson
+status = READY
+numevents = 200564
+kfactor = 1.38
+localevents = 28235
+crosssection = 7.1
+datasetpath = /ZZ/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /ZZ/nmohr-ZZ_Summer08-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[SUSY_LM5_sftsht]
+groups = Summer08 LM5 SUSY Aachen Pythia
+status = 0
+crosssection = 1.94
+datasetpath = /SUSY_LM5-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt2200_Winter09]
+groups = Winter09 StandardModel FastSim QCD
+status = 0
+crosssection = 0
+datasetpath = /QCDpt2200/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[ZJets_madgraph_Fall08]
+groups = Fall08 StandardModel ZJets Aachen Madgraph
+status = READY
+numevents = 1221378
+kfactor = 1.14
+localevents = 632337
+crosssection = 3700.
+datasetpath = /ZJets-madgraph/Fall08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /ZJets-madgraph/nmohr-ZJets_madgraph_Fall08-bcf0841bc52aa83511669b74a2915e9e/USER
+
+[ZJets_madgraph_Cern]
+groups = Fall08 StandardModel ZJets Redigi CERN PL1v5 Madgraph
+status = READY
+numevents = 1262816 
+kfactor = 1.14
+localevents = 1262816 
+crosssection = 3700.
+datasetpath = /ZJets-madgraph/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /ZJets-madgraph/walten-SUSY_ZJets-madgraph_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER 
+
+[QCDpt15_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt15/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[Zmumu]
+groups = Summer08 StandardModel ZJets Aachen Pythia
+status = PUBLISHED
+numevents = 662500
+kfactor = 1
+localevents = 600311
+crosssection = 2274
+datasetpath = /Zmumu/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /Zmumu/nmohr-Zmumu-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[SUSY_LM6_sftsht]
+groups = Summer08 LM6 SUSY Aachen Pythia
+status = 0
+crosssection = 1.28
+datasetpath = /SUSY_LM6-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt1400_redigi]
+groups = Summer08 StandardModel QCD Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt1400/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[Zgamma]
+groups = Summer08 StandardModel Aachen Pythia
+status = READY
+numevents = 102300
+kfactor = 1
+localevents = 47272
+crosssection = 11.
+datasetpath = /Zgamma/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /Zgamma/nmohr-Zgamma-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[SUSY_LM10_sftsht]
+groups = Summer08 LM10 SUSY Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /SUSY_LM10-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[WJets_madgraph_Fall08]
+groups = Fall08 StandardModel WJets Aachen Madgraph
+status = READY
+numevents = 6230138
+kfactor = 1.14
+localevents = 2123437
+crosssection = 40000
+datasetpath = /WJets-madgraph/Fall08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /WJets-madgraph/nmohr-WJets_madgraph_Fall08-bcf0841bc52aa83511669b74a2915e9e/USER
+
+[WJets_madgraph_Cern]
+groups = Fall08 StandardModel WJets CERN PL1v5 Madgraph Redigi
+status = READY
+numevents = 9745661
+kfactor = 1.14
+localevents = 9745661
+crosssection = 40000
+datasetpath = /WJets-madgraph/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /WJets-madgraph/susy-SUSY_WJets-madgraph_229_SUSYPAT_V5_v2-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[Upsilon3S_redigi]
+groups = Summer08 StandardModel Redigi QCD
+status = 0
+crosssection = 0
+datasetpath = /Upsilon3S/Summer08_IDEAL_V11_redigi_v10/GEN-SIM-RECO
+kfactor = 1
+
+[CalibmSUGRA_200_200_10_1_m400]
+groups = SUSY FastSim Aachen Pythia
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 10
+pythia_xsec = 37.67
+a0 = m400
+m12 = 200
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_200_10_1_m400.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_200_200_10_1_m400/nmohr-CalibmSUGRA_200_200_10_1_m400-8965ac433044f526103e4796954c2c12/USER
+
+[Upsilon1S]
+groups = Summer08 StandardModel QCD Aachen Pythia
+status = READY
+numevents = 10203
+kfactor = 1
+localevents = 403
+crosssection = 1390
+datasetpath = /Upsilon1S/Summer08_IDEAL_V9_v10/GEN-SIM-RECO
+localdbspath = /Upsilon1S/nmohr-Upsilon1S-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt2200]
+groups = Summer08 StandardModel QCD Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /QCDpt2200/Summer08_IDEAL_V9_reco-v1/GEN-SIM-RECO
+crosssection = 0
+
+[CalibmSUGRA_200_120_10_1_m400]
+groups = SUSY FastSim Aachen Pythia
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 10
+pythia_xsec = 442.4
+a0 = m400
+m12 = 120
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_120_10_1_m400.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_200_120_10_1_m400/nmohr-CalibmSUGRA_200_120_10_1_m400-8d9700d7c3b091ca7b09cf60902029d7/USER
+
+[JPsi_redigi]
+groups = Summer08 StandardModel Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /JPsi/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[VVJets_madgraph_redigi]
+groups = Summer08 StandardModel Redigi Aachen Madgraph Diboson
+status = 0
+crosssection = 0
+datasetpath = /VVJets-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SUSY_LM3_sftsht]
+groups = Summer08 LM3 SUSY Aachen Pythia
+status = 0
+crosssection = 11.79
+datasetpath = /SUSY_LM3-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[InclusivePPmuX]
+groups = Summer08 StandardModel Aachen Pythia QCD
+status = READY
+numevents = 5232662
+kfactor = 1
+localevents = 6282
+crosssection = 35552400
+datasetpath = /InclusivePPmuX/Summer08_IDEAL_V9_v4/GEN-SIM-RECO
+localdbspath = /InclusivePPmuX/nmohr-InclusivePPmuX-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[Wgamma]
+groups = Summer08 StandardModel Aachen Pythia
+status = READY
+numevents = 102012
+kfactor = 1
+localevents = 39149
+crosssection = 36.6
+datasetpath = /Wgamma/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /Wgamma/nmohr-Wgamma-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[SUSY_LM4_sftsht]
+groups = Summer08 LM4 SUSY
+status = 0
+crosssection = 6.7
+datasetpath = /SUSY_LM4-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt800_redigi]
+groups = Summer08 StandardModel Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt800/Summer08_IDEAL_V11_redigi_v2/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt30_redigi]
+groups = Summer08 StandardModel Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt30/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SUSY_LM0_noTrigger]
+groups = Summer08 LM0 SUSY Aachen Pythia Redigi
+status = READY
+numevents = 202686
+kfactor = 1.3756
+localevents = 202686
+crosssection = 110.
+datasetpath = /SUSY_LM0-sftsht/Summer08_IDEAL_V11_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM0-sftsht/nmohr-SUSY_LM0_noTrigger-290fb45be951253b0d44b77142e7088c/USER
+
+[Upsilon2S_1S]
+groups = Summer08 StandardModel Aachen Pythia QCD
+status = 0
+crosssection = 0
+datasetpath = /Upsilon2S_1S/Summer08_IDEAL_V9_v10/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt470_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt470/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[WJets_madgraph_redigi]
+groups = Fall08 StandardModel WJets Redigi Aachen Madgraph
+status = READY
+numevents = 8109437
+kfactor = 1.14
+localevents = 3226726
+crosssection = 40000
+datasetpath = /WJets-madgraph/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /WJets-madgraph/nmohr-WJets_madgraph_redigi-add7e912b8d7450bc913d7e2165b923b/USER
+
+[SUSY_LM9_sftsht]
+groups = Summer08 LM9 SUSY Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /SUSY_LM9-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[MCatNLOZmumu_M20]
+groups = Summer08 StandardModel Aachen MCatNLO ZJets
+status = 0
+crosssection = 0
+datasetpath = /MCatNLOZmumu_M20/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[TTJets_madgraph_Fall08]
+groups = Fall08 StandardModel TTJets Aachen Madgraph
+status = READY
+numevents = 1005253
+kfactor = 1.3
+localevents = 310952
+crosssection = 319
+datasetpath = /TTJets-madgraph/Fall08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /TTJets-madgraph/nmohr-TTJets_madgraph_Fall08-bcf0841bc52aa83511669b74a2915e9e/USER
+
+[TTJets_madgraph_Cern]
+groups = Fall08 StandardModel CERN PL1v5 Madgraph TTJets Redigi
+status = READY
+numevents = 946644
+kfactor = 1.3
+localevents = 946644
+crosssection = 319
+datasetpath = /TTJets-madgraph/Fall08_IDEAL_V11_redigi_v10/GEN-SIM-RECO 
+localdbspath = /TTJets-madgraph/susy-SUSY_TTJets-madgraph_229_SUSYPAT_V5_v2-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[QCDpt470_redigi]
+groups = Summer08 StandardModel QCD Redigi
+status = 0
+crosssection = 0
+datasetpath = /QCDpt470/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt15_redigi]
+groups = Summer08 StandardModel QCD Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt15/Summer08_IDEAL_V11_redigi_v3/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt300]
+groups = Summer08 StandardModel QCD Aachen Pythia 
+status = READY
+numevents = 3106580
+kfactor = 1
+localevents = 15861
+crosssection = 3664.608301
+datasetpath = /QCDpt300/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /QCDpt300/nmohr-QCDpt300-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt300_Cern]
+groups = Summer08 StandardModel QCD CERN PL1v5 Pythia Redigi
+status = READY
+numevents = 1815585 
+kfactor = 1
+localevents = 1815585
+crosssection = 3664.608301
+datasetpath = /QCDpt300/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCDpt300/susy-QCD_PYTHIA_PT300_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM7_sftsht]
+groups = Summer08 LM7 SUSY Aachen Pythia
+status = 0
+crosssection = 2.9
+datasetpath = /SUSY_LM7-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[Zmumu_M20]
+groups = Summer08 StandardModel ZJets Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /Zmumu_M20/Summer08_IDEAL_V9_reco-v2/GEN-SIM-RECO
+crosssection = 0
+
+[SUSY_LM1_sftsht]
+groups = Summer08 LM1 SUSY Aachen Pythia
+status = READY
+numevents = 200000
+kfactor = 1.3524
+localevents = 200000
+crosssection = 16.06
+datasetpath = /SUSY_LM1-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM1-sftsht/nmohr-SUSY_LM1_sftsht-72178c3db8db9a815d18f7003fbe34b2/USER
+
+[SUSY_LM0_sftsht]
+groups = Summer08 LM0 SUSY Aachen Pythia
+status = READY
+numevents = 88872
+kfactor = 1.3756
+localevents = 23967
+crosssection = 110.
+datasetpath = /SUSY_LM0-sftsht/Summer08_IDEAL_V11_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM0-sftsht/nmohr-SUSY_LM0_sftsht-bcf0841bc52aa83511669b74a2915e9e/USER
+
+[QCDpt2200_redigi]
+groups = Summer08 StandardModel Redigi QCD Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt2200/Summer08_IDEAL_V11_redigi_v2/GEN-SIM-RECO
+kfactor = 1
+
+[QCD100to250_madgraph_redigi]
+groups = Summer08 StandardModel QCD Redigi Aachen Madgraph
+status = READY
+numevents = 11479995
+kfactor = 1
+localevents = 1093412
+crosssection = 15000000
+datasetpath = /QCD100to250-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD100to250-madgraph/nmohr-QCD100to250_madgraph_redigi-add7e912b8d7450bc913d7e2165b923b/USER
+
+[QCD100to250_madgraph_Cern]
+groups = Summer08 StandardModel CERN PL1v5 Madgraph QCD
+status = READY
+numevents = 12662923
+kfactor = 1
+localevents = 12662923
+crosssection = 15000000
+datasetpath = /QCD100to250-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD100to250-madgraph/susy-SUSY_QCD100to250-madgraph_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[CalibmSUGRA_200_180_10_1_m400]
+groups = SUSY FastSim Aachen Pythia
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 10
+pythia_xsec = 61.96
+a0 = m400
+m12 = 180
+m0 = 200
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_200_180_10_1_m400.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_200_180_10_1_m400/nmohr-CalibmSUGRA_200_180_10_1_m400-c1c037ba1a4aa412b4ef0069ff605dc4/USER
+
+[QCDpt300_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt300/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[SUSY_LM9t175_sftsht]
+groups = Summer08 LM9 SUSY Aachen Pythia
+status = READY
+numevents = 176672
+kfactor = 1.6377
+localevents = 39190
+crosssection = 11.12
+datasetpath = /SUSY_LM9t175-sftsht/Summer08_IDEAL_V9_v2/GEN-SIM-RECO
+localdbspath = /SUSY_LM9t175-sftsht/nmohr-SUSY_LM9t175_sftsht-bcf0841bc52aa83511669b74a2915e9e/USER
+
+[QCDpt300_redigi]
+groups = Summer08 StandardModel Redigi Aachen Pythia QCD
+status = 0
+crosssection = 0
+datasetpath = /QCDpt300/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[QCD500to1000_madgraph_redigi]
+groups = Summer08 StandardModel Redigi Aachen Madgraph QCD
+status = READY
+numevents = 4397601
+kfactor = 1
+localevents = 4396243
+crosssection = 15000
+datasetpath = /QCD500to1000-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD500to1000-madgraph/nmohr-QCD500to1000_madgraph_redigi-add7e912b8d7450bc913d7e2165b923b/USER
+
+[QCD500to1000_madgraph_Cern]
+groups = Summer08 StandardModel QCD Redigi CERN PL1v5 Madgraph
+status = READY
+numevents = 4690718
+kfactor = 1
+localevents = 4690718
+crosssection = 15000
+datasetpath = /QCD500to1000-madgraph/Fall08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCD500to1000-madgraph/susy-QCD500to1000-madgraph_229_SUSYPAT_V5_v1-6e6ee89347d8aaa6f7b14dff1a0707fb/USER
+
+[QCDpt3000_Winter09]
+groups = Winter09 StandardModel FastSim QCD
+status = 0
+crosssection = 0
+datasetpath = /QCDpt3000/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[SUSY_LM6]
+groups = Summer08 LM6 SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 134400
+kfactor = 1
+localevents = 134400
+crosssection = 1.28
+datasetpath = /SUSY_LM6-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM6-sftsht/nmohr-SUSY_LM6-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM6_Cern]
+groups = Summer08 LM6 SUSY CERN PL1v5 Pythia Redigi
+status = PUBLISHED
+numevents = 134400
+kfactor = 1
+localevents = 134400
+crosssection = 1.28
+datasetpath = /SUSY_LM6-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM6-sftsht/auterman-SUSY_LM6_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM7]
+groups = Summer08 LM7 SUSY Aachen Pythia Redigi
+status = PUBLSIHED
+numevents = 82400
+kfactor = 1
+localevents = 82400
+crosssection = 2.90
+datasetpath = /SUSY_LM7-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM7-sftsht/nmohr-SUSY_LM7-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM7_Cern]
+groups = Summer08 LM7 SUSY CERN PL1v5 Pythia Redigi
+status = PUBLISHED
+numevents = 82400
+kfactor = 1
+localevents = 82400
+crosssection = 2.90
+datasetpath = /SUSY_LM7-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM7-sftsht/auterman-SUSY_LM7_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM4]
+groups = Summer08 LM4 SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 110400
+kfactor = 1
+localevents = 110400
+crosssection = 6.70
+datasetpath = /SUSY_LM4-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM4-sftsht/nmohr-SUSY_LM4-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM4_Cern]
+groups = Summer08 LM4 SUSY CERN PL1v5 Pythia Redigi
+status = PUBLISHED
+numevents = 110400
+kfactor = 1
+localevents = 110400
+crosssection = 6.70
+datasetpath = /SUSY_LM4-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM4-sftsht/auterman-SUSY_LM4_229_SUSYPAT_V5j_v2-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM5]
+groups = Summer08 LM5 SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 171600
+kfactor = 1
+localevents = 171600
+crosssection = 1.94
+datasetpath = /SUSY_LM5-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM5-sftsht/nmohr-SUSY_LM5-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM5_Cern]
+groups = Summer08 LM5 SUSY CERN PL1v5 Pythia Redigi
+status = PUBLISHED
+numevents = 171600
+kfactor = 1
+localevents = 171600
+crosssection = 1.94
+datasetpath = /SUSY_LM5-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM5-sftsht/auterman-SUSY_LM5_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM2_mhfeq360]
+groups = Summer08 LM2 SUSY Aachen Pythia Redigi
+status = 0
+kfactor = 1
+datasetpath = /SUSY_LM2-mhfeq360-sftsht/Summer08_IDEAL_V11_v1/GEN-SIM-RECO
+crosssection = 0
+
+[SUSY_LM3]
+groups = Summer08 LM3 SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 153000
+kfactor = 1
+localevents = 153000
+crosssection = 11.79
+datasetpath = /SUSY_LM3-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM3-sftsht/nmohr-SUSY_LM3-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM3_Cern]
+groups = Summer08 LM3 SUSY Redigi CERN PL1v5 Pythia
+status = PUBLISHED
+numevents = 153000
+kfactor = 1
+localevents = 153000
+crosssection = 11.79
+datasetpath = /SUSY_LM3-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM3-sftsht/auterman-SUSY_LM3_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM0]
+groups = Summer08 LM0 SUSY Aachen Pythia Redigi
+status = READY
+numevents = 202686
+kfactor = 1.3756
+localevents = 202686
+crosssection = 110.
+datasetpath = /SUSY_LM0-sftsht/Summer08_IDEAL_V11_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM0-sftsht/nmohr-SUSY_LM0-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM1]
+groups = Summer08 LM1 SUSY Aachen Pythia Redigi
+status = READY
+numevents = 104800
+kfactor = 1.3524
+localevents = 104800
+crosssection = 16.06
+datasetpath = /SUSY_LM1-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM1-sftsht/nmohr-SUSY_LM1-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM1_Cern]
+groups = Summer08 LM1 SUSY Redigi CERN PL1v5 Pythia
+status = READY
+numevents = 104800
+kfactor = 1.3524
+localevents = 104800
+crosssection = 16.06
+datasetpath = /SUSY_LM1-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM1-sftsht/susy-SUSY_LM1_229_SUSYPAT_V5_v2-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[QCDpt800_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt800/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[SUSY_LM8]
+groups = Summer08 LM8 SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 211302
+kfactor = 1
+localevents = 211302
+crosssection = 2.86
+datasetpath = /SUSY_LM8-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM8-sftsht/nmohr-SUSY_LM8-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM8_Cern]
+groups = Summer08 LM8 SUSY CERN PL1v5 Pythia Redigi
+status = PUBLISHED
+numevents = 211302
+kfactor = 1
+localevents = 211302
+crosssection = 2.86
+datasetpath = /SUSY_LM8-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM8-sftsht/susy-SUSY_LM8_229_SUSYPAT_V5_v2-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[SUSY_LM9]
+groups = Summer08 LM9 SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 200250
+kfactor = 1
+localevents = 200250
+crosssection = 11.58
+datasetpath = /SUSY_LM9-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM9-sftsht/nmohr-SUSY_LM9-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[SUSY_LM9_Cern]
+groups = Summer08 LM9 SUSY CERN PL1v5 Pythia Redigi
+status = PUBLISHED
+numevents = 200250
+kfactor = 1
+localevents = 200250
+crosssection = 11.58
+datasetpath = /SUSY_LM9-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM9-sftsht/auterman-SUSY_LM9_229_SUSYPAT_V5j_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[QCDpt170_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt170/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[CalibmSUGRA_1450_210_50_1_0]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 50
+pythia_xsec = 4.529
+a0 = 0
+m12 = 210
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_210_50_1_0.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_1450_210_50_1_0/nmohr-CalibmSUGRA_1450_210_50_1_0-3a9dfc4f91f0bb33c8745e71d7d9e9d2/USER
+
+[QCDpt30_Winter09]
+groups = Winter09 StandardModel QCD FastSim Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt30/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[SUSY_LM9p]
+groups = Summer08 LM9p SUSY Aachen Pythia Redigi
+status = PUBLISHED
+numevents = 213651
+kfactor = 1
+localevents = 213651
+crosssection = 0
+datasetpath = /SUSY_LM9p-sftsht/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM9p-sftsht/nmohr-SUSY_LM9p-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[QCDpt80_redigi]
+groups = Summer08 StandardModel QCD Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt80/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SUSY_LM2_sftsht]
+groups = Summer08 LM2 SUSY Aachen Pythia Redigi
+status = 0
+crosssection = 2.42
+datasetpath = /SUSY_LM2-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SingleTop_tWChannel]
+groups = Summer08 StandardModel Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /SingleTop_tWChannel/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+crosssection = 0
+
+[QCDpt80_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt80/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[SUSY_LM8_sftsht]
+groups = Summer08 LM8 SUSY Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /SUSY_LM8-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SingleTop_tChannel]
+groups = Summer08 StandardModel Aachen Pythia
+status = 0
+kfactor = 1
+datasetpath = /SingleTop_tChannel/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+crosssection = 0
+
+[QCDpt3000_redigi]
+groups = Summer08 StandardModel QCD Redigi Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /QCDpt3000/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SUSY_LM0_Imperial]
+groups = Summer08 LM0 Imperial SUSY Redigi Pythia
+status = READY
+numevents = 88872
+kfactor = 1.3756
+localevents = 88872
+crosssection = 110.
+datasetpath = /SUSY_LM0-sftsht/Summer08_IDEAL_V11_v1/GEN-SIM-RECO
+localdbspath = /SUSY_LM0-sftsht/susy-SUSY_LM0_PAT_LAYER1_V2-34d62bfea6b21632e1824db01584ddb6/USER
+
+[MCatNLOZee_M20]
+groups = Summer08 StandardModel ZJets Aachen MCatNLO
+status = 0
+crosssection = 0
+datasetpath = /MCatNLOZee_M20/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[Wgamma_redigi]
+groups = Summer08 StandardModel Aachen Pythia Redigi
+status = 0
+crosssection = 0
+datasetpath = /Wgamma/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[SUSY_LM11_sftsht]
+groups = Summer08 LM11 SUSY Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /SUSY_LM11-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[TTJets_madgraph_redigi]
+groups = Summer08 StandardModel TTJets Redigi Aachen Madgraph
+status = READY
+numevents = 946644
+kfactor = 1.3
+localevents = 946644
+crosssection = 319.
+datasetpath = /TTJets-madgraph/Fall08_IDEAL_V11_redigi_v10/GEN-SIM-RECO
+localdbspath = /TTJets-madgraph/nmohr-TTJets_madgraph_redigi-7bc9bba02e737b4fa511565fa76a15e8/USER
+
+[CalibmSUGRA_1450_175_50_1_0]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 50
+pythia_xsec = 10.85
+a0 = 0
+m12 = 175
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_175_50_1_0.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_1450_175_50_1_0/nmohr-CalibmSUGRA_1450_175_50_1_0-e8454c4d50895546758cd22ab0355b4f/USER
+
+[CalibmSUGRA_1450_125_50_1_0]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 50
+pythia_xsec = 53.33
+a0 = 0
+m12 = 125
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_125_50_1_0.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_1450_125_50_1_0/nmohr-CalibmSUGRA_1450_125_50_1_0-9d301ba426934ada2e94986a99b15460/USER
+
+[Upsilon2S_1S_redigi]
+groups = Summer08 StandardModel QCD Redigi
+status = 0
+crosssection = 0
+datasetpath = /Upsilon2S_1S/Summer08_IDEAL_V11_redigi_v10/GEN-SIM-RECO
+kfactor = 1
+
+[SUSY_LM9p_sftsht]
+groups = Summer08 LM9p Aachen Pythia
+status = 0
+crosssection = 0
+datasetpath = /SUSY_LM9p-sftsht/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+kfactor = 1
+
+[AstarJets_madgraph_Fall08]
+groups = Fall08 StandardModel ZJets Aachen Madgraph
+status = READY
+numevents = 117390
+kfactor = 1.14
+localevents = 20411
+crosssection = 2630.
+datasetpath = /AstarJets-madgraph/Fall08_IDEAL_V9_v2/GEN-SIM-RECO
+localdbspath = /AstarJets-madgraph/nmohr-AstarJets_madgraph_Fall08-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[CalibmSUGRA_1450_150_50_1_0]
+groups = SUSY Aachen Pythia FastSim
+status = READY
+numevents = 100000
+sgnmu = 1
+localevents = 100000
+kfactor = 1
+tanb = 50
+pythia_xsec = 22.29
+a0 = 0
+m12 = 150
+m0 = 1450
+slhafile = /home/home4/institut_1b/nmohr/SUSYcalculation/Scan/SLHA/CalibmSUGRA_1450_150_50_1_0.slha
+crosssection = 500
+localdbspath = /CalibmSUGRA_1450_150_50_1_0/nmohr-CalibmSUGRA_1450_150_50_1_0-d90426450429f6949e7136fb801fb3b9/USER
+
+[JPsi]
+groups = Summer08 StandardModel QCD Aachen Pythia
+status = READY
+numevents = 1847135
+kfactor = 1
+localevents = 35115
+crosssection = 941.28
+datasetpath = /JPsi/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+localdbspath = /JPsi/nmohr-JPsi-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[Zee]
+groups = Summer08 StandardModel Aachen Pythia ZJets
+status = 0
+kfactor = 1
+datasetpath = /Zee/Summer08_IDEAL_V9_v1/GEN-SIM-RECO
+crosssection = 2274
+
+[ZJets_madgraph_redigi]
+groups = Summer08 StandardModel ZJets Aachen Madgraph Redigi
+status = READY
+numevents = 1262816
+kfactor = 1.14
+localevents = 1262816
+crosssection = 3700.
+datasetpath = /ZJets-madgraph/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /ZJets-madgraph/nmohr-ZJets_madgraph_redigi-4b808eca76343c3c9f60ad987c1c6b0d/USER
+
+[QCDpt1400_Winter09]
+groups = Winter09 StandardModel QCD FastSim
+status = 0
+crosssection = 0
+datasetpath = /QCDpt1400/Winter09_IDEAL_V11_FastSim_v1/GEN-SIM-DIGI-RECO
+kfactor = 1
+
+[QCDpt170_redigi]
+groups = Summer08 StandardModel QCD Aachen Pythia Redigi
+status = 0
+crosssection = 0
+datasetpath = /QCDpt170/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+kfactor = 1
+
+[QCDpt30]
+groups = Summer08 StandardModel QCD Aachen Pythia Redigi
+status = READY
+numevents = 2970000
+kfactor = 1
+localevents = 13037
+crosssection = 109057220.4
+datasetpath = /QCDpt30/Summer08_IDEAL_V9_v4/GEN-SIM-RECO
+localdbspath = /QCDpt30/nmohr-QCDpt30-e2e7905ba7cd470d5425c3b7db158b23/USER
+
+[QCDpt30_Cern]
+groups = Summer08 StandardModel QCD CERN PL1v5 Pythia Redigi
+status = READY
+numevents = 3299400
+kfactor = 1
+localevents = 3299400
+crosssection = 109057220.4
+datasetpath = /QCDpt30/Summer08_IDEAL_V11_redigi_v1/GEN-SIM-RECO
+localdbspath = /QCDpt30/susy-QCD_PYTHIA_PT30_229_SUSYPAT_V5_v1-00a24c1fa2b61c755cc684c50e9bc48c/USER
+
+[Upsilon2S_redigi]
+groups = Summer08 StandardModel Redigi Aachen Pythia QCD
+status = 0
+crosssection = 0
+datasetpath = /Upsilon2S/Summer08_IDEAL_V11_redigi_v10/GEN-SIM-RECO
+kfactor = 1
+

@@ -1,0 +1,741 @@
+[QCD_BCtoE_Pt20to30_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 QCD Ele15
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt20to30/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt30to80_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 QCD Ele15
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt30to80/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_BCtoE_Pt80to170_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 QCD Ele15
+crosssection = 0
+datasetpath = /QCD_BCtoE_Pt80to170/Summer10-START37_V5_S09-v2/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt20to30_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 QCD Ele15
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt20to30/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt30to80_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 QCD Ele15
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt30to80/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_EMEnriched_Pt80to170_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 QCD Ele15
+crosssection = 0
+datasetpath = /QCD_EMEnriched_Pt80to170/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[TTbar_Summer10]
+status = CREATED
+numevents = 0
+kfactor = 1.
+localevents = 0
+groups = MC at7TeV PL1V9800 Aachen CMSSW370 TTJets Ele15
+crosssection = 0
+datasetpath = /TTbar-mcatnlo/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[ZJets_madgraph_Summer10]
+status = CREATED
+numevents = 1034921
+kfactor = 1.19
+localevents = 1034921
+groups = MC at7TeV PL1V9800 Aachen ZJets Madgraph CMSSW370
+crosssection = 2350
+datasetpath = /ZJets-madgraph/Summer10-START37_V5_S09-v1/GEN-SIM-RECO
+localdbspath = /ZJets-madgraph/nmohr-ZJets_madgraph_Summer10_SUSYAC_V9800_MCV5-b2667f469e913b31fb53ebc9e53a840d/USER
+
+[GMSB1_Spring10]
+status = CREATED
+numevents = 200000
+kfactor = 1.
+localevents = 200000
+groups = MC at7TeV PL1V9800 Pythia GM1 CMSSW362 GMSB
+crosssection = 32.0
+datasetpath = /PhysicsProcess_PYTHIA6_SUSY_GMSM_SC_ML01_7TeV_v0/spadhi-PhysicsProcess_PYTHIA6_SUSY_GMSM_SC_ML01_7TeV_v0-a73d1ec6edf392d3b157013b643c088f/USER
+localdbspath = /PhysicsProcess_PYTHIA6_SUSY_GMSM_SC_ML01_7TeV_v0/nmohr-GSMB1_Spring10_SUSYAC_V9800_MCV1-563b5eb21dfaf2580b935f3bce520128/USER
+
+[GMSB2_Spring10]
+status = CREATED
+numevents = 200000
+kfactor = 1.
+localevents = 200000
+groups = MC at7TeV PL1V9800 Pythia GM2 CMSSW362 GMSB
+crosssection = 4.5
+datasetpath = /PhysicsProcess_PYTHIA6_SUSY_GMSM_SC_ML02_7TeV_v0/spadhi-PhysicsProcess_PYTHIA6_SUSY_GMSM_SC_ML02_7TeV_v0-f5e2dfe1f9fddad31f2d854d74a3d29a/USER
+localdbspath = /PhysicsProcess_PYTHIA6_SUSY_GMSM_SC_ML02_7TeV_v0/nmohr-GSMB2_Spring10_SUSYAC_V9800_MCV1-563b5eb21dfaf2580b935f3bce520128/USER
+
+[GMSB1a_Spring10]
+status = CREATED
+numevents = 200000
+kfactor = 1.
+localevents = 200000
+groups = MC at7TeV PL1V9800 Pythia GM1a CMSSW362 GMSB
+crosssection = 5.09
+datasetpath = /PhysicsProcess_PYTHIA6_SUSY_GGM_PGM1a_7TeV_v0/spadhi-PhysicsProcess_PYTHIA6_SUSY_GGM_PGM1a_7TeV_v0-f038ce2933e8978077c2a23b59c85416/USER
+localdbspath = /PhysicsProcess_PYTHIA6_SUSY_GGM_PGM1a_7TeV_v0/nmohr-GSMB1a_Spring10_SUSYAC_V9800_MCV1-563b5eb21dfaf2580b935f3bce520128/USER
+
+[GMSB1b_Spring10]
+status = CREATED
+numevents = 200000
+kfactor = 1.
+localevents = 200000
+groups = MC at7TeV PL1V9800 Pythia GM1b CMSSW362 GMSB
+crosssection = 5.31
+datasetpath = /PhysicsProcess_PYTHIA6_SUSY_GGM_PGM1b_7TeV_v0/spadhi-PhysicsProcess_PYTHIA6_SUSY_GGM_PGM1b_7TeV_v0-6c0e3f4dfc65e887ec1c5cea56cf6087/USER
+localdbspath = /PhysicsProcess_PYTHIA6_SUSY_GGM_PGM1b_7TeV_v0/nmohr-GSMB1b_Spring10_SUSYAC_V9800_MCV1-563b5eb21dfaf2580b935f3bce520128/USER
+
+#[PD_EG_Jul26th_JSON]
+#status = DELETED
+#numevents = 2967707
+#kfactor = 1.
+#localevents = 2967707
+#groups = Data at7TeV PL1V9800 SD EG CMSSW370
+#crosssection = -0.113522320
+#datasetpath = /EG/Run2010A-Jul26thReReco-v1/RECO
+#localdbspath = /EG/sprenger-PD_EG_Jul26th_JSON_SUSYAC_V9800v5-758e32f004b52810e65bcfec1da26eb3/USER
+
+#[PD_EG_Jul15th_JSON]
+#status = DELETED
+#numevents = 10453103
+#kfactor = 1.
+#localevents = 10453103
+#groups = Data at7TeV PL1V9800 SD EG CMSSW370
+#crosssection = -0.193419140
+#datasetpath = /EG/Run2010A-Jul15thReReco-v1/RECO
+#localdbspath = /EG/sprenger-PD_EG_Jul15th_JSON_SUSYAC_V9800v5-758e32f004b52810e65bcfec1da26eb3/USER
+
+#[PD_EG_Jul6th_JSON]
+#status = DELETED
+#numevents = 6533438
+#kfactor = 1.
+#localevents = 6533438
+#groups = Data at7TeV PL1V9800 SD EG CMSSW370
+#crosssection = -0.083058807
+#datasetpath = /EG/Run2010A-Jul6thReReco_v1/RECO
+#localdbspath = /EG/sprenger-PD_EG_Jul6th_JSON_SUSYAC_V9800v5-758e32f004b52810e65bcfec1da26eb3/USER
+
+[PD_Mu_June14th_JSON]
+status = CREATED
+numevents = 705437
+kfactor = 1.
+localevents = 705437
+groups = Data at7TeV PL1V9800 SD Mu CMSSW362
+crosssection = -0.004411142
+datasetpath = /Mu/Run2010A-Jun14thReReco_v1/RECO
+localdbspath = /Mu/nmohr-PD_Mu_June14th_JSON_SUSYAC_V9800_DATAV2-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[SD_Mu_June14th_JSON]
+status = CREATED
+numevents = 1222374
+kfactor = 1.
+localevents = 1222374
+groups = Data at7TeV PL1V9800 SD Mu CMSSW362
+crosssection = -0.007119612
+datasetpath = /MinimumBias/Commissioning10-SD_Mu-Jun14thSkim_v1/RECO
+localdbspath = /MinimumBias/nmohr-SD_Mu_June14th_JSON_SUSYAC_V9800_DATAV2-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[PD_JetMETTau_June14th_JSON]
+status = CREATED
+numevents = 896160
+kfactor = 1.
+localevents = 896160
+groups = Data at7TeV PL1V9800 SD JetMETTau CMSSW362
+crosssection = -0.004678642
+datasetpath = /JetMETTau/Run2010A-Jun14thReReco_v2/RECO
+localdbspath = /JetMETTau/nmohr-PD_JetMETTau_June14th_JSON_SUSYAC_V9800_DATAV2-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[SD_JetMETTau_June14th_JSON]
+status = CREATED
+numevents = 2981404
+kfactor = 1.
+localevents = 2981404
+groups = Data at7TeV PL1V9800 SD JetMETTau CMSSW362
+crosssection = -0.007210941
+datasetpath = /MinimumBias/Commissioning10-SD_JetMETTau-Jun14thSkim_v1/RECO
+localdbspath = /MinimumBias/nmohr-SD_JetMETTau_June14th_JSON_SUSYAC_V9800_DATAV2-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[PD_Mu_PromptV4_JSON]
+status = CREATED
+numevents = 1341020
+kfactor = 1.
+localevents = 1341020
+groups = Data at7TeV PL1V9800 SD Mu CMSSW362
+crosssection = -0.022494951
+datasetpath = /Mu/Run2010A-PromptReco-v4/RECO
+localdbspath = /Mu/nmohr-PD_Mu_PromptV4_JSON_SUSYAC_V9800_DATAV3-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[PD_JetMETTau_PromptV4_JSON]
+status = CREATED
+numevents = 1172449
+kfactor = 1.
+localevents = 1172449
+groups = Data at7TeV PL1V9800 SD JetMETTau CMSSW362
+crosssection = -0.022115167
+datasetpath = /JetMETTau/Run2010A-PromptReco-v4/RECO
+localdbspath = /JetMETTau/nmohr-PD_JetMETTau_PromptV4_JSON_SUSYAC_V9800_DATAV3-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[PD_EG_PromptV4_JSON]
+status = CREATED
+numevents = 449065
+kfactor = 1.
+localevents = 449065
+groups = Data at7TeV PL1V9800 SD EG
+crosssection = -0.00334
+datasetpath = /EG/Run2010A-PromptReco-v4/RECO
+localdbspath =
+
+[PD_Mu_June9th_JSON]
+status = CREATED
+numevents = 449065
+kfactor = 1.
+localevents = 449065
+groups = Data at7TeV PL1V9800 SD Mu
+crosssection = -0.00334
+datasetpath = /Mu/Run2010A-Jun9thReReco_v1/RECO
+localdbspath = /Mu/nmohr-PD_Mu_June9th_JSON_SUSYAC_V9800_DATA-f42b2e92d7a031edd75d57dc6085a510/USER 
+
+[SD_Mu_June9th_JSON]
+status = CREATED
+numevents = 1176343
+kfactor = 1.
+localevents = 1176343
+groups = Data at7TeV PL1V9800 SD Mu
+crosssection = -0.00799
+datasetpath = /MinimumBias/Commissioning10-SD_Mu-Jun9thSkim_v1/RECO
+localdbspath = /MinimumBias/nmohr-SD_Mu_June9th_JSON_SUSYAC_V9800_DATA-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[PD_JetMETTau_June9th_JSON]
+status = CREATED
+numevents = 562748
+kfactor = 1.
+localevents = 562748
+groups = Data at7TeV PL1V9800 SD JetMETTau
+crosssection = -0.00334
+datasetpath = /JetMETTau/Run2010A-Jun9thReReco_v1/RECO
+localdbspath = /JetMETTau/nmohr-PD_JetMETTau_June9th_JSON_SUSYAC_V9800_DATA-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[SD_JetMETTau_June9th_JSON]
+status = CREATED
+numevents = 1278566
+kfactor = 1.
+localevents = 1278566
+groups = Data at7TeV PL1V9800 SD JetMETTau
+crosssection = -0.00799
+datasetpath = /MinimumBias/Commissioning10-SD_JetMETTau-Jun9thSkim_v1/RECO
+localdbspath = /MinimumBias/nmohr-SD_JetMETTau_June9th_JSON_SUSYAC_V9800_DATA-f42b2e92d7a031edd75d57dc6085a510/USER
+
+[PD_EG_June9th_JSON]
+status = CREATED
+numevents = 449065
+kfactor = 1.
+localevents = 449065
+groups = Data at7TeV PL1V9800 SD EG
+crosssection = -0.00334
+datasetpath = /EG/Run2010A-Jun9thReReco_v1/RECO
+localdbspath =
+
+[SD_EG_June9th_JSON]
+status = CREATED
+numevents = 1278566
+kfactor = 1.
+localevents = 1278566
+groups = Data at7TeV PL1V9800 SD EG
+crosssection = -0.00909
+datasetpath = /MinimumBias/Commissioning10-SD_EG-Jun9thSkim_v1/RECO
+localdbspath =
+
+[JPsiToMuMu_7TeV_Spring10]
+status = CREATED
+numevents = 7449089
+kfactor = 1.
+localevents = 4590671
+groups = MC 360 at7TeV PL1V8702 JPsi Pythia
+# lt DBS configfile (tbc)
+crosssection = 12550000.0
+datasetpath = /JPsiToMuMu_2MuPEtaFilter_7TeV-pythia6-evtgen/Spring10-START3X_V26-v1/GEN-SIM-RECO
+localdbspath = /JPsiToMuMu_2MuPEtaFilter_7TeV-pythia6-evtgen/edelhoff-JPsiToMuMu_7TeV_Spring10_SUSYAC_V8702v4-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[ppMuX_Spring10]
+status = CREATED
+numevents = 8938911
+kfactor = 1.
+localevents = 8938911
+groups = MC 360 at7TeV PL1V8702 Aachen QCD Pythia
+crosssection = 6058911
+datasetpath = /ppMuX/Spring10-START3X_V26_S09-v1/AODSIM
+localdbspath = /ppMuX/nmohr-ppMuX_Spring10_SUSYAC_V8704_MCV2-567ede6688840917007c3abc0d8ed26b/USER
+
+[PD_Mu_27thMay_JSON]
+status = CREATED
+numevents = 449065
+kfactor = 1.
+localevents = 449065
+groups = Data 361 at7TeV PL1V8704 SD Mu
+crosssection = -0.00334
+datasetpath = /Mu/Run2010A-May27thReReco_v2/RECO
+localdbspath = /Mu/nmohr-PD_Mu_27thMay_JSON_SUSYAC_V8704_DATAV3-e7950702766693ce28abfaa50a21887b/USER 
+
+[SD_Mu_27thMay_JSON]
+status = CREATED
+numevents = 1278566
+kfactor = 1.
+localevents = 1278566
+groups = Data 361 at7TeV PL1V8704 SD Mu
+crosssection = -0.00909
+datasetpath = /MinimumBias/Commissioning10-May27thSkim_SD_Mu-v2/RECO
+localdbspath = /MinimumBias/nmohr-SD_Mu_27thMay_JSON_SUSYAC_V8704_DATAV3-e7950702766693ce28abfaa50a21887b/USER 
+
+[PD_EG_27thMay_JSON]
+status = CREATED
+numevents = 262034
+kfactor = 1.
+localevents = 262034
+groups = Data 361 at7TeV PL1V8704 SD EG
+crosssection = -1
+datasetpath = /EG/Run2010A-May27thReReco_v1/RECO
+localdbspath = /EG/nmohr-PD_EG_27thMay_JSON_SUSYAC_V8704_DATAV4-e7950702766693ce28abfaa50a21887b/USER 
+
+[SD_EG_27thMay_JSON]
+status = CREATED
+numevents = 770771
+kfactor = 1.
+localevents = 770771
+groups = Data 361 at7TeV PL1V8704 SD EG
+crosssection = -1
+datasetpath = /MinimumBias/Commissioning10-May27thSkim_SD_EG-v2/RECO
+localdbspath = /MinimumBias/nmohr-SD_EG_27thMay_JSON_SUSYAC_V8704_DATAV4-e7950702766693ce28abfaa50a21887b/USER 
+
+[PD_JetMETTau_27thMay_JSON]
+status = CREATED
+numevents = 562748
+kfactor = 1.
+localevents = 562748
+groups = Data 361 at7TeV PL1V8704 SD JetMETTau
+crosssection = -1
+datasetpath = /JetMETTau/Run2010A-May27thReReco_v1/RECO
+localdbspath = /JetMETTau/nmohr-PD_JetMETTau_27thMay_JSON_SUSYAC_V8704_DATAV4-e7950702766693ce28abfaa50a21887b/USER 
+
+[SD_JetMETTau_27thMay_JSON]
+status = CREATED
+numevents = 2961633
+kfactor = 1.
+localevents = 2961633 
+groups = Data 361 at7TeV PL1V8704 SD JetMETTau
+crosssection = -1
+datasetpath = /MinimumBias/Commissioning10-May27thSkim_SD_JetMETTau-v2/RECO
+localdbspath = /MinimumBias/nmohr-SD_JetMETTau_27thMay_JSON_SUSYAC_V8704_DATAV4-e7950702766693ce28abfaa50a21887b/USER
+
+[PD_Mu_PromptV2_JSON]
+status = CREATED
+numevents = 516569
+kfactor = 1.
+localevents = 516569
+groups = Data 360 at7TeV PL1V8702 SD Mu
+crosssection = -1
+datasetpath = /Mu/Run2010A-PromptReco-v2/RECO
+localdbspath = /Mu/nmohr-PD_Mu_PromptV2_JSON_SUSYAC_V8704_DATA-e7950702766693ce28abfaa50a21887b/USER
+
+[SD_JetMETTau_135821to136086_BackgroundSkim]
+status = CREATED
+numevents = 1461546
+kfactor = 1.
+localevents = -1
+groups = Data 360 at7TeV PL1V8702 SD JetMETTau BackgroundSkim
+crosssection = -1
+datasetpath = /JetMETTau/Run2010A-PromptReco-v1/RECO
+localdbspath = 
+
+[SD_EG_Prompt_JSON]
+status = CREATED
+numevents = 273397
+kfactor = 1.
+localevents = 273397
+groups = Data 360 at7TeV PL1V8702 SD EG
+crosssection = -1
+datasetpath = /MinimumBias/Commissioning10-SD_EG-v9/RECO
+localdbspath = /MinimumBias/nmohr-SD_EG_Prompt_JSON_SUSYAC_V8702_DATAV1-41ddd7c1b4169eed627776906376acc2/USER 
+
+[SD_JetMETTau_Prompt_JSON]
+status = CREATED
+numevents = 702670
+kfactor = 1.
+localevents = 702670
+groups = Data 360 at7TeV PL1V8702 SD JetMETTau
+crosssection = -1
+datasetpath = /MinimumBias/Commissioning10-SD_JetMETTau-v9/RECO 
+localdbspath = /MinimumBias/nmohr-SD_JetMETTau_Prompt_JSON_SUSYAC_V8702_DATAV1-41ddd7c1b4169eed627776906376acc2/USER
+
+[SD_Mu_Prompt_JSON]
+status = CREATED
+numevents = 390177
+kfactor = 1.
+localevents = 390177
+groups = Data 360 at7TeV PL1V8702 SD Mu
+crosssection = -1
+datasetpath = /MinimumBias/Commissioning10-SD_Mu-v9/RECO
+localdbspath = /MinimumBias/nmohr-SD_Mu_Prompt_JSON_SUSYAC_V8702_DATAV1-41ddd7c1b4169eed627776906376acc2/USER 
+
+[MinBias_7TeV_Commisioning10_Apr20_JSON]
+status = CREATED
+numevents = 12207220
+kfactor = 1.
+localevents = 12207220
+groups = Data 360 at7TeV PL1V8702 MinBias
+crosssection = -1
+datasetpath = /MinimumBias/Commissioning10-Apr20Skim_GOODCOLL-v1/RAW-RECO
+localdbspath = /MinimumBias/nmohr-MinBias_7TeV_Commisioning10_Apr20_JSON_SUSYAC_V8702_DATA-41ddd7c1b4169eed627776906376acc2/USER 
+
+[MinBias_7TeV_Spring10_Apr20]
+status = CREATED
+numevents = 8718457
+kfactor = 1.
+localevents = 8718457
+groups = MC 360 at7TeV PL1V8702 MinBias Pythia
+crosssection = 71260000000.0
+datasetpath = /MinBias/Spring10-START3X_V26A_357ReReco-v3/GEN-SIM-RECO
+localdbspath = /MinBias/nmohr-MinBias_7TeV_Spring10_Apr20_SUSYAC_V8702_V1-d502e47395e96cedbc76425ccc7c61c1/USER 
+
+
+[TTbarJets_madgraph_Spring10]
+status = CREATED
+numevents = 1443404
+kfactor = 1.67
+localevents = 1443404
+groups = MC 360 at7TeV PL1V8702 Aachen TTJets Madgraph
+crosssection = 90
+datasetpath = /TTbarJets-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /TTbarJets-madgraph/nmohr-TTbarJets_madgraph_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[ZJets_madgraph_Spring10]
+status = CREATED
+numevents = 1084921
+kfactor = 1.19
+localevents = 1084921
+groups = MC 360 at7TeV PL1V8702 Aachen ZJets Madgraph
+crosssection = 2350
+datasetpath = /ZJets-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /ZJets-madgraph/nmohr-ZJets_madgraph_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[ZJets_madgraph_Pileup_Spring10]
+status = CREATED
+numevents = 1084921
+kfactor = 1.19
+localevents = 1084921
+groups = MC 360 at7TeV PL1V8702 Aachen ZJets Madgraph Pileup
+crosssection = 2350
+datasetpath = /ZJets-madgraph/Spring10-START3X_V26_S09_E7TeV_L69E30_BX156-v1/GEN-SIM-RECO
+localdbspath = 
+
+[WJets_madgraph_Spring10]
+status = CREATED
+numevents = 9768895
+kfactor = 1.158
+localevents = 9768895
+groups = MC 360 at7TeV PL1V8702 Aachen WJets Madgraph
+crosssection = 24170
+datasetpath = /WJets-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /WJets-madgraph/nmohr-WJets_madgraph_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER 
+
+[WJets_madgraph_Pileup_Spring10]
+status = CREATED
+numevents = 10068895
+kfactor = 1.158
+localevents = 10068895
+groups = MC 360 at7TeV PL1V8702 Aachen WJets Madgraph Pileup
+crosssection = 24170
+datasetpath = /WJets-madgraph/Spring10-START3X_V26_S09_E7TeV_L69E30_BX156-v1/GEN-SIM-RECO
+localdbspath = 
+
+[QCD_Pt30_Spring10]
+status = CREATED
+numevents = 5269664
+kfactor = 1.
+localevents = 5069664
+groups = MC 360 at7TeV PL1V8702 Aachen QCD Pythia
+crosssection = 53110000.0
+datasetpath = /QCD_Pt30/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath =   /QCD_Pt30/edelhoff-QCD_Pt30_Spring10_SUSYAC_V8702v1-d502e47395e96cedbc76425ccc7c61c1/USER
+
+#[QCD_Pt30_Spring10_BackgroundSkim]
+#status = DELETED
+#numevents = 5269664
+#kfactor = 1.
+#localevents = 5269664
+#groups = MC 360 at7TeV PL1V8702 Aachen QCD Pythia BackgroundSkim
+#crosssection = 53110000.0
+#datasetpath = /QCD_Pt30/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+#localdbspath = /QCD_Pt30/sprenger-QCD_Pt30_Spring10_BackgroundSkim_SUSYAC_V8702v10-f09d771ac7dc8c4544140e53c4940389/USER
+
+[QCD_Pt100to250_madgraph_Spring10]
+status = CREATED
+numevents = 10842371
+kfactor = 1.
+localevents = 10842371
+groups = MC 360 at7TeV PL1V8702 Aachen QCD Madgraph
+crosssection = 7000000.0
+datasetpath = /QCD_Pt100to250-madgraph/Spring10-START3X_V26_S09-v2/GEN-SIM-RECO
+localdbspath = /QCD_Pt100to250-madgraph/edelhoff-QCD_Pt100to250_madgraph_Spring10_SUSYAC_V8702v4-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[QCD_Pt250to500_madgraph_Spring10]
+status = CREATED
+numevents = 4873036
+kfactor = 1.
+localevents = 4873036
+groups = MC 360 at7TeV PL1V8702 Aachen QCD Madgraph
+crosssection = 171000.0
+datasetpath = /QCD_Pt250to500-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt250to500-madgraph/sprenger-QCD_Pt250to500_madgraph_Spring10_SUSYAC_V8702v2-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[QCD_Pt500to1000_madgraph_Spring10]
+status = CREATED
+numevents = 4034762
+kfactor = 1.
+localevents = 4034762
+groups = MC 360 at7TeV PL1V8702 Aachen QCD Madgraph
+crosssection = 5200.0
+datasetpath = /QCD_Pt500to1000-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt500to1000-madgraph/sprenger-QCD_Pt500to1000_madgraph_Spring10_SUSYAC_V8702v2-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[QCD_Pt1000toInf_madgraph_Spring10]
+status = CREATED
+numevents = 1541261
+kfactor = 1.
+localevents = 1541261
+groups = MC 360 at7TeV PL1V8702 Aachen QCD Madgraph
+crosssection = 83.0
+datasetpath = /QCD_Pt1000toInf-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /QCD_Pt1000toInf-madgraph/sprenger-QCD_Pt1000toInf_madgraph_Spring10_SUSYAC_V8702v3-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[AstarJets_madgraph_Spring10]
+status = CREATED
+numevents = 189069
+kfactor = 1
+localevents = 189069
+groups = MC 360 at7TeV PL1V8702 Aachen ZJets Madgraph
+crosssection = 310
+datasetpath = /AstarJets-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /AstarJets-madgraph/nmohr-AstarJets_madgraph_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[VVJets_madgraph_Spring10]
+status = CREATED
+numevents = 102853
+kfactor = 1
+localevents = 102853
+groups = MC 360 at7TeV PL1V8702 Aachen Diboson Madgraph
+crosssection = 4.8
+datasetpath = /VVJets-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /VVJets-madgraph/nmohr-VVJets_madgraph_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[Dileptons_samesign_madgraph_Spring10]
+status = CREATED
+numevents = 102853
+kfactor = 1
+localevents = 0
+groups = MC 360 at7TeV PL1V8702 Aachen Dilepton Madgraph
+crosssection = 0
+datasetpath = /Dileptons_samesign-madgraph/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[LM6_Spring10]
+status = CREATED
+numevents = 275950
+kfactor = 1.3
+localevents = 275950
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM6 Pythia
+crosssection = 0.3104
+datasetpath = /LM6/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM6/nmohr-LM6_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM2_Spring10]
+status = CREATED
+numevents = 190240
+kfactor = 1.33
+localevents = 190240
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM2 Pythia
+crosssection = 0.6027
+datasetpath = /LM2/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM2/nmohr-LM2_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM11_Spring10]
+status = CREATED
+numevents = 276780
+kfactor = 1.35
+localevents = 276780
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM11 Pythia
+crosssection = 0.8236
+datasetpath = /LM11/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM11/nmohr-LM11_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM1_Spring10]
+status = CREATED
+numevents = 207273
+kfactor = 1.34
+localevents = 207273
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM1
+crosssection = 4.888
+datasetpath = /LM1/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM1/nmohr-LM1_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM3_Spring10]
+status = CREATED
+numevents = 229750
+kfactor = 1.4
+localevents = 229750
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM3 Pythia
+crosssection = 3.438
+datasetpath = /LM3/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM3/nmohr-LM3_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM4_Spring10]
+status = CREATED
+numevents = 235954
+kfactor = 1.35
+localevents = 235954
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM4 Pythia
+crosssection = 1.879
+datasetpath = /LM4/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM4/nmohr-LM4_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM7_Spring10]
+status = CREATED
+numevents = 275169
+kfactor = 1.11
+localevents = 275169
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM7 Pythia
+crosssection = 1.209
+datasetpath = /LM7/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM7/nmohr-LM7_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM0_Spring10]
+status = CREATED
+numevents = 207533
+kfactor = 1.41
+localevents = 207533
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM0 Pythia
+crosssection = 38.93
+datasetpath = /LM0/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM0/nmohr-LM0_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM9p_Spring10]
+status = CREATED
+numevents = 214424
+kfactor = 1.41
+localevents = 214424
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM9p Pythia
+crosssection = 1.653
+datasetpath = /LM9p/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM9p/nmohr-LM9p_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER 
+
+[LM9_Spring10]
+status = CREATED
+numevents = 220000
+kfactor = 1.48
+localevents = 220000
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM9 Pythia
+crosssection = 7.134
+datasetpath = /LM9/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM9/nmohr-LM9_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER 
+
+[LM10_Spring10]
+status = CREATED
+numevents = 183818
+kfactor = 1.22
+localevents = 183818
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM10 Pythia
+crosssection = 0.04778
+datasetpath = /LM10/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM10/nmohr-LM10_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM8_Spring10]
+status = CREATED
+numevents = 217435
+kfactor = 1.41
+localevents = 217435
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM8 Pythia
+crosssection = 0.73
+datasetpath = /LM8/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM8/nmohr-LM8_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM13_Spring10]
+status = CREATED
+numevents = 221800
+kfactor = 1.42
+localevents = 221800
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM13 Pythia
+crosssection = 6.899
+datasetpath = /LM13/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM13/nmohr-LM13_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM5_Spring10]
+status = CREATED
+numevents = 242840
+kfactor = 1.34
+localevents = 242840
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM5 Pythia
+crosssection = 0.473
+datasetpath = /LM5/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM5/nmohr-LM5_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER 
+
+[LM10_Spring10]
+status = CREATED
+numevents = 210514
+kfactor = 1.22
+localevents = 210514
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM10 Pythia
+crosssection = 0.04778
+datasetpath = /LM10/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = 
+
+[LM12_Spring10]
+status = CREATED
+numevents = 208620
+kfactor = 1.34
+localevents = 208620
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM12 Pythia
+crosssection = 4.414
+datasetpath = /LM12/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM12/nmohr-LM12_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER
+
+[LM9t175_Spring10]
+status = CREATED
+numevents = 219834
+kfactor = 1.55
+localevents = 219834
+groups = MC 360 at7TeV PL1V8702 Aachen SUSY LM9t175 Pythia
+crosssection = 4.241
+datasetpath = /LM9t175/Spring10-START3X_V26_S09-v1/GEN-SIM-RECO
+localdbspath = /LM9t175/nmohr-LM9t175_Spring10_SUSYAC_V8702-d502e47395e96cedbc76425ccc7c61c1/USER

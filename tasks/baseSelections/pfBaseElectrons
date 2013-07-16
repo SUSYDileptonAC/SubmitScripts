@@ -1,0 +1,153 @@
+[
+# PF Electrons
+#==============
+    {	 "name": "ESeededElectrons",
+         "cut": "ecalDrivenSeed",
+    },
+    {   "name": "noIDIsoElectrons",
+        "skip": True,
+        "cut": "(chargedHadronIso + photonIso + neutralHadronIso) / pt <= 0.15"
+    },
+    {   "name": "TagPtElectrons",
+        "skip": True,
+        "cut": "pt > 20."
+    },
+    {    "name": "caloIdLElectrons",
+         "cut": """
+         isEB
+         & (sigmaIetaIeta < 0.014 & hadronicOverEm < 0.15)
+         | isEE
+         & (sigmaIetaIeta < 0.035 & hadronicOverEm < 0.10)
+         """,
+    },
+    {    "name": "caloIdTElectrons",
+         "cut": """
+         isEB
+         & (sigmaIetaIeta < 0.011 & hadronicOverEm < 0.10)
+         | isEE
+         & (sigmaIetaIeta < 0.031 & hadronicOverEm < 0.075)
+         """,
+    },
+    {    "name": "TrkIdVLElectrons",
+         "cut": """
+         isEB
+         & (abs(deltaPhiSuperClusterTrackAtVtx) < 0.15 & abs(deltaEtaSuperClusterTrackAtVtx) < 0.01)
+         | isEE
+         & (abs(deltaPhiSuperClusterTrackAtVtx) < 0.10 & abs(deltaEtaSuperClusterTrackAtVtx) < 0.01)
+         """,
+    },
+    {   "name": "nonConvertedElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 0,
+    },
+#    {	"name": "qualityElectrons",
+#        "cut": 'pfCandidateRef.mva_e_pi > 0.4' 
+#    },
+    #{	"name": "ChargeAgreeElectrons",
+    #    "cut": "isGsfCtfScPixChargeConsistent == 1"
+    #},
+    {	"name": "d0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0Max": 0.04,
+        "dZMin": -1.,
+        "dZMax": 1.,
+        "beamSpotSource": "(vertices)" 
+    },
+    {	"name": "d0TriggerElectrons",
+        "skip": True,
+        "cut": "pt >= 20."
+    },
+    {	"name": "IsoElectrons",
+        "cut": "(chargedHadronIso + photonIso + neutralHadronIso) / pt <= 0.15"
+    },
+    {	"name": "TriggerElectrons",
+        "skip": True,
+        "cut": "pt >= 20."
+    },
+    {   "name": "LnTElectrons",
+        "src": "(electrons.d0Electrons)",
+        "skip": True,
+        "cut": "(chargedHadronIso + photonIso + neutralHadronIso) / pt > 0.15"
+    },	
+    {   "name": "matchedElectrons",
+        "cut": "genParticlesSize != 0"
+    },
+    {   "name": "chCorrectElectrons",
+        "cut": "genLepton.charge == pfCandidateRef.charge",
+        "skip": True
+    },
+    {   "name": "chWrongElectrons",
+        "cut": "genLepton.charge != pfCandidateRef.charge",
+    },
+
+# PAT Electrons
+#===============
+    	{	"src": "cleanPatElectrons",
+		"name": "basicElectronsPAT",
+        	"cut": "abs( eta ) <= 2.5 & pt >= 10" 
+    	},
+    	#{	"name": "ESeededElectronsPAT",
+		#"cut": "ecalDrivenSeed",
+	#},
+       # {    "name": "caloIdLElectronsPAT",
+       #      "cut": """
+       #      abs(eta) < 1.479
+       #      & (sigmaIetaIeta < 0.014 & hadronicOverEm < 0.15)
+       #      | abs(eta) > 1.479
+       #      & (sigmaIetaIeta < 0.035 & hadronicOverEm < 0.10)
+       #      """,
+       # },
+        {    "name": "caloIdTElectronsPAT",
+             "cut": """
+             isEB 
+             & (sigmaIetaIeta <= 0.01 & hadronicOverEm <= 0.1)
+             | isEE 
+             & (sigmaIetaIeta <= 0.03 & hadronicOverEm <= 0.075)
+             """,
+        },
+    {    "name": "TrkIdVLElectronsPAT",
+         "cut": """
+         isEB
+         & (abs(deltaPhiSuperClusterTrackAtVtx) <= 0.15 & abs(deltaEtaSuperClusterTrackAtVtx) <= 0.007)
+         | isEE 
+         & (abs(deltaPhiSuperClusterTrackAtVtx) <= 0.1 & abs(deltaEtaSuperClusterTrackAtVtx) <= 0.009)
+         """,
+    },
+    {   "name": "nonConvertedElectronsPAT",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 1,
+    },
+	{	"name": "noConvsPAT",
+        "cut": '!(abs(convDcot) <= 0.02 & abs(convDist) <= 0.02)', 
+	},
+    {	"name": "d0ElectronsPAT",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0Max": 0.04,
+        "dZMin": -1.,
+        "dZMax": 1.,
+        "beamSpotSource": "(vertices)" 
+    },
+	{	"name": "IsoElectronsPAT",
+		"cut": """
+                (isEE & (dr03HcalTowerSumEt + dr03EcalRecHitSumEt + dr03TkSumPt) / pt <= 0.17) || (isEB & (dr03HcalTowerSumEt + max( 0., dr03EcalRecHitSumEt-1. ) + dr03TkSumPt) / pt <= 0.17) 
+                """
+	},
+    	{	"name": "IsoElectrons20PAT",
+                "skip": True,
+        	"cut": "abs( eta ) <= 2.5 & pt >= 20."
+    	},
+        {       "name": "matchedElectronsPAT",
+                "cut": "genParticlesSize != 0"
+        },
+        {       "name": "chCorrectElectronsPAT",
+                "cut": "genLepton.charge == charge",
+                "skip": True
+        },
+        {       "name": "chWrongElectronsPAT",
+                "cut": "genLepton.charge != charge",
+        },
+]

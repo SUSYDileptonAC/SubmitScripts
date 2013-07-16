@@ -1,0 +1,8 @@
+[
+    {  "src": "selectedPatJetsPF",
+        "name": "baseJets",
+        "cut": "abs( eta ) <= 3. & pt >= 30.",
+    },
+    {   "name": "qualityJets",
+        "selector": "patPFJetIDSelector",
+    }                                                                                ]

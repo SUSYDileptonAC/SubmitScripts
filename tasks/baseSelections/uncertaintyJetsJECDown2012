@@ -1,0 +1,9 @@
+[
+# PAT Jets
+#===========
+
+    {  "src": "shiftedPatJetsPFenDownForRawMEt",
+        "name": "qualityJetsJESDown",
+	"cut": "abs( eta ) <= 3. & pt >= 40.",
+    },
+ ]
