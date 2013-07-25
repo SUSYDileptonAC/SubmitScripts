@@ -16,6 +16,7 @@ syntax: glob
 *.tex
 *.d
 *.so
+*~
 Crosschecks/tab/*
 Crosschecks/cfg/*
 Crosschecks/shelves/*

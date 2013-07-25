@@ -31,7 +31,7 @@
             """,
         },
     {   "selector": "muonCleanElectrons",
-	#"skip":True,
+	"skip":True,
         "srcNames": "src leptSrc",
         "name": "MuonCleanElectrons",
         "leptSrc": "(muons.electronVetoMuons)"
@@ -56,7 +56,13 @@
         "skip": True,
         "cut": "pt >= 20."
     },
-
+	{	"name": "LooseIsoElectrons",
+        	 "srcNames": "src",
+		"src":"(electrons.d0Electrons)",
+               	"selector": "PATElectronEffectiveAreaSelector",
+                "isoMin": -1.,
+	        "isoMax": 0.5,
+       	},
 	{	"name": "IsoElectrons",
         	 "srcNames": "src",
 		"src":"(electrons.d0Electrons)",

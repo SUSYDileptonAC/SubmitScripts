@@ -20,7 +20,7 @@
 #    },
 #],
 
-#"METFilter": input("baseSelections/baseMETFilter"),
+"METFilter": input("baseSelections/baseMETFilter"),
 
 
 "muons": input("baseSelections/pogMuons2012"),

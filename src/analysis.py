@@ -527,11 +527,9 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 %(globalTag)s
 
 
-import EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi 
-process.hcallasereventfilter2012 = EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi.defaultSelector.clone()
 
-#import EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi 
-#process.hcallasereventfilter2012 = EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi.hcallasereventfilter2012.clone()
+import EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi 
+process.hcallasereventfilter2012 = EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi.hcallasereventfilter2012.clone()
 
 process.newHCALLaserSequence = cms.Sequence(process.hcallasereventfilter2012)
 process.newHCALLaserPath = cms.Path(process.newHCALLaserSequence)
