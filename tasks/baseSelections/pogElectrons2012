@@ -31,7 +31,6 @@
             """,
         },
     {   "selector": "muonCleanElectrons",
-	"skip":True,
         "srcNames": "src leptSrc",
         "name": "MuonCleanElectrons",
         "leptSrc": "(muons.electronVetoMuons)"
