@@ -139,8 +139,9 @@ class MainConfig:
             for command in ["globalTag","globalTagMc"]:
                if config.has_option(CSA, command):
                    self.getMap()[ command ] = "'%s'"%config.get(CSA, command)                                       
-
+	    print "HIER!", self.master_list	
             for masterListPath in self.master_list:
+		    
                 if not os.path.exists(masterListPath):
                     raise StandardError, "Could not find master list: '%s'" % self.master_list
             self.getMap()[ "masterConfig" ] = BetterConfigParser()
