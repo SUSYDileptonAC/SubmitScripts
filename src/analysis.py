@@ -106,6 +106,7 @@ def poolSourceGrid(job, n):
 	txt += ')\n'
 	txt += ')\n\n'
 	txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
+	#txt += 'eventsToProcess = cms.untracked.VEventRange(195399:3175301-195399:3175301)\n\n'
 	return txt
 
 def poolSourceLocal(job, n):
@@ -244,7 +245,6 @@ def makePATConfig(flag, job, n, task, MC, Grid, Weighted, HLT, MVA=False):
 		"taskName":task,
 		"job":job
 		}
-
 	if Grid:
 		cfgname = settings.analysispath + "/CMSSWCFG/%(flag)s.%(taskName)s.%(job)s.grid.py" % repMap
 	if not Grid:
@@ -447,12 +447,14 @@ def getPATPset(flag, job, n, tasks, HLT, MVA=False):
 	repMap["MessageLogger"] = MessageLogger("%(flag)s_%(taskName)s_%(job)s" % repMap)
 	repMap["fileService"] = TFileService("%(flag)s.%(taskName)s.%(job)s.root" % repMap)
 	repMap["OutputModule"] = getOutputModule("%(flag)s.%(taskName)s.%(job)s.EDM.root" % repMap, tasks[0])
+	#print settings.getMap()["masterConfig"].get(job, "globalTag")
+	#print "test"
 	if "globalTag" in settings.getMap(): repMap["globalTag"] = """
 process.load("Configuration.Geometry.GeometryIdeal_cff")
 #process.load("Configuration.StandardSequences.Geometry_cff")
 process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #from Configuration.PyReleaseValidation.autoCond import autoCond
-process.GlobalTag.globaltag = cms.string("GR_P_V40_AN1::All")
+process.GlobalTag.globaltag = cms.string(%(globalTag)s)
 process.load("Configuration.StandardSequences.MagneticField_cff")
 	""" % settings.getMap()
 	#inputTags
@@ -527,13 +529,6 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 %(globalTag)s
 
 
-
-import EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi 
-process.hcallasereventfilter2012 = EventFilter.HcalRawToDigi.hcallasereventfilter2012_cfi.hcallasereventfilter2012.clone()
-
-process.newHCALLaserSequence = cms.Sequence(process.hcallasereventfilter2012)
-process.newHCALLaserPath = cms.Path(process.newHCALLaserSequence)
-
 ########## Additional Producers ########################
 %(additionalProducers)s
 
@@ -555,7 +550,7 @@ from SuSyAachen.DiLeptonHistograms.DiLeptonHistograms_cfi import DiLeptonAnalysi
 %(OutputModule)s
 ########## Paths ##########################
 process.producerPath = cms.Path(%(producerPath)s)
-process.schedule = cms.Schedule(process.newHCALLaserPath, process.producerPath, %(taskPaths)s)
+process.schedule = cms.Schedule( process.producerPath, %(taskPaths)s)
 
 ########## Counting Histograms (must be at the very end) ##############
 %(counters)s
@@ -579,7 +574,6 @@ def __createAnalyzersAndPaths(task, products, job):
 	settings = MainConfig(job=job)
 	taskPaths = []
 	analyzers = ""
-
 	diLeptonAnalyzers = settings.getAnalyzers("DiLeptonAnalyzer")
 	genericAnalyzers = settings.getAnalyzers("GenericAnalyzer")
 	rawTask = settings.getRawTask(task, {"isMC": settings.monteCarloAvailable})
