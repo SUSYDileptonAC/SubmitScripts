@@ -1,5 +1,5 @@
 {
-"activeFilters": ["basicVertices", "HLTMuEGIncl"],
+"activeFilters": ["basicVertices","HBHENoiseFilter", "HLTMuEGIncl"],
 "order":["hlt","vertices","muons","electrons","jets","met"],
 
 
@@ -19,7 +19,6 @@
 #    },
 #],
 "METFilter": input("baseSelections/baseMETFilter2013"),
-"InverseMETFilter": input("baseSelections/baseTrackingFilter2013"),
 
 "muons": input("baseSelections/pogMuons2012"),
 "electrons" : input("baseSelections/pogElectrons2012"),

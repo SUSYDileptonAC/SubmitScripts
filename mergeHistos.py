@@ -125,7 +125,8 @@ def getUnmergedHistos(filterTask=None, filterFlag=None, fileList=None):
 			 2008007: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
 			 2008008: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
 			 2009000: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2009001: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",			 			 			 			 				 		 			 
+			 2009001: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
+             2009002: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",				 		 			 
                          }
     versionReStrings[2007008] = versionReStrings[2007007]
     fileNameRE = re.compile(versionReStrings[getLatestCrabVersion( sorted(versionReStrings.keys()))])
@@ -191,9 +192,9 @@ def removeDone( sources, destPathName, verbose=True):
 def findLastRetry(path):
     from glob import glob
     paths = glob(path.replace(".root","_*.root"))
-    if getLatestCrabVersion([0,2007002,2007004,2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001]) == 2007002:
+    if getLatestCrabVersion([0,2007002,2007004,2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001,2009002]) == 2007002:
         expr = re.compile(path.replace(".root","_([0-9]*).root"))
-    elif getLatestCrabVersion([0,2007002,2007004,2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001]) > 2007002:
+    elif getLatestCrabVersion([0,2007002,2007004,2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001,2009002]) > 2007002:
         expr = re.compile(path.replace(".root","_([0-9]*)_(.*).root"))
     return sorted(paths, key=lambda x: int(expr.search(x).groups()[0]))[-1]
         
@@ -213,7 +214,7 @@ def addHistos(unmergedList=None, dryRun=False, verbose=True, sampleFilter = None
                     continue
                 rawSources = [ os.path.join(settings.localhistopath, "%s.%s.%s_%s.root" % (flag, task, sample, i)) for i in unmergedList[flag][task][sample] ]
                 sources = []
-                if getLatestCrabVersion([0, 2007002, 2007004, 2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001]) >= 2007002:
+                if getLatestCrabVersion([0, 2007002, 2007004, 2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001,2009002]) >= 2007002:
                     for source in rawSources:
                         sources.append(findLastRetry(source))
                 else:
