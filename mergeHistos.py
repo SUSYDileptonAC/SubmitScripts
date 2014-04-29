@@ -69,18 +69,6 @@ def readableIntList(numbers, minRow=2):
             result.append("%s" % single)
     return ", ".join(result)
 
-def getLatestCrabVersion(versionList):
-    from crab import Crab
-    result = versionList[0]
-    crabVersion = 0
-    for i in range(0,3):
-        crabVersion += [int(j) for j in Crab.version().split(".")][i]*10**((2-i)*3)
-
-    for version in versionList:
-        if version == crabVersion: result = version
-        
-    #print "versionList: %s, crabVersion: %s ==> %s" % (versionList, crabVersion, result)
-    return result
     
 def histoListToString(list):
     result = []
@@ -111,26 +99,11 @@ def getUnmergedHistos(filterTask=None, filterFlag=None, fileList=None):
     fileList = filter(lambda x: not ".EDM" in x, fileList)
 
     result = {}
-    versionReStrings = { 0: "(.*)\.(.*)\.(.*)_([0-9]*).root",
-                         2007002: "(.*)\.(.*)\.(.*)_([0-9]*)_(?:[0-9]*).root",
-                         2007004: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-                         2007005: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-                         2007007: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",                         
-                         2008001: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2008002: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2008003: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2008004: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2008005: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",	
-			 2008006: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2008007: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2008008: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2009000: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-			 2009001: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-             2009002: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",
-	     2010002: "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root",				 		 			 
+			 		 			 
                          }
-    versionReStrings[2007008] = versionReStrings[2007007]
-    fileNameRE = re.compile(versionReStrings[getLatestCrabVersion( sorted(versionReStrings.keys()))])
+    #versionReStrings[2007008] = versionReStrings[2007007]
+    stringTemplate = "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root"
+    fileNameRE = re.compile(stringTemplate)
     for fileName in fileList:
         groups = fileNameRE.search(fileName)
         if not groups == None:
@@ -193,10 +166,7 @@ def removeDone( sources, destPathName, verbose=True):
 def findLastRetry(path):
     from glob import glob
     paths = glob(path.replace(".root","_*.root"))
-    if getLatestCrabVersion([0,2007002,2007004,2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001,2009002,2010002]) == 2007002:
-        expr = re.compile(path.replace(".root","_([0-9]*).root"))
-    elif getLatestCrabVersion([0,2007002,2007004,2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001,2009002,2010002]) > 2007002:
-        expr = re.compile(path.replace(".root","_([0-9]*)_(.*).root"))
+    expr = re.compile(path.replace(".root","_([0-9]*)_(.*).root"))
     return sorted(paths, key=lambda x: int(expr.search(x).groups()[0]))[-1]
         
 
@@ -215,11 +185,10 @@ def addHistos(unmergedList=None, dryRun=False, verbose=True, sampleFilter = None
                     continue
                 rawSources = [ os.path.join(settings.localhistopath, "%s.%s.%s_%s.root" % (flag, task, sample, i)) for i in unmergedList[flag][task][sample] ]
                 sources = []
-                if getLatestCrabVersion([0, 2007002, 2007004, 2007005, 2007007, 2007008, 2008001,2008002,2008003,2008004,2008005,2008006,2008007,2008008,2009000,2009001,2009002,2010002]) >= 2007002:
-                    for source in rawSources:
-                        sources.append(findLastRetry(source))
-                else:
-                    sources = rawSources
+
+                for source in rawSources:
+			sources.append(findLastRetry(source))
+
                 sources = filter(rootFileValid, sources)
                 destDir = os.path.join(settings.mergedhistopath, flag, task)
                 dest = os.path.join(destDir, "%s.%s.%s.root" % (flag, task, sample))
