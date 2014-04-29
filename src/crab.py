@@ -44,7 +44,7 @@ use_server = 1
 
 [CMSSW]
 datasetpath = %(datasetpath)s
-%(customDBSBlock)s
+#%(customDBSBlock)s
 pset = %(ParameterSet)s
 total_number_of_events = %(numEvents)s
 events_per_job = %(nEventsPerJob)s
