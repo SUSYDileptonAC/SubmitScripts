@@ -100,7 +100,7 @@ def getUnmergedHistos(filterTask=None, filterFlag=None, fileList=None):
 
     result = {}
 			 		 			 
-                         }
+                         
     #versionReStrings[2007008] = versionReStrings[2007007]
     stringTemplate = "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root"
     fileNameRE = re.compile(stringTemplate)
