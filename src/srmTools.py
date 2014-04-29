@@ -9,6 +9,7 @@ import os, subprocess
 def copyFile(source, destination, verbose=False):
     if (verbose):
         print 'srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination
+    print 'srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination
 
     subprocess.call(['srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination], shell=True)
     #time.sleep(1)
@@ -25,13 +26,13 @@ def removeFile(source, verbose=False):
 
 
 def getDir(source, verbose=False):
-    command = 'srmls -count=800 -recursion_depth=1000 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + source
+    command = 'srmls -count=950 -recursion_depth=1000 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + source
 
     if (verbose): print command
     output = __getCommandOutput2(command)
     if (verbose):
         print "Output:\n" + output
-    if (len(output.splitlines()) >= 800):
+    if (len(output.splitlines()) >= 950):
         print "Warning: list probably not complete!"
         #raise StandardError, "More than 999 entries found in directory. Aborting!"
 
