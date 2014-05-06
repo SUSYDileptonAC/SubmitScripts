@@ -102,10 +102,16 @@ def getActions(rawPath, verbous=False):
 def getTasks(rawDirs):
     from glob import glob
     tasks = {}
+    
     for rawDir in rawDirs:
         for dir in glob(rawDir):
             if os.path.exists(os.path.join(dir, "share", "crabDB")):
-                tasks[dir] = getActions(os.path.join(dir, "share", "crabDB"))
+                tasks[dir] = getActions(os.path.join(dir, "share", "crabDB"))    
+    if len(tasks) == 0:
+	for rawDir in rawDirs:
+		for dir in os.listdir(rawDir):
+			if os.path.exists(os.path.join(rawDir,dir, "share", "crabDB")):
+				tasks[os.path.join(rawDir,dir)] = getActions(os.path.join(rawDir,dir, "share", "crabDB"))
                 
     return tasks
 
@@ -187,7 +193,10 @@ def main(argv=None):
                     print suggestion
         else:
             for suggestion in suggestions:
-                print suggestion
+		if not opts.dryrun:
+			call(["%s" % suggestion], shell=True)
+	        else:   
+                	print suggestion
 
 if __name__ == '__main__':
     main()
