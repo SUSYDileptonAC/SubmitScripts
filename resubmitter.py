@@ -17,17 +17,20 @@ except:
     sys.exit(1)
 
 class job:
-    def __init__(self, db, jobId):
+    def __init__(self, db, jobId):    
         self.__dict__.update({"job_id":jobId})
         self.__dict__.update(self.__readTable(db, "bl_job", ["name", "closed", "submission_number", "dls_destination"],
                           "job_id=%i" % self.job_id))
-        self.__dict__.update(self.__readTable(db, "bl_runningjob", ["state", "application_return_code", "wrapper_return_code", "storage", "lfn"],
+        self.__dict__.update(self.__readTable(db, "bl_runningjob", ["state","status_scheduler", "application_return_code", "wrapper_return_code", "storage", "lfn"],
                          "job_id=%(job_id)i and submission =%(submission_number)i" % self.__dict__))
         #from pprint import pprint
         #pprint(self.__dict__)
 
     def __readTable(self, db, name, columns, condition="1=1"):
         result = {}
+	cursor = db.execute('select * from %s'%name)
+	names = list(map(lambda x: x[0], cursor.description))
+	#print names
         for row in db.execute("select %s from %s where %s" % (", ".join(columns), name, condition)):
             if not result == {}:
                 raise StandardError, "more than one row for job_id %s and condition:\n %s\n%s" % (self.job_id, condition, row)
@@ -37,12 +40,15 @@ class job:
 
     def getActions(self):
         #print self.job_id, self.state
-        result = {"get":False, "resubmit":-1, "forceResubmit":-1, "status":self.state == "SubSuccess"}
-
+        result = {"get":False, "resubmit":-1, "forceResubmit":-1, "status":self.state == "SubSuccess","kill":-1}
         result["status"] = not (self.state == "Terminated" or self.state == "Cleared")
         result["get"] = self.state == "Terminated"
+	#print self.status_scheduler
         result["remove"] = []
-        if (self.state == "Terminated" or self.state == "Cleared") and not (self.wrapper_return_code == 0 and self.application_return_code == 0):
+	if (self.status_scheduler == "Cancelled"):
+		result["kill"] = str(self.job_id)
+
+        if (self.state == "Terminated" or self.state == "Cleared" or self.status_scheduler == "Cancelled") and not (self.wrapper_return_code == 0 and self.application_return_code == 0):
           if self.wrapper_return_code == 50117:
             result["forceResubmit"] = str(self.job_id)
           else:
@@ -83,7 +89,7 @@ def getActions(rawPath, verbous=False):
         path = os.path.join(path, "share", "crabDB")
 
     jobs = readCrabDB(path)
-    result = {"get":False, "status":False, "resubmit":[], "forceResubmit":[], "remove":[]}
+    result = {"get":False, "status":False, "resubmit":[], "forceResubmit":[], "remove":[], "kill":[]}
     for job in jobs:
         jobAction = job.getActions()
         if verbous:
@@ -94,6 +100,8 @@ def getActions(rawPath, verbous=False):
           result["resubmit"].append(jobAction["resubmit"])
         if jobAction["forceResubmit"] > 0:
           result["forceResubmit"].append(jobAction["forceResubmit"])
+	if jobAction["kill"] > 0:
+	  result["kill"].append(jobAction["kill"]) 	
         if not jobAction["remove"] == []:
           result["remove"].extend(jobAction["remove"])
 
@@ -151,6 +159,8 @@ def main(argv=None):
                   system(suggestions.pop())
 
             tasks[task] = getActions(task)
+	    if not tasks[task]["kill"] == []:
+              suggestions.append("crab -c %s -kill %s" % (os.path.abspath(task), ",".join(tasks[task]["kill"])))		    
             if not tasks[task]["resubmit"] == []:
               suggestions.append("crab -c %s -resubmit %s" % (os.path.abspath(task), ",".join(tasks[task]["resubmit"])))
             if not tasks[task]["forceResubmit"] == []:
