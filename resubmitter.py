@@ -123,30 +123,9 @@ def getTasks(rawDirs):
                 
     return tasks
 
-def main(argv=None):
-    import sys
-    from os import system
-    from optparse import OptionParser
-    if argv == None:
-        argv = sys.argv[1:]
-        parser = OptionParser()
-        parser.add_option("-d", "--directory", dest="directory", action="append", default=[],
-                              help="crab directory")
-        parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=False,
-                              help="Verbose mode.")
-        parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun", default=False,
-                              help="Dry-run mode, no job submission.")
-        parser.add_option("-l", "--lumi-report", dest="lumiReport", default=None,
-                              help="filename to store lumi information in")
-        parser.add_option("-s", "--sort", action="store_true", dest="sort", default=False,
-                              help="Sort suggestions by type")
-        parser.add_option("-g", "--get", action="store_true", dest="get", default=False,
-                                                        help="execute all get and report operations")
-        
-        (opts, args) = parser.parse_args(argv)
+def resubmit(opts,tasks):
+	from subprocess import call
 
-        from subprocess import call
-        tasks = getTasks(opts.directory)
         suggestions = []
         for task in tasks:
             if tasks[task]["status"]:
@@ -208,6 +187,48 @@ def main(argv=None):
 	        else:   
                 	print suggestion
 
+
+
+
+
+def main(argv=None):
+    import sys
+    from os import system
+    from optparse import OptionParser
+    import time
+    
+    if argv == None:
+        argv = sys.argv[1:]
+        parser = OptionParser()
+        parser.add_option("-d", "--directory", dest="directory", action="append", default=[],
+                              help="crab directory")
+        parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=False,
+                              help="Verbose mode.")
+        parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun", default=False,
+                              help="Dry-run mode, no job submission.")
+        parser.add_option("-l", "--lumi-report", dest="lumiReport", default=None,
+                              help="filename to store lumi information in")
+        parser.add_option("-s", "--sort", action="store_true", dest="sort", default=False,
+                              help="Sort suggestions by type")
+        parser.add_option("-w", "--watch", action="store_true", dest="watch", default=False,
+                              help="Watch Folder and run resubmitter every hour, for 3 days")			      
+        parser.add_option("-g", "--get", action="store_true", dest="get", default=False,
+                                                        help="execute all get and report operations")
+        
+        (opts, args) = parser.parse_args(argv)
+
+        tasks = getTasks(opts.directory)
+  	if not opts.watch:
+		resubmit(opts,tasks)
+	else:
+		for i in range(0,72):
+			resubmit(opts,tasks)
+			i = i + 1
+			print "spleeping for an hour"
+			print "sitting jobs in directory %s, %d hours to go"%(opts.directory[0], 72-i)
+			print "if you want to terminate me, now would be the right time"
+			time.sleep(3600)
+			
 if __name__ == '__main__':
     main()
 
