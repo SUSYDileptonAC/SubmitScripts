@@ -28,9 +28,9 @@ class job:
 
     def __readTable(self, db, name, columns, condition="1=1"):
         result = {}
-	cursor = db.execute('select * from %s'%name)
-	names = list(map(lambda x: x[0], cursor.description))
-	#print names
+        cursor = db.execute('select * from %s'%name)
+        names = list(map(lambda x: x[0], cursor.description))
+		#print names
         for row in db.execute("select %s from %s where %s" % (", ".join(columns), name, condition)):
             if not result == {}:
                 raise StandardError, "more than one row for job_id %s and condition:\n %s\n%s" % (self.job_id, condition, row)
@@ -40,13 +40,16 @@ class job:
 
     def getActions(self):
         #print self.job_id, self.state
-        result = {"get":False, "resubmit":-1, "forceResubmit":-1, "status":self.state == "SubSuccess","kill":-1}
+        result = {"get":False, "resubmit":-1, "forceResubmit":-1, "status":self.state == "SubSuccess","kill":-1,"Cleared":False,"Created":False}
         result["status"] = not (self.state == "Terminated" or self.state == "Cleared")
         result["get"] = self.state == "Terminated"
 	#print self.status_scheduler
         result["remove"] = []
-	if (self.status_scheduler == "Cancelled"):
-		result["kill"] = str(self.job_id)
+        result["Cleared"] = self.state == "Cleared"
+	if self.state == "Created" or self.state == None:
+		result["Created"] = True
+        if (self.status_scheduler == "Cancelled"):
+        	result["kill"] = str(self.job_id)
 
         if (self.state == "Terminated" or self.state == "Cleared" or self.status_scheduler == "Cancelled") and not (self.wrapper_return_code == 0 and self.application_return_code == 0):
           if self.wrapper_return_code == 50117:
@@ -64,7 +67,6 @@ class job:
           result["resubmit"] = str(self.job_id)
         if self.state == "None":
           result["forceResubmit"] = str(self.job_id)
-                    
         return result
 
     def __repr__(self):
@@ -89,7 +91,7 @@ def getActions(rawPath, verbous=False):
         path = os.path.join(path, "share", "crabDB")
 
     jobs = readCrabDB(path)
-    result = {"get":False, "status":False, "resubmit":[], "forceResubmit":[], "remove":[], "kill":[]}
+    result = {"get":False, "status":False, "resubmit":[], "forceResubmit":[], "remove":[], "kill":[], "notCleared":[],"created":[]}
     for job in jobs:
         jobAction = job.getActions()
         if verbous:
@@ -100,11 +102,14 @@ def getActions(rawPath, verbous=False):
           result["resubmit"].append(jobAction["resubmit"])
         if jobAction["forceResubmit"] > 0:
           result["forceResubmit"].append(jobAction["forceResubmit"])
-	if jobAction["kill"] > 0:
-	  result["kill"].append(jobAction["kill"]) 	
-        if not jobAction["remove"] == []:
+        if jobAction["kill"] > 0:
+		  result["kill"].append(jobAction["kill"])
+	if jobAction["Created"]:
+		result["created"].append(jobAction["Created"])	  
+        if not jobAction["Cleared"]:
+		  result["notCleared"].append(jobAction["Cleared"])		     	
+	if not jobAction["remove"] == []:
           result["remove"].extend(jobAction["remove"])
-
     return result
 
 def getTasks(rawDirs):
@@ -116,16 +121,16 @@ def getTasks(rawDirs):
             if os.path.exists(os.path.join(dir, "share", "crabDB")):
                 tasks[dir] = getActions(os.path.join(dir, "share", "crabDB"))    
     if len(tasks) == 0:
-	for rawDir in rawDirs:
-		for dir in os.listdir(rawDir):
-			if os.path.exists(os.path.join(rawDir,dir, "share", "crabDB")):
-				tasks[os.path.join(rawDir,dir)] = getActions(os.path.join(rawDir,dir, "share", "crabDB"))
+		for rawDir in rawDirs:
+			for dir in os.listdir(rawDir):
+				if os.path.exists(os.path.join(rawDir,dir, "share", "crabDB")):
+					tasks[os.path.join(rawDir,dir)] = getActions(os.path.join(rawDir,dir, "share", "crabDB"))
                 
     return tasks
 
 def resubmit(opts,tasks):
 	from subprocess import call
-
+	tasksToDelete = []
         suggestions = []
         for task in tasks:
             if tasks[task]["status"]:
@@ -138,8 +143,12 @@ def resubmit(opts,tasks):
                   system(suggestions.pop())
 
             tasks[task] = getActions(task)
-	    if not tasks[task]["kill"] == []:
-              suggestions.append("crab -c %s -kill %s" % (os.path.abspath(task), ",".join(tasks[task]["kill"])))		    
+            if not tasks[task]["created"] == []:
+		    submitsNeeded = int(len(tasks[task]["created"])/500)+1
+		    for i in range(0,submitsNeeded):
+		    	suggestions.append("crab -c %s -submit 500" % (os.path.abspath(task)))	    
+            if not tasks[task]["kill"] == []:
+	              suggestions.append("crab -c %s -kill %s" % (os.path.abspath(task), ",".join(tasks[task]["kill"])))		    
             if not tasks[task]["resubmit"] == []:
               suggestions.append("crab -c %s -resubmit %s" % (os.path.abspath(task), ",".join(tasks[task]["resubmit"])))
             if not tasks[task]["forceResubmit"] == []:
@@ -147,7 +156,7 @@ def resubmit(opts,tasks):
             if not tasks[task]["remove"] == []:
               suggestions.append("srmrm %s" % " ".join(tasks[task]["remove"]))
             tasks[task] = getActions(task)
-
+		
             if  (not tasks[task]["status"] or not opts.lumiReport == None):
             #and not os.path.exists(os.path.join(task, "res/lumiSummary.json")):
                 suggestions.append("crab -c %s -report" % (os.path.abspath(task)))
@@ -158,6 +167,11 @@ def resubmit(opts,tasks):
             print "lumiCalc2.py -i %(json)s  -o %(task)s.cvs overview"%{"json":jsonPath, "task":os.path.split(task)[-1]}
             if not opts.lumiReport == None and os.path.exists(jsonPath):
               suggestions.append("lumiCalc2.py -i %(json)s  -o %(task)s.cvs overview"%{"json":jsonPath, "task":os.path.split(task)[-1]})
+	      
+	    if tasks[task]["notCleared"] == []:
+		    #print "task is done, removing"
+		    tasksToDelete.append(task)
+  
               #suggestions.append("echo '%(task)s' >> %(lumiReport)s && lumiCalc.py -c frontier://LumiProd/CMS_LUMI_PROD -i %(task)s --nowarning overview >> %(lumiReport)s" % { "task":jsonPath, "lumiReport":opts.lumiReport})
               
 
@@ -186,9 +200,10 @@ def resubmit(opts,tasks):
 			call(["%s" % suggestion], shell=True)
 	        else:   
                 	print suggestion
-
-
-
+	for task in tasksToDelete:
+		print "task ", task, " is done, removing"
+		del tasks[task]
+	return tasks
 
 
 def main(argv=None):
@@ -218,14 +233,17 @@ def main(argv=None):
         (opts, args) = parser.parse_args(argv)
 
         tasks = getTasks(opts.directory)
+	numTasksOrig = len(tasks)
   	if not opts.watch:
 		resubmit(opts,tasks)
 	else:
-		for i in range(0,72):
-			resubmit(opts,tasks)
-			i = i + 1
+		while True:
+			tasks = resubmit(opts,tasks)
+			if tasks == []:
+				print "All done! Terminating"
+				break
 			print "spleeping for an hour"
-			print "sitting jobs in directory %s, %d hours to go"%(opts.directory[0], 72-i)
+			print "sitting jobs in directory %s, %d/%d tasks done"%(opts.directory,numTasksOrig-len(tasks), numTasksOrig)
 			print "if you want to terminate me, now would be the right time"
 			time.sleep(3600)
 			
