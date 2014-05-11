@@ -128,7 +128,7 @@ def getTasks(rawDirs):
     if len(tasks) == 0:
 		for rawDir in rawDirs:
 			for rawDirLevel2 in os.listdir(rawDir):
-				for dir in os.listdir(rawDirLevel2):
+				for dir in os.listdir(os.path.join(rawDir,rawDirLevel2)):
 					if os.path.exists(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB")):
 						tasks[os.path.join(rawDir,rawDirLevel2,dir)] = getActions(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB"))                
     return tasks
