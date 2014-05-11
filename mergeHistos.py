@@ -217,11 +217,9 @@ def addHistos(unmergedList=None, dryRun=False, verbose=True, sampleFilter = None
 					logFile.write(logContent)
 					logFile.close()
 				dest = os.path.join(destDir, "%s.%s.%s.root" % (flag, task, sample))	
-				argv = ["hadd",dest]
-				print argv
+				argv = ["hadd","-f",dest]
 				for i in range(0,num):
 					argv.append(os.path.join(destDir, "%s.%s.%s_%d.root" % (flag, task, sample,i)))  
-				print argv
 				(stdout,stderr)=subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()								
 			else:
 				
