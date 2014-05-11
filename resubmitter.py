@@ -125,7 +125,12 @@ def getTasks(rawDirs):
 			for dir in os.listdir(rawDir):
 				if os.path.exists(os.path.join(rawDir,dir, "share", "crabDB")):
 					tasks[os.path.join(rawDir,dir)] = getActions(os.path.join(rawDir,dir, "share", "crabDB"))
-                
+    if len(tasks) == 0:
+		for rawDir in rawDirs:
+			for rawDirLevel2 in os.listdir(rawDir):
+				for dir in os.listdir(rawDirLevel2):
+					if os.path.exists(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB")):
+						tasks[os.path.join(rawDir,rawDirLevel2,dir)] = getActions(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB"))                
     return tasks
 
 def resubmit(opts,tasks):
