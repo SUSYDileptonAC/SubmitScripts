@@ -112,31 +112,37 @@ def getActions(rawPath, verbous=False):
           result["remove"].extend(jobAction["remove"])
     return result
 
-def getTasks(rawDirs):
+def getTasks(rawDirs,doneTasks = []):
     from glob import glob
     tasks = {}
     
     for rawDir in rawDirs:
         for dir in glob(rawDir):
-            if os.path.exists(os.path.join(dir, "share", "crabDB")):
-                tasks[dir] = getActions(os.path.join(dir, "share", "crabDB"))    
+	    if not dir == "doneTasks.shelve":	
+		if os.path.exists(os.path.join(dir, "share", "crabDB")):
+			if not dir in doneTasks:    
+				tasks[dir] = getActions(os.path.join(dir, "share", "crabDB"))    
     if len(tasks) == 0:
 		for rawDir in rawDirs:
 			for dir in os.listdir(rawDir):
-				if os.path.exists(os.path.join(rawDir,dir, "share", "crabDB")):
-					tasks[os.path.join(rawDir,dir)] = getActions(os.path.join(rawDir,dir, "share", "crabDB"))
+				if not rawDir == "doneTasks.shelve":
+					if os.path.exists(os.path.join(rawDir,dir, "share", "crabDB")):
+						if not os.path.join(rawDir,dir) in doneTasks:
+							tasks[os.path.join(rawDir,dir)] = getActions(os.path.join(rawDir,dir, "share", "crabDB"))
     if len(tasks) == 0:
 		for rawDir in rawDirs:
 			for rawDirLevel2 in os.listdir(rawDir):
-				for dir in os.listdir(os.path.join(rawDir,rawDirLevel2)):
-					if os.path.exists(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB")):
-						tasks[os.path.join(rawDir,rawDirLevel2,dir)] = getActions(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB"))                
+				if not rawDirLevel2 == "doneTasks.shelve":
+					for dir in os.listdir(os.path.join(rawDir,rawDirLevel2)):
+						if os.path.exists(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB")):
+							if not os.path.join(rawDir,rawDirLevel2,dir) in doneTasks:
+								tasks[os.path.join(rawDir,rawDirLevel2,dir)] = getActions(os.path.join(rawDir,rawDirLevel2,dir, "share", "crabDB"))                
     return tasks
 
-def resubmit(opts,tasks):
+def resubmit(opts,tasks,doneTasks=[]):
 	from subprocess import call
-	tasksToDelete = []
         suggestions = []
+	tasksToRemove = []
         for task in tasks:
             if tasks[task]["status"]:
                 print "getting status for %s" % task
@@ -175,8 +181,9 @@ def resubmit(opts,tasks):
 	      
 	    if tasks[task]["notCleared"] == []:
 		    #print "task is done, removing"
-		    tasksToDelete.append(task)
-  
+		    tasksToRemove.append(task)
+		    doneTasks.append(task)
+		    
               #suggestions.append("echo '%(task)s' >> %(lumiReport)s && lumiCalc.py -c frontier://LumiProd/CMS_LUMI_PROD -i %(task)s --nowarning overview >> %(lumiReport)s" % { "task":jsonPath, "lumiReport":opts.lumiReport})
               
 
@@ -205,10 +212,10 @@ def resubmit(opts,tasks):
 			call(["%s" % suggestion], shell=True)
 	        else:   
                 	print suggestion
-	for task in tasksToDelete:
+	for task in tasksToRemove:
 		print "task ", task, " is done, removing"
 		del tasks[task]
-	return tasks
+	return tasks, doneTasks
 
 
 def main(argv=None):
@@ -216,6 +223,7 @@ def main(argv=None):
     from os import system
     from optparse import OptionParser
     import time
+    import pickle, shelve
     
     if argv == None:
         argv = sys.argv[1:]
@@ -236,17 +244,30 @@ def main(argv=None):
                                                         help="execute all get and report operations")
         
         (opts, args) = parser.parse_args(argv)
-
-        tasks = getTasks(opts.directory)
-	numTasksOrig = len(tasks)
+	
+	doneTasks = []
+	if os.path.isfile("%s/doneTasks.shelve"%(opts.directory[0])):
+		db=shelve.open("%s/doneTasks.shelve"%(opts.directory[0]))
+		doneTasks = db["doneTasks"]
+		db.close()
+		for task in doneTasks:
+			print "task %s already done, will not be wachted"%task	
+        tasks = getTasks(opts.directory,doneTasks)
+	
+	numTasksOrig = len(tasks) + len(doneTasks)
   	if not opts.watch:
 		resubmit(opts,tasks)
 	else:
 		while True:
-			tasks = resubmit(opts,tasks)
+			tasks = getTasks(opts.directory,doneTasks)
+			tasks, doneTasks = resubmit(opts,tasks,doneTasks)
 			if tasks == []:
 				print "All done! Terminating"
 				break
+			print "%s/doneTasks.shelve"%(opts.directory)
+			db=shelve.open("%s/doneTasks.shelve"%(opts.directory[0]))
+			db["doneTasks"]= doneTasks
+			db.close()				
 			print "spleeping for an hour"
 			print "sitting jobs in directory %s, %d/%d tasks done"%(opts.directory,numTasksOrig-len(tasks), numTasksOrig)
 			print "if you want to terminate me, now would be the right time"
