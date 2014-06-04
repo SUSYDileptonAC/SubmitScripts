@@ -115,7 +115,7 @@ def getActions(rawPath, verbous=False):
 def getTasks(rawDirs,doneTasks = []):
     from glob import glob
     tasks = {}
-    
+    print rawDirs
     for rawDir in rawDirs:
         for dir in glob(rawDir):
 	    if not dir == "doneTasks.shelve":	
@@ -161,7 +161,7 @@ def resubmit(opts,tasks,doneTasks=[]):
             if not tasks[task]["kill"] == []:
 	              suggestions.append("crab -c %s -kill %s" % (os.path.abspath(task), ",".join(tasks[task]["kill"])))		    
             if not tasks[task]["resubmit"] == []:
-              suggestions.append("crab -c %s -resubmit %s" % (os.path.abspath(task), ",".join(tasks[task]["resubmit"])))
+              suggestions.append("crab -c %s -resubmit %s -GRID.se_black_list=T2_EE_Estonia" % (os.path.abspath(task), ",".join(tasks[task]["resubmit"])))
             if not tasks[task]["forceResubmit"] == []:
               suggestions.append("crab -c %s -forceResubmit %s" % (os.path.abspath(task), ",".join(tasks[task]["forceResubmit"])))
             if not tasks[task]["remove"] == []:
@@ -209,6 +209,13 @@ def resubmit(opts,tasks,doneTasks=[]):
         else:
             for suggestion in suggestions:
 		if not opts.dryrun:
+			#child = pexpect.spawn("%s" % suggestion)
+			#while True:
+				#i = child.expect(["Enter GRID pass phrase:", pexpect.EOF], timeoutput = None)
+				#if i == 0:
+					#child.sendline(pwd)
+				#elif i == 1:
+					#break	
 			call(["%s" % suggestion], shell=True)
 	        else:   
                 	print suggestion
@@ -242,16 +249,17 @@ def main(argv=None):
                               help="Watch Folder and run resubmitter every hour, for 3 days")			      
         parser.add_option("-g", "--get", action="store_true", dest="get", default=False,
                                                         help="execute all get and report operations")
-        
+       	
         (opts, args) = parser.parse_args(argv)
 	
 	doneTasks = []
-	if os.path.isfile("%s/doneTasks.shelve"%(opts.directory[0])):
-		db=shelve.open("%s/doneTasks.shelve"%(opts.directory[0]))
-		doneTasks = db["doneTasks"]
-		db.close()
-		for task in doneTasks:
-			print "task %s already done, will not be wachted"%task	
+	for dir in opts.directory:
+		if os.path.isfile("%s/doneTasks.shelve"%(dir)):
+			db=shelve.open("%s/doneTasks.shelve"%(dir))
+			doneTasks = doneTasks + db["doneTasks"]
+			db.close()
+			for task in doneTasks:
+				print "task %s already done, will not be wachted"%task	
         tasks = getTasks(opts.directory,doneTasks)
 	
 	numTasksOrig = len(tasks) + len(doneTasks)

@@ -497,6 +497,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 		if settings.makeCountHistos:repMap["counters"] += __createCounters(task, taskProducts)
 
 	taskPaths = []
+	
 	for task in tasks:
 		(thisAnalyzers, thisPaths) = __createAnalyzersAndPaths(task, products, job)
 		repMap["analyzers"] += thisAnalyzers
@@ -513,6 +514,14 @@ makeFilterPaths(process)
 
 	if "process.outpath" in repMap["OutputModule"]:
 		repMap["taskPaths"] += ", process.outpath"
+		
+	repMap["metUncertaintyTool"] = ""
+	if settings.monteCarloAvailable:
+		repMap["producerPath"] = repMap["producerPath"] + " + process.metUncertaintySequence"	
+		repMap["task"] = task
+		repMap["metUncertaintyTool"] = """from PhysicsTools.PatUtils.tools.metUncertaintyTools import runMEtUncertainties
+runMEtUncertainties(process,jetCollection="selectedPatJetsAK5PF",electronCollection="%sIsoElectrons",muonCollection="%sIsoMuons",dRjetCleaning=0.4,tauCollection=None,addToPatDefaultSequence=False)""" % (task,task)
+			
 	txt = """import FWCore.ParameterSet.Config as cms
 
 
@@ -537,7 +546,7 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 
 %(tasks)s
 
-
+%(metUncertaintyTool)s
 
 
 ########## DiLeptonAnalyzers ##############
@@ -549,7 +558,7 @@ from SuSyAachen.DiLeptonHistograms.DiLeptonHistograms_cfi import DiLeptonAnalysi
 
 %(OutputModule)s
 ########## Paths ##########################
-process.producerPath = cms.Path(%(producerPath)s)
+process.producerPath = cms.Path(%(producerPath)s )
 process.schedule = cms.Schedule( process.producerPath, %(taskPaths)s)
 
 ########## Counting Histograms (must be at the very end) ##############
@@ -590,6 +599,7 @@ def __createAnalyzersAndPaths(task, products, job):
 
 	for analyzer in diLeptonAnalyzers:
 		(attributes, productsMissing) = checkMissingProducts(diLeptonAnalyzers[analyzer], task, products)
+		#productsMissing = False
 		if not productsMissing:
 			for name in modules:
 				analyzers += createDiLeptonAnalyzer(name + analyzer, attributes, task,
@@ -598,7 +608,9 @@ def __createAnalyzersAndPaths(task, products, job):
 
 	for analyzer in genericAnalyzers:
 		(attributes, productsMissing) = checkMissingProducts(genericAnalyzers[analyzer], task, products)
+		#productsMissing = False
 		if not productsMissing:
+			
 			for name in modules:
 				if not "module" in genericAnalyzers[analyzer] or not "path" in genericAnalyzers[analyzer]:
 					raise StandardError, "either 'module' or 'path' missing to create %s" % analyzer
@@ -606,6 +618,8 @@ def __createAnalyzersAndPaths(task, products, job):
 								   genericAnalyzers[analyzer]["module"],
 								   attributes, task, job)
 				modules[name].append("process.%(task)s%(name)s%(analyzer)s" % {"task":task, "analyzer":analyzer, "name":name})
+
+	
 
 	pathElements = []
 	pathElements.extend(activeFilters)
@@ -620,7 +634,6 @@ def __createAnalyzersAndPaths(task, products, job):
 		pathElements.extend(modules[name])
 		analyzers += "process.%sPath%s =cms.Path(%s)\n" % (task, name, " * ".join(pathElements))
 		taskPaths.append("process.%sPath%s" % (task, name))
-
 	return (analyzers, taskPaths)
 
 def numbers(job):
