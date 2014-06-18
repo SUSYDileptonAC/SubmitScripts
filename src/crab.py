@@ -51,6 +51,7 @@ events_per_job = %(nEventsPerJob)s
 output_file = %(OutputFiles)s
 #Not used at the moment, but can be used if quicker
 #get_edm_output = 1
+allow_NonProductionCMSSW = 1
 %(CMSSW-AdditionsBlock)s
 
 [USER]
