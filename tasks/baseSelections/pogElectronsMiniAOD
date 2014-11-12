@@ -21,12 +21,10 @@
              isEB 
              & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.007 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.15 & sigmaIetaIeta < 0.01
 		& hadronicOverEm < 0.12 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.05 
-		& gsfTrack().trackerExpectedHitsInner().numberOfHits <= 1
 	     )
              | isEE
              & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.009 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.1 & sigmaIetaIeta < 0.03
                 & hadronicOverEm < 0.1 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.05
-		& gsfTrack().trackerExpectedHitsInner().numberOfHits <= 1
              )
             """,
         },
@@ -58,8 +56,7 @@
 	{	"name": "LooseIsoElectrons",
         	 "srcNames": "src",
 		"src":"(electrons.d0Electrons)",
-               	"selector": "PATElectronEffectiveAreaSelector",
-				"rhoSource": "kt6fixedGridRhoFastjetAll",               	
+               	"selector": "PATElectronEffectiveAreaSelector",             	
                 "isoMin": -1.,
 	        "isoMax": 0.5,
        	},
