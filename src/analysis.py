@@ -148,7 +148,7 @@ def poolSourceLocal(job, n):
 	#txt = txt[:-1] # remove the last comma
 #	txt += ')\n'
 	txt += ')\n\n'
-	cmsswBlocks = settings.getMap()["crabAdditionsBlocks"]["CMSSW-AdditionsBlock"].splitlines()
+	cmsswBlocks = settings.getMap()["crabAdditionsBlocks"]["Data-AdditionsBlock"].splitlines()
 	jsonPath = None
 	for cmsswBlock in cmsswBlocks:
 		if "lumi_mask" in cmsswBlock:
@@ -246,9 +246,9 @@ def makePATConfig(flag, job, n, task, MC, Grid, Weighted, HLT, MVA=False):
 		"job":job
 		}
 	if Grid:
-		cfgname = settings.analysispath + "/CMSSWCFG/%(flag)s.%(taskName)s.%(job)s.grid.py" % repMap
+		cfgname = settings.analysispath + "/CMSSWCFG/%(flag)s%(taskName)s.%(job)s.grid.py" % repMap
 	if not Grid:
-		cfgname = settings.analysispath + "/CMSSWCFG/%(flag)s.%(taskName)s.%(job)s.local.py" % repMap
+		cfgname = settings.analysispath + "/CMSSWCFG/%(flag)s%(taskName)s.%(job)s.local.py" % repMap
 	f = open(cfgname, 'w')
 	f.write(txt)
 	f.close()
@@ -445,8 +445,8 @@ def getPATPset(flag, job, n, tasks, HLT, MVA=False):
 	 }
 	#small helpers
 	repMap["MessageLogger"] = MessageLogger("%(flag)s_%(taskName)s_%(job)s" % repMap)
-	repMap["fileService"] = TFileService("%(flag)s.%(taskName)s.%(job)s.root" % repMap)
-	repMap["OutputModule"] = getOutputModule("%(flag)s.%(taskName)s.%(job)s.EDM.root" % repMap, tasks[0])
+	repMap["fileService"] = TFileService("%(flag)s_%(taskName)s_%(job)s.root" % repMap)
+	repMap["OutputModule"] = getOutputModule("%(flag)s_%(taskName)s_%(job)s_EDM.root" % repMap, tasks[0])
 	#print settings.getMap()["masterConfig"].get(job, "globalTag")
 	#print "test"
 	if "globalTag" in settings.getMap(): repMap["globalTag"] = """

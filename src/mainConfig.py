@@ -69,10 +69,14 @@ class MainConfig:
                 "minFileSize": config.get("general" , "minFileSize"),
                 "StatusPath": config.get("general" , "StatusPath"),
                 #-- crab options
-		        "CrabServer": config.get("crab", 'CrabServer'),
+		        #~ "CrabServer": config.get("crab", 'CrabServer'),
                 "StageoutSite": config.get("crab", 'StageoutSite'),
                 "nEventsPerJob": config.get("crab", 'nEventsPerJob'),
-                "user_remote_dir": os.path.expandvars(config.get("crab", 'user_remote_dir')),
+                #~ "user_remote_dir": os.path.expandvars(config.get("crab", 'user_remote_dir')),
+		"lumis_per_job": os.path.expandvars(config.get("crab", 'lumis_per_job')),		
+		"publish": os.path.expandvars(config.get("crab", 'publish')),		
+		"pubDBSURL": os.path.expandvars(config.get("crab", 'pubDBSURL')),		
+				
                 #--CSA specific options
                 "monteCarloAvailable": eval(config.get(CSA, 'monteCarloAvailable')), #must be True or False
                 "makeMETUncertainties": eval(config.get(CSA, 'makeMETUncertainties')), #must be True or False		
@@ -178,16 +182,17 @@ class MainConfig:
                          self.getMap()["Analyzers"][ analyzerName ][ option ] = config.get(section, option)
 
             #read Crab additions blocks (like CMSSW.smothing = something differnt) 
-            crabAdditionsBlockNames = ["CRAB", "CMSSW", "USER", "GRID", "CONDORG", "CAF"]
+            crabAdditionsBlockNames = ["General", "JobType", "Data", "Site", "User", "Debug"]
             crabAdditionsBlocks = {}
             for blockName in crabAdditionsBlockNames:
                 crabAdditionsBlocks["%s-AdditionsBlock" % blockName] = ""
             for option in config.options("crab"):
                 if "." in option:
                     sectionName = option.split(".")[0]
+                    print option
                     if not "%s-AdditionsBlock" % sectionName in crabAdditionsBlocks:
                        raise StandardError, "could not set crab additions Block for section %s" % sectionName
-                    crabAdditionsBlocks["%s-AdditionsBlock" % sectionName] += "%s = %s\n" % (option.split(".")[1], config.get("crab", option))
+                    crabAdditionsBlocks["%s-AdditionsBlock" % sectionName] += 'config.%s.%s = "%s"\n' % (sectionName,option.split(".")[1], config.get("crab", option))
             self.getMap()["crabAdditionsBlocks"] = crabAdditionsBlocks
 
 #            for collection in self.getMap()[ "masterConfig" ].options("InputTags:%s" % self.getMap()["InputTagCollection"]):
@@ -260,16 +265,16 @@ class MainConfig:
 
         else:
             if numbers == None:
-                result.extend(["%s.%s.%s.root" % (flag, taskName, job),
+                result.extend(["%s_%s_%s.root" % (flag, taskName, job),
                                "%s_%s_%s.log" % (flag, taskName, job)])
                 if not (self.keep == [] and self.drop == []):
-                    result.append("%s.%s.%s.EDM.root" % (flag, taskName, job))
+                    result.append("%s_%s_%s.EDM.root" % (flag, taskName, job))
             else:
                 for number in numbers:
-                    result.extend(["%s.%s.%s_%s.root" % (flag, taskName, job, number),
+                    result.extend(["%s_%s_%s_%s.root" % (flag, taskName, job, number),
                                    "%s_%s_%s_%s.log" % (flag, taskName, job, number)])
                 if not (self.keep == [] and self.drop == []):
-                    result.append("%s.%s.%s_%s.EDM.root" % (flag, taskName, job, number))
+                    result.append("%s_%s_%s_%s.EDM.root" % (flag, taskName, job, number))
         return result
 
     #FIXME: depricated

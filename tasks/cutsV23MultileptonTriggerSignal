@@ -1,0 +1,46 @@
+{
+"activeFilters": ["basicVertices"],
+"order":["hlt","vertices","muons","electrons","jets","met"],
+
+"additionalFilters":{
+        "HLTDiEle": ["HLTDoubleElectronIncl"],
+        "HLTDiMu": ["HLTDoubleMuIncl"],
+        "HLTMuEle": ["HLTMuEGIncl"],
+},
+
+
+"hlt": input("baseSelections/baseHLT2012"),
+"vertices":[
+    {   "src": "offlinePrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+
+# TODO: do we need this?
+#"beamscraping":[
+#    {   "srcNames": "debugOn",
+#        "debugOn": False,
+#        "name": "beamScraping"
+#    },
+#],
+
+
+"muons": input("baseSelections/pogMuonsMultiLepton"),
+"electrons" : input("baseSelections/pogElectronsMultiLepton"),
+
+"jets" : input("baseSelections/baseJetsMultiLepton")+input("baseSelections/baseHT2012"),
+
+"met" : [
+	{	"src": "patMETsPF",
+		"name": "BaseMET",
+		"cut": "pt >= 0."
+	},
+	{	"name": "METFilter100",
+		"cut": "pt >= 100"
+	},
+	{	"name": "METFilter150",
+		"cut": "pt >= 150"
+	},
+],
+}
