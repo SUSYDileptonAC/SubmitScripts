@@ -11,7 +11,7 @@ process.readAK5PF    = cms.EDAnalyzer('JetCorrectorDBReader',
         payloadName    = cms.untracked.string('AK5PF'),
         # this is used ONLY for the name of the printed txt files. You can use any name that you like, 
         # but it is recommended to use the GT name that you retrieved the files from.
-        globalTag      = cms.untracked.string('START53_V27'),  
+        globalTag      = cms.untracked.string('START53_V27::All'),  
         printScreen    = cms.untracked.bool(False),
         createTextFile = cms.untracked.bool(True)
 )

@@ -5,7 +5,7 @@ Created on 10.12.2009
 @author: heron
 '''
 import os.path
-
+from os import system
 try:
   from sqlite3 import dbapi2 as sqlite # python 2.5
 except:
@@ -227,7 +227,7 @@ def resubmit(opts,tasks,doneTasks=[]):
 
 def main(argv=None):
     import sys
-    from os import system
+    
     from optparse import OptionParser
     import time
     import pickle, shelve

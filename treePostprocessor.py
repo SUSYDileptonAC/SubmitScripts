@@ -430,6 +430,7 @@ def main(argv = None):
     
     basePath = config.get("general","basePath")
     producers = getProducers(config, basePath)
+    print producers
     for p in producers:
         p.produce()
     

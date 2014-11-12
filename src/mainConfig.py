@@ -75,6 +75,7 @@ class MainConfig:
                 "user_remote_dir": os.path.expandvars(config.get("crab", 'user_remote_dir')),
                 #--CSA specific options
                 "monteCarloAvailable": eval(config.get(CSA, 'monteCarloAvailable')), #must be True or False
+                "makeMETUncertainties": eval(config.get(CSA, 'makeMETUncertainties')), #must be True or False		
                 "skimpath": self.__formatPath(config.get(CSA, 'skimpath')),
                 "skimFromLocalDBS": "True" in config.get(CSA, "skimFromLocalDBS"),
                 "logpath":  self.__formatPath(config.get(CSA, 'skimlogpath')),

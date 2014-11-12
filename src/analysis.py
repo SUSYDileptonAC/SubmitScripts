@@ -516,7 +516,7 @@ makeFilterPaths(process)
 		repMap["taskPaths"] += ", process.outpath"
 		
 	repMap["metUncertaintyTool"] = ""
-	if settings.monteCarloAvailable:
+	if settings.monteCarloAvailable and settings.makeMETUncertainties:
 		repMap["producerPath"] = repMap["producerPath"] + " + process.metUncertaintySequence"	
 		repMap["task"] = task
 		repMap["metUncertaintyTool"] = """from PhysicsTools.PatUtils.tools.metUncertaintyTools import runMEtUncertainties
