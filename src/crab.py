@@ -44,13 +44,14 @@ use_server = 1
 
 [CMSSW]
 datasetpath = %(datasetpath)s
-#%(customDBSBlock)s
+%(customDBSBlock)s
 pset = %(ParameterSet)s
 total_number_of_events = %(numEvents)s
 events_per_job = %(nEventsPerJob)s
 output_file = %(OutputFiles)s
 #Not used at the moment, but can be used if quicker
 #get_edm_output = 1
+allow_NonProductionCMSSW = 1
 %(CMSSW-AdditionsBlock)s
 
 [USER]
@@ -120,8 +121,9 @@ CMSSW.total_number_of_events = %(number_events)s
 			#repMap["publishBlock"] = "USER.user_remote_dir = %(histogramstoragepath)s/%(name)s" % repMap
 			repMap["publishBlock"] = ""
 
-		if settings.masterConfig.has_option(job, "dbs_url"):
-			repMap["additions"] += "CMSSW.dbs_url = %s\n"%settings.masterConfig.get(job, "dbs_url")
+		#if settings.masterConfig.has_option(job, "dbs_url"):
+			#print settings.masterConfig.get(job, "dbs_url")
+			#repMap["additions"] += "CMSSW.dbs_url = %s\n"%settings.masterConfig.get(job, "dbs_url")
 		if not settings.masterConfig.has_option(job, datasetPathMode):
 			print "WARNING: '%s' has no dataset path set. skipping job!" % (job)
 		else:

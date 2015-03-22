@@ -60,7 +60,7 @@
 		"src":"(electrons.d0Electrons)",
                	"selector": "PATElectronEffectiveAreaSelector",
                 "isoMin": -1.,
-	        "isoMax": 0.5,
+	        "isoMax": 1.0,
        	},
 	{	"name": "IsoElectrons",
         	 "srcNames": "src",
