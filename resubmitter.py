@@ -157,11 +157,11 @@ def resubmit(opts,tasks,doneTasks=[]):
             if not tasks[task]["created"] == []:
 		    submitsNeeded = int(len(tasks[task]["created"])/500)+1
 		    for i in range(0,submitsNeeded):
-		    	suggestions.append("crab -c %s -submit 500" % (os.path.abspath(task)))	    
+		    	suggestions.append("crab -c %s -submit 500 -GRID.se_black_list=T2_US_UCSD" % (os.path.abspath(task)))	    
             if not tasks[task]["kill"] == []:
 	              suggestions.append("crab -c %s -kill %s" % (os.path.abspath(task), ",".join(tasks[task]["kill"])))		    
             if not tasks[task]["resubmit"] == []:
-              suggestions.append("crab -c %s -resubmit %s -GRID.se_black_list=T2_EE_Estonia" % (os.path.abspath(task), ",".join(tasks[task]["resubmit"])))
+              suggestions.append("crab -c %s -resubmit %s -GRID.se_black_list=T2_US_UCSD" % (os.path.abspath(task), ",".join(tasks[task]["resubmit"])))
             if not tasks[task]["forceResubmit"] == []:
               suggestions.append("crab -c %s -forceResubmit %s" % (os.path.abspath(task), ",".join(tasks[task]["forceResubmit"])))
             if not tasks[task]["remove"] == []:
