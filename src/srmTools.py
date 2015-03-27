@@ -8,7 +8,7 @@ import os, subprocess
 
 def copyFile(source, destination, verbose=False):
     if (verbose):
-        print 'lcg-cp  -b -D srmv2  srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + source + ' file:///' + destination
+        print 'srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination
     #print 'srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination
 #lcg-cp -v -b -D srmv2 SURL  file://local_file
 
@@ -50,9 +50,8 @@ def getDir(source, verbose=False):
     while (output.find(source, i, len(output)) != -1):
         nextOccurrence = output.find(source, i, len(output))
         entry = output[nextOccurrence:output.find('\n', nextOccurrence, len(output))]
-        command = 'lcg-ls --count=950  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry
+        command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry
         output_2 = __getCommandOutput2(command)
-	
         j = 0
         while (output_2.find(entry, j, len(output_2)) != -1):
 			nextOccurrence_2 = output_2.find(entry, j, len(output_2))
@@ -96,7 +95,7 @@ def getDir(source, verbose=False):
 		         
 
         i = output.find(source, i, len(output)) + 1
-    print returnValue
+
     return returnValue
 
 

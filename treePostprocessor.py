@@ -39,8 +39,7 @@ class SimpleSelector(TreeProcessor):
         expression = expression.replace("&&","and")
         expression = expression.replace("&","and")
         expression = expression.replace("||","or")
-        expression = expression.replace("|","or")  
-        expression = expression.replace("!(","not (")     	      
+        expression = expression.replace("|","or")        
         evalGlobal = {"abs":fabs}
         for i in [i.GetName() for i in event.GetListOfBranches()]:
             evalGlobal[i] = getattr(event,i)
