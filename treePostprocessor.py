@@ -39,8 +39,7 @@ class SimpleSelector(TreeProcessor):
         expression = expression.replace("&&","and")
         expression = expression.replace("&","and")
         expression = expression.replace("||","or")
-        expression = expression.replace("|","or")  
-        expression = expression.replace("!(","not (")     	      
+        expression = expression.replace("|","or")        
         evalGlobal = {"abs":fabs}
         for i in [i.GetName() for i in event.GetListOfBranches()]:
             evalGlobal[i] = getattr(event,i)
@@ -281,7 +280,8 @@ class TreeProducer:
                             for t in self.tasks:
                                 if ".%s."%t in splitPath(filePath)[1]:
                                     assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
-                                    task = t                        
+                                    task = t
+                                    print task                        
                             self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
 
                             ## also add 3D weights
@@ -403,6 +403,9 @@ def getProducers(config, path):
     dataPaths = []
     for inputPath in glob("%s/*.root"%path):
         if match(mcExpression, splitPath(inputPath)[1]) ==None:
+            #~ print "TEST!!!"
+            #~ print mcExpression
+            #~ print splitPath(inputPath)[1]
             dataPaths.append(inputPath)
         else:   
             result.append(TreeProducer(config, [inputPath]))
