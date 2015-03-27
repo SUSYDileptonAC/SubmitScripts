@@ -26,7 +26,10 @@ def createCRABcfg(Job, Pset, WorkDir, OutputFiles, DBSpath, numEvents, crabcfg, 
 	repMap.update(settings.crabAdditionsBlocks)
 	#~ if "lumiMask" in repMap["Data-AdditionsBlock"]:		
 	repMap["nUnits"] = repMap["lumis_per_job"]
-	repMap["splitting"] = "LumiBased"
+	repMap["splitting"] = "FileBased"
+	#~ repMap["nUnits"] = repMap["nEventsPerJob"]
+	#~ repMap["splitting"] = "EventBased"
+	
 	#~ else:
 		#~ repMap["nUnits"] = repMap["nEventsPerJob"]
 		#~ repMap["splitting"] = "LumiBased"
@@ -38,8 +41,8 @@ config.section_("General")
 	
 config.General.requestName = "%(theJob)s"
 config.General.workArea = "%(workdir)s"	
-config.General.transferOutput = True
-config.General.saveLogs = False
+config.General.transferOutputs = True
+config.General.transferLogs = False
 	
 %(General-AdditionsBlock)s	
 	
@@ -55,22 +58,21 @@ config.JobType.allowNonProductionCMSSW = True
 config.section_("Data")
 
 config.Data.inputDataset = "%(datasetpath)s"
-config.Data.dbsUrl = "%(dbsurl)s"
+config.Data.inputDBS = "%(inputDBS)s"
 config.Data.splitting = "%(splitting)s"
 config.Data.unitsPerJob = %(nUnits)s
 config.Data.totalUnits = %(numEvents)s
 config.Data.publication = %(publish)s
-config.Data.publishDbsUrl = "%(pubDBSURL)s"
+config.Data.publishDBS = "%(pubDBSURL)s"
 config.Data.publishDataName = "%(theJob)s"
 config.Data.ignoreLocality = True
-config.Data.outlfn = "%(histogramstoragepath)s/%(theJob)s"
+config.Data.outLFN = "%(histogramstoragepath)s/%(theJob)s"
 
 %(Data-AdditionsBlock)s
 
 config.section_("Site")
 
 config.Site.storageSite = "%(StageoutSite)s"
-config.Site.whitelist = ['T2_DE_RWTH']
 %(Site-AdditionsBlock)s
 
 config.section_("User")

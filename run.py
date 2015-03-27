@@ -3,12 +3,12 @@
 import os, sys, time, srmop, dbsop, subprocess, shutil
 import py_compile
 import configurator, getopt, threading, random, Queue
-import src.crab3 as crab, src.analysis_crab3 as analysis
+import src.crab as crab, src.analysis as analysis
 from optparse import OptionParser
 
 
 #from pfade import *
-from src.mainConfig_crab3 import MainConfig
+from src.mainConfig import MainConfig
 
 #from configurator import config as cfg
 

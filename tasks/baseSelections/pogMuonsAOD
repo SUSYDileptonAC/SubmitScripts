@@ -1,7 +1,7 @@
 [
 # PAT Muons
 #===========
-    {	"src": "slimmedMuons",
+    {	"src": "cleanPatMuons",
 		"name": "basicMuonsPAT",
 		"cut": "abs( eta ) <= 2.4 & pt >= 10."
 	},
@@ -57,5 +57,15 @@
     {	"name": "TriggerMuons",
         "skip": True,
 		"cut": "abs( eta ) <= 2.4 & pt >= 20"
+	},
+	{	"name": "matchedMuons",
+		"cut": "genParticlesSize != 0"
+	},
+	{	"name": "chCorrectMuons",
+		"cut": "genLepton.charge == charge",
+		"skip": True
+	},
+	{	"name": "chWrongMuons",
+		"cut": "genLepton.charge != charge",
 	},
 ]

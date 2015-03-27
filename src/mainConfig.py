@@ -54,6 +54,7 @@ class MainConfig:
             raise StandardError, "MainConfiguration already been set up!"
         else:
             config = BetterConfigParser()
+            print configPaths
 
             config.read(self.__cleanPaths(configPaths))
             CSA = config.get('general', 'CSA')
@@ -92,6 +93,7 @@ class MainConfig:
                 "analogpath":  self.__formatPath(config.get(CSA, 'analogpath')),
                 "storagepath":  self.__formatPath(config.get(CSA, 'storagepath')),
                 "histogramstoragepath":  self.__formatPath(config.get(CSA, 'histogramstoragepath')),
+                "histogramoutputpath":  self.__formatPath(config.get(CSA, 'histogramoutputpath')),
                 "cmsstoragepath":  config.get(CSA, 'cmsstoragepath'),
                 "filename":  config.get(CSA, 'filename'),
                 "logname":  config.get(CSA, 'logname'),
@@ -104,7 +106,7 @@ class MainConfig:
                 "famospath":  self.__formatPath(config.get(CSA, 'famospath')),
                 "famosdatapath":  config.get(CSA, 'famosdatapath'),
                 # local dbs instance for publication
-                "dbsurl":  config.get(CSA, 'dbsurl'),
+                "inputDBS":  config.get(CSA, 'inputDBS'),
                 # path of all dbsentries
                 "dbsfilepath":  self.__formatPath(config.get(CSA, 'dbsfilepath')),
                 "storage_element":  config.get(CSA, 'storage_element'),

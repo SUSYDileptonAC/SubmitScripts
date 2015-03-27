@@ -1,8 +1,9 @@
 [
 # PAT Jets
 #===========
-    {  "src": "slimmedJets",
+    {  "src": "patJetsAK4PFCHS",
         "name": "baseJets",
+#        "cut": "abs( eta ) <= 3. & correctedJet('L2L3Residual').pt >= 40.",
 	"cut": "abs( eta ) <= 3. & pt >= 10.",
     },
     {   "selector": "muonCleanJets",
@@ -23,6 +24,7 @@
     {   "skip": True,
         "name": "qualityBJets",
         "cut":'bDiscriminator("combinedInclusiveSecondaryVertexV2BJetTags") >= 0.814 & pt >= 30 && abs( eta ) <= 2.4',
+#        "cut":'bDiscriminator("combinedSecondaryVertexBJetTags") >= 0.679 & pt >= 30 && abs( eta ) <= 2.4',
 #        "cut": 'bDiscriminator("trackCountingHighEffBJetTags")>=3.3',
 #        "cut": 'bDiscriminator("combinedSecondaryVertexMVA") >= 0.679'
     },

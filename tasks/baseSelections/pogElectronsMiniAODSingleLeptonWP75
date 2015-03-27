@@ -19,13 +19,13 @@
         {    "name": "MediumElectrons",
              "cut": """
              isEB 
-             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.007 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.07 & sigmaIetaIeta < 0.01
-		& hadronicOverEm < 0.12 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.05
+             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.0035 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.021 & sigmaIetaIeta < 0.011
+		& hadronicOverEm < 0.01 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.05
 		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
 	     )
              | isEE
-             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.009 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.1 & sigmaIetaIeta < 0.03
-                & hadronicOverEm < 0.1 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.05
+             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.0065 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.035 & sigmaIetaIeta < 0.031
+                & hadronicOverEm < 0.01 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.05
                 & gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
              )
             """,
