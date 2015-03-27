@@ -67,7 +67,7 @@ def main():
                 os.makedirs(theLocalHistPath)
             doCopy(opts)
     else:
-        theStoragePath = settings.histogramstoragepath
+        theStoragePath = settings.histogramoutputpath
         theLocalHistPath = settings.localhistopath
         theLocalLogPath = settings.analogpath
         doCopy(opts)

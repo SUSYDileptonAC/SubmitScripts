@@ -202,14 +202,16 @@ def main(argv=None):
 
   if settings.grid:
       if settings.verbose: print "creating multicrab configfiles... ",
-      (crabCfgPath, multicrabCfgPath) = createMulticrabConfig(opts.job, psetPaths)
-      if settings.verbose: print "done. got: %s and %s" % (crabCfgPath, multicrabCfgPath)
+      crabCfgPaths = createCrabCfgs(opts.job, psetPaths)
+      if settings.verbose: print "done. got: %s" % crabCfgPaths
       if not settings.dryrun:
           originPath = os.path.abspath(os.path.curdir)
-          os.chdir(os.path.dirname(multicrabCfgPath))
-          if settings.verbose: print "starting multicrab -create -submit"
-          subprocess.call(["multicrab -create -submit"], shell=True)
-          os.chdir(originPath)
+          for crabCfgPath in crabCfgPaths:
+		os.chdir(os.path.dirname(crabCfgPath))
+		if settings.verbose: print "starting crab submit -c %s"%crabCfgPath.split("/")[-1]
+		#print "starting crab submit -c %s"%crabCfgPath.split("/")[-1]
+		subprocess.call(["crab submit -c %s"%crabCfgPath.split("/")[-1]], shell=True)
+		os.chdir(originPath)
 
   else:
       if not settings.dryrun:
@@ -232,7 +234,7 @@ def createMulticrabConfig(jobs, psetPaths):
         numEvents = settings.nSkimEvents
 
     #for now the crab.cfg is created from the first job...
-    crabCfgPath = os.path.join(sessionPath, "crab.cfg")
+    crabCfgPath = os.path.join(sessionPath, "crabConfig.py")
     multicrabCfgPath = os.path.join(sessionPath, "multicrab.cfg")
     #name of the job has to be empty since multicrab adds the jobname on its own
     crab.createCRABcfg("", psetPaths[0], sessionPath,
@@ -244,6 +246,35 @@ def createMulticrabConfig(jobs, psetPaths):
     #here multicrab ist created
     crab.createMULTICRABcfg(jobs, psetPaths, multicrabCfgPath, datasetPathMode)
     return (crabCfgPath, multicrabCfgPath)
+    
+def createCrabCfgs(jobs, psetPaths):
+    settings = MainConfig()
+    sessionPath = os.path.abspath(os.path.join(settings.getCrabDirectory(jobs[0]), ".."))
+
+    datasetPathMode = 'localdbspath'
+    if settings.skim and not settings.skimFromLocalDBS:
+        datasetPathMode = 'datasetpath'
+
+    publishName = ""
+    #for now the crab.cfg is created from the first job...
+    crabCfgPaths = []
+    #name of the job has to be empty since multicrab adds the jobname on its own
+    for jobIndex, job in enumerate(jobs):
+	crabCfgPath = os.path.join(sessionPath, "crabConfig_%s.py"%job)    
+	crabCfgPaths.append(crabCfgPath)
+	outputFiles = []
+	for index, file in enumerate(settings.getOutfiles(job)):
+		if not index == 0:
+			outputFiles.append(file)
+	crab.createCRABcfg(job, psetPaths[jobIndex], sessionPath,
+			outputFiles,
+			settings.masterConfig.get(job, 'localdbspath'),
+			str(analysis.LumiToNumber(job, settings.lumi)),
+			crabCfgPath, publishName
+			)
+    #here multicrab ist created
+    #crab.createMULTICRABcfg(jobs, psetPaths, multicrabCfgPath, datasetPathMode)
+    return crabCfgPaths    
 
 def createSkimPSet(job):
     ''' sets up the _cfg.py config-file for skimming'''
@@ -301,7 +332,7 @@ def createAnalysisPSet(job, flag=None, tasks=None):
     psetPath = os.path.join(settings.analysispath, flag, settings.getTaskName(tasks), "psets")
     if not os.path.exists(psetPath):
         os.makedirs(psetPath)
-    psetPath = os.path.join(psetPath, "%s.%s.%s_cfg.py" % (flag, settings.getTaskName(tasks), job))
+    psetPath = os.path.join(psetPath, "%s_%s_%s_cfg.py" % (flag, settings.getTaskName(tasks), job))
     if os.path.exists(psetPath):
         if settings.verbose == True: print ", it exists. overwriting:",
     psetFile = open(psetPath, "w")
@@ -330,6 +361,8 @@ def startLocalJob(pset, job, flag=None, tasks=None, MVA=None):
     subprocess.call(['cmsRun ' + pset], shell=True)
     if not os.path.exists(settings.localhistopath):
         os.makedirs(settings.localhistopath)
+    for outFile in settings.getOutfiles(job):
+		print outFile
     for outFile in settings.getOutfiles(job):
         shutil.move(os.path.join(settings.analysispath, outFile) ,
                     os.path.join(settings.localhistopath, outFile))
@@ -418,7 +451,7 @@ def getJobsFromGroups(groupSelection, missing, flag, tasks):
         if settings.inGroup(groupSelection, jobName):
             if settings.masterConfig.has_option(jobName, 'localevents') and settings.masterConfig.has_option(jobName, 'crosssection') and settings.masterConfig.has_option(jobName, 'kfactor') and settings.masterConfig.has_option(jobName, 'numevents') and settings.masterConfig.has_option(jobName, 'localdbspath'):
                 if missing:
-                    fileName = settings.localhistopath + "/" + flag + "." + settings.getTaskName(tasks) + "." + jobName + "_1.root"
+                    fileName = settings.localhistopath + "/" + flag + "_" + settings.getTaskName(tasks) + "_" + jobName + "_1.root"
                     if theVerbose == True: print 'Checking for file ' + fileName + ' ... ',
                     if os.path.exists(fileName) == False:
                         if theVerbose == True: print 'not found'

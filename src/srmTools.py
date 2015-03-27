@@ -57,43 +57,39 @@ def getDir(source, verbose=False):
         while (output_2.find(entry, j, len(output_2)) != -1):
 			nextOccurrence_2 = output_2.find(entry, j, len(output_2))
 			entry_2 = output_2[nextOccurrence_2:output_2.find('\n', nextOccurrence_2, len(output_2))]
-			command = 'lcg-ls --count=950  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_2
+			command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_2
 			output_3 = __getCommandOutput2(command)
-
-			
 			k = 0
-			nextOccurrence_3 = output_3.find(entry, k, len(output_3))
-			returnValue.append(output_3[nextOccurrence_3:output_3.find('\n', nextOccurrence_3, len(output_3))])
-			#while (output_3.find(entry, k, len(output_3)) != -1):
-				#nextOccurrence_3 = output_3.find(entry, k, len(output_3))
-				#entry_3 = output_3[nextOccurrence_3:output_3.find('\n', nextOccurrence_3, len(output_3))]
-				#command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_3
-				#output_4 = __getCommandOutput2(command)
-				#l = 0
-				#while (output_4.find(entry, l, len(output_4)) != -1):
-					#nextOccurrence_4 = output_4.find(entry, l, len(output_4))
-					#entry_4 = output_4[nextOccurrence_4:output_4.find('\n', nextOccurrence_4, len(output_4))]
-					#command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_4
-					#output_5 = __getCommandOutput2(command)
-					#m = 0
-					#while (output_5.find(entry, m, len(output_5)) != -1):
-						#nextOccurrence_5 = output_5.find(entry, m, len(output_5))
-						#entry_5 = output_5[nextOccurrence_5:output_5.find('\n', nextOccurrence_5, len(output_5))]
-						#command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_5
-						#output_6 = __getCommandOutput2(command)
-						#n = 0
-						#while (output_6.find(entry, n, len(output_6)) != -1):
-							#nextOccurrence_6 = output_6.find(entry, n, len(output_6))
-							#entry_6 = output_6[nextOccurrence_6:output_6.find('\n', nextOccurrence_6, len(output_6))]
-							#if not "failed" in entry_6 and (entry_6 != entry_5):
-								#returnValue.append(entry_6)
-							#n = output_6.find(entry, n, len(output_6)) + 1
+			while (output_3.find(entry, k, len(output_3)) != -1):
+				nextOccurrence_3 = output_3.find(entry, k, len(output_3))
+				entry_3 = output_3[nextOccurrence_3:output_3.find('\n', nextOccurrence_3, len(output_3))]
+				command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_3
+				output_4 = __getCommandOutput2(command)
+				l = 0
+				while (output_4.find(entry, l, len(output_4)) != -1):
+					nextOccurrence_4 = output_4.find(entry, l, len(output_4))
+					entry_4 = output_4[nextOccurrence_4:output_4.find('\n', nextOccurrence_4, len(output_4))]
+					command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_4
+					output_5 = __getCommandOutput2(command)
+					m = 0
+					while (output_5.find(entry, m, len(output_5)) != -1):
+						nextOccurrence_5 = output_5.find(entry, m, len(output_5))
+						entry_5 = output_5[nextOccurrence_5:output_5.find('\n', nextOccurrence_5, len(output_5))]
+						command = 'lcg-ls  -b -D srmv2 srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + entry_5
+						output_6 = __getCommandOutput2(command)
+						n = 0
+						while (output_6.find(entry, n, len(output_6)) != -1):
+							nextOccurrence_6 = output_6.find(entry, n, len(output_6))
+							entry_6 = output_6[nextOccurrence_6:output_6.find('\n', nextOccurrence_6, len(output_6))]
+							if not "failed" in entry_6 and (entry_6 != entry_5):
+								returnValue.append(entry_6)
+							n = output_6.find(entry, n, len(output_6)) + 1
 							
-						#m = output_5.find(entry, m, len(output_5)) + 1
+						m = output_5.find(entry, m, len(output_5)) + 1
 					
-					#l = output_4.find(entry, l, len(output_4)) + 1
+					l = output_4.find(entry, l, len(output_4)) + 1
 				
-			k = output_3.find(entry, k, len(output_3)) + 1
+				k = output_3.find(entry, k, len(output_3)) + 1
 
 			j = output_2.find(entry, j, len(output_2)) + 1
 			

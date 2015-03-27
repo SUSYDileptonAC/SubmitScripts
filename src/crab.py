@@ -1,3 +1,5 @@
+### adapting crab.py to use CRAB3, October 2014 Jan-F. Schulte
+
 import os, subprocess, shutil
 #, srmop
 import analysis
@@ -22,56 +24,66 @@ def createCRABcfg(Job, Pset, WorkDir, OutputFiles, DBSpath, numEvents, crabcfg, 
 	#put CMSSW.increment_seeds=generator,VtxSmeared for production
 	repMap.update(settings.getMap())
 	repMap.update(settings.crabAdditionsBlocks)
-	if PublishName != '':
-		repMap["PublishBlock"] = """storage_element = %(StageoutSite)s
-user_remote_dir = %(user_remote_dir)s
-publish_data = 1
-publish_data_name = %(PublishName)s 
-dbs_url_for_publication =%(dbsurl)s """ % repMap
-	else:
-		repMap["PublishBlock"] = """storage_element = %(storage_element)s
-storage_path = /srm/managerv2?SFN=%(histogramstoragepath)s/%(theJob)s""" % repMap
+	#~ if "lumiMask" in repMap["Data-AdditionsBlock"]:		
+	repMap["nUnits"] = repMap["lumis_per_job"]
+	repMap["splitting"] = "FileBased"
+	#~ repMap["nUnits"] = repMap["nEventsPerJob"]
+	#~ repMap["splitting"] = "EventBased"
+	
+	#~ else:
+		#~ repMap["nUnits"] = repMap["nEventsPerJob"]
+		#~ repMap["splitting"] = "LumiBased"
 
-	if settings.skimFromLocalDBS or PublishName == '':
-		repMap["customDBSBlock"] = "dbs_url = %(dbsurl)s" % repMap
+	txt = """from WMCore.Configuration import Configuration
+config = Configuration()
+	
+config.section_("General")
+	
+config.General.requestName = "%(theJob)s"
+config.General.workArea = "%(workdir)s"	
+config.General.transferOutputs = True
+config.General.transferLogs = False
+	
+%(General-AdditionsBlock)s	
+	
+config.section_("JobType")
 
-	txt = """[CRAB]
-jobtype = cmssw
-scheduler = glite
-use_server = 1
-#server_name = %(CrabServer)s
-%(CRAB-AdditionsBlock)s
+config.JobType.pluginName = "Analysis"
+config.JobType.psetName = "%(ParameterSet)s"
+#config.JobType.inputFiles = 
+config.JobType.outputFiles = %(OutputFiles)s
+config.JobType.allowNonProductionCMSSW = True
+%(JobType-AdditionsBlock)s
 
-[CMSSW]
-datasetpath = %(datasetpath)s
-%(customDBSBlock)s
-pset = %(ParameterSet)s
-total_number_of_events = %(numEvents)s
-events_per_job = %(nEventsPerJob)s
-output_file = %(OutputFiles)s
-#Not used at the moment, but can be used if quicker
-#get_edm_output = 1
-allow_NonProductionCMSSW = 1
-%(CMSSW-AdditionsBlock)s
+config.section_("Data")
 
-[USER]
-ui_working_dir = %(workdir)s
-copy_data = 1
-%(PublishBlock)s
-thresholdLevel = 70
-eMail = %(email)s
-%(USER-AdditionsBlock)s
+config.Data.inputDataset = "%(datasetpath)s"
+config.Data.inputDBS = "%(inputDBS)s"
+config.Data.splitting = "%(splitting)s"
+config.Data.unitsPerJob = %(nUnits)s
+config.Data.totalUnits = %(numEvents)s
+config.Data.publication = %(publish)s
+config.Data.publishDBS = "%(pubDBSURL)s"
+config.Data.publishDataName = "%(theJob)s"
+config.Data.ignoreLocality = True
+config.Data.outLFN = "%(histogramstoragepath)s/%(theJob)s"
 
-[GRID]
-virtual_organization = cms
-group = dcms
-%(GRID-AdditionsBlock)s
+%(Data-AdditionsBlock)s
 
-[CONDORG]
-%(CONDORG-AdditionsBlock)s
+config.section_("Site")
 
-[CAF]
-%(CAF-AdditionsBlock)s
+config.Site.storageSite = "%(StageoutSite)s"
+%(Site-AdditionsBlock)s
+
+config.section_("User")
+
+config.User.voGroup = "dcms"
+%(User-AdditionsBlock)s
+
+config.section_("Debug")
+
+%(Debug-AdditionsBlock)s
+
 """ % repMap
  	if not os.path.exists(os.path.dirname(crabcfg)):
  		os.makedirs(os.path.dirname(crabcfg))

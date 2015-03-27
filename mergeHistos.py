@@ -102,12 +102,27 @@ def getUnmergedHistos(filterTask=None, filterFlag=None, fileList=None):
 			 		 			 
                          
     #versionReStrings[2007008] = versionReStrings[2007007]
-    stringTemplate = "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root"
+    #~ stringTemplate = "(.*)\.(.*)\.(.*)_([0-9]*)_([0-9]*)_(.*).root"
+    stringTemplate = "(.*)\_(.*)\_(.*)_([0-9]*).root"
     fileNameRE = re.compile(stringTemplate)
     for fileName in fileList:
         groups = fileNameRE.search(fileName)
         if not groups == None:
-            (flag, task, sample, fileNumber) = groups.groups()[:4]
+            #~ (flag, task, sample, fileNumber) = groups.groups()[:4]
+            fileNameParts = fileName.split("_")
+            flag =  fileNameParts[0]
+            task =  fileNameParts[1]
+            fileNumber = fileNameParts[-1]
+            fileNumber = fileNumber.replace(".root","")
+            sample = ""
+            del fileNameParts[0]
+            del fileNameParts[0]
+            del fileNameParts[-1]
+            for fileNamePart in fileNameParts:
+				if sample == "":
+					sample = "%s"%(fileNamePart)
+				else:
+					sample = "%s_%s"%(sample,fileNamePart)
             retries = None
             if len(groups.groups()) == 5:
                 retries = groups.groups()[4]
@@ -166,7 +181,8 @@ def removeDone( sources, destPathName, verbose=True):
 def findLastRetry(path):
     from glob import glob
     paths = glob(path.replace(".root","_*.root"))
-    expr = re.compile(path.replace(".root","_([0-9]*)_(.*).root"))
+    #~ expr = re.compile(path.replace(".root","_([0-9]*)_(.*).root"))
+    expr = re.compile(path.replace(".root","_([0-9]*).root"))
     return sorted(paths, key=lambda x: int(expr.search(x).groups()[0]))[-1]
         
 
@@ -183,11 +199,12 @@ def addHistos(unmergedList=None, dryRun=False, verbose=True, sampleFilter = None
                 if (not sampleFilter == None) and  match(sampleFilter, sample) == None:
                     print "skipping",sample, sampleFilter
                     continue
-                rawSources = [ os.path.join(settings.localhistopath, "%s.%s.%s_%s.root" % (flag, task, sample, i)) for i in unmergedList[flag][task][sample] ]
-                sources = []
+                #~ rawSources = [ os.path.join(settings.localhistopath, "%s.%s.%s_%s.root" % (flag, task, sample, i)) for i in unmergedList[flag][task][sample] ]
+                rawSources = [ os.path.join(settings.localhistopath, "%s_%s_%s_%s.root" % (flag, task, sample, i)) for i in unmergedList[flag][task][sample] ]
+                sources = rawSources
 
-                for source in rawSources:
-			sources.append(findLastRetry(source))
+                #~ for source in rawSources:
+			#~ sources.append(findLastRetry(source))
 
                 sources = filter(rootFileValid, sources)
                 destDir = os.path.join(settings.mergedhistopath, flag, task)
