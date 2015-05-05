@@ -19,13 +19,13 @@
         {    "name": "MediumElectrons",
              "cut": """
              isEB 
-             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.007 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.15 & sigmaIetaIeta < 0.01
-		& hadronicOverEm < 0.12 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.05 
+             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.012442 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.072624 & full5x5_sigmaIetaIeta < 0.010557
+		& hadronicOverEm < 0.121476 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.221803 
 		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
 	     )
              | isEE
-             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.009 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.1 & sigmaIetaIeta < 0.03
-                & hadronicOverEm < 0.1 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.05
+             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.010654 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.145129 & full5x5_sigmaIetaIeta < 0.032602
+                & hadronicOverEm < 0.131862 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.142283
 		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
              )
             """,
@@ -46,9 +46,11 @@
         "srcNames": "src beamSpotSource",
         "selector": "PATElectronD0PVSelector",
         "d0Min": -1.,
-        "d0Max": 0.02,
+        "d0MaxEB": 0.022664,
+        "d0MaxEE":  0.097358,
         "dZMin": -1.,
-        "dZMax": 0.1,
+        "dZMaxEB": 0.173670,
+        "dZMaxEE": 0.198444,
         "beamSpotSource": "(vertices)" 
     },
     {   "name": "d0TriggerElectrons",

@@ -5,30 +5,34 @@
 "additionalFilters":{
         "HLTDiEle": ["HLTDoubleElectronIncl"],
         "HLTDiMu": ["HLTDoubleMuIncl"],
-        "HLTMuEG": ["HLTMuEGIncl"],
-        "HLTMuEle": ["HLTMuEGInclmue"]
+        "HLTMuEle": ["HLTMuEGIncl"],
 },
 
 
-
-"hlt": input("baseSelections/baseHLTMiniAOD"),
+"hlt": input("baseSelections/baseHLT2012"),
 "vertices":[
-    {   "src": "offlineSlimmedPrimaryVertices",
+    {   "src": "offlinePrimaryVertices",
         "name": "basicVertices",
         "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
     },
 ],
 
+# TODO: do we need this?
+#"beamscraping":[
+#    {   "srcNames": "debugOn",
+#        "debugOn": False,
+#        "name": "beamScraping"
+#    },
+#],
 
-"muons": input("baseSelections/pogMuonsMiniAOD"),
-"electrons" : input("baseSelections/pogElectronsMiniAOD"),
 
-"jets" : input("baseSelections/baseJetsMiniAOD")+input("baseSelections/baseHT2012"),
+"muons": input("baseSelections/hpaMuons2012"),
+"electrons" : input("baseSelections/hpaElectrons2012"),
 
-
+"jets" : input("baseSelections/baseJets2012")+input("baseSelections/baseHT2012"),
 
 "met" : [
-	{	"src": "slimmedMETs",
+	{	"src": "patMETsPF",
 		"name": "BaseMET",
 		"cut": "pt >= 0."
 	},

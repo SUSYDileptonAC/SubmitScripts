@@ -24,6 +24,11 @@
         "cut": "pt > 20."
     },
     {	"name": "qualityMuons",
+		"srcNames": "src vertexSource",
+		"selector": "PATMuonTightIDSelector",
+		"vertexSource": "(vertices)",
+	},
+	{	"name": "qualityMuons",
 		"cut":"""globalTrack().normalizedChi2 < 10 & 
 			  globalTrack().hitPattern().numberOfValidMuonHits > 0 &
 			  numberOfMatchedStations > 1 &
@@ -34,9 +39,9 @@
 		"srcNames": "src beamSpotSource",
 		"selector": "PATMuonD0PVSelector",
                 "d0Min": -1.,
-                "d0Max": 0.2,
+                "d0Max": 0.02,
                 "dZMin": -0.1,
-                "dZMax": 0.5,
+                "dZMax": 0.1,
 		"beamSpotSource": "(vertices)",
 	},
     {   "name": "d0TriggerMuons",

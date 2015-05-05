@@ -2,33 +2,37 @@
 "activeFilters": ["basicVertices"],
 "order":["hlt","vertices","muons","electrons","jets","met"],
 
+
 "additionalFilters":{
         "HLTDiEle": ["HLTDoubleElectronIncl"],
         "HLTDiMu": ["HLTDoubleMuIncl"],
         "HLTMuEG": ["HLTMuEGIncl"],
-        "HLTMuEle": ["HLTMuEGInclmue"]
+        "HLTMuEle": ["HLTMuEGInclmue"],
+	"HLTEleMu": ["HLTMuEGInclemu"],
+	"HLTDiMuNoTrackerMuon": ["HLTDoubleMuNoTrackerMuon"],
 },
-
 
 
 "hlt": input("baseSelections/baseHLTMiniAOD"),
 "vertices":[
-    {   "src": "offlineSlimmedPrimaryVertices",
+    {   "src": "offlinePrimaryVertices",
         "name": "basicVertices",
         "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
     },
 ],
 
 
-"muons": input("baseSelections/pogMuonsMiniAOD"),
-"electrons" : input("baseSelections/pogElectronsMiniAOD"),
+"METFilter": input("baseSelections/baseMETFilter2013"),
 
-"jets" : input("baseSelections/baseJetsMiniAOD")+input("baseSelections/baseHT2012"),
+"muons": input("baseSelections/pogMuonsAOD"),
+"electrons" : input("baseSelections/pogElectronsAOD"),
+
+"jets" : input("baseSelections/baseJetsAOD")+input("baseSelections/baseHT2012"),
 
 
 
 "met" : [
-	{	"src": "slimmedMETs",
+	{	"src": "patMETsPF",
 		"name": "BaseMET",
 		"cut": "pt >= 0."
 	},

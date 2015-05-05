@@ -45,7 +45,7 @@
     },
 	{	"name": "LooseIsoMuons",
 		"cut": """
-  (pfIsolationR03().sumChargedHadronPt + max(0., pfIsolationR03().sumNeutralHadronEt + pfIsolationR03().sumPhotonEt - 0.5 * pfIsolationR03().sumPUPt)) / pt <= 1.0
+  (pfIsolationR03().sumChargedHadronPt + max(0., pfIsolationR03().sumNeutralHadronEt + pfIsolationR03().sumPhotonEt - 0.5 * pfIsolationR03().sumPUPt)) / pt <= 0.5
 """
 	},
 	{	"name": "IsoMuons",
