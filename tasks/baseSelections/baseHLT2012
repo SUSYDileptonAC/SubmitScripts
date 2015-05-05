@@ -80,7 +80,7 @@ condition(True,[
        "selector": "triggerSelection",
         "hltResults": InputTag("TriggerResults","","HLT"),
         "name": "HLTMET",
-        "triggerConditions": ["HLT_PFMET150_v* OR HLT_PFMET180_v* OR HLT_MET80_Parked_v* OR HLT_MET100_HBHENoiseCleaned_v* OR HLT_MET120_HBHENoiseCleaned_v*"],
+        "triggerConditions": ["HLT_PFMET150_v* OR HLT_PFMET180_v*"],
         "throw": False,
     },
    {  "srcNames": "hltResults",
@@ -132,13 +132,6 @@ condition(True,[
         "triggerConditions": ["HLT_Mu17_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_v* OR HLT_IsoMu24_v* OR HLT_Ele27_WP80_v*"],
         "throw": False,
     },
-    {  "srcNames": "hltResults",
-       "selector": "triggerSelection",
-        "hltResults": InputTag("TriggerResults","","HLT"),
-        "name": "HLTFakeStudies",
-        "triggerConditions": ["HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Jet30_v* OR HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_v* OR HLT_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Jet30_v* OR HLT_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_v* OR HLT_Mu8_v* OR HLT_Mu17_v*"],
-        "throw": False,
-    },
 ], 
 
 [{  "srcNames": "hltResults",
@@ -148,6 +141,5 @@ condition(True,[
         "triggerConditions": ["HLT_Mu8_v*"],
         "throw": False,
     },
-
  
 ] )

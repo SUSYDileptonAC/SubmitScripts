@@ -6,16 +6,7 @@
         "HLTDiEle": ["HLTDoubleElectronIncl"],
         "HLTDiMu": ["HLTDoubleMuIncl"],
         "HLTMuEG": ["HLTMuEGIncl"],
-        "HLTMuEle": ["HLTMuEGInclmue"],
-	"HLTEleMu": ["HLTMuEGInclemu"],
-	"HLTDiMuNoTrackerMuon": ["HLTDoubleMuNoTrackerMuon"],
-	"HLTSingleMuon": ["HLTSingleMuon"],
-	"HLTSingleEle": ["HLTSingleElectron"],
-	"HLTSingleLepton": ["HLTSingleLepton"],
-	"HLTDoubleEleHT300": ["HLTDoubleElectronHT300"],
-	"HLTDoubleMuonHT300": ["HLTDoubleMuonHT300"],
-	"HLTMuEleHT300": ["HLTMuEleHT300"],
-	"HLTDiLeptonOrSingleLepton": ["HLTDiLeptonOrSingleLepton"],
+        "HLTMuEle": ["HLTMuEGInclmue"]
 },
 
 

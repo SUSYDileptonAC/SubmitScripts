@@ -1,0 +1,66 @@
+[
+# PAT Muons
+#===========
+    {	"src": "slimmedMuons",
+		"name": "basicMuonsPAT",
+		"cut": "abs( eta ) <= 2.4 & pt >= 10."
+	},
+	{	"name": "electronVetoMuons",
+        "skip": True,
+		"cut": "muonID( 'AllGlobalMuons' ) | isTrackerMuon"
+	},
+	{	"name": "globalMuons",
+	#not in POG recommendations
+		"cut": "isGlobalMuon & isTrackerMuon & isPFMuon"
+	},
+	{	"name": "NoIDIsoMuons",
+        "skip": True,
+		"cut": """
+                ((pfIsolationR03().sumChargedHadronPt + max(0., pfIsolationR03().sumNeutralHadronEt + pfIsolationR03().sumPhotonEt - 0.5 * pfIsolationR03().sumPUPt)) / pt < 0.15) 
+                """
+	},
+    {   "name": "TagPtMuons",
+        "skip": True,
+        "cut": "pt > 20."
+    },
+    {	"name": "qualityMuons",
+		"srcNames": "src vertexSource",
+		"selector": "PATMuonTightIDSelector",
+		"vertexSource": "(vertices)",
+	},
+	{	"name": "qualityMuons",
+		"cut":"""globalTrack().normalizedChi2 < 10 & 
+			  globalTrack().hitPattern().numberOfValidMuonHits > 0 &
+			  numberOfMatchedStations > 1 &
+			  innerTrack().hitPattern().numberOfValidPixelHits > 0 & 
+			  track().hitPattern().trackerLayersWithMeasurement > 5""",
+	},
+	{	"name": "d0Muons",
+		"srcNames": "src beamSpotSource",
+		"selector": "PATMuonD0PVSelector",
+                "d0Min": -1.,
+                "d0Max": 0.02,
+                "dZMin": -0.1,
+                "dZMax": 0.1,
+		"beamSpotSource": "(vertices)",
+	},
+    {   "name": "d0TriggerMuons",
+        "skip": True,
+        "cut": "pt >= 20."
+    },
+	{	"name": "LooseIsoMuons",
+		"cut": """
+  (pfIsolationR03().sumChargedHadronPt + max(0., pfIsolationR03().sumNeutralHadronEt + pfIsolationR03().sumPhotonEt - 0.5 * pfIsolationR03().sumPUPt)) / pt <= 0.5
+"""
+	},
+	{	"name": "IsoMuons",
+		"cut": """
+  (pfIsolationR03().sumChargedHadronPt + max(0., pfIsolationR03().sumNeutralHadronEt + pfIsolationR03().sumPhotonEt - 0.5 * pfIsolationR03().sumPUPt)) / pt <= 0.15
+"""
+	},
+
+    {	"name": "TriggerMuons",
+        "skip": True,
+		"cut": "abs( eta ) <= 2.4 & pt >= 20"
+	},
+]

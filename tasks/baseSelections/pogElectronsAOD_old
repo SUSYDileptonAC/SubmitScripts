@@ -1,0 +1,86 @@
+[
+# PAT Electrons
+#===============
+    	{	"src": "cleanPatElectrons",
+		"name": "basicElectronsPAT",
+            "cut": "pt >= 10. & abs( eta ) <= 2.5 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566)"
+    	},
+	{   "name": "noIDIsoElectrons",
+            	"skip": True,
+		"srcNames": "src",
+		"selector": "PATElectronEffectiveAreaSelector",
+		"isoMin": -1.,
+		"isoMax": 0.09,
+	    },
+        {   "name": "TagPtElectrons",
+            "skip": True,
+                "cut": "pt > 20."
+        },
+        {    "name": "MediumElectrons",
+             "cut": """
+             isEB 
+             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.007 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.07 & sigmaIetaIeta < 0.01
+		& hadronicOverEm < 0.12 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.05 
+		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
+	     )
+             | isEE
+             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.009 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.1 & sigmaIetaIeta < 0.03
+                & hadronicOverEm < 0.1 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.05
+		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
+             )
+            """,
+        },
+    {   "selector": "muonCleanElectrons",
+        "srcNames": "src leptSrc",
+        "name": "MuonCleanElectrons",
+        "leptSrc": "(muons.electronVetoMuons)"
+     },
+    {   "name": "nonMissHitsElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 1,
+    },
+     {	"name": "nonConvertedElectrons",
+	"cut": "passConversionVeto"
+     },
+    {	"name": "d0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0Max": 0.02,
+        "dZMin": -1.,
+        "dZMax": 0.1,
+        "beamSpotSource": "(vertices)" 
+    },
+    {   "name": "d0TriggerElectrons",
+        "skip": True,
+        "cut": "pt >= 20."
+    },
+	{	"name": "LooseIsoElectrons",
+        	 "srcNames": "src",
+		"src":"(electrons.d0Electrons)",
+               	"selector": "PATElectronEffectiveAreaSelector",
+                "isoMin": -1.,
+	        "isoMax": 0.5,
+       	},
+	{	"name": "IsoElectrons",
+        	 "srcNames": "src",
+		"src":"(electrons.d0Electrons)",
+               	"selector": "PATElectronEffectiveAreaSelector",
+                "isoMin": -1.,
+	        "isoMax": 0.15,
+       	},
+    	{	"name": "TriggerElectrons",
+                "skip": True,
+        	"cut": "abs( eta ) <= 2.5 & pt >= 20."
+    	},
+        {       "name": "matchedElectrons",
+                "cut": "genParticlesSize != 0"
+        },
+        {       "name": "chCorrectElectrons",
+                "cut": "genLepton.charge == charge",
+                "skip": True
+        },
+        {       "name": "chWrongElectrons",
+                "cut": "genLepton.charge != charge",
+        },
+]
