@@ -1,0 +1,7 @@
+[
+	{   "selector": "defaultSelector",
+	    "name": "METFilterMiniAOD",
+	    "src": "TriggerResults",	
+	},
+
+]
