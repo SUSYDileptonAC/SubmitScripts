@@ -52,7 +52,7 @@ config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "%(ParameterSet)s"
 #config.JobType.inputFiles = 
 config.JobType.outputFiles = %(OutputFiles)s
-config.JobType.allowNonProductionCMSSW = True
+config.JobType.allowUndistributedCMSSW = True
 %(JobType-AdditionsBlock)s
 
 config.section_("Data")
@@ -66,7 +66,7 @@ config.Data.publication = %(publish)s
 config.Data.publishDBS = "%(pubDBSURL)s"
 config.Data.publishDataName = "%(theJob)s"
 config.Data.ignoreLocality = True
-config.Data.outLFN = "%(histogramstoragepath)s/%(theJob)s"
+config.Data.outLFNDirBase = "%(histogramstoragepath)s/%(theJob)s"
 
 %(Data-AdditionsBlock)s
 
