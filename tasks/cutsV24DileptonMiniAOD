@@ -18,7 +18,7 @@
 
 "jets" : input("baseSelections/baseJetsMiniAOD")+input("baseSelections/baseHT2012"),
 
-
+"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
 
 "met" : [
 	{	"src": "slimmedMETs",

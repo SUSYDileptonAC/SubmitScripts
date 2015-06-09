@@ -1,7 +1,14 @@
 [
 # PAT Electrons
 #===============
-    	{	"src": "slimmedElectrons",
+        {   "src": "slimmedElectrons", 
+        	"name": "LooseElectrons",
+        	"selector": "PATElectronIDSelector",
+        	"srcNames": "src",
+        	"idMapSource": "egmGsfElectronIDs:cutBasedElectronID-PHYS14-PU20bx25-V1-miniAOD-standalone-loose"
+        },								      
+
+    	{	
 		"name": "basicElectronsPAT",
             "cut": "pt >= 10. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566)"
     	},
@@ -16,20 +23,7 @@
             "skip": True,
                 "cut": "pt > 20."
         },
-        {    "name": "MediumElectrons",
-             "cut": """
-             isEB 
-             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.012442 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.072624 & full5x5_sigmaIetaIeta < 0.010557
-		& hadronicOverEm < 0.121476 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) <  0.221803 
-		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
-	     )
-             | isEE
-             & (abs(deltaEtaSuperClusterTrackAtVtx) < 0.010654 & abs(deltaPhiSuperClusterTrackAtVtx) < 0.145129 & full5x5_sigmaIetaIeta < 0.032602
-                & hadronicOverEm < 0.131862 & abs(1.0/ecalEnergy - eSuperClusterOverP/ecalEnergy) < 0.142283 
-		& gsfTrack().hitPattern().numberOfHits("MISSING_INNER_HITS") <= 1 
-             )
-            """,
-        },
+
     {   "name": "nonMissHitsElectrons",
         "selector": "PATElectronConversionSelector",
         "maxLostHits": 1,
@@ -37,13 +31,6 @@
      {	"name": "nonConvertedElectrons",
 	"cut": "passConversionVeto"
      },
-     
-    {   "selector": "muonCleanElectrons",
-        "srcNames": "src leptSrc",
-        "name": "MuonCleanElectrons",
-        "leptSrc": "(muons.IsoMuons)"
-     },      
-     
     {	"name": "d0Electrons",
         "srcNames": "src beamSpotSource",
         "selector": "PATElectronD0PVSelector",
@@ -55,8 +42,6 @@
         "dZMaxEE": 0.198444,
         "beamSpotSource": "(vertices)" 
     },
-   
-    
     {   "name": "d0TriggerElectrons",
         "skip": True,
         "cut": "pt >= 20."
@@ -64,18 +49,16 @@
 	{	"name": "LooseIsoElectrons",
         	 "srcNames": "src",
 		"src":"(electrons.d0Electrons)",
-               	"selector": "PATElectronIsolationSelector",
-               	"method": "miniIsoEA",             	
+               	"selector": "PATElectronEffectiveAreaSelector",             	
                 "isoMin": -1.,
 	        "isoMax": 0.5,
        	},
 	{	"name": "IsoElectrons",
         	 "srcNames": "src",
 		"src":"(electrons.d0Electrons)",
-               	"selector": "PATElectronIsolationSelector",
-               	"method": "miniIsoEA",
+               	"selector": "PATElectronEffectiveAreaSelector",
                 "isoMin": -1.,
-	        "isoMax": 0.1,
+	        "isoMax": 0.15,
        	},
     	{	"name": "TriggerElectrons",
                 "skip": True,

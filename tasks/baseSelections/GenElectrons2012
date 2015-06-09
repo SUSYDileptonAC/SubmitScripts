@@ -1,0 +1,8 @@
+[
+# PAT Electrons
+#===============
+    	{	"src": "genParticles",
+		"name": "GenElectrons",
+    	},
+
+]
