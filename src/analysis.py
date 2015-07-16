@@ -60,7 +60,6 @@ def MessageLogger(analogname):
 	txt = """
 process.options = cms.untracked.PSet(\n
      wantSummary = cms.untracked.bool(True),
-     SkipEvent = cms.untracked.vstring('ProductNotFound')
 )
 process.MessageLogger = cms.Service('MessageLogger',
   %(analogname)s = cms.untracked.PSet( 

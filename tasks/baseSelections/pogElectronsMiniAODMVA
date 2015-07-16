@@ -1,0 +1,67 @@
+[
+# PAT Electrons
+#===============
+        {   "src": "slimmedElectrons", 
+        	"name": "MVAElectrons",
+        	"selector": "PATElectronMVAIDSelector",
+        	"srcNames": "src",
+        	"idMapSource": "electronMVAValueMapProducer:ElectronMVAEstimatorRun2Phys14NonTrigValues"
+        },								      
+
+    	{	
+		"name": "basicElectronsPAT",
+            "cut": "pt >= 10. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566)"
+    	},
+	{   "name": "noIDIsoElectrons",
+            	"skip": True,
+		"srcNames": "src",
+		"selector": "PATElectronEffectiveAreaSelector",
+		"isoMin": -1.,
+		"isoMax": 0.09,
+	    },
+        {   "name": "TagPtElectrons",
+            "skip": True,
+                "cut": "pt > 20."
+        },
+
+    {   "name": "nonMissHitsElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 1,
+    },
+     {	"name": "nonConvertedElectrons",
+	"cut": "passConversionVeto"
+     },
+    {	"name": "d0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0MaxEB": 0.022664,
+        "d0MaxEE":  0.097358,
+        "dZMin": -1.,
+        "dZMaxEB": 0.173670,
+        "dZMaxEE": 0.198444,
+        "beamSpotSource": "(vertices)" 
+    },
+    {   "name": "d0TriggerElectrons",
+        "skip": True,
+        "cut": "pt >= 20."
+    },
+	{	"name": "LooseIsoElectrons",
+        	 "srcNames": "src",
+		"src":"(electrons.d0Electrons)",
+               	"selector": "PATElectronEffectiveAreaSelector",             	
+                "isoMin": -1.,
+	        "isoMax": 0.5,
+       	},
+	{	"name": "IsoElectrons",
+        	 "srcNames": "src",
+		"src":"(electrons.d0Electrons)",
+               	"selector": "PATElectronEffectiveAreaSelector",
+                "isoMin": -1.,
+	        "isoMax": 0.15,
+       	},
+    	{	"name": "TriggerElectrons",
+                "skip": True,
+        	"cut": "abs( eta ) <= 2.5 & pt >= 20."
+    	},
+]

@@ -24,7 +24,7 @@
         "cut": "pt > 20."
     },
     {	"name": "qualityMuons",
-		"selector": "PATMuonTightIDSelector",
+		"selector": "PATMuonMediumIDSelector",
 		"vertexSource": "offlineSlimmedPrimaryVertices",
 	},
 	{	"name": "d0Muons",
