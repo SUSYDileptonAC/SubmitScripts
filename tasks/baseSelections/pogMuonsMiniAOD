@@ -3,7 +3,7 @@
 #===========
     {	"src": "slimmedMuons",
 		"name": "basicMuonsPAT",
-		"cut": "abs( eta ) <= 2.4 & pt >= 10."
+		"cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 10."
 	},
 	{	"name": "electronVetoMuons",
         "skip": True,
@@ -11,6 +11,7 @@
 	},
 	{	"name": "globalMuons",
 	#not in POG recommendations
+	        "skip": True,
 		"cut": "isGlobalMuon & isTrackerMuon & isPFMuon"
 	},
 	{	"name": "NoIDIsoMuons",
@@ -31,9 +32,9 @@
 		"srcNames": "src beamSpotSource",
 		"selector": "PATMuonD0PVSelector",
                 "d0Min": -1.,
-                "d0Max": 0.2,
+                "d0Max": 0.05,
                 "dZMin": -0.1,
-                "dZMax": 0.5,
+                "dZMax": 0.1,
 		"beamSpotSource": "(vertices)",
 	},
     {   "name": "d0TriggerMuons",
