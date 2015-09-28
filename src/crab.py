@@ -30,9 +30,6 @@ def createCRABcfg(Job, Pset, WorkDir, OutputFiles, DBSpath, numEvents, crabcfg, 
 		repMap["splitting"] = "FileBased"
 	repMap["InFiles"] = repMap["additional_input_files"]
 	repMap["nUnits"] = repMap["lumis_per_job"]
-	
-	
-	print repMap["lumi_mask"]
 
 
 	txt = """from WMCore.Configuration import Configuration

@@ -2,7 +2,7 @@
 
 while :
 do
-    python getOutputFromStorage2.py -C Input/default70X.ini
+    python getOutputFromStorage2.py -C Input/default74X.ini
 	echo "Press [CTRL+C] to stop.."
 	sleep 60
 done
