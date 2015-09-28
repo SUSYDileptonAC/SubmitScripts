@@ -150,6 +150,7 @@ def poolSourceLocal(job, n):
 	cmsswBlocks = settings.getMap()["crabAdditionsBlocks"]["Data-AdditionsBlock"].splitlines()
 	jsonPath = None
 	for cmsswBlock in cmsswBlocks:
+		print cmsswBlock
 		if "lumi_mask" in cmsswBlock:
 			jsonPath = cmsswBlock.split("=")[-1].strip()
 
@@ -451,7 +452,7 @@ def getPATPset(flag, job, n, tasks, HLT, MVA=False):
 	if "globalTag" in settings.getMap(): repMap["globalTag"] = """
 process.load("Configuration.Geometry.GeometryIdeal_cff")
 #process.load("Configuration.StandardSequences.Geometry_cff")
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff")
 #from Configuration.PyReleaseValidation.autoCond import autoCond
 process.GlobalTag.globaltag = cms.string(%(globalTag)s)
 process.load("Configuration.StandardSequences.MagneticField_cff")
