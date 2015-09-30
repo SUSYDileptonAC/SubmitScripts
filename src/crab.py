@@ -26,10 +26,11 @@ def createCRABcfg(Job, Pset, WorkDir, OutputFiles, DBSpath, numEvents, crabcfg, 
 	repMap.update(settings.crabAdditionsBlocks)
 	if not repMap["lumi_mask"] == "":
 		repMap["splitting"] = "LumiBased"
+		repMap["nUnits"] = repMap["lumis_per_job"]
 	else:
 		repMap["splitting"] = "FileBased"
+		repMap["nUnits"] = repMap["events_per_job"]
 	repMap["InFiles"] = repMap["additional_input_files"]
-	repMap["nUnits"] = repMap["lumis_per_job"]
 
 
 	txt = """from WMCore.Configuration import Configuration
