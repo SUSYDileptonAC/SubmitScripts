@@ -1,9 +1,0 @@
-[
-#    {    "name": "CorrElectrons",
-#         "src": "selectedPatElectronsPF",
-#         "selector": "pfPatElectrons",
-#    },
-    {    "name": "basicElectrons",
-         "cut": "abs( eta ) <= 2.4 & pt >= 20",
-    },
-]

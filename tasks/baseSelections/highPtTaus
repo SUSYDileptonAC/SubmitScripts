@@ -1,6 +1,0 @@
-[
-   {   "src": "selectedPatTausPFShrinkingCone",
-       "name": "basicTaus",
-       "cut": "abs( eta ) <= 2.3 & pt >= 20"
-   },
-]

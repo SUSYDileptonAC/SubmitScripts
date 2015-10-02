@@ -1,9 +1,0 @@
-[
-# PAT Jets
-#===========
-    {  "src": "smearedPatJetsPFresUp",
-        "name": "qualityJetsResUp",
-	"cut": "abs( eta ) <= 3. & pt >= 40.",
-    },
-
- ]
