@@ -75,6 +75,9 @@ class MainConfig:
                 "nEventsPerJob": config.get("crab", 'nEventsPerJob'),
                 #~ "user_remote_dir": os.path.expandvars(config.get("crab", 'user_remote_dir')),
 		"lumis_per_job": os.path.expandvars(config.get("crab", 'lumis_per_job')),		
+		"events_per_job": os.path.expandvars(config.get("crab", 'events_per_job')),		
+		"lumi_mask": os.path.expandvars(config.get("crab", 'lumi_mask')),		
+		"additional_input_files": os.path.expandvars(config.get("crab", 'additional_input_files')),		
 		"publish": os.path.expandvars(config.get("crab", 'publish')),		
 		"pubDBSURL": os.path.expandvars(config.get("crab", 'pubDBSURL')),		
 				

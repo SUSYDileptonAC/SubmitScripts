@@ -24,15 +24,14 @@ def createCRABcfg(Job, Pset, WorkDir, OutputFiles, DBSpath, numEvents, crabcfg, 
 	#put CMSSW.increment_seeds=generator,VtxSmeared for production
 	repMap.update(settings.getMap())
 	repMap.update(settings.crabAdditionsBlocks)
-	#~ if "lumiMask" in repMap["Data-AdditionsBlock"]:		
-	repMap["nUnits"] = repMap["lumis_per_job"]
-	repMap["splitting"] = "FileBased"
-	#~ repMap["nUnits"] = repMap["nEventsPerJob"]
-	#~ repMap["splitting"] = "EventBased"
-	
-	#~ else:
-		#~ repMap["nUnits"] = repMap["nEventsPerJob"]
-		#~ repMap["splitting"] = "LumiBased"
+	if not repMap["lumi_mask"] == "":
+		repMap["splitting"] = "LumiBased"
+		repMap["nUnits"] = repMap["lumis_per_job"]
+	else:
+		repMap["splitting"] = "FileBased"
+		repMap["nUnits"] = repMap["events_per_job"]
+	repMap["InFiles"] = repMap["additional_input_files"]
+
 
 	txt = """from WMCore.Configuration import Configuration
 config = Configuration()
@@ -50,7 +49,7 @@ config.section_("JobType")
 
 config.JobType.pluginName = "Analysis"
 config.JobType.psetName = "%(ParameterSet)s"
-#config.JobType.inputFiles = 
+config.JobType.inputFiles = %(InFiles)s
 config.JobType.outputFiles = %(OutputFiles)s
 config.JobType.allowUndistributedCMSSW = True
 %(JobType-AdditionsBlock)s
@@ -58,6 +57,7 @@ config.JobType.allowUndistributedCMSSW = True
 config.section_("Data")
 
 config.Data.inputDataset = "%(datasetpath)s"
+config.Data.lumiMask = "%(lumi_mask)s"
 config.Data.inputDBS = "%(inputDBS)s"
 config.Data.splitting = "%(splitting)s"
 config.Data.unitsPerJob = %(nUnits)s
