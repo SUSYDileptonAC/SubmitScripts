@@ -4,6 +4,7 @@ try:
 except ImportError:
 	print "WARNING: no dbs support!"
 
+
 from src.mainConfig import MainConfig
 
 p = re.compile('TrigReport Events total =')
@@ -536,6 +537,8 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 
 ##--- GlobalTag
 %(globalTag)s
+
+#process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
 ########## Additional Producers ########################
