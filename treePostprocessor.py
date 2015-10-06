@@ -66,6 +66,26 @@ class SimpleWeighter(TreeProcessor):
     def processEvent(self, event, object):
         self.weight[object][0] = event.weight*(event.pt1+event.pt2)
         return True
+    
+class VertexWeighter(TreeProcessor):
+    def __init__(self, config, name):
+        TreeProcessor.__init__(self, config, name)
+        self.weight = {}
+        
+    def prepareSrc(self, src, object, processors):
+        #src.SetBranchStatus("weight", 0)
+        pass
+        
+    def prepareDest(self, dest, object):
+        from array import array
+        pass
+        self.weight[object] = array("f",[1.0])
+        dest.Branch("weight",self.weight[object],"weight/F")
+
+    def processEvent(self, event, object):
+        from helpers import getVtxWeight
+        self.weight[object][0] = getVtxWeight(event.nVertices)
+        return True
 
 class NoFakeWeighter(TreeProcessor):
     def __init__(self, config, name):
@@ -248,7 +268,6 @@ class TreeProducer:
             if section.startswith("dileptonTree:"):
                 treeProducerName =self.config.get(section,"treeProducerName")
                 trees = self._getDileptonTrees(section)
-		print trees
                 treeName = "DileptonTree"
                 subDirName = "%s%s"%(section.split("dileptonTree:")[1],treeProducerName)
             if section.startswith("isoTree:"):
@@ -274,15 +293,24 @@ class TreeProducer:
                         makeCounterSum = eval(self.config.get("general","counterSum"))
                         print "Add counter sum: %s" % makeCounterSum
                         if not self.counterSum and makeCounterSum:
-                            outFile.mkdir("%sCounters" % section.split("dileptonTree:")[1])
-                            outFile.cd("%sCounters" % section.split("dileptonTree:")[1])
-                            task = None                            
-                            for t in self.tasks:
-                                if ".%s."%t in splitPath(filePath)[1]:
-                                    assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
-                                    task = t
-                                    print task                        
-                            self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
+							outFile.mkdir("%sCounters" % section.split("dileptonTree:")[1])
+							outFile.cd("%sCounters" % section.split("dileptonTree:")[1])
+							task = None   
+							t =  self.config.get("general","tasks")
+                            
+							if ".%s."%t in splitPath(filePath)[1]:
+								assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+								task = t
+								print task
+							else:
+								task = t                         
+                            #~ for t in self.tasks:
+                                #~ if ".%s."%t in splitPath(filePath)[1]:
+                                    #~ assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+                                    #~ task = t
+                                    #~ print task                        
+							#~ print task
+							self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
 
                             ## also add 3D weights
                             #outFile.mkdir("%sWeightSummer" % section.split("dileptonTree:")[1])
@@ -300,6 +328,8 @@ class TreeProducer:
                         print "adding", treePath
                     srcTree[object].SetBranchStatus("*", 1)
                     for processorName in processors:
+                        if processorName == "vtxWeighter":
+							srcTree[object].SetBranchStatus("weight", 0)
                         if (self.treeProcessors[processorName].__class__.__name__ == SimpleSelector.__name__ and not self.config.has_option(section,"%sFilter"%object)):
                             print "Requirements met, applying simple selection boosting =)"
                             expression = self.treeProcessors[processorName].getExpression(object)
@@ -316,12 +346,13 @@ class TreeProducer:
                     if not outDir:
                         outDir = outFile.mkdir(subDirName)
                     outFile.cd(subDirName)
+ 
                     destTree = srcTree[object].CloneTree(0)
                     destTree.SetAutoSave(5000000000)
                     #print processors
                     for processorName in processors:
                         self.treeProcessors[processorName].prepareDest(destTree, object)
-                        print "%s: %d" % (str(processorName), self.treeProcessors[processorName].nEntries)
+                        #~ print "%s: %d" % (str(processorName), self.treeProcessors[processorName].nEntries)
                     endOfLine = 1000
                     for i in srcTree[object]:
                         if endOfLine < 1:
@@ -386,12 +417,18 @@ class TreeProducer:
             
             result[object] = []
             for path in datasetPaths:
-                task = None
-                for t in self.tasks:
-                    if ".%s."%t in splitPath(path)[1]:
-                        assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
-                        task = t
-                result[object].append( "%s/%s%s%s/%sDileptonTree"%(path,task,datasetSelection,treeProducerName,object))
+				task = None
+                #~ for t in self.tasks:
+                    #~ if ".%s."%t in splitPath(path)[1]:
+                        #~ assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
+                        #~ task = t
+				t =  self.config.get("general","tasks")
+				if ".%s."%t in splitPath(path)[1]:
+					assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
+					task = t
+				else:
+					task = t
+				result[object].append( "%s/%s%s%s/%sDileptonTree"%(path,task,datasetSelection,treeProducerName,object))
         return result
         
 def getProducers(config, path):
@@ -419,6 +456,10 @@ def main(argv = None):
     import sys
     from ConfigParser import ConfigParser
     from optparse import OptionParser
+    
+    sys.path.append('../frameworkBase/')
+    from helpers import getVtxWeight
+    
     if argv == None:
         argv = sys.argv[1:]
     parser = OptionParser()
@@ -434,7 +475,6 @@ def main(argv = None):
     
     basePath = config.get("general","basePath")
     producers = getProducers(config, basePath)
-    print producers
     for p in producers:
         p.produce()
     
@@ -522,6 +562,9 @@ TauTauExpression = pt1 > 20 && pt2 > 15 && ht > 250
 
 [treeProcessor:ptSumWeighter]
 type = SimpleWeighter
+
+[treeProcessor:vtxWeighter]
+type = VertexWeighter
 
 [treeProcessor:tauFakeWeights]
 type = FakeWeighter
