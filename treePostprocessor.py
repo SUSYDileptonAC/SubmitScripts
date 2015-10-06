@@ -262,7 +262,6 @@ class TreeProducer:
         #if pathExists(outFilePath):
         #    return
         outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"recreate")
-        
         for section in self.config.sections():            
             trees = None
             if section.startswith("dileptonTree:"):
@@ -295,21 +294,21 @@ class TreeProducer:
                         if not self.counterSum and makeCounterSum:
 							outFile.mkdir("%sCounters" % section.split("dileptonTree:")[1])
 							outFile.cd("%sCounters" % section.split("dileptonTree:")[1])
-							task = None   
-							t =  self.config.get("general","tasks")
-                            
-							if ".%s."%t in splitPath(filePath)[1]:
-								assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
-								task = t
-								print task
-							else:
-								task = t                         
-                            #~ for t in self.tasks:
-                                #~ if ".%s."%t in splitPath(filePath)[1]:
-                                    #~ assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
-                                    #~ task = t
-                                    #~ print task                        
-							#~ print task
+							task = None 
+							
+							if "vtxWeighter" in processors:  
+								t =  self.config.get("general","tasks")
+								
+								if ".%s."%t in splitPath(filePath)[1]:
+									assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+									task = t
+								else:
+									task = t
+							else:                         
+								for t in self.tasks:
+									if ".%s."%t in splitPath(filePath)[1]:
+										assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+										task = t
 							self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
 
                             ## also add 3D weights
@@ -405,6 +404,7 @@ class TreeProducer:
         objects = self.config.get(section,"objects").split()
         treeProducerName =self.config.get(section,"treeProducerName")
         for object in objects:
+            processors = self.config.get(section,"%sProcessors"%object).split()
             datasetPaths = []
             datasetExpression = self.config.get(section, "%sDataset"%object)
             datasetSelection = self.config.get(section, "%sSelection"%object)
@@ -418,16 +418,19 @@ class TreeProducer:
             result[object] = []
             for path in datasetPaths:
 				task = None
-                #~ for t in self.tasks:
-                    #~ if ".%s."%t in splitPath(path)[1]:
-                        #~ assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
-                        #~ task = t
-				t =  self.config.get("general","tasks")
-				if ".%s."%t in splitPath(path)[1]:
-					assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
-					task = t
-				else:
-					task = t
+				if "vtxWeighter" in processors:
+					t =  self.config.get("general","tasks")
+					if ".%s."%t in splitPath(path)[1]:
+						assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
+						task = t
+					else:
+						task = t
+				else:					
+					for t in self.tasks:
+						if ".%s."%t in splitPath(path)[1]:
+							assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(path, task, t)
+							task = t
+				
 				result[object].append( "%s/%s%s%s/%sDileptonTree"%(path,task,datasetSelection,treeProducerName,object))
         return result
         
