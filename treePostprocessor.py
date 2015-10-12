@@ -460,7 +460,7 @@ def main(argv = None):
     from ConfigParser import ConfigParser
     from optparse import OptionParser
     
-    sys.path.append('../frameworkBase/')
+    sys.path.append('../frameWorkBase/')
     from helpers import getVtxWeight
     
     if argv == None:
