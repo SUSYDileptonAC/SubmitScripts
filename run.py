@@ -1,4 +1,5 @@
 #! /usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import os, sys, time, srmop, dbsop, subprocess, shutil
 import py_compile
@@ -200,6 +201,8 @@ def main(argv=None):
       py_compile.compile(psetPath, doraise=True)
       os.remove("%sc" % psetPath)
 
+
+
   if settings.grid:
       if settings.verbose: print "creating multicrab configfiles... ",
       crabCfgPaths = createCrabCfgs(opts.job, psetPaths)
@@ -215,6 +218,14 @@ def main(argv=None):
 
   else:
       if not settings.dryrun:
+	  #copy additional input files to proper location to allow local running
+	  psetPath = os.path.join(settings.analysispath, settings.flag, settings.getTaskName(settings.tasks), "psets")
+	  import shutil, re
+	  fileString = re.sub('[[]','',settings.additional_input_files)
+	  fileString = re.sub('[]]','',fileString)
+	  fileString = re.sub('["]','',fileString)	  
+	  for file in fileString.split(','):
+	      shutil.copyfile(file,settings.analysispath+"/"+file.split("/")[-1])
           startLocalJob(psetPaths[0], opts.job[0])
 
   settings.tearDown()

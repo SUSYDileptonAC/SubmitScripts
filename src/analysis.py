@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os, subprocess, re, glob
 try:
 	import dbsop
@@ -538,7 +539,7 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 ##--- GlobalTag
 %(globalTag)s
 
-#process.options.allowUnscheduled = cms.untracked.bool(True)
+process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
 ########## Additional Producers ########################
