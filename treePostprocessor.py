@@ -23,10 +23,10 @@ class TreeProcessor:
     def processEvent(self, event, object):
         import sys
         self.nThEntry +=1
-        if self.nThEntry%(self.nEntries*0.001) < 1:
+        #if self.nThEntry%(self.nEntries*0.001) < 1:
             #print "%d / %d" % (self.nThEntry, self.nEntries)
-            sys.stdout.write("\r%.1f%%" %(self.nThEntry*1./(self.nEntries*0.01)))    
-            sys.stdout.flush()  
+            #sys.stdout.write("\r%.1f%%" %(self.nThEntry*1./(self.nEntries*0.01)))    
+            #sys.stdout.flush()  
         return True
     
 class SimpleSelector(TreeProcessor):

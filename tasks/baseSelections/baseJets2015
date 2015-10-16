@@ -1,7 +1,7 @@
 [
 # PAT Jets
 #===========
-    {  "src": "patJetsReapplyJEC",
+    {  "src": "slimmedJets",
         "name": "baseJets",
 	"cut": "abs( eta ) <= 3. & pt >= 10.",
     },

@@ -1,7 +1,13 @@
 {
-"activeFilters": ["basicVertices", "HLTDoubleElectronIncl"],
+"activeFilters": ["basicVertices"],
 "order":["hlt","vertices","muons","electrons","jets"],
 
+"additionalFilters":{
+        "HLTDiEle": ["HLTDoubleElectronIncl"],
+        "HLTDiEleAll": ["HLTDoubleElectronAll"],
+
+
+},
 
 "hlt": input("baseSelections/baseHLT2015"),
 "vertices":[

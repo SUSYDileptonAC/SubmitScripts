@@ -1,6 +1,11 @@
 {
-"activeFilters": ["basicVertices", "HLTMuEGIncl"],
+"activeFilters": ["basicVertices"],
 "order":["hlt","vertices","muons","electrons","jets"],
+
+"additionalFilters":{
+	"HLTMuEG": ["HLTMuEGIncl"],
+	"HLTMuEGAll": ["HLTMuEGAll"],	
+},
 
 
 "hlt": input("baseSelections/baseHLT2015"),

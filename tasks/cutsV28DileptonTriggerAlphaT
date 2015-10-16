@@ -3,12 +3,13 @@
 "order":["hlt","vertices","muons","electrons","jets"],
 
 "additionalFilters":{
-        "HLTDiEle": ["HLTHT", "HLTDoubleElectronIncl"],
-        "HLTDiMu": ["HLTHT", "HLTDoubleMuIncl"],
-	"HLTMuEG": ["HLTHT", "HLTMuEGIncl"],
-        "HLTMuEle": ["HLTHT", "HLTMuEGInclmue"],
-	"HLTEleMu": ["HLTHT", "HLTMuEGInclemu"],
-	"HLTDiMuNoTrackerMuon": ["HLTHT", "HLTDoubleMuNoTrackerMuon"],
+        "HLTDiEle": ["HLTAlphaT", "HLTDoubleElectronIncl"],
+        "HLTDiMu": ["HLTAlphaT", "HLTDoubleMuIncl"],
+	"HLTMuEG": ["HLTAlphaT", "HLTMuEGIncl"],
+        "HLTDiEleAll": ["HLTAlphaT", "HLTDoubleElectronAll"],
+        "HLTDiMuAll": ["HLTAlphaT", "HLTDoubleMuAll"],
+	"HLTMuEGAll": ["HLTAlphaT", "HLTMuEGAll"],	
+
 
 },
 

@@ -6,9 +6,9 @@
         "HLTDiEle": ["HLTHT", "HLTDoubleElectronIncl"],
         "HLTDiMu": ["HLTHT", "HLTDoubleMuIncl"],
 	"HLTMuEG": ["HLTHT", "HLTMuEGIncl"],
-        "HLTMuEle": ["HLTHT", "HLTMuEGInclmue"],
-	"HLTEleMu": ["HLTHT", "HLTMuEGInclemu"],
-	"HLTDiMuNoTrackerMuon": ["HLTHT", "HLTDoubleMuNoTrackerMuon"],
+        "HLTDiEleAll": ["HLTHT", "HLTDoubleElectronAll"],
+        "HLTDiMuAll": ["HLTHT", "HLTDoubleMuAll"],
+	"HLTMuEGAll": ["HLTHT", "HLTMuEGAll"],	
 
 },
 
