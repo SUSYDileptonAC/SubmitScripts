@@ -1,0 +1,54 @@
+{
+"activeFilters": ["basicVertices","HBHENoiseFilter","HBHEIsoNoiseFilter","CSCTightHaloFilter","eeBadScFilter"],
+#"activeFilters": ["basicVertices","CSCTightHaloFilter","eeBadScFilter"],
+"order":["hlt","vertices","muons","electrons","jets"],
+
+"additionalFilters":{
+        "HLTDiEle": ["HLTDoubleElectronIncl"],
+        "HLTDiMu": ["HLTDoubleMuIncl"],
+        "HLTMuEG": ["HLTMuEGIncl"],
+        "HLTDiEleAll": ["HLTDoubleElectronAll"],
+        "HLTDiMuAll": ["HLTDoubleMuAll"],
+        "HLTMuEGAll": ["HLTMuEGAll"],          
+	"HT": ["HLTHT"],
+        "HLTDiEleHT": ["HLTHT", "HLTDoubleElectronIncl"],
+        "HLTDiMuHT": ["HLTHT", "HLTDoubleMuIncl"],
+        "HLTMuEGHT": ["HLTHT", "HLTMuEGIncl"],
+	"AlphaT": ["HLTAlphaT"],
+        "HLTDiEleAlphaT": ["HLTAlphaT", "HLTDoubleElectronIncl"],
+        "HLTDiMuAlphaT": ["HLTAlphaT", "HLTDoubleMuIncl"],
+        "HLTMuEGAlphaT": ["HLTAlphaT", "HLTMuEGIncl"],
+        "HLTDiEleAllHT": ["HLTHT", "HLTDoubleElectronAll"],
+        "HLTDiMuAllHT": ["HLTHT", "HLTDoubleMuAll"],
+        "HLTMuEGAllHT": ["HLTHT", "HLTMuEGAll"],
+        "HLTDiEleAllAlphaT": ["HLTAlphaT", "HLTDoubleElectronAll"],
+        "HLTDiMuAllAlphaT": ["HLTAlphaT", "HLTDoubleMuAll"],
+        "HLTMuEGAllAlphaT": ["HLTAlphaT", "HLTMuEGAll"],        
+
+
+},
+
+
+
+"hlt": input("baseSelections/baseHLT2015MC"),
+"vertices":[
+    {   "src": "offlineSlimmedPrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+
+"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
+
+"HBHENoiseFilterMiniAOD": input("baseSelections/baseHBHEFilterMiniAOD"),
+
+
+"muons": input("baseSelections/pogMuonsMiniAOD"),
+"electrons" : input("baseSelections/pogElectronsMiniAODMVASpring15"),
+
+"jets" : input("baseSelections/baseJets2015")+input("baseSelections/baseHT2012"),
+
+
+
+
+}

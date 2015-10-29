@@ -1,0 +1,13 @@
+[
+	{   "src": InputTag("HBHENoiseFilterResultProducer","HBHENoiseFilterResult",""),
+	    "name": "HBHENoiseFilter"
+	
+	},
+
+	{   "src": InputTag("HBHENoiseFilterResultProducer","HBHEIsoNoiseFilterResult",""),
+	    "name": "HBHEIsoNoiseFilter"
+	
+	},
+	
+
+]

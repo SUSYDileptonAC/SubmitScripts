@@ -1,7 +1,28 @@
 [
-	{   "selector": "defaultSelector",
-	    "name": "METFilterMiniAOD",
-	    "src": "TriggerResults",	
+	#{   "selector": "defaultSelector",
+	#    "name": "METFilterMiniAOD",
+	#    "src": "TriggerResults",	
+	#},
+	
+	#{   "src": InputTag("HBHENoiseFilterResultProducer","HBHENoiseFilterResult",""),
+	#    "name": "HBHENoiseFilter"
+	
+	#},
+
+	#{   "src": InputTag("HBHENoiseFilterResultProducer","HBHENoiseIsoFilterResult",""),
+	#    "name": "HBHEIsoNoiseFilter"
+	
+	#},
+	
+	{   "flag":"Flag_CSCTightHaloFilter",
+		"src" : InputTag("TriggerResults","","PAT"),
+	    "name" : "CSCTightHaloFilter"
 	},
+	
+	{   "flag":"Flag_eeBadScFilter", 
+		"src" : InputTag("TriggerResults","","PAT"),
+	    "name" : "eeBadScFilter"
+	},
+	
 
 ]
