@@ -20,7 +20,7 @@
 	},
 	
 	{   "flag":"Flag_eeBadScFilter", 
-		"src" : InputTag("TriggerResults","","PAT"),
+		"src" : InputTag("TriggerResults","",""),
 	    "name" : "eeBadScFilter"
 	},
 	
