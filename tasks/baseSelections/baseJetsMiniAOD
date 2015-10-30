@@ -3,7 +3,7 @@
 #===========
     {  "src": "slimmedJets",
         "name": "baseJets",
-	"cut": "abs( eta ) <= 3. & pt >= 10.",
+	"cut": "abs( eta ) <= 5. & pt >= 10.",
     },
     {   "selector": "muonCleanJets",
         "srcNames": "src leptSrc",
@@ -22,7 +22,7 @@
     },
     {   "skip": True,
         "name": "qualityBJets",
-        "cut":'bDiscriminator("combinedInclusiveSecondaryVertexV2BJetTags") >= 0.814 & pt >= 30 && abs( eta ) <= 2.4',
+        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTag") >= 0.890 & pt >= 35 && abs( eta ) <= 2.4',
 #        "cut": 'bDiscriminator("trackCountingHighEffBJetTags")>=3.3',
 #        "cut": 'bDiscriminator("combinedSecondaryVertexMVA") >= 0.679'
     },

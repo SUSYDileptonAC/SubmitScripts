@@ -15,7 +15,7 @@
 	#},
 	
 	{   "flag":"Flag_CSCTightHaloFilter",
-		"src" : InputTag("TriggerResults","","PAT"),
+		"src" : InputTag("TriggerResults","",""),
 	    "name" : "CSCTightHaloFilter"
 	},
 	

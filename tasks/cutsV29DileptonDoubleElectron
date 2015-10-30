@@ -1,18 +1,11 @@
 {
-"activeFilters": ["basicVertices","HLTSingleElectron"],
+"activeFilters": ["basicVertices","HBHENoiseFilter","HBHEIsoNoiseFilter","CSCTightHaloFilter","eeBadScFilter"],
 "order":["hlt","vertices","muons","electrons","jets"],
 
 "additionalFilters":{
         "HLTDiEle": ["HLTDoubleElectronIncl"],
-        "HLTDiMu": ["HLTDoubleMuIncl"],
-        "HLTMuEG": ["HLTMuEGIncl"],
-        "HLTMuEle": ["HLTMuEGInclmue"],
-	"HLTEleMu": ["HLTMuEGInclemu"],
         "HLTDiEleAll": ["HLTDoubleElectronAll"],
-        "HLTDiMuAll": ["HLTDoubleMuAll"],
-        "HLTMuEGAll": ["HLTMuEGAll"],
-        "HLTMuEleAll": ["HLTMuEGAllmue"],
-	"HLTEleMuAll": ["HLTMuEGAllemu"],
+
 
 },
 
@@ -24,7 +17,9 @@
     },
 ],
 
+"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
 
+"HBHENoiseFilterMiniAOD": input("baseSelections/baseHBHEFilterMiniAOD"),
 
 "muons": input("baseSelections/pogMuonsMiniAOD"),
 "electrons" : input("baseSelections/pogElectronsMiniAODMVASpring15"),
