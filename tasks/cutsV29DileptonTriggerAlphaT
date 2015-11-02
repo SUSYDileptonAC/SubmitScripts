@@ -1,5 +1,5 @@
 {
-"activeFilters": ["basicVertices","HLTAlphaT","HBHENoiseFilter","HBHEIsoNoiseFilter","CSCTightHaloFilter","eeBadScFilter"],
+"activeFilters": ["basicVertices","HLTAlphaT","HBHENoiseFilter","HBHEIsoNoiseFilter","eeBadScFilter"],
 "order":["hlt","vertices","muons","electrons","jets"],
 
 "additionalFilters":{
