@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ### adapting crab.py to use CRAB3, October 2014 Jan-F. Schulte
 
 import os, subprocess, shutil
@@ -64,7 +65,7 @@ config.Data.unitsPerJob = %(nUnits)s
 config.Data.totalUnits = %(numEvents)s
 config.Data.publication = %(publish)s
 config.Data.publishDBS = "%(pubDBSURL)s"
-config.Data.publishDataName = "%(theJob)s"
+config.Data.outputDatasetTag = "%(theJob)s"
 config.Data.ignoreLocality = True
 config.Data.outLFNDirBase = "%(histogramstoragepath)s/%(theJob)s"
 
@@ -73,6 +74,7 @@ config.Data.outLFNDirBase = "%(histogramstoragepath)s/%(theJob)s"
 config.section_("Site")
 
 config.Site.storageSite = "%(StageoutSite)s"
+config.Site.blacklist = ["T3_MX_Cinvestav","T2_UA_KIPT","T3_IT_Perugia"]
 %(Site-AdditionsBlock)s
 
 config.section_("User")

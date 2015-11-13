@@ -4,7 +4,8 @@
 
 "additionalFilters":{
 	"HLTMuEG": ["HLTMuEGIncl"],
-	"HLTMuEGAll": ["HLTMuEGAll"],	
+	"HLTMuEGAll": ["HLTMuEGAll"],
+	"HLTMuEGNoIso": ["HLTMuEGNoIso"],		
 },
 
 

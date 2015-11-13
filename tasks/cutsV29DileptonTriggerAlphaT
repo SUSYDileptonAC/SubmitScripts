@@ -8,7 +8,10 @@
 	"HLTMuEG": ["HLTAlphaT", "HLTMuEGIncl"],
         "HLTDiEleAll": ["HLTAlphaT", "HLTDoubleElectronAll"],
         "HLTDiMuAll": ["HLTAlphaT", "HLTDoubleMuAll"],
-	"HLTMuEGAll": ["HLTAlphaT", "HLTMuEGAll"],	
+	"HLTMuEGAll": ["HLTAlphaT", "HLTMuEGAll"],
+        "HLTDiEleNoIso": ["HLTAlphaT", "HLTDoubleElectronNoIso"],
+        "HLTDiMuNoIso": ["HLTAlphaT", "HLTDoubleMuNoIso"],
+	"HLTMuEGNoIso": ["HLTAlphaT", "HLTMuEGNoIso"],		
 
 
 },

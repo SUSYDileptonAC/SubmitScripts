@@ -5,7 +5,7 @@
 "additionalFilters":{
         "HLTDiEle": ["HLTDoubleElectronIncl"],
         "HLTDiEleAll": ["HLTDoubleElectronAll"],
-
+        "HLTDiEleNoIso": ["HLTDoubleElectronNoIso"],
 
 },
 

@@ -1,4 +1,5 @@
 #!/usr/bin/env VERSIONER_PYTHON_PREFER_32_BIT=yes python
+# -*- coding: utf-8 -*-
 '''
 Created on 26.05.2011
 
@@ -47,6 +48,24 @@ class SimpleSelector(TreeProcessor):
 
     def getExpression(self, object):
         return self.config.get(self.section,"%sExpression"%object)
+        
+        
+class EventFilter(TreeProcessor):
+    def __init__(self, config, name):
+        TreeProcessor.__init__(self, config, name)
+        
+        names = self.config.get(self.section,"names").split(" ")
+        self.eventList = readEventLists(names)
+        
+    def processEvent(self, event,object):
+	 
+        result = True
+        if event.runNr in self.eventList:
+	  if event.lumiSec in self.eventList[event.runNr]:
+	    if event.eventNr in self.eventList[event.runNr][event.lumiSec]:
+		result = False
+ 
+	return result
         
     
 class SimpleWeighter(TreeProcessor):
@@ -433,7 +452,23 @@ class TreeProducer:
 				
 				result[object].append( "%s/%s%s%s/%sDileptonTree"%(path,task,datasetSelection,treeProducerName,object))
         return result
-        
+
+
+def readEventLists(names):
+    result = {}
+    for name in names:
+	lines = [line.rstrip('\n') for line in open(name)]
+	for line in lines:
+	  runNr = int(line.split(":")[0])
+	  lumiSec = int(line.split(":")[1])
+	  eventNr = int(line.split(":")[2])
+	  if not runNr in result:
+	    result[runNr] = {}
+	  
+	  if not lumiSec in result[runNr]:
+	     result[runNr][lumiSec] = []
+	  result[runNr][lumiSec].append(eventNr)
+    return result		
 def getProducers(config, path):
     from glob import glob
     from re import match

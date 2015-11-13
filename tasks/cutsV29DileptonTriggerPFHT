@@ -9,6 +9,9 @@
         "HLTDiEleAll": ["HLTHT", "HLTDoubleElectronAll"],
         "HLTDiMuAll": ["HLTHT", "HLTDoubleMuAll"],
 	"HLTMuEGAll": ["HLTHT", "HLTMuEGAll"],	
+        "HLTDiEleNoIso": ["HLTHT", "HLTDoubleElectronNoIso"],
+        "HLTDiMuNoIso": ["HLTHT", "HLTDoubleMuNoIso"],
+	"HLTMuEGNoIso": ["HLTHT", "HLTMuEGNoIso"],		
 
 },
 

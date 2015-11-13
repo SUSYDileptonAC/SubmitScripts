@@ -5,6 +5,7 @@
 "additionalFilters":{
         "HLTDiMu": ["HLTDoubleMuIncl"],
         "HLTDiMuAll": ["HLTDoubleMuAll"],
+        "HLTDiMuNoIso": ["HLTDoubleMuNoIso"],        
 },
 
 

@@ -13,7 +13,9 @@
         "HLTMuEGAll": ["HLTMuEGAll"],
         "HLTMuEleAll": ["HLTMuEGAllmue"],
 	"HLTEleMuAll": ["HLTMuEGAllemu"],
-
+        "HLTDiEleNoIso": ["HLTDoubleElectronNoIso"],
+        "HLTDiMuNoIso": ["HLTDoubleMuNoIso"],
+        "HLTMuEGNoIso": ["HLTMuEGNoIso"],
 },
 
 "hlt": input("baseSelections/baseHLT2015"),
