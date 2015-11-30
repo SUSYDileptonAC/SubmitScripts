@@ -22,7 +22,7 @@
     },
     {   "skip": True,
         "name": "qualityBJets",
-        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTag") >= 0.890 & pt >= 35 && abs( eta ) <= 2.4',
+        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags") >= 0.890 & pt >= 35 && abs( eta ) <= 2.4',
 #        "cut": 'bDiscriminator("trackCountingHighEffBJetTags")>=3.3',
 #        "cut": 'bDiscriminator("combinedSecondaryVertexMVA") >= 0.679'
     },
