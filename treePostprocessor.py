@@ -63,7 +63,9 @@ class EventFilter(TreeProcessor):
         if event.runNr in self.eventList:
 	  if event.lumiSec in self.eventList[event.runNr]:
 	    if event.eventNr in self.eventList[event.runNr][event.lumiSec]:
-		result = False
+			if event.eventNr == 147199320:
+				print str(event.runNr)+":"+str(event.lumiSec)+":"+str(event.eventNr)
+			result = False
  
 	return result
         
