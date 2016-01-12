@@ -74,7 +74,7 @@ config.Data.outLFNDirBase = "%(histogramstoragepath)s/%(theJob)s"
 config.section_("Site")
 
 config.Site.storageSite = "%(StageoutSite)s"
-config.Site.blacklist = ["T3_MX_Cinvestav","T2_UA_KIPT","T3_IT_Perugia"]
+config.Site.blacklist = ["T3_MX_Cinvestav","T2_UA_KIPT","T3_IT_Perugia","T2_US_Vanderbilt"]
 %(Site-AdditionsBlock)s
 
 config.section_("User")
