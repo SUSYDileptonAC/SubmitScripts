@@ -1,0 +1,22 @@
+[
+    {   "name":"HTFilter200",
+        "selector": "htJetFilter",
+        "skip": True,
+        "minHT": "200"
+    },
+    {   "name":"HTFilter350",
+        "selector": "htJetFilter",
+        "skip": True,
+        "minHT": "350"
+    },
+    {   "name":"HTFilter400",
+        "selector": "htJetFilter",
+        "minHT": "400"
+    },
+    {   "name":"MHTFilter100",
+        "selector": "mhtJetFilter",
+        "src":"(jetsPuppi.qualityJetsPuppi)",
+        "skip": True,
+        "minMHT": "100"
+    },   
+]

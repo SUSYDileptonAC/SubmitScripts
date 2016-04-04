@@ -1,0 +1,30 @@
+[
+# PAT Jets
+#===========
+    {  "src": "slimmedJetsPuppi",
+        "name": "baseJetsPuppi",
+	"cut": "abs( eta ) <= 3. & pt >= 10.",
+    },
+    {   "selector": "muonCleanJets",
+        "srcNames": "src leptSrc",
+        "name": "MuonCleanJetsPuppi",
+        "leptSrc": "(muons.IsoMuons)"},
+    {   "selector": "electronCleanJets",
+        "srcNames": "src leptSrc",
+        "name": "ElectronCleanJetsPuppi",
+        "leptSrc": "(electrons.IsoElectrons)"},
+    {   "name": "qualityJets30Puppi",
+        "selector": "patPFJetIDSelector",
+    },
+    {  "name": "qualityJetsPuppi",
+	"cut": "pt >= 10.",
+	"skip" : True
+    },
+    {   "skip": True,
+        "name": "qualityBJetsPuppi",
+        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags") >= 0.890 & pt >= 35 && abs( eta ) <= 2.4',
+#        "cut": 'bDiscriminator("trackCountingHighEffBJetTags")>=3.3',
+#        "cut": 'bDiscriminator("combinedSecondaryVertexMVA") >= 0.679'
+    },
+
+]

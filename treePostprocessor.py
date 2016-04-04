@@ -286,6 +286,8 @@ class TreeProducer:
 				trees = self._getDileptonTrees(section)
 				treeName = "DileptonTree"
 				subDirName = "%s%s"%(section.split("dileptonTree:")[1],treeProducerName)
+				if "PFHTHLT" in subDirName:
+					subDirName = "%sFinalTrees"%subDirName.split(treeProducerName)[0]
 			if section.startswith("isoTree:"):
 				treeProducerName =self.config.get(section,"treeProducerName")
 				trees = self._getIsoTrees(section)
@@ -345,17 +347,28 @@ class TreeProducer:
 						print "adding", treePath
 					srcTree[object].SetBranchStatus("*", 1)
 					
-					if (self.treeProcessors[filter].__class__.__name__ == SimpleSelector.__name__ and self.config.has_option(section,"%sFilter"%object)):
-						expression = self.treeProcessors[filter].getExpression(object)
-						print "Cutting tree down to: '%s'" % (expression)
-						outFile.Write()
-						outFile.Close()
-						srcTree[object] = srcTree[object].CopyTree(expression)					
-						outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"UPDATE")
+					### new code
+					#~ if (self.treeProcessors[filter].__class__.__name__ == SimpleSelector.__name__ and self.config.has_option(section,"%sFilter"%object)):
+						#~ expression = self.treeProcessors[filter].getExpression(object)
+						#~ print "Cutting tree down to: '%s'" % (expression)
+						#~ outFile.Write()
+						#~ outFile.Close()
+						#~ srcTree[object] = srcTree[object].CopyTree(expression)					
+						#~ outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"UPDATE")
+					#####
 	
 					for processorName in processors:
 						if processorName == "vtxWeighter":
 							srcTree[object].SetBranchStatus("weight", 0)
+							
+						####old code	
+						if (self.treeProcessors[processorName].__class__.__name__ == SimpleSelector.__name__ and not self.config.has_option(section,"%sFilter"%object)):
+							print "Requirements met, applying simple selection boosting =)"
+							expression = self.treeProcessors[processorName].getExpression(object)
+							print "Cutting tree down to: '%s'" % (expression)
+							srcTree[object] = srcTree[object].CopyTree(expression)
+						######
+												
 						self.treeProcessors[processorName].prepareSrc(srcTree[object], object, self.treeProcessors)
 				for object in trees:
 					processors = self.config.get(section,"%sProcessors"%object).split()
@@ -380,12 +393,23 @@ class TreeProducer:
 							#continue
 						endOfLine -= 1
 						processingResults = {}
-						keep = False
-						for processorName in processors:
-							keep = self.treeProcessors[processorName].processEvent(srcTree[object], object)
 						
-						if keep:
+						### old code
+						for processorName in processors:
+							processingResults[processorName] = self.treeProcessors[processorName].processEvent(srcTree[object], object)
+						if filter == "" or eval(filter, processingResults):
 							destTree.Fill()
+						####
+						
+						### new code
+						#~ keep = False
+						#~ for processorName in processors:
+							#~ keep = self.treeProcessors[processorName].processEvent(srcTree[object], object)
+						#~ 
+						#~ if keep:
+							#~ destTree.Fill()
+						####	
+						
 					#srcFile.Close()
 					outFile.Write()
 				#from pprint import pprint
@@ -462,16 +486,16 @@ def readEventLists(names):
 	result = {}
 	for name in names:
 		lines = [line.rstrip('\n') for line in open(name)]
-	for line in lines:
-	  runNr = int(line.split(":")[0])
-	  lumiSec = int(line.split(":")[1])
-	  eventNr = int(line.split(":")[2])
-	  if not runNr in result:
-		result[runNr] = {}
-	  
-	  if not lumiSec in result[runNr]:
-		 result[runNr][lumiSec] = []
-	  result[runNr][lumiSec].append(eventNr)
+		for line in lines:
+		  runNr = int(line.split(":")[0])
+		  lumiSec = int(line.split(":")[1])
+		  eventNr = int(line.split(":")[2])
+		  if not runNr in result:
+			result[runNr] = {}
+		  
+		  if not lumiSec in result[runNr]:
+			 result[runNr][lumiSec] = []
+		  result[runNr][lumiSec].append(eventNr)
 	return result		
 def getProducers(config, path):
 	from glob import glob
