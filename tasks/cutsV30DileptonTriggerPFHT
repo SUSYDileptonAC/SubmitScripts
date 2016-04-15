@@ -8,10 +8,9 @@
 	"HLTMuEG": ["HLTHT", "HLTMuEGIncl"],
         "HLTDiEleAll": ["HLTHT", "HLTDoubleElectronAll"],
         "HLTDiMuAll": ["HLTHT", "HLTDoubleMuAll"],
-	"HLTMuEGAll": ["HLTHT", "HLTMuEGAll"],
-	"HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
-    "HLTDiMuPFHT": ["HLTDoubleMuPFHT"],
-    "HLTMuEGPFHT": ["HLTMuEGPFHT"], 	
+	"HLTMuEGAll": ["HLTHT", "HLTMuEGAll"],	        
+	"HLTLowPTSingleELectron": ["HLTHT", "HLTLowPTSingleELectron"],
+	"HLTLowPTSingleMuon": ["HLTHT", "HLTLowPTSingleMuon"],
 
 },
 

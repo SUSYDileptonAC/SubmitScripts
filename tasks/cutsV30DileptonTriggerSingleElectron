@@ -1,12 +1,9 @@
 {
-"activeFilters": ["basicVertices","HBHENoiseFilter","HBHEIsoNoiseFilter","eeBadScFilter"],
+"activeFilters": ["basicVertices","HLTLowPTSingleELectron","HBHENoiseFilter","HBHEIsoNoiseFilter","eeBadScFilter"],
 "order":["hlt","vertices","muons","electrons","jets","jetsPuppi"],
 
 "additionalFilters":{
-        "HLTDiEle": ["HLTDoubleElectronIncl"],
-        "HLTDiEleAll": ["HLTDoubleElectronAll"],
-        "HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
-
+        "HLTHT300": ["HLTHT300"],
 },
 
 "hlt": input("baseSelections/baseHLT2015"),
