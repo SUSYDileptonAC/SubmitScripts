@@ -20,11 +20,25 @@
         "HLTDiEleHTAll": ["HLTHT", "HLTDoubleElectronAll"],
         "HLTDiMuHTAll": ["HLTHT", "HLTDoubleMuAll"],
         "HLTMuEGHTAll": ["HLTHT", "HLTMuEGAll"], 
-		"HT": ["HLTHT350"],    
-		"SingleLepton" : ["HLTLowPTSingleLepton"],        
-        "HLTLowPTSingleMuHT350": ["HLTHT350", "HLTLowPTSingleMuon"],
-        "HLTLowPTSingleElectronHT350": ["HLTHT350", "HLTLowPTSingleELectron"],   
-        "HLTLowPTHT350SingleLepton": ["HLTHT350", "HLTLowPTSingleLepton"],         
+		
+		"HLTPFHT": ["HLTHT350"],    
+		"HLTPFHTDiElePFHT": ["HLTHT350","HLTDoubleElectronPFHT"], 
+		"HLTPFHTMuEGPFHT": ["HLTHT350","HLTMuEGPFHT"], 
+		"HLTPFHTDiMuPFHT": ["HLTHT350","HLTDoubleMuPFHT"], 	
+					   		
+		"SingleElectron" : ["HLTLowPTSingleElectron"],  
+		"SingleMuon" : ["HLTLowPTSingleMuon"],        
+        "HLTSingleMuDiElePFHT": ["HLTDoubleElectronPFHT", "HLTLowPTSingleMuon"],
+        "HLTSingleMuDiMuPFHT": ["HLTDoubleMuPFHT", "HLTLowPTSingleMuon"],
+        "HLTSingleMuMuEGPFHT": ["HLTMuEGPFHT", "HLTLowPTSingleMuon"],                
+        "HLTSingleElectronDiElePFHT": ["HLTDoubleElectronPFHT", "HLTLowPTSingleElectron"],   
+        "HLTSingleElectronDiMuPFHT": ["HLTDoubleMuPFHT", "HLTLowPTSingleElectron"],  
+        "HLTSingleElectronMuEGPFHT": ["HLTMuEGPFHT", "HLTLowPTSingleElectron"],   
+        
+        "HLTDiEleDiElePFHT": ["HLTDoubleElectronIncl","HLTDoubleElectronPFHT"],
+        "HLTDiMuDiMuPFHT": ["HLTDoubleMuIncl","HLTDoubleMuPFHT"],
+        "HLTMuEGMuEGPFHT": ["HLTMuEGIncl","HLTMuEGPFHT"],        
+               
 },
 
 

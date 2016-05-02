@@ -10,7 +10,7 @@
 
     	{	
 		"name": "basicElectronsPAT",
-            "cut": "pt >= 10. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566) & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
+            "cut": "pt >= 5. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566) & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
     	},
 	{   "name": "noIDIsoElectrons",
             	"skip": True,

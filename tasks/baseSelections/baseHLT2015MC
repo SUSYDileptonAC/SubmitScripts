@@ -209,7 +209,7 @@ condition(True,[
     {  "srcNames": "hltResults",
        "selector": "triggerSelection",
         "hltResults": InputTag("TriggerResults","","HLT"),
-        "name": "HLTLowPTSingleELectron",
+        "name": "HLTLowPTSingleElectron",
         "triggerConditions": ["HLT_Ele8_CaloIdM_TrackIdM_PFJet30_v*"],
         "throw": False,
     },  

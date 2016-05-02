@@ -5,8 +5,8 @@
 "additionalFilters":{
 	"HLTMuEG": ["HLTMuEGIncl"],
 	"HLTMuEGAll": ["HLTMuEGAll"],
-	"HLTMuEGNoIso": ["HLTMuEGNoIso"],	
 	"HLTMuEGPFHT": ["HLTMuEGPFHT"],	
+	"HLTMuEGMuEGPFHT": ["HLTMuEGIncl","HLTMuEGPFHT"],		
 },
 
 
