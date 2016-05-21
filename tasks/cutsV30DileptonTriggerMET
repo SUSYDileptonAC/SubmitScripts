@@ -3,9 +3,9 @@
 "order":["hlt","vertices","muons","electrons","jets","jetsPuppi"],
 
 "additionalFilters":{
-        "HLTDiElePFHT": ["HLTHT", "HLTDoubleElectronPFHT"],
-        "HLTDiMuPFHT": ["HLTHT", "HLTDoubleMuPFHT"],
-	"HLTMuEGPFHT": ["HLTHT", "HLTMuEGPFHT"],	
+        "HLTDiElePFHT": ["HLTMET", "HLTDoubleElectronPFHT"],
+        "HLTDiMuPFHT": ["HLTMET", "HLTDoubleMuPFHT"],
+	"HLTMuEGPFHT": ["HLTMET", "HLTMuEGPFHT"],	
 
 },
 
