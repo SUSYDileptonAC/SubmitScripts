@@ -1,0 +1,27 @@
+{
+"activeFilters": ["basicVertices"],
+#"activeFilters": ["basicVertices","CSCTightHaloFilter","eeBadScFilter"],
+"order":["vertices","muons","looseMuons","electrons","looseElectrons","jets"],
+
+
+"vertices":[
+    {   "src": "offlineSlimmedPrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+
+"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
+
+
+"muons": input("baseSelections/pogMuonsMiniAOD2016"),
+"looseMuons": input("baseSelections/pogMuonsMiniAOD2016Loose"),
+"electrons" : input("baseSelections/pogElectronsMiniAODMVASpring16"),
+"looseElectrons" : input("baseSelections/pogElectronsMiniAODMVASpring16Loose"),
+
+"jets" : input("baseSelections/baseJets2016")+input("baseSelections/baseHT2012"),
+
+
+
+
+}

@@ -1,8 +1,8 @@
 [
 # PAT Jets
 #===========
-    {  "src": "selectedPatJetsAK4PFCHS",
-#    {  "src": "patJetsReapplyJEC",
+    {  "src": "patJetsReapplyJEC",
+#    {  "src": "slimmedJets",
         "name": "baseJets",
 	"cut": "abs( eta ) <= 3. & pt >= 10.",
     },
@@ -23,9 +23,11 @@
     },
     {   "skip": True,
         "name": "qualityBJets",
-        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags") >= 0.890 & pt >= 35 && abs( eta ) <= 2.4',
-#        "cut": 'bDiscriminator("trackCountingHighEffBJetTags")>=3.3',
-#        "cut": 'bDiscriminator("combinedSecondaryVertexMVA") >= 0.679'
+        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags") >= 0.800 & pt >= 25 && abs( eta ) <= 2.4',
+    },
+    {   "skip": True,
+        "name": "qualityBJets35",
+        "cut":'bDiscriminator("pfCombinedInclusiveSecondaryVertexV2BJetTags") >= 0.800 & pt >= 35 && abs( eta ) <= 2.4',
     },
 
 ]

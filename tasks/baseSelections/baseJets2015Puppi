@@ -1,7 +1,8 @@
 [
 # PAT Jets
 #===========
-    {  "src": "slimmedJetsPuppi",
+    {  "src": "selectedPatJetsAK4PFPuppi",
+#    {  "src": "slimmedJetsPuppi",
         "name": "baseJetsPuppi",
 	"cut": "abs( eta ) <= 3. & pt >= 10.",
     },

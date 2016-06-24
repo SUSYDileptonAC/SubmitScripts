@@ -5,12 +5,15 @@
         	"name": "MVAElectrons",
         	"selector": "PATElectronMVAIDSelector",
         	"srcNames": "src",
-        	"idMapSource": "electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring15NonTrig25nsV1Values"
+        	"idMapSource": "electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring15NonTrig25nsV1Values",
+        	"workingPointCentralBarrel": 0.87,
+        	"workingPointOuterBarrel": 0.60,
+        	"workingPointEndcap": 0.17
         },								      
 
     	{	
 		"name": "basicElectronsPAT",
-            "cut": "pt >= 5. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566) & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
+            "cut": "pt >= 10. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566) & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
     	},
 	{   "name": "noIDIsoElectrons",
             	"skip": True,
@@ -37,29 +40,31 @@
         "selector": "PATElectronD0PVSelector",
         "d0Min": -1.,
         "d0MaxEB": 0.05,
-        "d0MaxEE":  0.05,
+        "d0MaxEE": 0.05,
         "dZMin": -1.,
         "dZMaxEB": 0.1,
         "dZMaxEE": 0.1,
+         "SIP3DMin": -1.,
+         "SIP3DMax": 8,
         "beamSpotSource": "(vertices)" 
     },
-   
     
-    {   "name": "d0TriggerElectrons",
-        "skip": True,
-        "cut": "pt >= 20."
+    {	"name": "d0TriggerElectrons",
+        "selector": "PATElectronTriggerSelector",
+        "HoverEEB": 0.10,
+        "HoverEEE": 0.07,
+        "deltaEtaEB": 0.01,
+        "deltaEtaEE": 0.008,
+        "deltaPhiEB": 0.04,
+        "deltaPhiEE": 0.07,
+        "eInvMinusPInvEB": 0.01,
+        "eInvMinusPInvEE": 0.005,
+        "sigmaIEtaIEtaEB": 0.011,
+        "sigmaIEtaIEtaEE": 0.030,
+ 
     },
-	{	"name": "LooseIsoElectrons",
-        	 "srcNames": "src",
-		"src":"(electrons.d0Electrons)",
-               	"selector": "PATElectronIsolationSelector",
-               	"method": "miniIsoEA",             	
-                "isoMin": -1.,
-	        "isoMax": 0.5,
-       	},
+   
 	{	"name": "IsoElectrons",
-        	 "srcNames": "src",
-		"src":"(electrons.d0Electrons)",
                	"selector": "PATElectronIsolationSelector",
                	"method": "miniIsoEA",
                 "isoMin": -1.,
