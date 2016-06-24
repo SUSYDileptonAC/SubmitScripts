@@ -1,19 +1,12 @@
 {
-"activeFilters": ["basicVertices","HBHENoiseFilter","HBHEIsoNoiseFilter","eeBadScFilter"],
+"activeFilters": ["basicVertices","HLTLowPTSingleMuon","HBHENoiseFilter","HBHEIsoNoiseFilter","eeBadScFilter"],
 "order":["hlt","vertices","muons","electrons","jets","jetsPuppi"],
-#"order":["hlt","vertices","muons","electrons","jets"],
 
 "additionalFilters":{
-<<<<<<< HEAD:tasks/cutsV31DileptonMuEG
-	"HLTMuEGAll": ["HLTMuEGAll"],	
-=======
-	"HLTMuEG": ["HLTMuEGIncl"],
-	"HLTMuEGAll": ["HLTMuEGAll"],
->>>>>>> 04b3f68edceb275348662f0f334d726c19884b18:tasks/cutsV30DileptonMuEG
-	"HLTMuEGPFHT": ["HLTMuEGPFHT"],	
-	"HLTMuEGMuEGPFHT": ["HLTMuEGIncl","HLTMuEGPFHT"],		
+        "HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
+        "HLTDiMuPFHT": ["HLTDoubleMuPFHT"],    
+		"HLTMuEGPFHT": ["HLTMuEGPFHT"],	  
 },
-
 
 "hlt": input("baseSelections/baseHLT2015"),
 "vertices":[

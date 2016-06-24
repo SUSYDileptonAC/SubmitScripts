@@ -5,7 +5,12 @@
 
 "additionalFilters":{
         "HLTDiMuAll": ["HLTDoubleMuAll"],
+<<<<<<< HEAD:tasks/cutsV31DileptonDoubleMu
         "HLTDiMuPFHT": ["HLTDoubleMuPFHT"],        
+=======
+        "HLTDiMuPFHT": ["HLTDoubleMuPFHT"],    
+        "HLTDiMuDiMuPFHT": ["HLTDoubleMuIncl","HLTDoubleMuPFHT"],                    
+>>>>>>> 04b3f68edceb275348662f0f334d726c19884b18:tasks/cutsV30DileptonDoubleMu
 },
 
 

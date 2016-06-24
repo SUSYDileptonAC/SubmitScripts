@@ -6,7 +6,7 @@
 "additionalFilters":{
         "HLTDiEleAll": ["HLTDoubleElectronAll"],
         "HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
-
+        "HLTDiEleDiElePFHT": ["HLTDoubleElectronIncl","HLTDoubleElectronPFHT"],
 },
 
 "hlt": input("baseSelections/baseHLT2015"),

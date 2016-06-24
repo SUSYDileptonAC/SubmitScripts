@@ -6,10 +6,19 @@
 "additionalFilters":{
         "HLTDiEleAll": ["HLTHT", "HLTDoubleElectronAll"],
         "HLTDiMuAll": ["HLTHT", "HLTDoubleMuAll"],
+<<<<<<< HEAD:tasks/cutsV31DileptonTriggerPFHT
 	"HLTMuEGAll": ["HLTHT", "HLTMuEGAll"],
 	"HLTDiElePFHT": ["HLTHT","HLTDoubleElectronPFHT"],
     "HLTDiMuPFHT": ["HLTHT","HLTDoubleMuPFHT"],
     "HLTMuEGPFHT": ["HLTHT","HLTMuEGPFHT"], 	
+=======
+	"HLTMuEGAll": ["HLTHT", "HLTMuEGAll"],	        
+	"HLTLowPTSingleELectron": ["HLTHT", "HLTLowPTSingleELectron"],
+	"HLTLowPTSingleMuon": ["HLTHT", "HLTLowPTSingleMuon"],
+	"HLTDiElePFHT": ["HLTHT", "HLTDoubleElectronPFHT"],
+	"HLTDiMuPFHT": ["HLTHT", "HLTDoubleMuPFHT"],
+	"HLTDiMuEGPFHT": ["HLTHT", "HLTMuEGPFHT"],	
+>>>>>>> 04b3f68edceb275348662f0f334d726c19884b18:tasks/cutsV30DileptonTriggerPFHT
 
 },
 

@@ -6,6 +6,7 @@
 "additionalFilters":{
         "HLTDiEleAll": ["HLTDoubleElectronAll"],
         "HLTDiMuAll": ["HLTDoubleMuAll"],
+<<<<<<< HEAD:tasks/cutsV31DileptonMiniAODTriggerEfficiency
         "HLTMuEGAll": ["HLTMuEGAll"],       
         "HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
         "HLTDiMuPFHT": ["HLTDoubleMuPFHT"],
@@ -25,6 +26,38 @@
         "HLTPFHTDiMuAll": ["HLTHT350", "HLTDoubleMuAll"],
         "HLTPFHTMuEGAll": ["HLTHT350", "HLTMuEGAll"],     
 
+=======
+        "HLTMuEGAll": ["HLTMuEGAll"],        
+        "HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
+        "HLTDiMuPFHT": ["HLTDoubleMuPFHT"],
+        "HLTMuEGPFHT": ["HLTMuEGPFHT"],         
+		"HT": ["HLTHT"],
+        "HLTDiEleHT": ["HLTHT", "HLTDoubleElectronIncl"],
+        "HLTDiMuHT": ["HLTHT", "HLTDoubleMuIncl"],
+        "HLTMuEGHT": ["HLTHT", "HLTMuEGIncl"],
+        "HLTDiEleHTAll": ["HLTHT", "HLTDoubleElectronAll"],
+        "HLTDiMuHTAll": ["HLTHT", "HLTDoubleMuAll"],
+        "HLTMuEGHTAll": ["HLTHT", "HLTMuEGAll"], 
+		
+		"HLTPFHT": ["HLTHT350"],    
+		"HLTPFHTDiElePFHT": ["HLTHT350","HLTDoubleElectronPFHT"], 
+		"HLTPFHTMuEGPFHT": ["HLTHT350","HLTMuEGPFHT"], 
+		"HLTPFHTDiMuPFHT": ["HLTHT350","HLTDoubleMuPFHT"], 	
+					   		
+		"SingleElectron" : ["HLTLowPTSingleElectron"],  
+		"SingleMuon" : ["HLTLowPTSingleMuon"],        
+        "HLTSingleMuDiElePFHT": ["HLTDoubleElectronPFHT", "HLTLowPTSingleMuon"],
+        "HLTSingleMuDiMuPFHT": ["HLTDoubleMuPFHT", "HLTLowPTSingleMuon"],
+        "HLTSingleMuMuEGPFHT": ["HLTMuEGPFHT", "HLTLowPTSingleMuon"],                
+        "HLTSingleElectronDiElePFHT": ["HLTDoubleElectronPFHT", "HLTLowPTSingleElectron"],   
+        "HLTSingleElectronDiMuPFHT": ["HLTDoubleMuPFHT", "HLTLowPTSingleElectron"],  
+        "HLTSingleElectronMuEGPFHT": ["HLTMuEGPFHT", "HLTLowPTSingleElectron"],   
+        
+        "HLTDiEleDiElePFHT": ["HLTDoubleElectronIncl","HLTDoubleElectronPFHT"],
+        "HLTDiMuDiMuPFHT": ["HLTDoubleMuIncl","HLTDoubleMuPFHT"],
+        "HLTMuEGMuEGPFHT": ["HLTMuEGIncl","HLTMuEGPFHT"],        
+               
+>>>>>>> 04b3f68edceb275348662f0f334d726c19884b18:tasks/cutsV30DileptonMiniAODTriggerEfficiency
 },
 
 
