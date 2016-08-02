@@ -1,0 +1,17 @@
+[
+	{   
+		"PFCandidates": "packedPFCandidates",   # Collection to test
+	    "src": "slimmedMuons",
+	    "name": "BadChargedCandidateFilterMiniAOD",
+	    "taggingMode": False,
+	    "debug": False,
+	    "maxDR": 0.001,
+	    "minPtDiffRel": -0.5,  
+	    "minMuonPt": 100,
+	    "minMuonTrackRelErr": 0.5,
+	
+	},
+
+	
+
+]

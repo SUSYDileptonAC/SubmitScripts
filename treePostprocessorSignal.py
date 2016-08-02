@@ -348,25 +348,25 @@ class TreeProducer:
 					srcTree[object].SetBranchStatus("*", 1)
 					
 					### signal code
-					#~ if (self.treeProcessors[filter].__class__.__name__ == SimpleSelector.__name__ and self.config.has_option(section,"%sFilter"%object)):
-						#~ expression = self.treeProcessors[filter].getExpression(object)
-						#~ print "Cutting tree down to: '%s'" % (expression)
-						#~ outFile.Write()
-						#~ outFile.Close()
-						#~ srcTree[object] = srcTree[object].CopyTree(expression)					
-						#~ outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"UPDATE")
+					if (self.treeProcessors[filter].__class__.__name__ == SimpleSelector.__name__ and self.config.has_option(section,"%sFilter"%object)):
+						expression = self.treeProcessors[filter].getExpression(object)
+						print "Cutting tree down to: '%s'" % (expression)
+						outFile.Write()
+						outFile.Close()
+						srcTree[object] = srcTree[object].CopyTree(expression)					
+						outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"UPDATE")
 					#####
 	
 					for processorName in processors:
 						if processorName == "vtxWeighter":
 							srcTree[object].SetBranchStatus("weight", 0)
 							
-						####default code	
-						if (self.treeProcessors[processorName].__class__.__name__ == SimpleSelector.__name__ and not self.config.has_option(section,"%sFilter"%object)):
-							print "Requirements met, applying simple selection boosting =)"
-							expression = self.treeProcessors[processorName].getExpression(object)
-							print "Cutting tree down to: '%s'" % (expression)
-							srcTree[object] = srcTree[object].CopyTree(expression)
+						#### default code	
+						#~ if (self.treeProcessors[processorName].__class__.__name__ == SimpleSelector.__name__ and not self.config.has_option(section,"%sFilter"%object)):
+							#~ print "Requirements met, applying simple selection boosting =)"
+							#~ expression = self.treeProcessors[processorName].getExpression(object)
+							#~ print "Cutting tree down to: '%s'" % (expression)
+							#~ srcTree[object] = srcTree[object].CopyTree(expression)
 						######
 												
 						self.treeProcessors[processorName].prepareSrc(srcTree[object], object, self.treeProcessors)
@@ -395,19 +395,19 @@ class TreeProducer:
 						processingResults = {}
 						
 						### default code
-						for processorName in processors:
-							processingResults[processorName] = self.treeProcessors[processorName].processEvent(srcTree[object], object)
-						if filter == "" or eval(filter, processingResults):
-							destTree.Fill()
+						#~ for processorName in processors:
+							#~ processingResults[processorName] = self.treeProcessors[processorName].processEvent(srcTree[object], object)
+						#~ if filter == "" or eval(filter, processingResults):
+							#~ destTree.Fill()
 						####
 						
 						### signal code
-						#~ keep = False
-						#~ for processorName in processors:
-							#~ keep = self.treeProcessors[processorName].processEvent(srcTree[object], object)
-						#~ 
-						#~ if keep:
-							#~ destTree.Fill()
+						keep = False
+						for processorName in processors:
+							keep = self.treeProcessors[processorName].processEvent(srcTree[object], object)
+						
+						if keep:
+							destTree.Fill()
 						####	
 						
 					#srcFile.Close()

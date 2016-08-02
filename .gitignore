@@ -25,3 +25,4 @@ EdgeFitter/shelves/*
 DataMC/shelves/*
 DataMC/tab/*
 TriggerEfficiencies/shelves/*
+CfgMerge/mergeSystematics/mergeSimulationMiniAOD*

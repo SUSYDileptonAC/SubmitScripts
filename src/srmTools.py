@@ -12,6 +12,7 @@ def copyFile(source, destination, verbose=False):
     #print 'srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination
 #lcg-cp -v -b -D srmv2 SURL  file://local_file
 
+    #~ print 'srmcp srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv1?SFN=' + source + ' file:///' + destination
     subprocess.call(['lcg-cp  -b -D srmv2  srm://grid-srm.physik.rwth-aachen.de:8443/srm/managerv2?SFN=' + source + ' file:///' + destination], shell=True)
     #time.sleep(1)
     return

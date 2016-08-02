@@ -14,9 +14,19 @@
 	
 	#},
 	
-	{   "flag":"Flag_CSCTightHaloFilter",
+	{   "flag":"Flag_globalTightHalo2016Filter",
 		"src" : InputTag("TriggerResults","",""),
 	    "name" : "CSCTightHaloFilter"
+	},
+	
+	{   "flag":"Flag_goodVertices", 
+		"src" : InputTag("TriggerResults","",""),
+	    "name" : "goodVerticesFilter"
+	},
+	
+	{   "flag":"Flag_EcalDeadCellTriggerPrimitiveFilter", 
+		"src" : InputTag("TriggerResults","",""),
+	    "name" : "EcalDeadCellTriggerPrimitiveFilter"
 	},
 	
 	{   "flag":"Flag_eeBadScFilter", 
