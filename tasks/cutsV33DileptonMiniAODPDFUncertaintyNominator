@@ -26,7 +26,4 @@
 
 "jets" : input("baseSelections/baseJets2016")+input("baseSelections/baseHT2012"),
 
-
-
-
 }
