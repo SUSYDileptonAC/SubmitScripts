@@ -118,7 +118,7 @@ condition(True,[
        "selector": "triggerSelection",
         "hltResults": InputTag("TriggerResults","","HLT"),
         "name": "HLTMET",
-        "triggerConditions": ["HLT_PFMET170_HBHECleaned_v* OR HLT_PFMET170_NotCleaned_v* OR HLT_PFMET170_BeamHaloCleaned_v*"],
+        "triggerConditions": ["HLT_MET200_v* OR HLT_MET250_v* OR HLT_MET300_v* OR HLT_MET600_v* OR HLT_MET700_v* OR HLT_PFMET300_v* OR HLT_PFMET400_v* OR HLT_PFMET500_v* OR HLT_PFMET600_v* OR HLT_PFMET170_NotCleaned_v* OR HLT_PFMET170_HBHECleaned_v* OR HLT_PFMET170_BeamHaloCleaned_v* OR HLT_PFMET170_HBHE_BeamHaloCleaned_v* OR HLT_PFMETTypeOne190_HBHE_BeamHaloCleaned_v* OR HLT_PFMET170_JetIdCleaned_v* OR HLT_PFMET170_NoiseCleaned_v*"],
         "throw": False,
     },
    {  "srcNames": "hltResults",
