@@ -1,0 +1,14 @@
+[
+	{   
+		"vtx": "offlineSlimmedPrimaryVertices", 
+	    "muons": "slimmedMuons",
+	    "name": "cloneGlobalMuonFilterMiniAOD",
+	    "verbose": False,
+	    "selectClones": True,
+	    "muonPtCut": 20,
+	
+	},
+
+	
+
+]

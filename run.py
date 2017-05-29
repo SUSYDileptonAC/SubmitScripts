@@ -32,8 +32,6 @@ def getOptparser():
                           help="To be used with -s to update the jobs.")
   parser.add_option("-c", "--create", action="store_true", dest="create", default=False,
                           help="To be used with -s to create the jobs.")
-  parser.add_option("-F", "--famos", dest="famos", nargs=1,
-                          help="Define the famos job to run. -F FastSim_LM9t175_sftsdkpyt_PAT. No analysis is done.")
   parser.add_option("-t", "--task", dest="tasks", action="append", default=[],
                           help="Set parameters of the job to TASK.")
   parser.add_option("-f", "--flag", dest="flag", nargs=1, default='test',
@@ -103,7 +101,6 @@ def main(argv=None):
   theVerbose = opts.verbose
   theDryrun = opts.dryrun
 #  theSkim = opts.skim
-  theFamos = opts.famos
   theFlag = opts.flag
   theTasks = opts.tasks
  # theJob = opts.job
@@ -156,13 +153,8 @@ def main(argv=None):
 #            OutputFetchingThread().start()
 #            # do not start all threads at the same time
 #            time.sleep(0.5)
-  if theFamos:
-    print "Submitting famos"
-    print theFamos
-    submitFamos(theFamos)
-  else:
-    print "Starting analysis"
-    if theVerbose == True:
+  print "Starting analysis"
+  if theVerbose == True:
       print 'Verbose mode active'
       if theMVA:
 	         print '\033[1;31mRunning MVA filter: ' + settings.getTaskName(theTasks) + '.mva\033[1;m'
@@ -383,10 +375,6 @@ def startLocalJob(pset, job, flag=None, tasks=None, MVA=None):
     if theVerbose == True: print 'Dry-run mode: NOT starting local job: %s' % job
   os.chdir(originPath)
 
-def submitFamos(job):
-	print 'Submitting famos job ' + job
-	crab.submitFamos(job, verbose=theVerbose, dryrun=theDryrun)
-
 def checkAnalysisStatus():
     settings = MainConfig()
     f = open(settings.analysispath + '/analysis.list', 'r')
@@ -497,115 +485,6 @@ if __name__ == '__main__':
         #main([ "-C Input/default.ini", "-G LM9", "-n", "-g", "-s", "-f _brot"])
     else:
         main()
-
-################# UNITTESTS #################
-import unittest
-import optparse
-class statusTest(unittest.TestCase):
-    unsaveOverride = True
-    def setUp(self):
-        self.originPath = os.path.abspath(os.path.curdir)
-        parser = getOptparser()
-        (opts, args) = parser.parse_args(["-funittest", "-tbaseCuts", "-totherCuts"])
-
-        MainConfig([ "unittest/Input/default.ini" ], opts)
-
-    def tearDown(self):
-        MainConfig().tearDown()
-        os.chdir(self.originPath)
-
-    def testCreatePset(self):
-        settings = MainConfig()
-        flag = settings.flag
-        taskName = settings.getTaskName()
-        job = "SUSY_LM0_Cern"
-        psetPath = os.path.join(settings.analysispath, flag, taskName, "psets", "%s.%s.%s_cfg.py" % (flag, taskName, job))
-        if os.path.exists(psetPath) and not self.unsaveOverride:
-            self.fail("the file: '%s' is in the way ! " % psetPath)
-
-        psetPathResult = createAnalysisPSet(job, flag, settings.tasks)
-
-        self.__comapreFile(psetPathResult, "unittest/reference/unittest.baseCutsotherCuts.SUSY_LM0_Cern_cfg.py")
-
-        os.remove(psetPath)
-
-    def testCreateSkimPSet(self):
-        settings = MainConfig()
-        psetPath = os.path.join(settings.skimpath, "unittest", "psets", os.path.split(settings.skimcfgname)[1])
-        if os.path.exists(psetPath) and not self.unsaveOverride:
-            self.fail("the file: '%s' is in the way ! " % psetPath)
-        psetPathResult = createSkimPSet("SUSY_LM0_Cern")
-
-        self.assertTrue(psetPathResult == psetPath, "Paths not the same:\n %s\n %s" % (psetPathResult, psetPath))
-        self.__comapreFile(psetPathResult, psetPath)
-
-        os.remove(psetPath)
-
-    def testCreateMulticrabConfig(self):
-        settings = MainConfig()
-        flag = settings.flag
-        taskName = settings.getTaskName()
-
-        crabPath = os.path.join(settings.analysispath, flag, taskName, "crab.cfg")
-        if os.path.exists(crabPath) and not self.unsaveOverride:
-            self.fail("the file: '%s' is in the way ! " % crabPath)
-        multicrabPath = os.path.join(settings.analysispath, flag, taskName, "multicrab.cfg")
-        if os.path.exists(multicrabPath) and not self.unsaveOverride:
-            self.fail("the file: '%s' is in the way ! " % multicrabPath)
-
-        jobs = ["SUSY_LM0_Cern", "SUSY_LM9_Cern"]
-        #no real nanmes or files here!
-        psetPaths = [ os.path.join(settings.analysispath, flag, taskName, "psets", "%s_cfg.py" % job) for job in jobs]
-
-        (crabPathResult, multicrabPathResult) = createMulticrabConfig(jobs, psetPaths)
-        self.assertEquals(crabPathResult, crabPath)
-        self.assertEquals(multicrabPathResult, multicrabPath)
-
-        self.__comapreFile(crabPath, "unittest/reference/crab.cfg")
-        os.remove(crabPath)
-        self.__comapreFile(multicrabPath, "unittest/reference/multicrab.cfg")
-        os.remove(multicrabPath)
-
-    def testCreateMulticrabSkimConfig(self):
-        settings = MainConfig()
-        settings.getMap()["skim"] = True
-        flag = settings.flag
-        task = settings.tasks
-
-#FIXME: not shure why the "unittest" needs to be there... 
-        crabPath = os.path.join(settings.skimpath, "unittest", "crab.cfg")
-        if os.path.exists(crabPath) and not self.unsaveOverride:
-            self.fail("the file: '%s' is in the way ! " % crabPath)
-        multicrabPath = os.path.join(settings.skimpath, "unittest", "multicrab.cfg")
-        if os.path.exists(multicrabPath) and not self.unsaveOverride:
-            self.fail("the file: '%s' is in the way ! " % multicrabPath)
-
-        jobs = ["SUSY_LM0_Cern", "SUSY_LM9_Cern"]
-        #no real nanmes or files here!
-        psetPaths = [ os.path.join(settings.skimpath, "patLayer1_fromSummer08redigi_V5j_cfg.py") for job in jobs]
-
-        (crabPathResult, multicrabPathResult) = createMulticrabConfig(jobs, psetPaths)
-        self.assertTrue(crabPathResult == crabPath, "Paths not the same:\n %s\n %s" % (crabPathResult, crabPath))
-        self.assertTrue(multicrabPathResult == multicrabPath, "Paths not the same:\n %s\n %s" % (multicrabPathResult, multicrabPath))
-
-        self.__comapreFile(crabPath, "unittest/reference/skim-crab.cfg")
-        os.remove(crabPath)
-        self.__comapreFile(multicrabPath, "unittest/reference/skim-multicrab.cfg")
-        os.remove(multicrabPath)
-
-    def __comapreFile(self, resPath, refPath):
-        resFile = open(resPath, "r")
-        res = resFile.read()
-        resFile.close()
-
-        refFile = open(refPath, "r")
-        ref = refFile.read()
-        refFile.close()
-
-        lineNo = 0
-        for (resLine, refLine) in zip(res.splitlines(), ref.splitlines()):
-            self.assertTrue(resLine == refLine, "Line %s:\n'%s'\n'%s'" % (lineNo, resLine, refLine))
-            lineNo += 1
 
 
 

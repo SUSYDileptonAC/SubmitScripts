@@ -24,10 +24,10 @@
 	    "name" : "HBHENoiseIsoFilter"
 	},
 	
-	{   "flag":"Flag_globalTightHalo2016Filter",
-		"src" : InputTag("TriggerResults","",""),
-	    "name" : "CSCTightHaloFilter"
-	},
+	#{   "flag":"Flag_globalTightHalo2016Filter",
+	#	"src" : InputTag("TriggerResults","",""),
+	#    "name" : "CSCTightHaloFilter"
+	#},
 	
 	{   "flag":"Flag_goodVertices", 
 		"src" : InputTag("TriggerResults","",""),
@@ -39,10 +39,10 @@
 	    "name" : "EcalDeadCellTriggerPrimitiveFilter"
 	},
 	
-	{   "flag":"Flag_eeBadScFilter", 
-		"src" : InputTag("TriggerResults","",""),
-	    "name" : "eeBadScFilter"
-	},
+	#{   "flag":"Flag_eeBadScFilter", 
+	#	"src" : InputTag("TriggerResults","",""),
+	#    "name" : "eeBadScFilter"
+	#},
 	
 
 ]

@@ -5,27 +5,20 @@
         	"name": "MVAElectrons",
         	"selector": "PATElectronMVAIDSelector",
         	"srcNames": "src",
-        	"idMapSource": "electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring15NonTrig25nsV1Values",
-        	"workingPointCentralBarrel": 0.87,
-        	"workingPointOuterBarrel": 0.60,
-        	"workingPointEndcap": 0.17
+        	"idMapSource": "electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values",
+        	"workingPointCentralBarrelHighPt": 0.52,
+        	"workingPointCentralBarrelLowPt": 0.77,
+        	"workingPointOuterBarrelHighPt": 0.11,
+        	"workingPointOuterBarrelLowPt": 0.56,
+        	"workingPointEndcapHighPt": -0.01,
+        	"workingPointEndcapLowPt": 0.48
         },								      
 
     	{	
 		"name": "basicElectronsPAT",
-            "cut": "pt >= 10. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566) & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
+          #  "cut": "pt >= 10. & abs( eta ) <= 2.4 & (abs( superCluster().eta ) <= 1.4442 | abs( superCluster().eta ) >= 1.566) & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
+            "cut": "pt >= 20. & abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
     	},
-	{   "name": "noIDIsoElectrons",
-            	"skip": True,
-		"srcNames": "src",
-		"selector": "PATElectronEffectiveAreaSelector",
-		"isoMin": -1.,
-		"isoMax": 0.09,
-	    },
-        {   "name": "TagPtElectrons",
-            "skip": True,
-                "cut": "pt > 20."
-        }, 
         
    {   "name": "nonMissHitsElectrons",
         "selector": "PATElectronConversionSelector",
@@ -49,26 +42,27 @@
         "beamSpotSource": "(vertices)" 
     },
     
-    {	"name": "d0TriggerElectrons",
-        "selector": "PATElectronTriggerSelector",
-        "HoverEEB": 0.10,
-        "HoverEEE": 0.07,
-        "deltaEtaEB": 0.01,
-        "deltaEtaEE": 0.008,
-        "deltaPhiEB": 0.04,
-        "deltaPhiEE": 0.07,
-        "eInvMinusPInvEB": 0.01,
-        "eInvMinusPInvEE": 0.005,
-        "sigmaIEtaIEtaEB": 0.011,
-        "sigmaIEtaIEtaEE": 0.030,
+#    {	"name": "d0TriggerElectrons",
+#               "skip": True,
+#        "selector": "PATElectronTriggerSelector",
+#        "HoverEEB": 0.10,
+#        "HoverEEE": 0.07,
+#        "deltaEtaEB": 0.01,
+#        "deltaEtaEE": 0.008,
+#        "deltaPhiEB": 0.04,
+#        "deltaPhiEE": 0.07,
+#        "eInvMinusPInvEB": 0.01,
+#        "eInvMinusPInvEE": 0.005,
+#        "sigmaIEtaIEtaEB": 0.011,
+#        "sigmaIEtaIEtaEE": 0.030,
  
-    },
+#    },
    
 	{	"name": "IsoElectrons",
                	"selector": "PATElectronIsolationSelector",
                	"method": "miniIsoEA",
                 "isoMin": -1.,
-	        "isoMax": 0.1,
+	        "isoMax": 3.,
        	},
     	{	"name": "TriggerElectrons",
                 "skip": True,

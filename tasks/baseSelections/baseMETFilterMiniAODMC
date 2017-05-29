@@ -39,10 +39,10 @@
 	    "name" : "EcalDeadCellTriggerPrimitiveFilter"
 	},
 	
-	{   "flag":"Flag_eeBadScFilter", 
-		"src" : InputTag("TriggerResults","",""),
-	    "name" : "eeBadScFilter"
-	},
+	#{   "flag":"Flag_eeBadScFilter", 
+	#	"src" : InputTag("TriggerResults","",""),
+	#    "name" : "eeBadScFilter"
+	#},
 	
 
 ]

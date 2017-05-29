@@ -1,7 +1,0 @@
-[
-# PAT Muons
-#===========
-    {	"src": "genParticles",
-		"name": "GenMuons",
-	},
-]

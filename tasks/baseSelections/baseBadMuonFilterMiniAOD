@@ -3,12 +3,14 @@
 		"PFCandidates": "packedPFCandidates",   # Collection to test
 	    "src": "slimmedMuons",
 	    "name": "BadPFMuonFilterMiniAOD",
-	    "taggingMode": False,
+	    "taggingMode": True,
 	    "debug": False,
 	    "algo": 14,
 	    "minDZ": 0.1,  
 	    "minMuPt": 100,
-	    "minTrkPtError": 0.5,
+	    "minPtError": 2.,
+	    "innerTrackRelErr": 1.,
+	    "segmentCompatibility": 0.3,
 	
 	},
 
