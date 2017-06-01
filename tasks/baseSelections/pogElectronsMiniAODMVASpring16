@@ -62,7 +62,7 @@
                	"selector": "PATElectronIsolationSelector",
                	"method": "miniIsoEA",
                 "isoMin": -1.,
-	        "isoMax": 3.,
+	        "isoMax": 0.1,
        	},
     	{	"name": "TriggerElectrons",
                 "skip": True,

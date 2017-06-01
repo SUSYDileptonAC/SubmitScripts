@@ -58,7 +58,7 @@
                	"selector": "PATMuonIsolationSelector",
                	"method": "miniIsoEA",
                 "isoMin": -1.,
-	        "isoMax": 3.,
+	        "isoMax": 0.2,
        	},
 
     {	"name": "TriggerMuons",
