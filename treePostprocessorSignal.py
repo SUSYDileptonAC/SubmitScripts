@@ -211,9 +211,9 @@ class OverlapRemover(TreeProcessor):
 		fingerPrint = (ev.runNr, ev.lumiSec, ev.eventNr) 
 		if not fingerPrint in self.keepEvents:
 			self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2)
-		elif self.keepEvents[fingerPrint][1] < ev.pt1+ev.pt2 or ("Tau" in self.keepEvents[fingerPrint][0] and not "Tau" in object):
-			rejectedObject = self.keepEvents[fingerPrint][0]
-			self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2)                
+		#~ elif self.keepEvents[fingerPrint][1] < ev.pt1+ev.pt2 or ("Tau" in self.keepEvents[fingerPrint][0] and not "Tau" in object):
+			#~ rejectedObject = self.keepEvents[fingerPrint][0]
+			#~ self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2)                
 		else:
 			rejectedObject = object
 		if rejectedObject:

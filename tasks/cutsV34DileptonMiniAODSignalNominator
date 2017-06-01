@@ -1,0 +1,28 @@
+{
+#"activeFilters": ["basicVertices","HBHENoiseFilter","HBHEIsoNoiseFilter","eeBadScFilter","CSCTightHaloFilter","goodVerticesFilter","EcalDeadCellTriggerPrimitiveFilter","BadPFMuonFilterMiniAOD","BadChargedCandidateFilterMiniAOD"],
+"activeFilters": ["basicVertices"],
+"order":["vertices","muons","electrons","jets"],
+
+
+
+
+"vertices":[
+    {   "src": "offlineSlimmedPrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+
+#"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
+
+#"HBHENoiseFilterMiniAOD": input("baseSelections/baseHBHEFilterMiniAOD"),
+#"BadPFMuonFilterMiniAOD": input("baseSelections/baseBadMuonFilterMiniAOD"),
+#"BadChargedCandidateFilterMiniAOD": input("baseSelections/baseChargedCandidateFilterMiniAOD"),
+
+
+"muons": input("baseSelections/pogMuonsMiniAOD2016"),
+"electrons" : input("baseSelections/pogElectronsMiniAODMVASpring16"),
+
+"jets" : input("baseSelections/baseJets2016")+input("baseSelections/baseHT2012"),
+
+}

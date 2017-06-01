@@ -1,0 +1,35 @@
+{
+#"activeFilters": ["basicVertices","HBHENoiseFilter","HBHENoiseIsoFilter","goodVerticesFilter","EcalDeadCellTriggerPrimitiveFilter","BadPFMuonFilterMiniAOD","BadChargedCandidateFilterMiniAOD"],
+"activeFilters": ["basicVertices",],
+"order":["vertices","muons","looseMuons","electrons","looseElectrons","jets"],
+
+
+
+
+"vertices":[
+    {   "src": "offlineSlimmedPrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+
+#"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAODMCFastSim"),
+
+"BadPFMuonFilterMiniAOD": input("baseSelections/baseBadMuonFilterMiniAOD"),
+"BadChargedCandidateFilterMiniAOD": input("baseSelections/baseChargedCandidateFilterMiniAOD"),
+
+"BadGlobalMuonFilterMiniAOD": input("baseSelections/baseBadGlobalMuonFilterMiniAOD"),
+"CloneGlobalMuonFilterMiniAOD": input("baseSelections/baseCloneGlobalMuonFilterMiniAOD"),
+
+
+"muons": input("baseSelections/pogMuonsMiniAOD2016"),
+"looseMuons": input("baseSelections/pogMuonsMiniAOD2016Loose"),
+"electrons" : input("baseSelections/pogElectronsMiniAODMVASpring16"),
+"looseElectrons" : input("baseSelections/pogElectronsMiniAODMVASpring16Loose"),
+
+"jets" : input("baseSelections/baseJets2016")+input("baseSelections/baseHT2012"),
+
+
+
+
+}

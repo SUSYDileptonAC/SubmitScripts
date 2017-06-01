@@ -3,7 +3,8 @@
 #===========
     {	"src": "slimmedMuons",
 		"name": "basicMuonsPAT",
-		"cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 10."
+		#"cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 10."
+		"cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 20."
 	},
 	{	"name": "electronVetoMuons",
         "skip": True,

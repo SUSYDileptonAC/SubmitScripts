@@ -105,10 +105,12 @@ def main(argv=None):
 			db=shelve.open("%s/doneTasks.shelve"%(opts.directory[0]))
 			db["doneTasks"]= doneTasks
 			db.close()				
-			print "spleeping for half an hour"
+			#~ print "spleeping for half an hour"
+			print "spleeping for an hour"
 			print "sitting jobs in directory %s, %d/%d tasks done"%(opts.directory,numTasksOrig-len(tasks), numTasksOrig)
 			print "if you want to terminate me, now would be the right time"
-			time.sleep(1800)
+			#~ time.sleep(1800)
+			time.sleep(3600)
 			
 if __name__ == '__main__':
     main()

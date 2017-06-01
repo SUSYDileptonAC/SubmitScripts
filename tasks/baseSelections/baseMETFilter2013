@@ -1,6 +1,0 @@
-[
-	{   "src": InputTag("HBHENoiseFilterResultProducer","HBHENoiseFilterResult",""),
-	    "name": "HBHENoiseFilter"	
-	},
-
-]

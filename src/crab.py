@@ -26,11 +26,12 @@ def createCRABcfg(Job, Pset, WorkDir, OutputFiles, DBSpath, numEvents, crabcfg, 
 	repMap.update(settings.getMap())
 	repMap.update(settings.crabAdditionsBlocks)
 	if not repMap["lumi_mask"] == "":
-		repMap["splitting"] = "LumiBased"
 		repMap["nUnits"] = repMap["lumis_per_job"]
 	else:
-		repMap["splitting"] = "FileBased"
-		repMap["nUnits"] = repMap["events_per_job"]
+		if repMap["splitting"] == "FileBased":
+			repMap["nUnits"] = repMap["files_per_job"]
+		else:
+			repMap["nUnits"] = repMap["events_per_job"]
 	repMap["InFiles"] = repMap["additional_input_files"]
 
 

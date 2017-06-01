@@ -259,7 +259,7 @@ def makePATConfig(flag, job, n, task, MC, Grid, Weighted, HLT, MVA=False):
 def __createCounters(taskName, taskProducers):
 	settings = MainConfig()
 	result = """
-from SuSyAachen.Histograms.triggerResultsCounter_cfi import triggerResultsCounter
+from SuSyAachen.DiLeptonHistograms.triggerResultsCounter_cfi import triggerResultsCounter
 process.%sCounters = triggerResultsCounter.clone( prefix = ['%s', '%s'], count = cms.VPSet() )
 """ % (taskName, taskName + "Path" , "filterPathFor" + taskName)
 	taskCounters = {}
@@ -454,7 +454,7 @@ def getPATPset(flag, job, n, tasks, HLT, MVA=False):
 	if "globalTag" in settings.getMap(): repMap["globalTag"] = """
 process.load("Configuration.Geometry.GeometryIdeal_cff")
 #process.load("Configuration.StandardSequences.Geometry_cff")
-process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff")
+process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 #from Configuration.PyReleaseValidation.autoCond import autoCond
 process.GlobalTag.globaltag = cms.string(%(globalTag)s)
 process.load("Configuration.StandardSequences.MagneticField_cff")
@@ -507,7 +507,7 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 		if settings.makeCountHistos: repMap["counters"] += "process.%sCounters.count.append( cms.PSet(name = cms.string('analysis paths'), triggerNames = cms.vstring('%s') ) )\n" % (task, "', '".join([ i[8 + len(task) + 4:] for i in thisPaths]))
 
 	if settings.makeCountHistos: repMap["counters"] += """
-from SuSyAachen.Histograms.triggerResultsCounter_cfi import makeFilterPaths
+from SuSyAachen.DiLeptonHistograms.triggerResultsCounter_cfi import makeFilterPaths
 process.counterPath = cms.EndPath( %s )
 makeFilterPaths(process)
 """ % (" + ".join(["process.%sCounters" % i for i in tasks]))
@@ -554,7 +554,6 @@ process.options.allowUnscheduled = cms.untracked.bool(True)
 
 
 ########## DiLeptonAnalyzers ##############
-from SuSyAachen.DiLeptonHistograms.DiLeptonHistograms_cfi import DiLeptonAnalysis
 %(analyzers)s
 
 ########## Output ##############

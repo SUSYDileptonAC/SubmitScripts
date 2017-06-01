@@ -104,71 +104,6 @@ class VertexWeighter(TreeProcessor):
 		from helpers import getVtxWeight
 		self.weight[object][0] = getVtxWeight(event.nVertices)
 		return True
-
-class NoFakeWeighter(TreeProcessor):
-	def __init__(self, config, name):
-		TreeProcessor.__init__(self, config, name)
-		self.bName = config.get(self.section, "branchName")
-		self.noFakeValue = eval(config.get(self.section, "weight"))
-		self.weight = {} 
-		
-		
-	#def prepareSrc(self, src, object, allProcessors):
-	#    TreeProcessor.prepareSrc(self, src, object, allProcessors)
-		#src.SetBranchStatus("weight", 0)
-	#    pass
-		
-	def prepareDest(self, dest, object):
-		from array import array
-		TreeProcessor.prepareDest(self, dest, object)
-		self.weight[object] = array("f",[self.noFakeValue])
-		dest.Branch(self.bName,self.weight[object],"%s/F"%self.bName)
-		
-	#def processEvent(self, event, object):
-	#    TreeProcessor.processEvent(self, event, object)
-	#    return True
-
-
-class FakeWeighter(TreeProcessor):
-	def __init__(self, config, name):
-		from helpers import parsePSet
-		TreeProcessor.__init__(self, config, name)
-		frPath = config.get(self.section, "fakePSet")
-		self.branchName = config.get(self.section, "branchName")
-		self.pSet = parsePSet(frPath)
-		self.ptMax = 74.9
-		self.weight = {}
-		
-	def prepareSrc(self, src, object, allProcessors):
-		TreeProcessor.prepareSrc(self, src, object, allProcessors)
-		#src.SetBranchStatus("weight", 0)
-		pass
-		
-	def prepareDest(self, dest, object):
-		from array import array
-		TreeProcessor.prepareDest(self, dest, object)
-		self.weight[object] = array("f",[-1.0])
-		dest.Branch(self.branchName, self.weight[object],"%s/F"%self.branchName)
-		
-	def processEvent(self, event, object):
-		TreeProcessor.processEvent(self, event, object)
-		frBins = {}
-		for (binName, varName) in zip(self.config.get(self.section,"binNames").split(),self.config.get(self.section,"varNames").split()):
-			frBins[binName] = getattr(event,varName)
-		for binName in frBins:
-			if "pt" in binName and frBins[binName] > self.ptMax:
-				frBins[binName] = self.ptMax
-		idExpr = self.config.get(self.section,"idExpr")
-		evalGlobals = {"id1":event.id1,
-					   "id2":event.id2}
-		self.weight[object][0] = -1
-		if eval(idExpr,evalGlobals):
-			frType = "center"
-			frType = self.config.get(self.section,"frType")
-			f = self.pSet[frType].fakeRate(frBins)
-			self.weight[object][0] = f/(1-f)
-		return True
-
 	
 class OverlapRemover(TreeProcessor):
 	def __init__(self, config, name):
@@ -208,12 +143,17 @@ class OverlapRemover(TreeProcessor):
 							
 	def _processEvent(self, ev, object):
 		rejectedObject = None
-		fingerPrint = (ev.runNr, ev.lumiSec, ev.eventNr) 
+		fingerPrint = (ev.runNr, ev.lumiSec, ev.eventNr)
 		if not fingerPrint in self.keepEvents:
-			self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2)
-		elif self.keepEvents[fingerPrint][1] < ev.pt1+ev.pt2 or ("Tau" in self.keepEvents[fingerPrint][0] and not "Tau" in object):
-			rejectedObject = self.keepEvents[fingerPrint][0]
-			self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2)                
+			self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2, ev.chargeProduct)
+			
+		### No longer necessary since we store each event once in the ntuples
+		### Was used previously when we were storing each dilepton pair
+		### Now we only want to keep the first one to prefer mumu > ee > emu primary datasets		
+		#~ elif self.keepEvents[fingerPrint][1] < ev.pt1+ev.pt2:
+			#~ rejectedObject = self.keepEvents[fingerPrint][0]
+			#~ self.keepEvents[fingerPrint] = (object, ev.pt1+ev.pt2, ev.chargeProduct) 
+			        
 		else:
 			rejectedObject = object
 		if rejectedObject:
@@ -240,6 +180,7 @@ class OverlapRemover(TreeProcessor):
 
 		# remove this event from the keepEvents list
 		# -> remove duplicates
+		#~ print self.keepEvents
 		if (value and value2):
 			self.keepEvents.pop(fingerPrint)
 			
@@ -303,7 +244,15 @@ class TreeProducer:
 					filter = " and ".join(processors)
 					if self.config.has_option(section,"%sFilter"%object):
 						filter = self.config.get(section,"%sFilter"%object)
+					
+					### Quick and dirty workaround to prefer certain primary datasets (double muon > double electron > emu)
+					### To be in synch with ETH group
+					### Remove duplication of loops and conditions on path if this is to be removed again	
+					
 					for treePath in trees[object]:
+						### Use events from dimuon primary dataset first
+						if not "DoubleMuon" in treePath:
+							continue
 						#srcFile = TFile(filePath,"r")
 						#srcTree = srcFile.Get(treePath)
 						filePath = "%s.root"%treePath.split(".root")[0]
@@ -331,23 +280,95 @@ class TreeProducer:
 										task = t
 							self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
 
-							## also add 3D weights
-							#outFile.mkdir("%sWeightSummer" % section.split("dileptonTree:")[1])
-							#outFile.cd("%sWeightSummer" % section.split("dileptonTree:")[1])
-							## task has been defined above
-							#self.weightSum = inFile.Get("%sWeightSummer/Weights"%task).Clone()
 						else:
 							pass
-							#need to cope with different lumis :( 
-							#h = inFile.Get("%sCounters/analysis paths"%task)
-							#print inFile, "%sCounters/analysis paths"%task, h
-							#self.counterSum.Add( h,1. )
+
 						inFile.Close()
 						srcTree[object].Add(treePath)
 						print "adding", treePath
+										
+											
+					for treePath in trees[object]:
+						### Then take ee primary dataset 
+						if not "DoubleElectron" in treePath:
+							continue
+						#srcFile = TFile(filePath,"r")
+						#srcTree = srcFile.Get(treePath)
+						filePath = "%s.root"%treePath.split(".root")[0]
+						inFile = TFile(filePath,"READ")
+						makeCounterSum = eval(self.config.get("general","counterSum"))
+						print "Add counter sum: %s" % makeCounterSum
+						if not self.counterSum and makeCounterSum:
+							if not outFile.GetDirectory("%sCounters" % section.split("dileptonTree:")[1]):
+								outFile.mkdir("%sCounters" % section.split("dileptonTree:")[1])
+							outFile.cd("%sCounters" % section.split("dileptonTree:")[1])
+							task = None 
+							
+							if "vtxWeighter" in processors:  
+								t =  self.config.get("general","tasks")
+								
+								if ".%s."%t in splitPath(filePath)[1]:
+									assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+									task = t
+								else:
+									task = t
+							else:                         
+								for t in self.tasks:
+									if ".%s."%t in splitPath(filePath)[1]:
+										assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+										task = t
+							self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
+
+						else:
+							pass
+
+						inFile.Close()
+						srcTree[object].Add(treePath)
+						print "adding", treePath	
+	
+					
+						
+					for treePath in trees[object]:
+						### Now the rest, but avoid taking a tree twice
+						if "DoubleElectron" in treePath or "DoubleMuon" in treePath:
+							continue
+						#srcFile = TFile(filePath,"r")
+						#srcTree = srcFile.Get(treePath)
+						filePath = "%s.root"%treePath.split(".root")[0]
+						inFile = TFile(filePath,"READ")
+						makeCounterSum = eval(self.config.get("general","counterSum"))
+						print "Add counter sum: %s" % makeCounterSum
+						if not self.counterSum and makeCounterSum:
+							if not outFile.GetDirectory("%sCounters" % section.split("dileptonTree:")[1]):
+								outFile.mkdir("%sCounters" % section.split("dileptonTree:")[1])
+							outFile.cd("%sCounters" % section.split("dileptonTree:")[1])
+							task = None 
+							
+							if "vtxWeighter" in processors:  
+								t =  self.config.get("general","tasks")
+								
+								if ".%s."%t in splitPath(filePath)[1]:
+									assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+									task = t
+								else:
+									task = t
+							else:                         
+								for t in self.tasks:
+									if ".%s."%t in splitPath(filePath)[1]:
+										assert task == None, "unable to disambiguate tasks '%s' matches both '%s' and '%s'"(filePath, task, t)
+										task = t
+							self.counterSum = inFile.Get("%sCounters/analysis paths"%task).Clone()
+
+						else:
+							pass
+
+						inFile.Close()
+						srcTree[object].Add(treePath)
+						print "adding", treePath
+						
 					srcTree[object].SetBranchStatus("*", 1)
 					
-					### signal code
+					### apply cuts first to reduce number of events
 					#~ if (self.treeProcessors[filter].__class__.__name__ == SimpleSelector.__name__ and self.config.has_option(section,"%sFilter"%object)):
 						#~ expression = self.treeProcessors[filter].getExpression(object)
 						#~ print "Cutting tree down to: '%s'" % (expression)
@@ -356,19 +377,19 @@ class TreeProducer:
 						#~ srcTree[object] = srcTree[object].CopyTree(expression)					
 						#~ outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"UPDATE")
 					#####
-	
+					
 					for processorName in processors:
 						if processorName == "vtxWeighter":
 							srcTree[object].SetBranchStatus("weight", 0)
 							
-						####default code	
+						#### old code	
 						if (self.treeProcessors[processorName].__class__.__name__ == SimpleSelector.__name__ and not self.config.has_option(section,"%sFilter"%object)):
 							print "Requirements met, applying simple selection boosting =)"
 							expression = self.treeProcessors[processorName].getExpression(object)
 							print "Cutting tree down to: '%s'" % (expression)
 							srcTree[object] = srcTree[object].CopyTree(expression)
 						######
-												
+											
 						self.treeProcessors[processorName].prepareSrc(srcTree[object], object, self.treeProcessors)
 				for object in trees:
 					processors = self.config.get(section,"%sProcessors"%object).split()
@@ -394,14 +415,14 @@ class TreeProducer:
 						endOfLine -= 1
 						processingResults = {}
 						
-						### default code
+						### old code
 						for processorName in processors:
 							processingResults[processorName] = self.treeProcessors[processorName].processEvent(srcTree[object], object)
 						if filter == "" or eval(filter, processingResults):
 							destTree.Fill()
 						####
 						
-						### signal code
+						### new code
 						#~ keep = False
 						#~ for processorName in processors:
 							#~ keep = self.treeProcessors[processorName].processEvent(srcTree[object], object)
@@ -546,133 +567,6 @@ def main(argv = None):
 	
 if __name__ == '__main__':
 	main()
-
-import unittest    
-
-class plotTest(unittest.TestCase):
-	configString ="""
-[general]
-tasks = pfBaseCuts pfBaseCutsSingleMu pfBaseCutsSingleE pfBaseCutsTauPlusX
-basePath = /Users/heron/Documents/superSymmetry/results/diLeptonTaus/diLeptons41x/susy0447v5/input
-MCDatasets = .*_Spring11
-outPath = processedTrees
-
-[dileptonTree NoCuts]
-treeProducerName = TaNCTrees
-objects = EE EMu MuMu ETau MuTau TauTau
-EEDataset = SingleElectron.* 
-EESelection = HLTE
-EEProcessors = htSelector ptSumWeighter overlap
-EEFilter = True
-EMuDataset = SingleMu_.*
-EMuSelection = HLTIsoMu
-EMuProcessors = htSelector ptSumWeighter overlap
-EMuFilter = htSelector 
-MuMuDataset = SingleMu_.*
-MuMuSelection = HLTMu
-MuMuProcessors = htSelector overlap
-ETauDataset = TauPlusX_.*
-ETauSelection = HLTETau
-ETauProcessors = htSelector overlap
-MuTauDataset = TauPlusX_.*
-MuTauSelection = HLTMuTau
-MuTauProcessors = htSelector overlap
-TauTauDataset = TauPlusX_.*
-TauTauSelection = HLTTauTauHT
-TauTauProcessors = htSelector overlap
-OtherSelection =
-
-[dileptonTree:NoCuts]
-treeProducerName = TaNCTrees
-objects = EE EMu MuMu ETau MuTau TauTau
-EEDataset = SingleElectron.* 
-EESelection = HLTE
-EEProcessors = overlap
-EMuDataset = SingleMu_.*
-EMuSelection = HLTIsoMu
-EMuProcessors = overlap 
-MuMuDataset = SingleMu_.*
-MuMuSelection = HLTMu
-MuMuProcessors = overlap
-ETauDataset = TauPlusX_.*
-ETauSelection = HLTETau
-ETauProcessors = overlap
-MuTauDataset = TauPlusX_.*
-MuTauSelection = HLTMuTau
-MuTauProcessors = overlap
-TauTauDataset = TauPlusX_.*
-TauTauSelection = HLTTauTauHT
-TauTauProcessors = overlap
-OtherSelection = 
- 
-
-[isoTree NoCuts]
-treeProducerName = TnPTaNCTauTrees
-Dataset = TauPlusX
-Selection = 
-Processors = tauFakeWeights
-PtherSelection = 
-
-[treeProcessor:htSelector]
-type = SimpleSelector
-
-[treeProcessor:lowPtSelector]
-type = SimpleSelector
-EEExpression = pt1 > 20 && pt2 > 20 && ht > 250 
-EMuExpression = pt1 > 20 && pt2 > 20 && ht > 250 
-MuMuExpression = pt1 > 20 && pt2 > 20 && ht > 250 
-ETauExpression = pt1 > 20 && pt2 > 15 && ht > 250 
-MuTauExpression = pt1 > 20 && pt2 > 15 && ht > 250 
-TauTauExpression = pt1 > 20 && pt2 > 15 && ht > 250 
-
-
-[treeProcessor:ptSumWeighter]
-type = SimpleWeighter
-
-[treeProcessor:vtxWeighter]
-type = VertexWeighter
-
-[treeProcessor:tauFakeWeights]
-type = FakeWeighter
-fakePSet = /Users/heron/Documents/superSymmetry/results/diLeptonTaus/diLeptons41x/susy0447v5/tauDataHT_cff.py
-selection = tauDiscr > 0.5
-
-[treeProcessor:overlap]
-type = OverlapRemover
-listPath = eventLists
-EEProcessors = lowPtSelector
-EMuProcessors = lowPtSelector
-MuMuProcessors = lowPtSelector
-ETauProcessors = lowPtSelector
-MuTauProcessors = lowPtSelector
-TauTauProcessors = lowPtSelector
-
-	"""
+    
 	
-	def setUp(self):
-		from ConfigParser import ConfigParser
-		configFile = open("treePostprocessor.unittest.General.ini","w")
-		configFile.write(self.configString)
-		configFile.close()
-		
-		self.config = ConfigParser()
-		self.config.read("treePostprocessor.unittest.General.ini")
-
-	
-	def tearDown(self):
-		from os import remove
-		try: remove("treePostprocessor.unittest.General.ini")
-		except: pass    
-	
-	def testProducer(self):
-		basePath = self.config.get("general","basePath")
-		producers = getProducers(self.config, basePath)
-		for p in producers:
-			#print p.name, p.inputPaths
-			if not p.name == "MergedData":                
-				p.produce()
-
-		#main(["unittest","-C","treePostprocessor.unittest.General.ini"])
-		
-		
 
