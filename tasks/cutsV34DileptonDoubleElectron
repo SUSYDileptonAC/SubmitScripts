@@ -1,23 +1,13 @@
 {
-#"activeFilters": ["basicVertices","HBHENoiseFilter","HBHENoiseIsoFilter","eeBadScFilter","CSCTightHaloFilter","goodVerticesFilter","EcalDeadCellTriggerPrimitiveFilter","BadPFMuonFilterMiniAOD","BadChargedCandidateFilterMiniAOD","BadGlobalMuonFilterMiniAOD","CloneGlobalMuonFilterMiniAOD"],
 "activeFilters": ["basicVertices"],
-"order":["hlt","vertices","muons","looseMuons","electrons","looseElectrons","jets"],
+"order":["vertices","muons","looseMuons","electrons","looseElectrons","jets"],
 
-"additionalFilters":{
-        "HLTDiEleAll": ["HLTDoubleElectronAll"],
-        "HLTDiElePFHT": ["HLTDoubleElectronPFHT"],
-
-},
-
-"hlt": input("baseSelections/baseHLT2016"),
 "vertices":[
     {   "src": "offlineSlimmedPrimaryVertices",
         "name": "basicVertices",
         "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
     },
 ],
-
-#"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
 
 "BadPFMuonFilterMiniAOD": input("baseSelections/baseBadMuonFilterMiniAOD"),
 "BadChargedCandidateFilterMiniAOD": input("baseSelections/baseChargedCandidateFilterMiniAOD"),

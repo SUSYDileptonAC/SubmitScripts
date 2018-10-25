@@ -1,24 +1,13 @@
 {
-#"activeFilters": ["basicVertices","HBHENoiseFilter","HBHENoiseIsoFilter","eeBadScFilter","CSCTightHaloFilter","goodVerticesFilter","EcalDeadCellTriggerPrimitiveFilter","BadPFMuonFilterMiniAOD","BadChargedCandidateFilterMiniAOD","BadGlobalMuonFilterMiniAOD","CloneGlobalMuonFilterMiniAOD"],
 "activeFilters": ["basicVertices"],
-"order":["hlt","vertices","muons","looseMuons","electrons","looseElectrons","jets"],
-#"order":["hlt","vertices","muons","electrons","jets"],
+"order":["vertices","muons","looseMuons","electrons","looseElectrons","jets"],
 
-"additionalFilters":{
-	"HLTMuEGAll": ["HLTMuEGAll"],	
-	"HLTMuEGPFHT": ["HLTMuEGPFHT"],	
-},
-
-
-"hlt": input("baseSelections/baseHLT2016"),
 "vertices":[
     {   "src": "offlineSlimmedPrimaryVertices",
         "name": "basicVertices",
         "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
     },
 ],
-
-#"METFilterMiniAOD": input("baseSelections/baseMETFilterMiniAOD"),
 
 "BadPFMuonFilterMiniAOD": input("baseSelections/baseBadMuonFilterMiniAOD"),
 "BadChargedCandidateFilterMiniAOD": input("baseSelections/baseChargedCandidateFilterMiniAOD"),
@@ -32,7 +21,6 @@
 "looseElectrons" : input("baseSelections/pogElectronsMiniAODMVASpring16Loose"),
 
 "jets" : input("baseSelections/baseJets2016")+input("baseSelections/baseHT2012"),
-#"jetsPuppi" : input("baseSelections/baseJets2016Puppi")+input("baseSelections/baseHT2012Puppi"),
 
 
 }

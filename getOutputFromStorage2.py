@@ -22,14 +22,12 @@ def main():
     parser = OptionParser()
     parser.add_option("-v", "--verbose", action="store_true", dest="verbose", default=False,
                       help="Verbose mode.")
-    parser.add_option("-d", "--statusdelay", dest="statusdelay", nargs=1, default=10,
+    parser.add_option("-d", "--statusdelay", dest="statusdelay", nargs=1, default=2,
                       help="Delay between status info messages in seconds ('0' hides status messages).")
     parser.add_option("-C", "--Config", dest="Config", action="append", default=["Input/default.ini"],
                       help="Main configuration file. Can be given multiple times in case of split configurations. Default is Input/default.ini")
     parser.add_option("-S", "--Source", dest="Source", action="append", default=None,
                       help="overwrite the source folder to start copying from.")
-    parser.add_option("-s", "--skims", action="store_true", dest="skim", default=False,
-                      help="Copy output of skim to localdatapath defined in.")
     parser.add_option("-f", "--flag", dest="flag", nargs=1, default='test',
                                         help="Set naming of the job to FLAG.")
     parser.add_option("-G", "--Groups", dest="Groups",
@@ -48,29 +46,10 @@ def main():
     # set up MainConfig singelton
     settings = MainConfig(opts.Config)
 
-    if opts.skim:
-        print 'Skim copy'
-        theJobs, theNonJobs = getJobsFromGroups(opts.Groups, False)
-        theFlag = opts.flag
-        theHash = crab.getHash(settings.skimcfgname)
-        for theJob in theJobs:
-            if settings.skimFromLocalDBS:
-                primData = settings.masterConfig.get(theJob, 'localdbspath').split('/')[1]
-            else:
-                primData = settings.masterConfig.get(theJob, 'datasetpath').split('/')[1]
-            theStoragePath = os.path.join(settings.storagepath, primData, theJob + '_' + theFlag, theHash)
-            theLocalHistPath = os.path.join(settings.localdatapath, theFlag, theJob + '_' + theFlag)
-            theLocalLogPath = settings.analogpath
-            print 'From ' + theStoragePath
-            print 'to ' + theLocalHistPath
-            if not os.path.exists(theLocalHistPath):
-                os.makedirs(theLocalHistPath)
-            doCopy(opts)
-    else:
-        theStoragePath = settings.histogramoutputpath
-        theLocalHistPath = settings.localhistopath
-        theLocalLogPath = settings.analogpath
-        doCopy(opts)
+    theStoragePath = settings.histogramoutputpath
+    theLocalHistPath = settings.localhistopath
+    theLocalLogPath = settings.analogpath
+    doCopy(opts)
 
 def doCopy(opts):
     # check for existence of paths
@@ -106,17 +85,13 @@ def doCopy(opts):
         if (subPath[len(subPath) - 1] != '/'):
             # ignore directories
             theListFiles.put(os.path.normpath(subPath))
-
     # start status thread
     if (opts.statusdelay != 0):
         StatusInfoThread(theListFiles.qsize(), float(opts.statusdelay), verbose).start()
 
     # start threads to copy all found files
-    for iThread in range(0, 6):
+    for iThread in range(0, min(6, len(pathList))):
         FetchingThread(verbose, replaceFilenameMap).start()
-        # do not start all threads at the same time
-        time.sleep(5)
-
 
 # Thread class for file fetching
 class FetchingThread(threading.Thread):
@@ -140,8 +115,9 @@ class FetchingThread(threading.Thread):
                 print "(thread " + str(self.threadId) + "): Getting file " + os.path.basename(nextFile)
 
             # sort out log files
-            if (os.path.splitext(nextFile)[1] == ".log"):
-                localFilePath = theLocalLogPath + '/' + os.path.basename(nextFile)
+            if (os.path.splitext(nextFile)[1] == ".log" or os.path.splitext(nextFile)[1] == ".gz"):
+                name = nextFile.split("/")[9]
+                localFilePath = theLocalLogPath + '/' +name+"_"+ os.path.basename(nextFile)
             else:
                 localFilePath = theLocalHistPath + '/' + os.path.basename(nextFile)
 
@@ -155,8 +131,8 @@ class FetchingThread(threading.Thread):
                 localFilePath = os.path.join(os.path.split(localFilePath)[0], localFileName)
 
             try:
-                srmTools.copyFile(nextFile, localFilePath, self.verbose)
-                if (os.path.exists(localFilePath) == True):
+                rc = srmTools.copyFile(nextFile, localFilePath, self.verbose)
+                if (os.path.exists(localFilePath) == True) and rc == 0:
                     srmTools.removeFile(nextFile, self.verbose)
                 else:
                     print "ERROR: Copying failed: " + nextFile
@@ -171,7 +147,7 @@ class FetchingThread(threading.Thread):
 
 # Thread class for status information
 class StatusInfoThread(threading.Thread):
-    def __init__(self, nTotalFiles, delay=10, verbose=False):
+    def __init__(self, nTotalFiles, delay=3, verbose=False):
         self.nTotalFiles = nTotalFiles
         self.delay = delay
         self.verbose = verbose
@@ -188,7 +164,6 @@ class StatusInfoThread(threading.Thread):
             sys.stdout.write("\r\033[1;34mStatus: %i%% (%i files left)\033[m" % (percentage, nFilesLeft))
             sys.stdout.flush()
             time.sleep(self.delay)
-
         if (self.verbose): print "(thread " + str(self.threadId) + "): Thread finished"
 
 # start main script

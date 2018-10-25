@@ -1,0 +1,31 @@
+[
+# PAT Muons
+#===========
+    {   "src": "slimmedMuons",
+                "name": "basicLooseMuonsPAT",
+                "cut": "abs( eta ) <= 2.4 & pt >= 10."
+        },
+    {   "name": "qualityLooseMuons",
+                "selector": "PATMuonMediumIDSelector",
+                "vertexSource": "offlineSlimmedPrimaryVertices",
+        },
+        {       "name": "looseD0Muons",
+                "srcNames": "src beamSpotSource",
+                "selector": "PATMuonD0PVSelector",
+                "d0Min": -1.,
+                "d0Max": 0.05,
+                "dZMin": -0.1,
+                "dZMax": 0.1,
+                "SIP3DMin": -1.,
+                "SIP3DMax": 8.,
+                "beamSpotSource": "(vertices)",
+        },
+        {       "name": "LooseMuons",
+                 "srcNames": "src",
+                "src":"(looseMuons.looseD0Muons)",
+                "selector": "PATMuonIsolationSelector",
+                "method": "miniIsoEA",                  
+                "isoMin": -1.,
+                "isoMax": 0.4,
+        },
+]

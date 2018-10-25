@@ -1,9 +1,10 @@
 [
 # PAT Jets
 #===========
-    {  "src": "patJetsReapplyJEC",
+#    {  "src": "patJetsReapplyJEC",
+     {  "src": "slimmedJets",
         "name": "baseJets",
-	"cut": "abs( eta ) <= 3. & pt >= 10.",
+    "cut": "abs( eta ) <= 2.4 & pt >= 35.",
     },
     {   "selector": "muonCleanJets",
        "srcNames": "src leptSrc",
@@ -17,8 +18,8 @@
         "selector": "patPFJetIDSelector",
     },
     {  "name": "qualityJets",
-	"cut": "pt >= 10.",
-	"skip" : True
+    "cut": "pt >= 10.",
+    "skip" : True
     },
     {   "skip": True,
         "name": "qualityBJets",
