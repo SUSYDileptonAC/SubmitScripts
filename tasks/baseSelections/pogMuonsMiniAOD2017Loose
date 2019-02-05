@@ -18,12 +18,14 @@
                 "dZMax": 0.1,
                 "SIP3DMin": -1.,
                 "SIP3DMax": 8.,
-                "beamSpotSource": "(vertices)",
+                "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+                #"beamSpotSource": "(vertices)" 
         },
         {       "name": "LooseMuons",
                  "srcNames": "src",
                 "src":"(looseMuons.looseD0Muons)",
                 "selector": "PATMuonIsolationSelector",
+                "isolationDefinitions" : '?isolationDefinitions2017',
                 "method": "miniIsoEA",                  
                 "isoMin": -1.,
                 "isoMax": 0.4,

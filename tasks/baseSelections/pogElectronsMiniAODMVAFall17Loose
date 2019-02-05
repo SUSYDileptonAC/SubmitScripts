@@ -41,24 +41,12 @@
         "dZMaxEE": 0.1,
         "SIP3DMin": -1.,
         "SIP3DMax": 8,
-        "beamSpotSource": "(vertices)" 
+        "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+        #"beamSpotSource": "(vertices)" 
     },
-#    {  "name": "looseTriggerElectrons",
-#        "selector": "PATElectronTriggerSelector",
-#        "HoverEEB": 0.10,
-#        "HoverEEE": 0.07,
-#        "deltaEtaEB": 0.01,
-#        "deltaEtaEE": 0.008,
-#        "deltaPhiEB": 0.04,
-#        "deltaPhiEE": 0.07,
-#        "eInvMinusPInvEB": 0.01,
-#        "eInvMinusPInvEE": 0.005,
-#        "sigmaIEtaIEtaEB": 0.011,
-#        "sigmaIEtaIEtaEE": 0.030,
- 
-#    },
         {       "name": "LooseElectrons",
             "selector": "PATElectronIsolationSelector",
+            "isolationDefinitions" : '?isolationDefinitions2017',
             "method": "miniIsoEA",              
             "isoMin": -1.,
                 "isoMax": 0.4,

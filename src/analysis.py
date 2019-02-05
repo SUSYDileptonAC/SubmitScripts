@@ -43,19 +43,6 @@ process.MessageLogger = cms.Service('MessageLogger',
 """ % {"analogname":analogname}
         return txt
 
-#create a PoolSource from datapath/job/*.root files where a log is present
-def poolSourceGrid(job, n):
-        settings = MainConfig(job=job)
-        txt = 'process.source = cms.Source(\'PoolSource\', \n'
-    ##################Fixme: How to handle this on data
-        txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
-        txt += '     fileNames = cms.untracked.vstring('
-        txt += ')\n'
-        txt += ')\n\n'
-        txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
-        #txt += 'eventsToProcess = cms.untracked.VEventRange(195399:3175301-195399:3175301)\n\n'
-        return txt
-
 def poolSourceLocal(job, n):
         settings = MainConfig(job=job)
 #       txt = 'process.source = cms.Source(\'PoolSource\', \n'
@@ -81,8 +68,11 @@ def poolSourceLocal(job, n):
         #txt += ",\n".join(["\t\t'%s'" % file for file in files])
         txt += 'process.source = cms.Source(\'PoolSource\', \n'
 
-        ##################Fixme: How to handle this on data                                                                    txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
-        #       txt += "eventsToProcess = cms.untracked.VEventRange('1:4165-1:4165'),\n"
+        ##################Fixme: How to handle this on data        
+
+        
+        #txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:65735500-1:65735500'),\n"
         txt += '     fileNames = cms.untracked.vstring(fileList),\n'
         txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
         #for file in files:
@@ -208,8 +198,8 @@ def createTask(name, job):
 
                                 for srcAttribute in srcAttributes:
                                         if srcAttribute in producer:
-                                                if type(producer[srcAttribute]) == type(""):# and producer[srcAttribute].startswith("(") and producer[srcAttribute].endswith(")"): # note: could go for regexp for really bad cornercases...
-                                                        def repalceOnFlyProducer(matchobj):
+                                                if type(producer[srcAttribute]) == type(""):
+                                                        def replaceOnFlyProducer(matchobj):
                                                                 onFlyProducerName = None
                                                                 if len(matchobj.groups()) == 1 and matchobj.group(1) in rawTask:
                                                                         onFlyProducerName = rawTask[matchobj.group(1)][-1]["name"]
@@ -219,9 +209,9 @@ def createTask(name, job):
                                                                                         onFlyProducerName = matchobj.group(2)
                                                                 return "%s%s" % (name, onFlyProducerName)
                                                         if "." in producer[srcAttribute]:
-                                                                inputCollections[srcAttribute] = sub("\((.*?)\.(.*?)\)", repalceOnFlyProducer, producer[srcAttribute])
+                                                                inputCollections[srcAttribute] = sub("\((.*?)\.(.*?)\)", replaceOnFlyProducer, producer[srcAttribute])
                                                         else:
-                                                                inputCollections[srcAttribute] = sub("\((.*?)\)", repalceOnFlyProducer, producer[srcAttribute])
+                                                                inputCollections[srcAttribute] = sub("\((.*?)\)", replaceOnFlyProducer, producer[srcAttribute])
                                                 else:
                                                         inputCollections[srcAttribute] = producer[srcAttribute]
 
@@ -233,7 +223,11 @@ def createTask(name, job):
 
                                 for attribute in producer:
                                         if not attribute in ["name", "selector", "skip", "srcNames"]:
-                                                repMap["attributes"] += "       %s = %s,\n" % (attribute, repr(producer[attribute]))
+                                                value = repr(producer[attribute])
+                                                # If value is a string that starts with ?, replace with non-string (need to remove ? and ' ')
+                                                if type(producer[attribute]) == type("") and producer[attribute].startswith("?"):
+                                                        value = value[2:-1]
+                                                repMap["attributes"] += "       %s = %s,\n" % (attribute, value)
                                 repMap.update(producer)
 
                                 result += """
@@ -289,9 +283,26 @@ def createGenericAnalyzer(name, path, module, attributes, task, job):
                           "MC":settings.monteCarloAvailable,
                           "attributes": "",
                           "expressions":"",
+                          "imports":"",
                           }
+        
+        if "imports" in attributes:
+                imports = [imp.strip() for imp in attributes["imports"].split(",")]
+        else:
+                imports = []
+                          
+        for imp in imports:
+                if not imp.endswith("_cfi"):
+                        imp = "%s_cfi"%(imp)
+                if "." in imp:
+                        imp_insert = imp
+                else:
+                        imp_insert = "SuSyAachen.DiLeptonHistograms.%s"%(imp)
+                repMap["imports"] += "from %s import *\n" % imp_insert
+                
+        
         for attribute in attributes:
-                if not attribute in ["type", "path", "module"]:
+                if not attribute in ["type", "path", "module", "imports"]:
                         if "." in attribute:
                                 repMap["expressions"] += "process.%(task)s%(name)s." % repMap
                                 repMap["expressions"] += "%s = %s\n" % (attribute, attributes[attribute] % repMap)
@@ -301,39 +312,13 @@ def createGenericAnalyzer(name, path, module, attributes, task, job):
 
         result = """
 from %(path)s import %(module)s
+
 process.%(task)s%(name)s = %(module)s.clone(    
 %(attributes)s
 )
 %(expressions)s
 """ % repMap
-        return result
-
-
-def createDiLeptonAnalyzer(name, attributes, task, weightDefault, job):
-        ''' create DiLeptonAnalyzer as defined in .ini'''
-        settings = MainConfig(job=job)
-        repMap = {
-                          "name":name,
-                          "MC":settings.monteCarloAvailable,
-                          "task":task,
-                          "CSA_weighted": weightDefault
-                          }
-        repMap.update(attributes)
-
-        return """
-process.%(task)s%(name)s = DiLeptonAnalysis.clone(      
-debug = False,
-mcInfo = %(MC)s,
-CSA_weighted = %(CSA_weighted)s,
-        
-mcSource = "%(mcSource)s",
-electronSource = "%(electronSource)s",
-muonSource = "%(muonSource)s",
-tauSource = "%(tauSource)s",
-metSource = "%(metSource)s",
-jetSource = "%(jetSource)s"
-)
-""" % repMap
+        return result, repMap["imports"]
 
 
 def getPATPset(flag, job, n, tasks, HLT):
@@ -346,12 +331,13 @@ def getPATPset(flag, job, n, tasks, HLT):
                 "job":job,
                 "n":n,
                 "HLT":HLT,
+                "imports":"",
                 "analyzers":"",
                 "producerPath":"",
                 "tasks":"",
                 "additionalProducers":"",
                 "globalTag":"",
-                "counters":""
+                "counters":"",
          }
         #small helpers
         repMap["MessageLogger"] = MessageLogger("%(flag)s_%(taskName)s_%(job)s" % repMap)
@@ -367,31 +353,24 @@ process.load("Configuration.StandardSequences.FrontierConditions_GlobalTag_cff")
 process.GlobalTag.globaltag = cms.string(%(globalTag)s)
 process.load("Configuration.StandardSequences.MagneticField_cff")
         """ % settings.getMap()
-        #inputTags
-        #repMap.update(settings.getInputTags(repMap["job"]))
-        #sources
-        #FIXME: deprecated for multicrab
-        #if Grid:
-        #       repMap["source"] = poolSourceGrid(job, n)
-        #else:
+
         repMap["source"] = poolSourceLocal(job, n)
         #filters
         repMap["filters"] = ""
         if HLT:
                 repMap["filters"] += createHLTFilter(repMap["HLT"])
                 repMap["producerPath"] = "process.LeptonHLT+" + repMap["producerPath"]
-        #bJets
-        repMap["bJetAlgo"] = "jetProbabilityJetTags"
-        if settings.CSA == 'CSA07':
-                repMap["bJetAlgo"] = "jetProbabilityJetTags"
-        if settings.CSA == 'CSA08' or settings.CSA == 'Summer08':
-                repMap["bJetAlgo"] = "jetProbabilityBJetTags"
-
+        
         for name in settings.additionalProducers:
-                repMap["additionalProducers"] += "from SuSyAachen.Skimming.defaults.%(name)s_cff import %(name)s\n" % {"name":name}
-                repMap["additionalProducers"] += "%(name)s(process)\n" % {"name":name}
+                if "|" in name:
+                        fileName,suffix = name.split("|")
+                else:
+                        fileName,suffix = name,""
+                        
+                repMap["additionalProducers"] += "from SuSyAachen.Skimming.defaults.%(name)s_cff import %(name)s%(suffix)s\n" % {"name":fileName, "suffix":suffix}
+                repMap["additionalProducers"] += "%(name)s%(suffix)s(process)\n" % {"name":fileName, "suffix":suffix}
                 if not repMap["producerPath"] == "": repMap["producerPath"] += "+ "
-                repMap["producerPath"] += "process.seq%s " % name
+                repMap["producerPath"] += "process.seq%s%s " % (fileName, suffix)
         #load tasks
         products = []
         for task in tasks:
@@ -406,9 +385,10 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
         taskPaths = []
         
         for task in tasks:
-                (thisAnalyzers, thisPaths) = __createAnalyzersAndPaths(task, products, job)
+                (thisAnalyzers, thisPaths, imports) = __createAnalyzersAndPaths(task, products, job)
                 #print thisAnalyzers, thisPaths, task
                 repMap["analyzers"] += thisAnalyzers
+                repMap["imports"] += imports
                 taskPaths.extend(thisPaths)
                 if settings.makeCountHistos: repMap["counters"] += "process.%sCounters.count.append( cms.PSet(name = cms.string('analysis paths'), triggerNames = cms.vstring('%s') ) )\n" % (task, "', '".join([ i[8 + len(task) + 4:] for i in thisPaths]))
 
@@ -425,7 +405,7 @@ makeFilterPaths(process)
                 
         if int(settings.CSA.split("X")[0]) >= 92:
                 repMap["makeUnscheduled"] = """
-##--- Add everything to Tasks so that unscheduled execution is possible
+#--- Add everything to Tasks so that unscheduled execution is possible
 from FWCore.ParameterSet.Utilities import convertToUnscheduled
 process=convertToUnscheduled(process)
 from FWCore.ParameterSet.Utilities import cleanUnscheduled
@@ -437,6 +417,7 @@ process=cleanUnscheduled(process)"""
 
 
 process = cms.Process('Analysis')
+
 process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 
 
@@ -448,10 +429,15 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 ##--- GlobalTag
 %(globalTag)s
 
+## Imports needed for Filters and Analyzer
+
+%(imports)s
+
 process.options.allowUnscheduled = cms.untracked.bool(True) # still needed for 80X, obsolete from 91X on
 
 ########## Additional Producers ########################
 %(additionalProducers)s
+
 
 ########## Filters ########################
 %(filters)s
@@ -460,6 +446,7 @@ process.options.allowUnscheduled = cms.untracked.bool(True) # still needed for 8
 
 ########## DiLeptonAnalyzers ##############
 %(analyzers)s
+
 
 ########## Output ##############
 %(fileService)s
@@ -472,7 +459,9 @@ process.schedule = cms.Schedule( process.producerPath, %(taskPaths)s)
 
 ########## Counting Histograms (must be at the very end) ##############
 %(counters)s
+
 %(makeUnscheduled)s
+
 """ % repMap
         #print txt
         return txt
@@ -493,29 +482,19 @@ def __createAnalyzersAndPaths(task, products, job):
         settings = MainConfig(job=job)
         taskPaths = []
         analyzers = ""
-        diLeptonAnalyzers = settings.getAnalyzers("DiLeptonAnalyzer")
         genericAnalyzers = settings.getAnalyzers("GenericAnalyzer")
         rawTask = settings.getRawTask(task, {"isMC": settings.monteCarloAvailable})
 
         modules = {"":[]}
         activeFilters = __makeFilters(rawTask["activeFilters"], task)
-#       activeFilters = [ "process.%s%s" % (task, i) for i in rawTask["activeFilters"]]
         additionalFilters = {}
         if "additionalFilters" in rawTask:
                 for name in rawTask["additionalFilters"]:
                         additionalFilters[name] = __makeFilters(rawTask["additionalFilters"][name], task)
-#                       additionalFilters[name] = [ "process.%s%s" % (task, i) for i in rawTask["additionalFilters"][name]]
                         modules[name] = []
 
-        for analyzer in diLeptonAnalyzers:
-                (attributes, productsMissing) = checkMissingProducts(diLeptonAnalyzers[analyzer], task, products)
-                #productsMissing = False
-                if not productsMissing:
-                        for name in modules:
-                                analyzers += createDiLeptonAnalyzer(name + analyzer, attributes, task,
-                                                                    (not settings.masterConfig.has_option(job, 'crosssection')) or float(settings.masterConfig.get(job, 'crosssection')) == 0, job)
-                                modules[name].append("process.%(task)s%(name)s%(analyzer)s" % {"task":task, "analyzer":analyzer, "name":name})
-
+        
+        imports = ""
         for analyzer in genericAnalyzers:
                 (attributes, productsMissing) = checkMissingProducts(genericAnalyzers[analyzer], task, products)
                 #productsMissing = False
@@ -524,11 +503,12 @@ def __createAnalyzersAndPaths(task, products, job):
                         for name in modules:
                                 if not "module" in genericAnalyzers[analyzer] or not "path" in genericAnalyzers[analyzer]:
                                         raise StandardError, "either 'module' or 'path' missing to create %s" % analyzer
-                                analyzers += createGenericAnalyzer(name + analyzer, genericAnalyzers[analyzer]["path"],
+                                newAnalyzer, newImports = createGenericAnalyzer(name + analyzer, genericAnalyzers[analyzer]["path"],
                                                                    genericAnalyzers[analyzer]["module"],
                                                                    attributes, task, job)
+                                analyzers += newAnalyzer
+                                imports += newImports
                                 modules[name].append("process.%(task)s%(name)s%(analyzer)s" % {"task":task, "analyzer":analyzer, "name":name})
-
         
 
         pathElements = []
@@ -544,4 +524,4 @@ def __createAnalyzersAndPaths(task, products, job):
                 pathElements.extend(modules[name])
                 analyzers += "process.%sPath%s =cms.Path(%s)\n" % (task, name, " * ".join(pathElements))
                 taskPaths.append("process.%sPath%s" % (task, name))
-        return (analyzers, taskPaths)
+        return (analyzers, taskPaths, imports)

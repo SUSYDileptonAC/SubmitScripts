@@ -15,7 +15,7 @@
 "electrons" : input("baseSelections/pogElectronsMiniAODMVAFall17"),
 "looseElectrons" : input("baseSelections/pogElectronsMiniAODMVAFall17Loose"),
 
-"jets" : input("baseSelections/baseJets2017")+input("baseSelections/baseHT2012"),
+"jets" : input("baseSelections/baseJets2017"),
 
 
 
