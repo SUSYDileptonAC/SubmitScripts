@@ -2,17 +2,14 @@
 # PAT Muons
 #===========
     {   "src": "slimmedMuons",
-                "name": "basicMuonsPAT",
-                #"cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 10."
-                #"cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 20."
-                "cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 20."
+                "name": "basicLooseMuonsPAT",
+                "cut": "abs( eta ) <= 2.4 & pt >= 10."
         },
-
-    {   "name": "qualityMuons",
+    {   "name": "qualityLooseMuons",
                 "selector": "PATMuonMediumIDSelector",
                 "vertexSource": "offlineSlimmedPrimaryVertices",
         },
-        {       "name": "d0Muons",
+        {       "name": "looseD0Muons",
                 "srcNames": "src beamSpotSource",
                 "selector": "PATMuonD0PVSelector",
                 "d0Min": -1.,
@@ -24,15 +21,13 @@
                 "beamSpotSource": "offlineSlimmedPrimaryVertices" 
                 #"beamSpotSource": "(vertices)" 
         },
-
-        {       "name": "IsoMuons",
+        {       "name": "LooseMuons",
                  "srcNames": "src",
-                "src":"(muons.d0Muons)",
+                "src":"(looseMuons.looseD0Muons)",
                 "selector": "PATMuonIsolationSelector",
-                "isolationDefinitions" : '?isolationDefinitions2017',
-                "method": "miniIsoEA",
+                "isolationDefinitions" : '?isolationDefinitions2018',
+                "method": "miniIsoEA",                  
                 "isoMin": -1.,
-                "isoMax": 0.2,
+                "isoMax": 0.4,
         },
-
 ]

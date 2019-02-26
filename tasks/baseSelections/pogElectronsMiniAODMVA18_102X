@@ -1,0 +1,60 @@
+[
+# PAT Electrons
+#===============
+        {   "src": "slimmedElectrons", 
+                "name": "MVAElectrons",
+                "selector": "PATElectronMVAIDSelector",
+                "srcNames": "src",
+                "idMapSource": "ElectronMVAEstimatorRun2Fall17NoIsoV2RawValues",
+                #"idMapSource": "ElectronMVAEstimatorRun2Fall17NoIsoV2Values",
+                "workingPointCentralBarrelHighPt": 4.277,
+                "workingPointCentralBarrelLowPt": 4.277,
+                "workingPointCentralBarrelLowPtLinear": 0.112,
+                "workingPointOuterBarrelHighPt": 3.152,
+                "workingPointOuterBarrelLowPt": 3.152,
+                "workingPointOuterBarrelLowPtLinear": 0.060,
+                "workingPointEndcapHighPt": 2.359,
+                "workingPointEndcapLowPt": 2.359,
+                "workingPointEndcapLowPtLinear": 0.087,
+                "lowPtLinearSubtraction" : 25.0
+                
+        },                                                                    
+
+        {       
+                "name": "basicElectronsPAT",
+             "cut": "pt >= 20. & abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
+
+        },
+        
+   {   "name": "nonMissHitsElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 0,
+    },
+     {  "name": "nonConvertedElectrons",
+        "cut": "passConversionVeto"
+     },        
+     
+    {   "name": "d0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0MaxEB": 0.05,
+        "d0MaxEE": 0.05,
+        "dZMin": -1.,
+        "dZMaxEB": 0.1,
+        "dZMaxEE": 0.1,
+         "SIP3DMin": -1.,
+         "SIP3DMax": 8,
+        "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+        #"beamSpotSource": "(vertices)" 
+        },
+    
+   
+        {       "name": "IsoElectrons",
+                "selector": "PATElectronIsolationSelector",
+                "isolationDefinitions" : '?isolationDefinitions2018',
+                "method": "miniIsoEA",
+                "isoMin": -1.,
+                "isoMax": 0.1,
+        }
+]

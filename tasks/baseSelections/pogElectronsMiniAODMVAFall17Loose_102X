@@ -1,0 +1,55 @@
+[
+# PAT Electrons
+#===============
+        {   "src": "slimmedElectrons", 
+                "name": "LooseMVAElectrons",
+                "selector": "PATElectronMVAIDSelector",
+                "srcNames": "src",
+                "idMapSource": "ElectronMVAEstimatorRun2Fall17NoIsoV1Values",
+                "workingPointCentralBarrelHighPt": -0.887,
+                "workingPointCentralBarrelLowPt": -0.93,
+                "workingPointCentralBarrelLowPtLinear": 0.043/15.,
+                "workingPointOuterBarrelHighPt": -0.89,
+                "workingPointOuterBarrelLowPt": -0.93,
+                "workingPointOuterBarrelLowPtLinear": 0.04/15.,
+                "workingPointEndcapHighPt": -0.91,
+                "workingPointEndcapLowPt": -0.942,
+                "workingPointEndcapLowPtLinear": 0.032/15
+        },                                                                    
+
+        {       
+                "name": "basicLooseElectronsPAT",
+            "cut": "pt >= 10. & abs( eta ) <= 2.5"
+        }, 
+        
+   {   "name": "nonMissHitsLooseElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 0,
+    },
+     {  "name": "nonConvertedLooseElectrons",
+        "cut": "passConversionVeto"
+     },        
+     
+    {   "name": "looseD0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0MaxEB": 0.05,
+        "d0MaxEE":  0.05,
+        "dZMin": -1.,
+        "dZMaxEB": 0.1,
+        "dZMaxEE": 0.1,
+        "SIP3DMin": -1.,
+        "SIP3DMax": 8,
+        "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+        #"beamSpotSource": "(vertices)" 
+    },
+        {       "name": "LooseElectrons",
+            "selector": "PATElectronIsolationSelector",
+            "isolationDefinitions" : '?isolationDefinitions2017',
+            "method": "miniIsoEA",              
+            "isoMin": -1.,
+                "isoMax": 0.4,
+        },
+
+]

@@ -45,12 +45,7 @@ process.MessageLogger = cms.Service('MessageLogger',
 
 def poolSourceLocal(job, n):
         settings = MainConfig(job=job)
-#       txt = 'process.source = cms.Source(\'PoolSource\', \n'
 
-    ##################Fixme: How to handle this on data
-#       txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
-#       txt += "eventsToProcess = cms.untracked.VEventRange('1:4165-1:4165'),\n"
-#       txt += '     fileNames = cms.untracked.vstring('
         files = glob.glob("%(localdatapath)s/" % settings.getMap() + job + "/*.root")
         files = ["file:%s" % i for i in files]
         if settings.getMap()["masterConfig"].has_option(job, "localListPath"):
@@ -59,26 +54,14 @@ def poolSourceLocal(job, n):
                 files = ["dcap://grid-dcap.physik.rwth-aachen.de/pnfs/physik.rwth-aachen.de/cms/%s" % i for i in
                          listFile.read().split()]
                 listFile.close()
-        #       print "#####", settings.numCores, settings.coreNumber
         txt = "fileList = %s\n" % files
 
         if settings.verbose: print "running localy on %i files in '%s'" % (len(files), "%(localdatapath)s/" % settings.getMap() + job)
-        #if settings.verbose == True: print "%(localdatapath)s/" % settings.getMap() + job + "/*.root"
 
-        #txt += ",\n".join(["\t\t'%s'" % file for file in files])
-        txt += 'process.source = cms.Source(\'PoolSource\', \n'
-
-        ##################Fixme: How to handle this on data        
-
-        
-        #txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
-        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:65735500-1:65735500'),\n"
+        txt += 'process.source = cms.Source(\'PoolSource\', \n'   
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:65626249-1:65626249'),\n"
         txt += '     fileNames = cms.untracked.vstring(fileList),\n'
         txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
-        #for file in files:
-        #       txt += '\'file:' + file + '\','
-        #txt = txt[:-1] # remove the last comma
-#       txt += ')\n'
         txt += ')\n\n'
         cmsswBlocks = settings.getMap()["crabAdditionsBlocks"]["Data-AdditionsBlock"].splitlines()
         jsonPath = None
@@ -124,7 +107,6 @@ def getOutputModule(path, taskName):
           repMap = {"path":path,
                     "commands":"",
                     "SelectEvents":""}
-          commands = ["    'drop *'"]
           if not settings.selectEvents == "":
                   selectingPathName = "%s%sPath" % (taskName, settings.selectEvents)
                   if settings.selectEvents == "activeFilters":
@@ -134,24 +116,6 @@ def getOutputModule(path, taskName):
       SelectEvents = cms.vstring('%s')
    ),""" % selectingPathName
 
-          if not (settings.drop == [] and settings.keep == []):
-                for product in settings.drop:
-                        commands.append("'drop %s'" % product)
-                for product in settings.keep:
-                        commands.append("'keep %s'" % product)
-
-                repMap["commands"] = ",\n    ".join(commands)
-
-                result = """
-process.out = cms.OutputModule("PoolOutputModule",
-  fileName = cms.untracked.string('%(path)s'),
-%(SelectEvents)s
-  outputCommands = cms.untracked.vstring(
-%(commands)s
-  )
-)
-process.outpath = cms.EndPath(process.out)
-""" % repMap
           return result
 
 def __createCounters(taskName, taskProducers):
@@ -176,7 +140,18 @@ def createTask(name, job):
         result = """#--- Task: %s\n""" % name
         taskProducers = {}
         rawTask = settings.getRawTask(name, {"isMC": settings.monteCarloAvailable})
-        for sequence in rawTask:
+        
+        # fix ordering in PSet for aesthetic reasons
+        loopTask = rawTask
+        if "order" in rawTask:
+                tmpTask = rawTask["order"][:]
+                allContent = rawTask.keys()
+                for key in allContent:
+                        if not key in tmpTask:
+                                tmpTask.append(key)
+                loopTask = tmpTask        
+                
+        for sequence in loopTask:
                 if not (sequence in ["activeFilters", "additionalFilters", "order"]):
                         result += "import SuSyAachen.Skimming.defaults.%s_cfi\n" % sequence
 
@@ -224,7 +199,8 @@ def createTask(name, job):
                                 for attribute in producer:
                                         if not attribute in ["name", "selector", "skip", "srcNames"]:
                                                 value = repr(producer[attribute])
-                                                # If value is a string that starts with ?, replace with non-string (need to remove ? and ' ')
+                                                # If value is a string that starts with ?, replace with non-string (need to remove ? as well as ' ' from start and end)
+                                                # This allows for the use of variables in skimming definitions, one only has to first import variables using "imports" feature
                                                 if type(producer[attribute]) == type("") and producer[attribute].startswith("?"):
                                                         value = value[2:-1]
                                                 repMap["attributes"] += "       %s = %s,\n" % (attribute, value)
@@ -433,7 +409,13 @@ process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
 
 %(imports)s
 
-process.options.allowUnscheduled = cms.untracked.bool(True) # still needed for 80X, obsolete from 91X on
+
+
+process.options = cms.untracked.PSet(
+    allowUnscheduled = cms.untracked.bool(True) # still needed for 80X, obsolete from 91X on
+)
+
+
 
 ########## Additional Producers ########################
 %(additionalProducers)s

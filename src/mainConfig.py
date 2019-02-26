@@ -47,7 +47,7 @@ class MainConfig:
         self.theGlobalName = "__theMainConfigMap__"
         if configPaths == None:
             if not job == None:
-                self.getMap()[ "monteCarloAvailable" ] &= not "Data" in self.getMap()[ "masterConfig"].get(job, 'groups')
+                self.getMap()[ "monteCarloAvailable" ] &= not "Data" in self.getMap()[ "masterConfig"].get(job, 'groups')                
             if not self.__testSetUp():
                 raise StandardError, "MainConfiguration has not been set up!"
         elif self.__testSetUp():
@@ -65,8 +65,6 @@ class MainConfig:
                 "CSA": CSA,
                 "email": os.path.expandvars(config.get("general", 'email')),
                 "groups": config.get("general", 'groups').split(),
-                "InputTagCollection": config.get("general", "InputTagCollection"),
-                "StatusPath": config.get("general" , "StatusPath"),
                 
                 #-- crab options
                 "StageoutSite": config.get("crab", 'StageoutSite'),
@@ -97,8 +95,6 @@ class MainConfig:
                 #--- private
                 "InputTags":{},
                 "Analyzers":{},
-                "drop":[],
-                "keep":[],
                 "addKeep": None,
                 "selectEvents":"",
                 "defaultNumEvents" :-1,
@@ -112,8 +108,8 @@ class MainConfig:
                     if command in ["additionalProducers"]:
                         self.getMap()[ command ] = self.getMap()[ command ].split()
 
-            #optimal commands in CSA section
-            for command in ["globalTag"]:
+            #optional commands in CSA section
+            for command in ["globalTag",]:
                if config.has_option(CSA, command):
                    self.getMap()[ command ] = "'%s'"%config.get(CSA, command)                                       
             for masterListPath in self.master_list:
@@ -121,7 +117,10 @@ class MainConfig:
                     raise StandardError, "Could not find master list: '%s'" % self.master_list
             self.getMap()[ "masterConfig" ] = BetterConfigParser()
             self.getMap()[ "masterConfig" ].read(self.master_list)
-
+            
+            
+            
+            
             if not job == None:
                 self.getMap()[ "monteCarloAvailable" ] &= not "Data" in self.getMap()[ "masterConfig"].get(job, 'groups')
             
@@ -159,6 +158,15 @@ class MainConfig:
                     self.getMap()[ option ] = value
                     if config.has_option("general", option):
                         self.getMap()[ option ] = config.get("general", option)
+                        
+        if job is not None:
+            # If there is a custom globalTag for a particular data set defined, use it instead of standard GT
+            di =  dict(self.getMap()[ "masterConfig" ].items(job))
+            if "globalTag" in di:
+                self.getMap()["globalTag"] = "'%s'"%(di["globalTag"].strip())
+    
+    
+    
 
     def tearDown(self):
         del __main__.__dict__[ self.theGlobalName ]
@@ -178,8 +186,6 @@ class MainConfig:
         taskName = self.getTaskName(tasks)
         result.extend(["%s_%s_%s.root" % (flag, taskName, job),
                        "%s_%s_%s.log" % (flag, taskName, job)])
-        if not (self.keep == [] and self.drop == []):
-            result.append("%s_%s_%s.EDM.root" % (flag, taskName, job))
         return result
 
     def getTaskName(self, tasks=None):

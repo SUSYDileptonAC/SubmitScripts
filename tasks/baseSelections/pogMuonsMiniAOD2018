@@ -29,7 +29,7 @@
                  "srcNames": "src",
                 "src":"(muons.d0Muons)",
                 "selector": "PATMuonIsolationSelector",
-                "isolationDefinitions" : '?isolationDefinitions2017',
+                "isolationDefinitions" : '?isolationDefinitions2018',
                 "method": "miniIsoEA",
                 "isoMin": -1.,
                 "isoMax": 0.2,

@@ -9,7 +9,7 @@ from optparse import OptionParser
 
 
 #from pfade import *
-from src.mainConfig import MainConfig
+from src.mainConfig import MainConfig, BetterConfigParser
 
 #from configurator import config as cfg
 
@@ -28,6 +28,8 @@ def getOptparser():
                           help="Set parameters of the job to TASK.")
   parser.add_option("-f", "--flag", dest="flag", nargs=1, default='test',
                           help="Set naming of the job to FLAG.")
+  parser.add_option("-m", "--mix", dest="mix", action="append", default=[],
+                          help="Use mix of configs for job")
   parser.add_option("-j", "--job", dest="job", nargs=1, default='SUSY_LM0_sftsht',
                           help="Submit the job.")
   parser.add_option("-a", "--all", action="store_true", dest="all", default=False,
@@ -54,18 +56,50 @@ def main(argv=None):
   global theTasks
 #  global theJob
   global theHLT
-
-
+  
   #create option parser
   parser = getOptparser()
   (opts, args) = parser.parse_args(argv)
+  
+  
+  # parse mix
+  for mix in opts.mix:
+    mixParser = BetterConfigParser()
+    if ":" in mix:
+      mixPath, mixName = mix.split(":")
+    else:
+      mixPath, mixName = mix, "default"
+    mixPath.strip()
+    mixParser.read(mixPath)
+    mixOptions = dict(mixParser.items(mixName))
+    
+    if mixOptions.has_key("configs"):
+      configsMix = mixOptions["configs"].split(" ")
+      for conf in configsMix:
+        opts.Config.append(conf)
+        
+    if mixOptions.has_key("tasks"):
+      tasksMix = mixOptions["tasks"].split(" ")
+      for task in tasksMix:
+        opts.tasks.append(task)
+        
+    if mixOptions.has_key("groups"):
+      groupsMix = mixOptions["groups"].strip
+      opts.Groups = groupsMix
+      opts.grid = True
+        
+    if mixOptions.has_key("job"):
+      jobMix = mixOptions["job"].strip()
+      opts.job = jobMix
+  
+
   if opts.Config == []:
-      opts.Config = [ "Input/default94.ini" ]
+      opts.Config = [ "Input/default102X.ini" ]
   if opts.job.startswith(" "):
       opts.job = opts.job[1:]
   opts.job = opts.job.split(",")
   opts.flag = opts.flag.replace(" ", "")
-  #set up ManiConfig singelton
+  #set up MainConfig singleton
   settings = MainConfig(opts.Config, opts)
 
   print 'Starting at: ' + time.asctime(time.localtime())
