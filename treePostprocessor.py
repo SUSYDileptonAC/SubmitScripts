@@ -37,18 +37,29 @@ class SimpleSelector(TreeProcessor):
         def processEvent(self, event, object):
                 from math import fabs
                 expression = self.getExpression(object)
+                def getVariables(expr):
+                        import re
+                        result = re.findall(r"(?![0-9])(\w+)", expr) # this is supposed to match all words = variable names that are not numbers
+                        return result
+                # find list of variables used in cutstring (instead of looping through all variables)
+                branchList = getVariables(expression)
                 expression = expression.replace("&&","and")
                 expression = expression.replace("&","and")
                 expression = expression.replace("||","or")
-                expression = expression.replace("|","or")        
+                expression = expression.replace("|","or")
+
                 evalGlobal = {"abs":fabs}
-                for i in [i.GetName() for i in event.GetListOfBranches()]:
+                for i in branchList:
+                #for i in [i.GetName() for i in event.GetListOfBranches()]:
                         evalGlobal[i] = getattr(event,i)
+                #print evalGlobal
                 return eval(expression, evalGlobal)
 
         def getExpression(self, object):
                 return self.config.get(self.section,"%sExpression"%object)
-                
+        
+        
+        
                 
 class EventFilter(TreeProcessor):
         def __init__(self, config, name):
@@ -118,25 +129,26 @@ class OverlapRemover(TreeProcessor):
         
         def prepareSrc(self, src, object, allProcessors):
                 TreeProcessor.prepareSrc(self, src, object, allProcessors)
-                endOfLine = 1000
+                endOfLine = 10000
+                processors = self.config.get(self.section,"%sProcessors"%object).split()
+                filter = " and ".join(processors)
+                if self.config.has_option(self.section,"%sFilter"%object):
+                        filter = self.config.get(self.section,"%sFilter"%object)
+                print "looping over %s tree"%object
+
                 for ev in src:
                         if (endOfLine < 1):
                                 pass
-                                #continue
+                                #break
                         endOfLine -= 1
                         processingResults = {}
-                        processors = self.config.get(self.section,"%sProcessors"%object).split()
-                        filter = " and ".join(processors)
-                        if self.config.has_option(self.section,"%sFilter"%object):
-                                filter = self.config.get(self.section,"%sFilter"%object)
+                        
                         for processorName in processors:
                                 processingResults[processorName] = allProcessors[processorName].processEvent(ev, object)
-                        # debugging
-                        #if (ev.lumiSec == 131):
-                        #    print "event %d: %s" % (ev.eventNr, processingResults)
-                                
+     
                         if filter == "" or eval(filter, processingResults):
                                 self._processEvent(ev, object)
+
                 self._writeEventList("%s/selected.eventList"%(self.listPath), self.keepEvents.keys())
                 for rejectedObject, rejectedList in self.rejected.iteritems():
                         self._writeEventList("%s/rejected.%s.eventList"%(self.listPath, rejectedObject), rejectedList)
@@ -227,18 +239,11 @@ class TreeProducer:
                                 trees = self._getDileptonTrees(section)
                                 treeName = "DileptonTree"
                                 subDirName = "%s%s"%(section.split("dileptonTree:")[1],treeProducerName)
-                                if "PFHTHLT" in subDirName:
-                                        subDirName = "%sFinalTrees"%subDirName.split(treeProducerName)[0]
-                        if section.startswith("isoTree:"):
-                                treeProducerName =self.config.get(section,"treeProducerName")
-                                trees = self._getIsoTrees(section)
-                                treeName = "Iso"
-                                subDirName = "%s%s"%(section.split("isoTree:")[1],treeProducerName)
+
                         if not trees == None:
                                 outDir = None
                                 srcTree = {} 
                                 for object in trees:
-                        
                                         srcTree[object] = TChain("%s%s"%(object, treeName))
                                         processors = self.config.get(section,"%sProcessors"%object).split()
                                         filter = " and ".join(processors)
@@ -367,16 +372,16 @@ class TreeProducer:
                                                 print "adding", treePath
                                                 
                                         srcTree[object].SetBranchStatus("*", 1)
+                                        #srcTree[object].SetBranchStatus("*", 0)
+                                        #srcTree[object].SetBranchStatus("pt1", 1)
+                                        #srcTree[object].SetBranchStatus("pt2", 1)
+                                        #srcTree[object].SetBranchStatus("p4", 1)
+                                        #srcTree[object].SetBranchStatus("chargeProduct", 1)
+                                        #srcTree[object].SetBranchStatus("eventNr", 1)
+                                        #srcTree[object].SetBranchStatus("runNr", 1)
+                                        #srcTree[object].SetBranchStatus("lumiSec", 1)
                                         
-                                        ### apply cuts first to reduce number of events
-                                        #~ if (self.treeProcessors[filter].__class__.__name__ == SimpleSelector.__name__ and self.config.has_option(section,"%sFilter"%object)):
-                                                #~ expression = self.treeProcessors[filter].getExpression(object)
-                                                #~ print "Cutting tree down to: '%s'" % (expression)
-                                                #~ outFile.Write()
-                                                #~ outFile.Close()
-                                                #~ srcTree[object] = srcTree[object].CopyTree(expression)                                       
-                                                #~ outFile = TFile("%s/%s.%s.%s.root"%(self.outPath, "".join(self.flags), "processed" , self.name),"UPDATE")
-                                        #####
+                                        
                                         
                                         for processorName in processors:
                                                 if processorName == "vtxWeighter":
@@ -422,14 +427,7 @@ class TreeProducer:
                                                         destTree.Fill()
                                                 ####
                                                 
-                                                ### new code
-                                                #~ keep = False
-                                                #~ for processorName in processors:
-                                                        #~ keep = self.treeProcessors[processorName].processEvent(srcTree[object], object)
-                                                #~ 
-                                                #~ if keep:
-                                                        #~ destTree.Fill()
-                                                ####    
+ 
                                                 
                                         #srcFile.Close()
                                         outFile.Write()

@@ -1,0 +1,5 @@
+These .ini files each contain a mix of configurations for job submission. One can define, config-files, tasks, and job/group names to be used.
+Each file has a default section from which all other sections in that file inherit. Obviously, default features can be overwritten.
+
+in order to use a certain mix, one adds the option -m mixPath:name to run.py. Here, name is the name of a section in the chosen mix file. If no name is chosen, 
+default is automatically used.

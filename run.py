@@ -50,11 +50,8 @@ def main(argv=None):
   global theVerbose
   global theDryrun
   global theSubmitmode
-  global Skim
-#  global theSkims
   global theFlag
   global theTasks
-#  global theJob
   global theHLT
   
   #create option parser
@@ -63,15 +60,34 @@ def main(argv=None):
   
   
   # parse mix
+  mixPathes = []
+  mixTuples =  []
   for mix in opts.mix:
-    mixParser = BetterConfigParser()
+    
     if ":" in mix:
       mixPath, mixName = mix.split(":")
     else:
       mixPath, mixName = mix, "default"
-    mixPath.strip()
+    
+    # every mix inherits from the "default" mix in its file
+    if mixPath not in mixPathes and mixName != "default":
+      mixPathes.append(mixPath)
+      mixTuples.append( (mixPath.strip(), "default") )
+    
+    mixTuples.append( (mixPath.strip(), mixName) )
+
+  
+  for mixPath, mixName in mixTuples:
+    mixParser = BetterConfigParser()
     mixParser.read(mixPath)
-    mixOptions = dict(mixParser.items(mixName))
+    
+    try:
+      mixOptions = dict(mixParser.items(mixName))
+    except:
+      print "ERROR: File %s has no section %s"%(mixPath, mixName)
+      if mixName == "default":
+        print "Every mix file needs a default section, even if it is left empty"
+      raise
     
     if mixOptions.has_key("configs"):
       configsMix = mixOptions["configs"].split(" ")
@@ -84,7 +100,7 @@ def main(argv=None):
         opts.tasks.append(task)
         
     if mixOptions.has_key("groups"):
-      groupsMix = mixOptions["groups"].strip
+      groupsMix = mixOptions["groups"].strip()
       opts.Groups = groupsMix
       opts.grid = True
         
