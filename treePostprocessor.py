@@ -39,9 +39,10 @@ class SimpleSelector(TreeProcessor):
                 expression = self.getExpression(object)
                 def getVariables(expr):
                         import re
-                        result = re.findall(r"(?![0-9])(\w+)", expr) # this is supposed to match all words = variable names that are not numbers
+                        result = re.findall(r"(?![0-9])(\w+)", expr) # this is supposed to match all words = variable names that are not numbers. Words can end with numbers, though
+                        result = [r for r in result if not r in ["and", "or"]] # remove and and or
                         return result
-                # find list of variables used in cutstring (instead of looping through all variables)
+                # find variables used in cutstring (instead of looping through all branches)
                 branchList = getVariables(expression)
                 expression = expression.replace("&&","and")
                 expression = expression.replace("&","and")
@@ -52,7 +53,6 @@ class SimpleSelector(TreeProcessor):
                 for i in branchList:
                 #for i in [i.GetName() for i in event.GetListOfBranches()]:
                         evalGlobal[i] = getattr(event,i)
-                #print evalGlobal
                 return eval(expression, evalGlobal)
 
         def getExpression(self, object):
