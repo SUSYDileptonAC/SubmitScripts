@@ -37,138 +37,28 @@ class SimpleSelector(TreeProcessor):
         def processEvent(self, event, object):
                 from math import fabs
                 expression = self.getExpression(object)
+                def getVariables(expr):
+                        import re
+                        result = re.findall(r"(?![0-9])(\w+)", expr) # this is supposed to match all words = variable names that are not numbers. Words can end with numbers, though
+                        result = [r for r in result if not r in ["and", "or"]] # remove and and or
+                        return result
+                # find variables used in cutstring (instead of looping through all branches)
+                branchList = getVariables(expression)
                 expression = expression.replace("&&","and")
                 expression = expression.replace("&","and")
                 expression = expression.replace("||","or")
-                expression = expression.replace("|","or")        
+                expression = expression.replace("|","or")
+
                 evalGlobal = {"abs":fabs}
-                for i in [i.GetName() for i in event.GetListOfBranches()]:
+                for i in branchList:
+                #for i in [i.GetName() for i in event.GetListOfBranches()]:
                         evalGlobal[i] = getattr(event,i)
                 return eval(expression, evalGlobal)
 
         def getExpression(self, object):
                 return self.config.get(self.section,"%sExpression"%object)
                 
-                
-class EventFilter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                
-                names = self.config.get(self.section,"names").split(" ")
-                self.eventList = readEventLists(names)
-                
-        def processEvent(self, event,object):
-                result = True
-                if event.runNr in self.eventList:
-                        if event.lumiSec in self.eventList[event.runNr]:
-                                if event.eventNr in self.eventList[event.runNr][event.lumiSec]:
-                                        result = False
- 
-                return result
-                
-        
-class SimpleWeighter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                self.weight = {}
-                
-        def prepareSrc(self, src, object, processors):
-                #src.SetBranchStatus("weight", 0)
-                pass
-                
-        def prepareDest(self, dest, object):
-                from array import array
-                self.weight[object] = array("f",[1.0])
-                dest.Branch("weight2",self.weight[object],"weight2/F")
-
-        def processEvent(self, event, object):
-                self.weight[object][0] = event.weight*(event.pt1+event.pt2)
-                return True
-        
-class VertexWeighter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                self.weight = {}
-                
-        def prepareSrc(self, src, object, processors):
-                #src.SetBranchStatus("weight", 0)
-                pass
-                
-        def prepareDest(self, dest, object):
-                from array import array
-                pass
-                self.weight[object] = array("f",[1.0])
-                dest.Branch("weight",self.weight[object],"weight/F")
-
-        def processEvent(self, event, object):
-                from helpers import getVtxWeight
-                self.weight[object][0] = getVtxWeight(event.nVertices)
-                return True
-
-class NoFakeWeighter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                self.bName = config.get(self.section, "branchName")
-                self.noFakeValue = eval(config.get(self.section, "weight"))
-                self.weight = {} 
-                
-                
-        #def prepareSrc(self, src, object, allProcessors):
-        #    TreeProcessor.prepareSrc(self, src, object, allProcessors)
-                #src.SetBranchStatus("weight", 0)
-        #    pass
-                
-        def prepareDest(self, dest, object):
-                from array import array
-                TreeProcessor.prepareDest(self, dest, object)
-                self.weight[object] = array("f",[self.noFakeValue])
-                dest.Branch(self.bName,self.weight[object],"%s/F"%self.bName)
-                
-        #def processEvent(self, event, object):
-        #    TreeProcessor.processEvent(self, event, object)
-        #    return True
-
-
-class FakeWeighter(TreeProcessor):
-        def __init__(self, config, name):
-                from helpers import parsePSet
-                TreeProcessor.__init__(self, config, name)
-                frPath = config.get(self.section, "fakePSet")
-                self.branchName = config.get(self.section, "branchName")
-                self.pSet = parsePSet(frPath)
-                self.ptMax = 74.9
-                self.weight = {}
-                
-        def prepareSrc(self, src, object, allProcessors):
-                TreeProcessor.prepareSrc(self, src, object, allProcessors)
-                #src.SetBranchStatus("weight", 0)
-                pass
-                
-        def prepareDest(self, dest, object):
-                from array import array
-                TreeProcessor.prepareDest(self, dest, object)
-                self.weight[object] = array("f",[-1.0])
-                dest.Branch(self.branchName, self.weight[object],"%s/F"%self.branchName)
-                
-        def processEvent(self, event, object):
-                TreeProcessor.processEvent(self, event, object)
-                frBins = {}
-                for (binName, varName) in zip(self.config.get(self.section,"binNames").split(),self.config.get(self.section,"varNames").split()):
-                        frBins[binName] = getattr(event,varName)
-                for binName in frBins:
-                        if "pt" in binName and frBins[binName] > self.ptMax:
-                                frBins[binName] = self.ptMax
-                idExpr = self.config.get(self.section,"idExpr")
-                evalGlobals = {"id1":event.id1,
-                                           "id2":event.id2}
-                self.weight[object][0] = -1
-                if eval(idExpr,evalGlobals):
-                        frType = "center"
-                        frType = self.config.get(self.section,"frType")
-                        f = self.pSet[frType].fakeRate(frBins)
-                        self.weight[object][0] = f/(1-f)
-                return True
-
+             
         
 class OverlapRemover(TreeProcessor):
         def __init__(self, config, name):
@@ -547,132 +437,4 @@ def main(argv = None):
 if __name__ == '__main__':
         main()
 
-import unittest    
-
-class plotTest(unittest.TestCase):
-        configString ="""
-[general]
-tasks = pfBaseCuts pfBaseCutsSingleMu pfBaseCutsSingleE pfBaseCutsTauPlusX
-basePath = /Users/heron/Documents/superSymmetry/results/diLeptonTaus/diLeptons41x/susy0447v5/input
-MCDatasets = .*_Spring11
-outPath = processedTrees
-
-[dileptonTree NoCuts]
-treeProducerName = TaNCTrees
-objects = EE EMu MuMu ETau MuTau TauTau
-EEDataset = SingleElectron.* 
-EESelection = HLTE
-EEProcessors = htSelector ptSumWeighter overlap
-EEFilter = True
-EMuDataset = SingleMu_.*
-EMuSelection = HLTIsoMu
-EMuProcessors = htSelector ptSumWeighter overlap
-EMuFilter = htSelector 
-MuMuDataset = SingleMu_.*
-MuMuSelection = HLTMu
-MuMuProcessors = htSelector overlap
-ETauDataset = TauPlusX_.*
-ETauSelection = HLTETau
-ETauProcessors = htSelector overlap
-MuTauDataset = TauPlusX_.*
-MuTauSelection = HLTMuTau
-MuTauProcessors = htSelector overlap
-TauTauDataset = TauPlusX_.*
-TauTauSelection = HLTTauTauHT
-TauTauProcessors = htSelector overlap
-OtherSelection =
-
-[dileptonTree:NoCuts]
-treeProducerName = TaNCTrees
-objects = EE EMu MuMu ETau MuTau TauTau
-EEDataset = SingleElectron.* 
-EESelection = HLTE
-EEProcessors = overlap
-EMuDataset = SingleMu_.*
-EMuSelection = HLTIsoMu
-EMuProcessors = overlap 
-MuMuDataset = SingleMu_.*
-MuMuSelection = HLTMu
-MuMuProcessors = overlap
-ETauDataset = TauPlusX_.*
-ETauSelection = HLTETau
-ETauProcessors = overlap
-MuTauDataset = TauPlusX_.*
-MuTauSelection = HLTMuTau
-MuTauProcessors = overlap
-TauTauDataset = TauPlusX_.*
-TauTauSelection = HLTTauTauHT
-TauTauProcessors = overlap
-OtherSelection = 
- 
-
-[isoTree NoCuts]
-treeProducerName = TnPTaNCTauTrees
-Dataset = TauPlusX
-Selection = 
-Processors = tauFakeWeights
-PtherSelection = 
-
-[treeProcessor:htSelector]
-type = SimpleSelector
-
-[treeProcessor:lowPtSelector]
-type = SimpleSelector
-EEExpression = pt1 > 20 && pt2 > 20 && ht > 250 
-EMuExpression = pt1 > 20 && pt2 > 20 && ht > 250 
-MuMuExpression = pt1 > 20 && pt2 > 20 && ht > 250 
-ETauExpression = pt1 > 20 && pt2 > 15 && ht > 250 
-MuTauExpression = pt1 > 20 && pt2 > 15 && ht > 250 
-TauTauExpression = pt1 > 20 && pt2 > 15 && ht > 250 
-
-
-[treeProcessor:ptSumWeighter]
-type = SimpleWeighter
-
-[treeProcessor:vtxWeighter]
-type = VertexWeighter
-
-[treeProcessor:tauFakeWeights]
-type = FakeWeighter
-fakePSet = /Users/heron/Documents/superSymmetry/results/diLeptonTaus/diLeptons41x/susy0447v5/tauDataHT_cff.py
-selection = tauDiscr > 0.5
-
-[treeProcessor:overlap]
-type = OverlapRemover
-listPath = eventLists
-EEProcessors = lowPtSelector
-EMuProcessors = lowPtSelector
-MuMuProcessors = lowPtSelector
-ETauProcessors = lowPtSelector
-MuTauProcessors = lowPtSelector
-TauTauProcessors = lowPtSelector
-
-        """
-        
-        def setUp(self):
-                from ConfigParser import ConfigParser
-                configFile = open("treePostprocessor.unittest.General.ini","w")
-                configFile.write(self.configString)
-                configFile.close()
-                
-                self.config = ConfigParser()
-                self.config.read("treePostprocessor.unittest.General.ini")
-
-        
-        def tearDown(self):
-                from os import remove
-                try: remove("treePostprocessor.unittest.General.ini")
-                except: pass    
-        
-        def testProducer(self):
-                basePath = self.config.get("general","basePath")
-                producers = getProducers(self.config, basePath)
-                for p in producers:
-                        #print p.name, p.inputPaths
-                        if not p.name == "MergedData":                
-                                p.produce()
-
-                #main(["unittest","-C","treePostprocessor.unittest.General.ini"])
-                
-                
 

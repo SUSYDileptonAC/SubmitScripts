@@ -93,9 +93,7 @@ class MainConfig:
                 # local dbs instance for publication
                 "inputDBS":  config.get(CSA, 'inputDBS'),
                 #--- private
-                "InputTags":{},
                 "Analyzers":{},
-                "addKeep": None,
                 "selectEvents":"",
                 "defaultNumEvents" :-1,
                 "additionalProducers":"",
@@ -117,25 +115,15 @@ class MainConfig:
                     raise StandardError, "Could not find master list: '%s'" % self.master_list
             self.getMap()[ "masterConfig" ] = BetterConfigParser()
             self.getMap()[ "masterConfig" ].read(self.master_list)
-            
-            
-            
+
             
             if not job == None:
                 self.getMap()[ "monteCarloAvailable" ] &= not "Data" in self.getMap()[ "masterConfig"].get(job, 'groups')
             
-            
-            for section in config.sections():
-                if "InputTags:" in section:
-                    collectionName = section.split("InputTags:")[1]
-                    self.getMap()["InputTags"][ collectionName ] = {}
-                    for option in config.options(section):
-                         self.getMap()["InputTags"][ collectionName ][ option ] = config.get(section, option)
-
             for section in config.sections():
                 if section.startswith("Analyzer:"):
                     analyzerName = section.split("Analyzer:")[1]
-                    self.getMap()["Analyzers"][ analyzerName ] = {"type":"DiLeptonAnalyzer"}
+                    self.getMap()["Analyzers"][ analyzerName ] = {"type":"GenericAnalyzer"}
                     for option in config.options(section):
                          self.getMap()["Analyzers"][ analyzerName ][ option ] = config.get(section, option)
 

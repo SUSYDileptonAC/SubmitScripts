@@ -59,63 +59,6 @@ class SimpleSelector(TreeProcessor):
                 return self.config.get(self.section,"%sExpression"%object)
         
         
-        
-                
-class EventFilter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                
-                names = self.config.get(self.section,"names").split(" ")
-                self.eventList = readEventLists(names)
-                
-        def processEvent(self, event,object):
-                result = True
-                if event.runNr in self.eventList:
-                        if event.lumiSec in self.eventList[event.runNr]:
-                                if event.eventNr in self.eventList[event.runNr][event.lumiSec]:
-                                        result = False
- 
-                return result
-                
-        
-class SimpleWeighter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                self.weight = {}
-                
-        def prepareSrc(self, src, object, processors):
-                #src.SetBranchStatus("weight", 0)
-                pass
-                
-        def prepareDest(self, dest, object):
-                from array import array
-                self.weight[object] = array("f",[1.0])
-                dest.Branch("weight2",self.weight[object],"weight2/F")
-
-        def processEvent(self, event, object):
-                self.weight[object][0] = event.weight*(event.pt1+event.pt2)
-                return True
-        
-class VertexWeighter(TreeProcessor):
-        def __init__(self, config, name):
-                TreeProcessor.__init__(self, config, name)
-                self.weight = {}
-                
-        def prepareSrc(self, src, object, processors):
-                #src.SetBranchStatus("weight", 0)
-                pass
-                
-        def prepareDest(self, dest, object):
-                from array import array
-                pass
-                self.weight[object] = array("f",[1.0])
-                dest.Branch("weight",self.weight[object],"weight/F")
-
-        def processEvent(self, event, object):
-                from helpers import getVtxWeight
-                self.weight[object][0] = getVtxWeight(event.nVertices)
-                return True
-        
 class OverlapRemover(TreeProcessor):
         def __init__(self, config, name):
                 from os.path import exists as pathExists

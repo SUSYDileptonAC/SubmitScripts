@@ -83,16 +83,6 @@ process.source.lumisToProcess.extend(myLumis)
         txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
         return txt
 
-#create a HLT filter
-def createHLTFilter(HLT):
-        #TODO hardcoded HLT Bits
-        txt = 'process.LeptonHLT = cms.EDFilter("HLTHighLevel",\n'
-        txt += 'HLTPaths = cms.vstring(' + HLT + '),\n'
-        txt += 'andOr = cms.bool(True),\n'
-        txt += 'TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")\n'
-        txt += ')\n\n'
-        return txt
-
 
 def TFileService(file):
         '''create a TFileService with output = file'''
@@ -100,23 +90,6 @@ def TFileService(file):
         txt = 'process.TFileService = cms.Service(\'TFileService\', closeFileFast = cms.untracked.bool(True), fileName = cms.string(\'' + file + '\'))\n\n'
         return txt
 
-def getOutputModule(path, taskName):
-          ''' create an output module to store created products in'''
-          settings = MainConfig()
-          result = ""
-          repMap = {"path":path,
-                    "commands":"",
-                    "SelectEvents":""}
-          if not settings.selectEvents == "":
-                  selectingPathName = "%s%sPath" % (taskName, settings.selectEvents)
-                  if settings.selectEvents == "activeFilters":
-                          selectingPathName = "%sPath" % (taskName)
-                  repMap["SelectEvents"] = """
-   SelectEvents = cms.untracked.PSet( 
-      SelectEvents = cms.vstring('%s')
-   ),""" % selectingPathName
-
-          return result
 
 def __createCounters(taskName, taskProducers):
         settings = MainConfig()
@@ -144,7 +117,7 @@ def createTask(name, job):
         # fix ordering in PSet for aesthetic reasons
         loopTask = rawTask
         if "order" in rawTask:
-                tmpTask = rawTask["order"][:]
+                tmpTask = rawTask["order"][:] # shallow copy
                 allContent = rawTask.keys()
                 for key in allContent:
                         if not key in tmpTask:
@@ -297,7 +270,7 @@ process.%(task)s%(name)s = %(module)s.clone(
         return result, repMap["imports"]
 
 
-def getPATPset(flag, job, n, tasks, HLT):
+def getPATPset(flag, job, n, tasks):
         '''get PAT cfg file contents for SUSYDiLepton Analysis'''
         settings = MainConfig(job=job)
         #general stuff
@@ -306,7 +279,6 @@ def getPATPset(flag, job, n, tasks, HLT):
                 "taskName":settings.getTaskName(tasks),
                 "job":job,
                 "n":n,
-                "HLT":HLT,
                 "imports":"",
                 "analyzers":"",
                 "producerPath":"",
@@ -318,7 +290,6 @@ def getPATPset(flag, job, n, tasks, HLT):
         #small helpers
         repMap["MessageLogger"] = MessageLogger("%(flag)s_%(taskName)s_%(job)s" % repMap)
         repMap["fileService"] = TFileService("%(flag)s_%(taskName)s_%(job)s.root" % repMap)
-        repMap["OutputModule"] = getOutputModule("%(flag)s_%(taskName)s_%(job)s_EDM.root" % repMap, tasks[0])
         #print settings.getMap()["masterConfig"].get(job, "globalTag")
         #print "test"
         if "globalTag" in settings.getMap(): repMap["globalTag"] = """
@@ -333,9 +304,6 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
         repMap["source"] = poolSourceLocal(job, n)
         #filters
         repMap["filters"] = ""
-        if HLT:
-                repMap["filters"] += createHLTFilter(repMap["HLT"])
-                repMap["producerPath"] = "process.LeptonHLT+" + repMap["producerPath"]
         
         for name in settings.additionalProducers:
                 if "|" in name:
@@ -376,8 +344,6 @@ makeFilterPaths(process)
 
         repMap["taskPaths"] = ", ".join(taskPaths)
 
-        if "process.outpath" in repMap["OutputModule"]:
-                repMap["taskPaths"] += ", process.outpath"
                 
         if int(settings.CSA.split("X")[0]) >= 92:
                 repMap["makeUnscheduled"] = """
@@ -433,7 +399,6 @@ process.options = cms.untracked.PSet(
 ########## Output ##############
 %(fileService)s
 
-%(OutputModule)s
 ########## Paths ##########################
 process.producerPath = cms.Path(%(producerPath)s )
 process.schedule = cms.Schedule( process.producerPath, %(taskPaths)s)

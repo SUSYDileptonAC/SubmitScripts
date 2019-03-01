@@ -1,14 +1,54 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
-Created on 10.12.2009
+Reworked on 27.02.2019
 
-@author: heron
+@author: teroerde
 '''
 import os.path
 from os import system
+from CRABAPI.RawCommand import crabCommand
 
 
+import sys, os
+
+# Disable
+def blockPrint():
+        sys.stdout = open(os.devnull, 'w')
+
+# Restore
+def enablePrint():
+        sys.stdout = sys.__stdout__
+
+def summary( jobSummary, task ):
+        totalNum = 0.0
+        numStates = 0.0
+        finished = 0.0
+        failed = 0.0
+        running = 0.0
+        other = 0.0
+        
+        
+        for state, number in jobSummary.iteritems():
+                totalNum += number
+                if state == "finished":
+                        finished = number
+                elif state == "failed":
+                        failed = number
+                elif state == "running":
+                        running = number
+                else:
+                        other += number
+        
+        if totalNum > 0:
+                status = "\033[32m{finished:>6.1f}% \033[0m{running:>6.1f}% \033[91m{failed:>6.1f}%  \033[33m{other:>6.1f}%\033[0m   / {total:>6}".format(finished=(finished/totalNum*100), 
+                                                        running=(running/totalNum*100),failed=(failed/totalNum*100), other=(other/totalNum*100), total=int(totalNum))
+        else:
+                status = "\033[91mNO JOBS\033[0m"
+        taskName = task.split("crab_")[1]
+        
+        output = "{}{:>50}".format(status, taskName)
+        return output
 
 
 def getTasks(rawDirs,doneTasks = []):
@@ -38,24 +78,37 @@ def getTasks(rawDirs,doneTasks = []):
 def resubmit(opts,tasks,doneTasks=[]):
         import tqdm
         import subprocess
+        
         tasksToRemove = []
+        summaries = []
         for task in tqdm.tqdm(tasks, total=len(tasks), unit="task"):
-                output = subprocess.check_output("crab status %s"%(os.path.abspath(task)), shell=True)
-                if  "SUBMITTED" in output:
-                        if "failed" in output:
-                                print "try to resubmit failed jobs in %s" % task
-                                p = subprocess.Popen(["crab", "resubmit", "%s" % os.path.abspath(task)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                                out, err = p.communicate()
-                        elif "COMPLETED" in output:
+                blockPrint()
+                output = crabCommand('status', dir = os.path.abspath(task))                     
+                enablePrint()
+                summ = summary(output["jobsPerStatus"], task)
+                summaries.append(summ)
+                #output = subprocess.check_output("crab status %s"%(os.path.abspath(task)), shell=True)
+                if output["status"] == "COMPLETED" :
                                 tasksToRemove.append(task)
                                 doneTasks.append(task)    
                                 print "task ", task, " is done, removing"
-                elif "SUBMITFAILED" in output:
+                elif output["status"] == "SUBMITTED" or output["status"] == "FAILED":
+                        if "failed" in output["jobsPerStatus"]:
+                                print "try to resubmit failed jobs in %s" % task
+                                blockPrint()
+                                output = crabCommand('resubmit', dir = os.path.abspath(task))  
+                                enablePrint()
+                                #p = subprocess.Popen(["crab", "resubmit", "%s" % os.path.abspath(task)], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                                #out, err = p.communicate()
+                elif output["status"] == "SUBMITFAILED":
                         tasksToRemove.append(task)
                         doneTasks.append(task)
                         print "Submission of task %s failed, check input files. It is removed from job sitting for now"%(task)
         for task in tasksToRemove:
                 tasks.remove(task)
+        print "\033[1mTasks summary:\033[0m"
+        for summ in summaries:
+                print summ
         return tasks, doneTasks
 
 

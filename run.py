@@ -34,8 +34,6 @@ def getOptparser():
                           help="Submit the job.")
   parser.add_option("-a", "--all", action="store_true", dest="all", default=False,
                           help="Submit all jobs.")
-  parser.add_option("-H", "--HLT", dest="hlt", nargs=1, default='', #'"HLT_Mu9","HLT_Ele15_SW_L1R"',
-                          help="HLT trigger bits to select events e.g, \"HLT_Mu9\",\"HLT_Ele15_SW_L1R\".")
   parser.add_option("-C", "--Config", dest="Config", action="append", default=[],
                           help="Main configuration file. Can be given multiple times in case of split configurations. Default is Input/default.ini")
   parser.add_option("-G", "--Groups", dest="Groups",
@@ -52,7 +50,6 @@ def main(argv=None):
   global theSubmitmode
   global theFlag
   global theTasks
-  global theHLT
   
   #create option parser
   parser = getOptparser()
@@ -126,7 +123,6 @@ def main(argv=None):
   theDryrun = opts.dryrun
   theFlag = opts.flag
   theTasks = opts.tasks
-  theHLT = opts.hlt
 
   nonjobs = []
   if not opts.grid:
@@ -268,7 +264,7 @@ def createAnalysisPSet(job, flag=None, tasks=None):
 
     # create cfg-file
     if settings.verbose == True: print 'Creating cfg file',
-    psetContent = analysis.getPATPset(flag, job, '-1', tasks, settings.hlt)
+    psetContent = analysis.getPATPset(flag, job, '-1', tasks)
     psetPath = os.path.join(settings.analysispath, flag, settings.getTaskName(tasks), "psets")
     if not os.path.exists(psetPath):
         os.makedirs(psetPath)
