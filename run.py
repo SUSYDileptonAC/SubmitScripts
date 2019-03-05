@@ -290,13 +290,13 @@ def startLocalJob(pset, job, flag=None, tasks=None):
   
   if theDryrun == False:
     subprocess.call(['cmsRun ' + pset], shell=True)
-    if not os.path.exists(settings.localhistopath):
-        os.makedirs(settings.localhistopath)
+    if not os.path.exists(settings.localjobhistopath):
+        os.makedirs(settings.localjobhistopath)
     for outFile in settings.getOutfiles(job):
       print outFile
     for outFile in settings.getOutfiles(job):
       shutil.move(os.path.join(settings.analysispath, outFile) ,
-                  os.path.join(settings.localhistopath, outFile))
+                  os.path.join(settings.localjobhistopath, outFile))
   else:
     if theVerbose == True: print 'Dry-run mode: NOT starting local job: %s' % job
   os.chdir(originPath)

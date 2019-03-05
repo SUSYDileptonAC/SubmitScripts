@@ -80,6 +80,7 @@ class MainConfig:
                 "localdatapath":  self.__formatPath(config.get(CSA, 'localdatapath')),
                 "analysispath":  self.__formatPath(config.get(CSA, 'analysispath')),
                 "localhistopath":  self.__formatPath(config.get(CSA, 'localhistopath')),
+                "localjobhistopath":  self.__formatPath(config.get(CSA, 'localjobhistopath')),
                 "mergedhistopath": self.__formatPath(config.get(CSA, 'mergedhistopath')),
                 "tasksPath":  [self.__formatPath(i) for i in config.get(CSA, 'tasksPath').split()],
                 "analogpath":  self.__formatPath(config.get(CSA, 'analogpath')),

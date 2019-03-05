@@ -1,0 +1,60 @@
+[
+# PAT Electrons
+#===============
+        {   "src": "slimmedElectrons", 
+                "name": "MVAElectrons",
+                "selector": "PATElectronMVAIDSelector",
+                "srcNames": "src",
+                "idMapSource": "ElectronMVAEstimatorRun2Fall17NoIsoV2RawValues",
+                "workingPointCentralBarrelHighPt": 4.392,
+                "workingPointCentralBarrelLowPt": 3.558,
+                "workingPointCentralBarrelLowPtLinear": 0.063,
+                "workingPointOuterBarrelHighPt": 3.392,
+                "workingPointOuterBarrelLowPt": 2.522,
+                "workingPointOuterBarrelLowPtLinear": 0.058,
+                "workingPointEndcapHighPt": 2.680,
+                "workingPointEndcapLowPt": 1.555,
+                "workingPointEndcapLowPtLinear": 0.075,
+                "lowPtLinearSubtraction" : 25.0,
+                "lowPtHighPtCutOff" : 40
+                
+        },                                                                    
+
+        {       
+                "name": "basicElectronsPAT",
+             "cut": "pt >= 20. & abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6)"
+
+        },
+        
+   {   "name": "nonMissHitsElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 0,
+    },
+     {  "name": "nonConvertedElectrons",
+        "cut": "passConversionVeto"
+     },        
+     
+    {   "name": "d0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0MaxEB": 0.05,
+        "d0MaxEE": 0.05,
+        "dZMin": -1.,
+        "dZMaxEB": 0.1,
+        "dZMaxEE": 0.1,
+         "SIP3DMin": -1.,
+         "SIP3DMax": 8,
+        "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+        #"beamSpotSource": "(vertices)" 
+        },
+    
+   
+        {       "name": "IsoElectrons",
+                "selector": "PATElectronIsolationSelector",
+                "isolationDefinitions" : '?isolationDefinitions2016',
+                "method": "miniIsoEA",
+                "isoMin": -1.,
+                "isoMax": 0.1,
+        }
+]

@@ -1,0 +1,56 @@
+[
+# PAT Electrons
+#===============
+        {   "src": "slimmedElectrons", 
+                "name": "LooseMVAElectrons",
+                "selector": "PATElectronMVAIDSelector",
+                "srcNames": "src",
+                "idMapSource": "ElectronMVAEstimatorRun2Fall17NoIsoV2RawValues",
+                "workingPointCentralBarrelHighPt": -0.388,
+                "workingPointCentralBarrelLowPt": -0.388,
+                "workingPointCentralBarrelLowPtLinear": 0.109,
+                "workingPointOuterBarrelHighPt": -0.696,
+                "workingPointOuterBarrelLowPt": -0.696,
+                "workingPointOuterBarrelLowPtLinear": 0.106,
+                "workingPointEndcapHighPt": -1.219,
+                "workingPointEndcapLowPt": -1.219,
+                "workingPointEndcapLowPtLinear": 0.148,
+                "lowPtLinearSubtraction" : 25.0
+        },                                                                    
+
+        {       
+                "name": "basicLooseElectronsPAT",
+            "cut": "pt >= 10. & abs( eta ) <= 2.5"
+        }, 
+        
+   {   "name": "nonMissHitsLooseElectrons",
+        "selector": "PATElectronConversionSelector",
+        "maxLostHits": 0,
+    },
+     {  "name": "nonConvertedLooseElectrons",
+        "cut": "passConversionVeto"
+     },        
+     
+    {   "name": "looseD0Electrons",
+        "srcNames": "src beamSpotSource",
+        "selector": "PATElectronD0PVSelector",
+        "d0Min": -1.,
+        "d0MaxEB": 0.05,
+        "d0MaxEE":  0.05,
+        "dZMin": -1.,
+        "dZMaxEB": 0.1,
+        "dZMaxEE": 0.1,
+        "SIP3DMin": -1.,
+        "SIP3DMax": 8,
+        "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+        #"beamSpotSource": "(vertices)" 
+    },
+        {       "name": "LooseElectrons",
+            "selector": "PATElectronIsolationSelector",
+            "isolationDefinitions" : '?isolationDefinitions2016',
+            "method": "miniIsoEA",              
+            "isoMin": -1.,
+                "isoMax": 0.4,
+        },
+
+]

@@ -1,0 +1,11 @@
+[
+# PAT Isolated Tracks
+#===============
+        {   
+                "name": "basicIsolatedTracks",
+                "src": "isolatedTracks", 
+                "selector": "defaultSelector",
+        },                                                                    
+
+        
+]

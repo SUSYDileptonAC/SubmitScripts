@@ -1,0 +1,35 @@
+[
+# PAT Muons
+#===========
+    {   "src": "slimmedMuons",
+                "name": "basicMuonsPAT",
+                "cut": "abs( eta ) <= 2.4 & !(abs (eta) > 1.4 & abs (eta) < 1.6) & pt >= 20."
+        },
+
+    {   "name": "qualityMuons",
+                "selector": "PATMuonMediumIDSelector",
+                "vertexSource": "offlineSlimmedPrimaryVertices",
+        },
+        {       "name": "d0Muons",
+                "srcNames": "src beamSpotSource",
+                "selector": "PATMuonD0PVSelector",
+                "d0Min": -1.,
+                "d0Max": 0.05,
+                "dZMin": -0.1,
+                "dZMax": 0.1,
+                "SIP3DMin": -1.,
+                "SIP3DMax": 8.,
+                "beamSpotSource": "offlineSlimmedPrimaryVertices" 
+        },
+
+        {       "name": "IsoMuons",
+                 "srcNames": "src",
+                "src":"(muons.d0Muons)",
+                "selector": "PATMuonIsolationSelector",
+                "isolationDefinitions" : '?isolationDefinitions2016',
+                "method": "miniIsoEA",
+                "isoMin": -1.,
+                "isoMax": 0.2,
+        },
+
+]
