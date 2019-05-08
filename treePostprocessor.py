@@ -315,14 +315,6 @@ class TreeProducer:
                                                 print "adding", treePath
                                                 
                                         srcTree[object].SetBranchStatus("*", 1)
-                                        #srcTree[object].SetBranchStatus("*", 0)
-                                        #srcTree[object].SetBranchStatus("pt1", 1)
-                                        #srcTree[object].SetBranchStatus("pt2", 1)
-                                        #srcTree[object].SetBranchStatus("p4", 1)
-                                        #srcTree[object].SetBranchStatus("chargeProduct", 1)
-                                        #srcTree[object].SetBranchStatus("eventNr", 1)
-                                        #srcTree[object].SetBranchStatus("runNr", 1)
-                                        #srcTree[object].SetBranchStatus("lumiSec", 1)
                                         
                                         
                                         

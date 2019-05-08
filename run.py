@@ -68,12 +68,13 @@ def main(argv=None):
     
     # every mix inherits from the "default" mix in its file
     if mixPath not in mixPathes and mixName != "default":
-      mixPathes.append(mixPath)
+      mixPathes.append(mixPath) # so that default is loaded only once (and first) for every file
       mixTuples.append( (mixPath.strip(), "default") )
     
     mixTuples.append( (mixPath.strip(), mixName) )
 
-  
+  tmpConf = opts.Config[:]
+  tmpTasks = opts.tasks[:]
   for mixPath, mixName in mixTuples:
     mixParser = BetterConfigParser()
     mixParser.read(mixPath)
@@ -86,13 +87,29 @@ def main(argv=None):
         print "Every mix file needs a default section, even if it is left empty"
       raise
     
+    # overwrites default options
     if mixOptions.has_key("configs"):
       configsMix = mixOptions["configs"].split(" ")
+      opts.Config = tmpConf[:]
       for conf in configsMix:
         opts.Config.append(conf)
-        
+    
+    # adds to default options
+    if mixOptions.has_key("configs+"):
+      configsMix = mixOptions["configs+"].split(" ")
+      for conf in configsMix:
+        opts.Config.append(conf)
+    
+    # overwrites default options
     if mixOptions.has_key("tasks"):
+      opts.tasks = tmpTasks[:]
       tasksMix = mixOptions["tasks"].split(" ")
+      for task in tasksMix:
+        opts.tasks.append(task)
+    
+    # adds to default options
+    if mixOptions.has_key("tasks+"):
+      tasksMix = mixOptions["tasks+"].split(" ")
       for task in tasksMix:
         opts.tasks.append(task)
         
@@ -104,7 +121,6 @@ def main(argv=None):
     if mixOptions.has_key("job"):
       jobMix = mixOptions["job"].strip()
       opts.job = jobMix
-  
 
   if opts.Config == []:
       opts.Config = [ "Input/default102X.ini" ]

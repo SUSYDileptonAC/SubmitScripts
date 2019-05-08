@@ -4,11 +4,9 @@ Created on 22.10.2018
 
 @author: teroerde
 '''
-# do 'pip install --user tqdm' before running this
+# do 'pip install --user tqdm' before running this if not already done
 #
-# New downloader with progress bar and dynamic waiting times, uses multiprocessing 
-# instead of threading. 
-#
+
 import sys, os, subprocess, time
 from multiprocessing import Pool
 from tqdm import tqdm
@@ -110,8 +108,11 @@ def main():
             
             print "Sleeping for {}:{}, press [CTRL+C] to stop".format(minutes_remaining, seconds_remaining)
             
-            
-            time.sleep(sleep_interval)
+            try:
+                time.sleep(sleep_interval)
+            except KeyboardInterrupt:
+                print("")
+                exit()
             time_remaining -= sleep_interval
             sys.stdout.write("\033[F")
             sys.stdout.write("\033[K")

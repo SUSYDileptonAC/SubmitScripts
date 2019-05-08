@@ -57,6 +57,7 @@ config.Data.publication = %(publish)s
 config.Data.publishDBS = "%(pubDBSURL)s"
 config.Data.outputDatasetTag = "%(theJob)s"
 config.Data.outLFNDirBase = "%(histogramstoragepath)s"
+config.Data.allowNonValidInputDataset = True
 %(Data-AdditionsBlock)s
 config.section_("Site")
 config.Site.storageSite = "%(StageoutSite)s"

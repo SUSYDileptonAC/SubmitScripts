@@ -235,9 +235,13 @@ def addHistos(unmergedList=None, dryRun=False, verbose=True, sampleFilter = None
                             logFile.close()
                         dest = os.path.join(destDir, "%s.%s.%s.root" % (flag, task, sample))    
                         argv = ["hadd","-f",dest]
+                        toRemove = []
                         for i in range(0,num):
                             argv.append(os.path.join(destDir, "%s.%s.%s_%d.root" % (flag, task, sample,i)))  
-                        (stdout,stderr)=subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()                                
+                            toRemove.append( os.path.join(destDir, "%s.%s.%s_%d.root" % (flag, task, sample,i)) )
+                        (stdout,stderr)=subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()  
+                        for ifile in toRemove:
+                            os.remove(ifile) # delete temporary files
                     else:
                         
                         (stdout,stderr)=subprocess.Popen(argv, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()
