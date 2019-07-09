@@ -24,11 +24,11 @@ mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts2017Dilept
 mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts2017DileptonMuEG102X/$1.cuts2017DileptonMuEG102X.MuEG_Run2017E.root /net/data_cms1b/user/teroerde/Cleaning/data_2017E/
 mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts2017DileptonMuEG102X/$1.cuts2017DileptonMuEG102X.MuEG_Run2017F.root /net/data_cms1b/user/teroerde/Cleaning/data_2017F/
 
-python treePostprocessor.py -C CfgMerge/mergeData2017InclusiveRunB.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2017InclusiveRunC.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2017InclusiveRunD.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2017InclusiveRunE.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2017InclusiveRunF.ini &
+python treePostprocessor.py -C CfgMerge/mergeData2017B.ini &
+python treePostprocessor.py -C CfgMerge/mergeData2017C.ini &
+python treePostprocessor.py -C CfgMerge/mergeData2017D.ini &
+python treePostprocessor.py -C CfgMerge/mergeData2017E.ini &
+python treePostprocessor.py -C CfgMerge/mergeData2017F.ini &
 wait
 
 procpath='/net/data_cms1b/user/teroerde/processedTrees/'

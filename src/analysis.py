@@ -59,7 +59,7 @@ def poolSourceLocal(job, n):
         if settings.verbose: print "running localy on %i files in '%s'" % (len(files), "%(localdatapath)s/" % settings.getMap() + job)
 
         txt += 'process.source = cms.Source(\'PoolSource\', \n'   
-        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:65735624-1:65735624'),\n"
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:65629527-1:65629527','1:65831117-1:65831117','1:65833571-1:65833571'),\n"        
         txt += '     fileNames = cms.untracked.vstring(fileList),\n'
         txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
         txt += ')\n\n'
@@ -80,6 +80,7 @@ process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange()
 process.source.lumisToProcess.extend(myLumis)
 """ % jsonPath
 
+        #txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
         txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
         return txt
 
@@ -403,6 +404,11 @@ process.options = cms.untracked.PSet(
 process.producerPath = cms.Path(%(producerPath)s )
 process.schedule = cms.Schedule( process.producerPath, %(taskPaths)s)
 
+#process.SimpleMemoryCheck = cms.Service("SimpleMemoryCheck",ignoreTotal = cms.untracked.int32(1) ) 
+#process.Timing = cms.Service("Timing",
+  #summaryOnly = cms.untracked.bool(False),
+  #useJobReport = cms.untracked.bool(True)
+#)
 
 ########## Counting Histograms (must be at the very end) ##############
 %(counters)s

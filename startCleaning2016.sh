@@ -1,48 +1,50 @@
 #!/bin/bash
 
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunB/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunC/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunD/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunE/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunF/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunG/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH/* -f
-#rm /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH_v3/* -f
-
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016B.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunB/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016C.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunC/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016D.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunD/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016E.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunE/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016F.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunF/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016G.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunG/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016H_v2.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu/$1.cuts$2DileptonDoubleMu.DoubleMuon_Run2016H_v3.root /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH_v3/
-
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016B.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunB/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016C.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunC/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016D.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunD/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016E.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunE/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016F.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunF/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016G.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunG/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016H_v2.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron/$1.cuts$2DileptonDoubleElectron.DoubleElectron_Run2016H_v3.root /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH_v3/
-
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016B.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunB/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016C.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunC/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016D.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunD/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016E.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunE/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016F.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunF/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016G.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunG/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016H_v2.root    /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH/
-mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG/$1.cuts$2DileptonMuEG.MuEG_Run2016H_v3.root /net/data_cms1b/user/teroerde/Cleaning/data_80X_RunH_v3/
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016B/* -f
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016C/* -f
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016D/* -f
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016E/* -f
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016F/* -f
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016G/* -f
+#rm /net/data_cms1b/user/teroerde/Cleaning/data_2016H/* -f
 
 
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunB.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunC.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunD.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunE.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunF.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunG.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunH.ini &
-python treePostprocessor.py -C CfgMerge/mergeData2016InclusiveRunH_v3.ini &
-wait
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016B.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016B/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016C.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016C/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016D.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016D/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016E.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016E/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016F.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016F/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016G.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016G/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleMu102X/$1.cuts$2DileptonDoubleMu102X.DoubleMuon_Run2016H.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016H/
+
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016B.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016B/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016C.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016C/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016D.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016D/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016E.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016E/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016F.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016F/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016G.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016G/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonDoubleElectron102X/$1.cuts$2DileptonDoubleElectron102X.DoubleElectron_Run2016H.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016H/
+
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016B.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016B/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016C.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016C/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016D.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016D/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016E.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016E/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016F.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016F/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016G.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016G/
+#mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts$2DileptonMuEG102X/$1.cuts$2DileptonMuEG102X.MuEG_Run2016H.root    /net/data_cms1b/user/teroerde/Cleaning/data_2016H/
+
+
+#python treePostprocessor.py -C CfgMerge/mergeData2016B.ini &
+#python treePostprocessor.py -C CfgMerge/mergeData2016C.ini &
+#python treePostprocessor.py -C CfgMerge/mergeData2016D.ini &
+#python treePostprocessor.py -C CfgMerge/mergeData2016E.ini &
+#python treePostprocessor.py -C CfgMerge/mergeData2016F.ini &
+#python treePostprocessor.py -C CfgMerge/mergeData2016G.ini &
+#python treePostprocessor.py -C CfgMerge/mergeData2016H.ini &
+#wait
+
+
+procpath='/net/data_cms1b/user/teroerde/processedTrees/'
+
+hadd ${procpath}$1.processed.MergedData.root  ${procpath}data_2016B/$1.processed.MergedData.root ${procpath}data_2016C/$1.processed.MergedData.root ${procpath}data_2016D/$1.processed.MergedData.root ${procpath}data_2016E/$1.processed.MergedData.root ${procpath}data_2016F/$1.processed.MergedData.root ${procpath}data_2016G/$1.processed.MergedData.root ${procpath}data_2016H/$1.processed.MergedData.root
+

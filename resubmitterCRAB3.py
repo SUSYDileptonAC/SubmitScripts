@@ -115,7 +115,14 @@ def resubmit(opts,tasks,doneTasks=[]):
                 except HTTPException as e: # might be because of servers being down
                         canStatus = False
                         ex = e
-                enablePrint()
+                except CRABClient.ClientExceptions.CachefileNotFoundException:
+                        enablePrint()
+                        print "Removing %s because it could not be submitted"%(task)
+                        tasksToRemove.append(task)
+                        doneTasks.append(task)
+                        continue
+                finally:
+                        enablePrint()
                 if not canStatus:
                         print "Encountered HTTPException while getting status, will stop and wait: %s"%(str(ex))
                         break
@@ -124,7 +131,11 @@ def resubmit(opts,tasks,doneTasks=[]):
                 if output["status"] == "COMPLETED" :
                                 tasksToRemove.append(task)
                                 doneTasks.append(task)    
-                                print "task ", task, " is done, removing from sitting."
+                                print "task ", task, " is done, removing from sitting and purging from crab cache."
+                                try:
+                                        output = crabCommand('purge', dir = os.path.abspath(task), cache=True)  
+                                except:
+                                        pass
                 elif output["status"] == "SUBMITTED" or output["status"] == "FAILED":
                         if "failed" in output["jobsPerStatus"]:
                                 if "NEW" in output["dbStatus"] or "QUEUED" in output["dbStatus"]: # can't resubmit if job is in this state
@@ -175,8 +186,6 @@ def main(argv=None):
                               help="Verbose mode.")
         parser.add_option("-k", "--kill", action="store_true", dest="kill", default=False,
                               help="Kill jobs in directory")
-        parser.add_option("-l", "--lumi-report", dest="lumiReport", default=None,
-                              help="filename to store lumi information in")
         parser.add_option("-w", "--watch", action="store_true", dest="watch", default=False,
                               help="Watch Folder and run resubmitter every hour, for 3 days")                         
 

@@ -18,16 +18,29 @@
         "selector": "patPFJetIDSelector",
     },
     {  "name": "qualityJets",
-    "cut": "pt >= 35",
+    "cut": "pt >= 10",
     "skip" : True
     },
     {   "skip": True,
         "name": "qualityBJets",
-        "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >= 0.4941 & pt >= 25 && abs( eta ) <= 2.4',
+        "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >=  0.6321 & pt >= 25 && abs( eta ) <= 2.4',
     },
     {   "skip": True,
         "name": "qualityBJets35",
-        "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >= 0.4941 & pt >= 35 && abs( eta ) <= 2.4',
+        "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >=  0.6321 & pt >= 35 && abs( eta ) <= 2.4',
     },
+    
+    # AK8
+    {   "selector": "muonCleanJets",
+       "srcNames": "src leptSrc",
+        "name": "MuonCleanAK8Jets",
+        "leptSrc": "(muons.IsoMuons)",
+        "dRJetLepton": 0.8,
+        "src":"updatedPatJetsAK8"},
+    {   "selector": "electronCleanJets",
+       "srcNames": "src leptSrc",
+        "name": "ElectronCleanAK8Jets",
+        "leptSrc": "(electrons.IsoElectrons)",
+        "dRJetLepton": 0.8},
 
 ]
