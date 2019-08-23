@@ -1,12 +1,13 @@
 {
-"activeFilters": ["basicVertices"],
+"activeFilters": ["basicVertices"], # 
 "order":["vertices","muons","looseMuons","electrons","looseElectrons","jets","isolatedTracks"],
 
 
 "vertices":[
     {   "src": "offlineSlimmedPrimaryVertices",
         "name": "basicVertices",
-        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2", # 
+        #"filter": False
     },
 ],
 

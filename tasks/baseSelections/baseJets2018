@@ -1,8 +1,8 @@
 [
 # PAT Jets
 #===========
-#      {  "src": "slimmedJets",
-    {  "src": "updatedPatJetsUpdatedJEC",
+
+    {"src": "updatedPatJetsUpdatedJEC",
         "name": "baseJets",
     "cut": "abs( eta ) <= 2.4",
     },
@@ -29,6 +29,13 @@
         "name": "qualityBJets35",
         "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >= 0.4184 & pt >= 35 && abs( eta ) <= 2.4',
     },
+    
+    {   "skip": True,
+        "src": "(jets.qualityJets)",
+        "name": "looseBJets",
+        "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >=  0.1241 && pt >= 25 && abs( eta ) <= 2.4',
+    },
+    
     
     # AK8
     {   "selector": "muonCleanJets",

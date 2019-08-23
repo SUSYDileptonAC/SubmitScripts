@@ -59,7 +59,8 @@ def poolSourceLocal(job, n):
         if settings.verbose: print "running localy on %i files in '%s'" % (len(files), "%(localdatapath)s/" % settings.getMap() + job)
 
         txt += 'process.source = cms.Source(\'PoolSource\', \n'   
-        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:65629527-1:65629527','1:65831117-1:65831117','1:65833571-1:65833571'),\n"        
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('302651:110:155604353-302651:110:155604353'),\n"       
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('297292:734:1308449827-297292:734:1308449827'),\n"    
         txt += '     fileNames = cms.untracked.vstring(fileList),\n'
         txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
         txt += ')\n\n'
@@ -80,8 +81,8 @@ process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange()
 process.source.lumisToProcess.extend(myLumis)
 """ % jsonPath
 
-        #txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
         txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + n + '))\n\n'
+        #txt += 'process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(' + '100' + '))\n\n'
         return txt
 
 

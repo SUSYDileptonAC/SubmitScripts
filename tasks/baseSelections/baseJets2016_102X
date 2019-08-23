@@ -30,6 +30,12 @@
         "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >=  0.6321 & pt >= 35 && abs( eta ) <= 2.4',
     },
     
+    {   "skip": True,
+        "src": "(jets.qualityJets)",
+        "name": "looseBJets",
+        "cut":'bDiscriminator("pfDeepCSVJetTags:probb")+bDiscriminator("pfDeepCSVJetTags:probbb") >=  0.2217 && pt >= 25 && abs( eta ) <= 2.4',
+    },
+    
     # AK8
     {   "selector": "muonCleanJets",
        "srcNames": "src leptSrc",

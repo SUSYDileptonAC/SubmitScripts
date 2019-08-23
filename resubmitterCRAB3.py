@@ -145,7 +145,7 @@ def resubmit(opts,tasks,doneTasks=[]):
                                 blockPrint()
                                 couldResubmit = True
                                 try:
-                                        output = crabCommand('resubmit', dir = os.path.abspath(task))  
+                                        output = crabCommand('resubmit', dir = os.path.abspath(task), maxmemory="3000")  
                                 except CRABClient.ClientExceptions.ConfigurationException: # tasks that were marked as failed couldn't be resubmitted,
                                                                                            # usually happens if pilot jobs from automatic splitting failed
                                         couldResubmit = False
