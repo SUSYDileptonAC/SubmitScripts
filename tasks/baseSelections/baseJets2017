@@ -16,6 +16,7 @@
         "leptSrc": "(electrons.IsoElectrons)"},
     {   "name": "qualityJets30",
         "selector": "patPFJetIDSelector",
+        "year": 2017,
     },
     {  "name": "qualityJets",
     "cut": "pt >= 10",

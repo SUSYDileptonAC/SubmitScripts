@@ -59,8 +59,9 @@ def poolSourceLocal(job, n):
         if settings.verbose: print "running localy on %i files in '%s'" % (len(files), "%(localdatapath)s/" % settings.getMap() + job)
 
         txt += 'process.source = cms.Source(\'PoolSource\', \n'   
-        #txt += "     eventsToProcess = cms.untracked.VEventRange('302651:110:155604353-302651:110:155604353'),\n"       
-        #txt += "     eventsToProcess = cms.untracked.VEventRange('297292:734:1308449827-297292:734:1308449827'),\n"    
+
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:12643123-1:12643123','1:12642362-1:12642362','1:7854012-1:7854012','1:2253683-1:2253683','1:13111692-1:13111692',),\n"       
+        #txt += "     eventsToProcess = cms.untracked.VEventRange('1:59005056-1:59005056'),\n"    
         txt += '     fileNames = cms.untracked.vstring(fileList),\n'
         txt += '     duplicateCheckMode = cms.untracked.string(\'noDuplicateCheck\'),\n'
         txt += ')\n\n'

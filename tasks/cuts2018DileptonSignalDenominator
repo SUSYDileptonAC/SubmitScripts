@@ -1,0 +1,16 @@
+{
+"activeFilters": ["basicVertices"],
+"order":["vertices","muons","electrons","jets"],
+
+
+"vertices":[
+    {   "src": "offlineSlimmedPrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+"muons": input("baseSelections/pogMuonsMiniAOD2018"),
+"electrons" : input("baseSelections/pogElectronsMiniAODMVA18_102X"),
+"jets" : input("baseSelections/baseJets2018"),
+
+}

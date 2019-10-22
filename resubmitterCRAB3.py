@@ -9,14 +9,12 @@ Reworked on 27.02.2019
 # do 'pip install --user tqdm' before running this if not already done
 #
 
-import os.path
-from os import system
 from CRABAPI.RawCommand import crabCommand
 import CRABClient.ClientExceptions
 from httplib import HTTPException
 from datetime import datetime
 import sys, os
-
+import shutil
 # Disable
 def blockPrint():
         sys.stdout = open(os.devnull, 'w')
@@ -65,16 +63,16 @@ def getTasks(rawDirs,doneTasks = []):
                         tasks.append(rawDir)    
     if len(tasks) == 0:
                 for rawDir in rawDirs:
-                        if not rawDir == "doneTasks.shelve":
+                        if os.path.isdir(rawDir):
                                 for dir in os.listdir(rawDir):
-                                        if "crab_" in rawDir:
+                                        if "crab_" in dir:
                                                 if not os.path.join(rawDir,dir) in doneTasks:
                                                         tasks.append(os.path.join(rawDir,dir))
     if len(tasks) == 0:
                 for rawDir in rawDirs:
                         for rawDirLevel2 in os.listdir(rawDir):
-                                if not rawDirLevel2 == "doneTasks.shelve":
-                                      for dir in os.listdir(os.path.join(rawDir,rawDirLevel2)):
+                                if os.path.isdir(os.path.join(rawDir,rawDirLevel2)):
+                                        for dir in os.listdir(os.path.join(rawDir,rawDirLevel2)):
                                               if "crab_" in dir:
                                                 if not os.path.join(rawDir,rawDirLevel2,dir) in doneTasks:
                                                       tasks.append(os.path.join(rawDir,rawDirLevel2,dir))                
@@ -145,7 +143,7 @@ def resubmit(opts,tasks,doneTasks=[]):
                                 blockPrint()
                                 couldResubmit = True
                                 try:
-                                        output = crabCommand('resubmit', dir = os.path.abspath(task), maxmemory="3000")  
+                                        output = crabCommand('resubmit', dir = os.path.abspath(task), maxjobruntime="480")  
                                 except CRABClient.ClientExceptions.ConfigurationException: # tasks that were marked as failed couldn't be resubmitted,
                                                                                            # usually happens if pilot jobs from automatic splitting failed
                                         couldResubmit = False
@@ -158,9 +156,20 @@ def resubmit(opts,tasks,doneTasks=[]):
                                 if not couldResubmit:
                                         print "No jobs to resubmit were found in %s, the failed jobs might be pilot jobs."%task
                 elif output["status"] == "SUBMITFAILED":
-                        tasksToRemove.append(task)
-                        doneTasks.append(task)
-                        print "Submission of task %s failed, check the crab directory for errors in the log file. It is removed from job sitting for now."%(task)
+                        if not opts.force:
+                                tasksToRemove.append(task)
+                                doneTasks.append(task)
+                                print "Submission of task %s failed, check the crab directory for errors in the log file. It is removed from job sitting for now."%(task)
+                        else:
+                                print "Submission of task %s failed, check the crab directory for errors in the log file. It is removed and a new submission is started"%(task)
+                                taskName = getTaskName(task)
+                                abovePath =  "/".join(task.split("/")[:-1])
+                                shutil.rmtree("%s/crab_%s"%(abovePath, taskName))
+                                try:
+                                        output = crabCommand('submit', config = "%s/crabConfig_%s.py"%(abovePath, taskName))  
+                                except:
+                                        print "Submission of task %s failed again!"%(task)
+                                
         for task in tasksToRemove:
                 tasks.remove(task)
         if canStatus:
@@ -187,7 +196,9 @@ def main(argv=None):
         parser.add_option("-k", "--kill", action="store_true", dest="kill", default=False,
                               help="Kill jobs in directory")
         parser.add_option("-w", "--watch", action="store_true", dest="watch", default=False,
-                              help="Watch Folder and run resubmitter every hour, for 3 days")                         
+                              help="Watch Folder and run resubmitter every half hour")                         
+        parser.add_option("-f", "--force", action="store_true", dest="force", default=False,
+                              help="If task is in status submitfailed, delete crab folder and submit again")                         
 
         
         (opts, args) = parser.parse_args(argv)

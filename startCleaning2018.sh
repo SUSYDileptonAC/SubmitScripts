@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ -z "$1" ]; then 
+    echo "Flag is not defined, exiting"
+    exit 
+fi
+
 rm /net/data_cms1b/user/teroerde/Cleaning/data_2018A/* -f
 rm /net/data_cms1b/user/teroerde/Cleaning/data_2018B/* -f
 rm /net/data_cms1b/user/teroerde/Cleaning/data_2018C/* -f
@@ -30,3 +35,9 @@ wait
 procpath='/net/data_cms1b/user/teroerde/processedTrees/'
 
 hadd ${procpath}$1.processed.MergedData.root ${procpath}data_2018A/$1.processed.MergedData.root ${procpath}data_2018B/$1.processed.MergedData.root ${procpath}data_2018C/$1.processed.MergedData.root ${procpath}data_2018D/$1.processed.MergedData.root
+
+
+rm /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts2018Dilepton102X/*.merged
+mv /net/data_cms1b/user/teroerde/AnalysisData/PAT/MergedHistos/$1/cuts2018Dilepton102X/ /net/data_cms1b/user/teroerde/trees/$1
+rename "cuts2018Dilepton102X" "processed" /net/data_cms1b/user/teroerde/trees/$1/*.root 
+mv ${procpath}$1.processed.MergedData.root /net/data_cms1b/user/teroerde/trees/$1/$1.processed.MergedData.root

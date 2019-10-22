@@ -1,0 +1,23 @@
+{
+"activeFilters": ["basicVertices"],
+"order":["vertices","muons","looseMuons","electrons","looseElectrons","jets","isolatedTracks"],
+
+
+"vertices":[
+    {   "src": "offlineSlimmedPrimaryVertices",
+        "name": "basicVertices",
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
+    },
+],
+
+"muons": input("baseSelections/pogMuonsMiniAOD2018"),
+"looseMuons": input("baseSelections/pogMuonsMiniAOD2018Loose"),
+"electrons" : input("baseSelections/pogElectronsMiniAODMVA18_102X"),
+"looseElectrons" : input("baseSelections/pogElectronsMiniAODMVA18Loose_102X"),
+"isolatedTracks" : input("baseSelections/isolatedTracks2018"),
+"jets" : input("baseSelections/baseJets2018"),
+
+
+
+
+}

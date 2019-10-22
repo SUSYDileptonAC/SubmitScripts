@@ -7,7 +7,7 @@
                 "srcNames": "src",
                 "idMapSource": "ElectronMVAEstimatorRun2Fall17NoIsoV2RawValues",
                 "workingPointCentralBarrelHighPt": 4.392,
-                "workingPointCentralBarrelLowPt": 3.558,
+                "workingPointCentralBarrelLowPt": 3.447,
                 "workingPointCentralBarrelLowPtLinear": 0.063,
                 "workingPointOuterBarrelHighPt": 3.392,
                 "workingPointOuterBarrelLowPt": 2.522,

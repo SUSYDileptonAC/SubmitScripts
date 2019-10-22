@@ -192,14 +192,16 @@ def main(argv=None):
       if settings.verbose: print "creating crab configfiles... ",
       crabCfgPaths = createCrabCfgs(opts.job, psetPaths)
       if settings.verbose: print "done. got: %s" % crabCfgPaths
-      if not settings.dryrun:
-        originPath = os.path.abspath(os.path.curdir)
-        for crabCfgPath in crabCfgPaths:
-          os.chdir(os.path.dirname(crabCfgPath))
-          if settings.verbose: print "starting crab submit -c %s"%crabCfgPath.split("/")[-1]
-          #print "starting crab submit -c %s"%crabCfgPath.split("/")[-1]
+      originPath = os.path.abspath(os.path.curdir)
+      for crabCfgPath in crabCfgPaths:
+        os.chdir(os.path.dirname(crabCfgPath))
+        if settings.verbose: print "starting crab submit -c %s"%crabCfgPath.split("/")[-1]
+        #print "starting crab submit -c %s"%crabCfgPath.split("/")[-1]
+        if not settings.dryrun:
           subprocess.call(["crab submit -c %s"%crabCfgPath.split("/")[-1]], shell=True)
-          os.chdir(originPath)
+        else:
+          subprocess.call(["crab submit -c %s --dryrun"%crabCfgPath.split("/")[-1]], shell=True)
+        os.chdir(originPath)
 
   else:
     if not settings.dryrun:

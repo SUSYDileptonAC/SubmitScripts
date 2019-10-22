@@ -1,13 +1,12 @@
 {
-"activeFilters": [], # "basicVertices"
+"activeFilters": ["basicVertices"],
 "order":["vertices","muons","looseMuons","electrons","looseElectrons","jets","isolatedTracks"],
-#
+
 
 "vertices":[
     {   "src": "offlineSlimmedPrimaryVertices",
         "name": "basicVertices",
-        "cut": "", # !isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2
-        "filter": False
+        "cut": "!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2"
     },
 ],
 
@@ -18,8 +17,5 @@
 "isolatedTracks" : input("baseSelections/isolatedTracks2017"),
 
 "jets" : input("baseSelections/baseJets2017"),
-
-
-
 
 }

@@ -36,6 +36,7 @@ config.General.requestName = "%(theJob)s"
 config.General.workArea = "%(workdir)s" 
 config.General.transferOutputs = True
 config.General.transferLogs = False
+config.General.instance = 'prod'
         
 %(General-AdditionsBlock)s      
         
