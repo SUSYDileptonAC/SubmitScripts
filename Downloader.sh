@@ -7,4 +7,4 @@
     #sleep 120
 #done
 
-python getOutputFromStorage.py -C Input/default94X.ini -w -p 8
+python getOutputFromStorage.py -C Input/default102X.ini -w -p 8

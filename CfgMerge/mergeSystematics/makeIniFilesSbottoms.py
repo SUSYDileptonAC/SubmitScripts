@@ -55,9 +55,9 @@ OtherSelection =
 #  -> possible only if running over trees with only tight leptons
 [treeProcessor:highPtSelector]
 type = SimpleSelector
-EEExpression =   mSbottom == {msbottom} && mNeutralino2 < {mneutralino2_min} && mNeutralino2 > {mneutralino2_max}
-EMuExpression =  mSbottom == {msbottom} && mNeutralino2 < {mneutralino2_min} && mNeutralino2 > {mneutralino2_max}
-MuMuExpression = mSbottom == {msbottom} && mNeutralino2 < {mneutralino2_min} && mNeutralino2 > {mneutralino2_max}
+EEExpression =   mSbottom == {msbottom} && mNeutralino2 > {mneutralino2_min} && mNeutralino2 < {mneutralino2_max}
+EMuExpression =  mSbottom == {msbottom} && mNeutralino2 > {mneutralino2_min} && mNeutralino2 < {mneutralino2_max}
+MuMuExpression = mSbottom == {msbottom} && mNeutralino2 > {mneutralino2_min} && mNeutralino2 < {mneutralino2_max}
 
 
 

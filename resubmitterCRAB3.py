@@ -43,6 +43,8 @@ def summary( jobSummary, task ):
                 else:
                         other += number
         
+        category = task.split("/")[-2]
+        
         if totalNum > 0:
                 status = "\033[32m{finished:>6.1f}% \033[0m{running:>6.1f}% \033[91m{failed:>6.1f}%  \033[33m{other:>6.1f}%\033[0m   / {total:>6}".format(finished=(finished/totalNum*100), 
                                                         running=(running/totalNum*100),failed=(failed/totalNum*100), other=(other/totalNum*100), total=int(totalNum))
@@ -51,7 +53,7 @@ def summary( jobSummary, task ):
         taskName = task.split("crab_")[1]
         
         output = "{}{:>70}".format(status, taskName)
-        return output
+        return output,category
 
 
 def getTasks(rawDirs,doneTasks = []):
@@ -100,7 +102,7 @@ def resubmit(opts,tasks,doneTasks=[]):
         
         tasksToRemove = []
         summaries = []
-        
+        categories = []
         def getTaskName(task):
                 return task.split("crab_")[1]
         tasks.sort(key=getTaskName)
@@ -115,9 +117,22 @@ def resubmit(opts,tasks,doneTasks=[]):
                         ex = e
                 except CRABClient.ClientExceptions.CachefileNotFoundException:
                         enablePrint()
-                        print "Removing %s because it could not be submitted"%(task)
-                        tasksToRemove.append(task)
-                        doneTasks.append(task)
+                        if not opts.force:
+                                print "Removing %s because it could not be submitted"%(task)
+                                tasksToRemove.append(task)
+                                doneTasks.append(task)
+                        else:
+                                print "Submission of task %s failed. It is removed and a new submission is started"%(task)
+                                taskName = getTaskName(task)
+                                abovePath =  "/".join(task.split("/")[:-1])
+                                shutil.rmtree("%s/crab_%s"%(abovePath, taskName))
+                                try:
+                                        #output = crabCommand('submit', config = "%s/crabConfig_%s.py"%(abovePath, taskName))  
+                                        subprocess.call("crab submit %s/crabConfig_%s.py"%(abovePath, taskName), shell=True)
+                                except Exception as e:
+                                        print "Submission of task %s failed again!"%(task)
+                                        print e
+                                
                         continue
                 finally:
                         enablePrint()
@@ -126,6 +141,7 @@ def resubmit(opts,tasks,doneTasks=[]):
                         break
                 summ = summary(output["jobsPerStatus"], task)
                 summaries.append(summ)
+                categories.append(summ[1])
                 if output["status"] == "COMPLETED" :
                                 tasksToRemove.append(task)
                                 doneTasks.append(task)    
@@ -165,17 +181,25 @@ def resubmit(opts,tasks,doneTasks=[]):
                                 taskName = getTaskName(task)
                                 abovePath =  "/".join(task.split("/")[:-1])
                                 shutil.rmtree("%s/crab_%s"%(abovePath, taskName))
-                                try:
-                                        output = crabCommand('submit', config = "%s/crabConfig_%s.py"%(abovePath, taskName))  
-                                except:
+                                try:    
+                                        subprocess.call("crab submit %s/crabConfig_%s.py"%(abovePath, taskName), shell=True)
+                                        #output = crabCommand('submit', config = "%s/crabConfig_%s.py"%(abovePath, taskName))  
+                                except Exception as e:
                                         print "Submission of task %s failed again!"%(task)
+                                        print e
                                 
         for task in tasksToRemove:
                 tasks.remove(task)
         if canStatus:
                 print "\033[1mTasks summary (%s):\033[0m"%(datetime.now())
-                for summ in summaries:
-                        print summ
+                categories = list(set(categories))
+                categories.sort()
+                
+                for category in categories:
+                        print "\033[1m{:>90}\033[0m".format(category)
+                        for summ, sub_category in summaries:
+                                if sub_category == category:
+                                        print summ
         return tasks, doneTasks
 
 

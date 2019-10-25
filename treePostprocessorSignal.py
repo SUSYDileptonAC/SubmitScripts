@@ -1,4 +1,4 @@
-#!/usr/bin/env VERSIONER_PYTHON_PREFER_32_BIT=yes python
+##!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
 Created on 26.05.2011
@@ -395,6 +395,7 @@ def getProducers(config, path):
         result = []
         dataPaths = []
         for inputPath in glob("%s/*.root"%path):
+                print inputPath
                 if match(mcExpression, splitPath(inputPath)[1]) ==None:
                         #~ print "TEST!!!"
                         #~ print mcExpression
@@ -428,12 +429,11 @@ def main(argv = None):
         
         config = ConfigParser()
         config.read(opts.Config)
-        
         basePath = config.get("general","basePath")
         producers = getProducers(config, basePath)
         for p in producers:
                 p.produce()
-        
+
 if __name__ == '__main__':
         main()
 

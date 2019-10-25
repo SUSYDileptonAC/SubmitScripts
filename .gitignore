@@ -26,4 +26,5 @@ DataMC/shelves/*
 DataMC/tab/*
 TriggerEfficiencies/shelves/*
 CfgMerge/mergeSystematics/mergeSimulationMiniAOD*
+CfgMerge/mergeSystematics/201*
 events.highPt

@@ -62,7 +62,7 @@ config.Data.allowNonValidInputDataset = True
 %(Data-AdditionsBlock)s
 config.section_("Site")
 config.Site.storageSite = "%(StageoutSite)s"
-config.Site.blacklist = ["T3_MX_Cinvestav","T2_UA_KIPT","T3_IT_Perugia","T2_US_Vanderbilt"]
+#config.Site.blacklist = []
 %(Site-AdditionsBlock)s
 config.section_("User")
 config.User.voGroup = "dcms"

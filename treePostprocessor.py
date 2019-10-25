@@ -1,4 +1,4 @@
-#!/usr/bin/env VERSIONER_PYTHON_PREFER_32_BIT=yes python
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 '''
 Created on 26.05.2011
@@ -36,7 +36,19 @@ class SimpleSelector(TreeProcessor):
                 
         def processEvent(self, event, object):
                 from math import fabs
+   
                 expression = self.getExpression(object)
+                
+                #########################
+                ## For trigger veto depending on pd
+                additionalCut = ""
+                if hasattr(self, "additionalCut"):
+                        if self.additionalCut != None:
+                                additionalCut = self.additionalCut
+                if len(additionalCut) > 0:
+                        expression = "%s && %s"%(expression, additionalCut)
+                #########################
+                        
                 def getVariables(expr):
                         import re
                         result = re.findall(r"(?![0-9])(\w+)", expr) # this is supposed to match all words = variable names that are not numbers. Words can end with numbers, though
@@ -78,8 +90,44 @@ class OverlapRemover(TreeProcessor):
                 if self.config.has_option(self.section,"%sFilter"%object):
                         filter = self.config.get(self.section,"%sFilter"%object)
                 print "looping over %s tree"%object
-
+                
+                ############################ 
+                ## For trigger vetoes depending on PD
+                additionalCut = None
+                curFile = None
+                oldCurFile = None
+                ############################ 
                 for ev in src:
+                        ############################ 
+                        ## For trigger vetoes depending on PD
+                        curFile = src.GetFile().GetName()
+                        if curFile != oldCurFile:
+                                oldCurFile = curFile
+                                PDname = curFile.split(".")[-2]
+                                if object == "EMu":
+                                        if "MuEG" in PDname:
+                                                # veto events triggered by EE or MM triggers
+                                                additionalCut = "(triggerSummaryEE == 0 && triggerSummaryMM == 0)"
+                                                #additionalCut = "(triggerSummaryEE == 0 || triggerSummaryMM == 0)"
+                                                
+                                        elif "DoubleElectron" in PDname:
+                                                # veto events triggered by MM
+                                                additionalCut = "(triggerSummaryMM == 0)"
+                                                #additionalCut = None
+                                        else:
+                                                additionalCut = None
+                                elif object == "EE":
+                                        if "DoubleElectron" in PDname:
+                                              # veto events triggered by MM
+                                              additionalCut =  "(triggerSummaryMM == 0)"
+                                        else:
+                                                additionalCut = None
+                                else:
+                                        additionalCut = None
+                                
+                                print "Changed additional cut for PD %s with dilepton %s to %s"%(PDname, object, additionalCut)
+                        ##
+                        ############################ 
                         if (endOfLine < 1):
                                 pass
                                 #break
@@ -87,6 +135,10 @@ class OverlapRemover(TreeProcessor):
                         processingResults = {}
                         
                         for processorName in processors:
+                                ############################ 
+                                ## For trigger vetoes depending on PD
+                                allProcessors[processorName].additionalCut = additionalCut
+                                ############################ 
                                 processingResults[processorName] = allProcessors[processorName].processEvent(ev, object)
      
                         if filter == "" or eval(filter, processingResults):
